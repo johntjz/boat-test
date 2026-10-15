@@ -292,4 +292,310 @@
                         <text x="15" y="22" fill="#0284c7" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold">VICTORIA HARBOUR WATERFRONT (BERTHING ZONE)</text>
 
                         <!-- Zone B: Floating BESS Pontoon -->
-                        <rect x="295" y="14" width="195" height="48" rx="4" fill="#10b981" fill-opacity="0.15"
+                        <rect x="295" y="14" width="195" height="48" rx="4" fill="#10b981" fill-opacity="0.15" stroke="#059669" stroke-width="1.8"/>
+                        <text x="392" y="33" fill="#059669" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="bold" text-anchor="middle">ZONE B: FLOATING BESS &amp; CHARGER</text>
+                        <text x="392" y="47" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">D2 (500kW) / EF-150 (3.5MW Buffer)</text>
+
+                        <!-- Seawall Line -->
+                        <line x1="5" y1="73" x2="515" y2="73" stroke="#334155" stroke-width="3"/>
+                        <text x="15" y="85" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="bold">FIXED CONCRETE SEAWALL / WATERFRONT PROMENADE (+5.0mPD)</text>
+
+                        <!-- Shun Tak / HK-Macau Ferry Terminal West Berth Reference -->
+                        <rect x="15" y="95" width="175" height="65" rx="3" fill="#64748b" fill-opacity="0.12" stroke="#64748b" stroke-width="1.2"/>
+                        <text x="102" y="122" fill="#334155" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle">SHUN TAK CENTRE /</text>
+                        <text x="102" y="135" fill="#334155" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">HK-MACAU FERRY TERMINAL</text>
+                        <text x="102" y="148" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">(Existing HKE Transformer Rooms)</text>
+
+                        <!-- Sheung Wan Landing No. 1 Steps & Zone A Fixed Demarcation -->
+                        <rect x="315" y="73" width="155" height="20" fill="#94a3b8" fill-opacity="0.25" stroke="#475569" stroke-width="1"/>
+                        <text x="392" y="86" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">SHEUNG WAN LANDING NO. 1</text>
+
+                        <!-- Zone A Box -->
+                        <rect x="320" y="102" width="145" height="44" rx="4" fill="#0284c7" fill-opacity="0.15" stroke="#0284c7" stroke-width="2"/>
+                        <text x="392" y="119" fill="#0284c7" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle">ZONE A: FIXED DEMARCATION</text>
+                        <text x="392" y="131" fill="#334155" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">1.5m × 0.8m IP66 Switchboard</text>
+                        <text x="392" y="141" fill="#059669" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="bold" text-anchor="middle">(HKE Meter + Main MCCB + 32R)</text>
+
+                        <!-- Flexible Umbilical Arrow Zone A -> Zone B -->
+                        <path d="M 392 102 L 392 62" stroke="#059669" stroke-width="2.2" stroke-dasharray="3,2"/>
+                        <polygon points="392,60 388,67 396,67" fill="#059669"/>
+
+                        <!-- Road Corridor (Bottom) -->
+                        <line x1="5" y1="175" x2="515" y2="175" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <text x="260" y="192" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="bold" text-anchor="middle">CHUNG KONG ROAD / PUBLIC FOOTPATH UTILITY CORRIDOR (SKETCH NEAREST HKE LV PILLAR BELOW)</text>
+                        <circle cx="245" cy="130" r="16" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,3"/>
+                        <text x="245" y="133" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="bold" text-anchor="middle">HKE?</text>
+                    </svg>
+
+                    <div class="font-mono text-[9px] pt-1 border-t flex justify-between" style="border-color: var(--border-color); color: var(--text-muted);">
+                        <span data-i18n="sketch_note1">Est. Trench Distance: _________ m</span>
+                        <span data-i18n="sketch_note2">Target Demarcation: Fixed Seawall Apron (Zone A)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: MULTI-PIER 10-YEAR ROLLOUT MATRIX (BRIDGING D2 & EF-150) -->
+            <section class="mb-2.5">
+                <div class="flex items-center justify-between mb-1">
+                    <h2 class="font-mono text-[11px] font-bold uppercase tracking-wider" style="color: var(--accent-primary);" data-i18n="sec3_title">
+                        3. PHASED LOAD FORECAST &amp; MULTI-PIER HK ISLAND ELECTRIFICATION ROADMAP
+                    </h2>
+                    <span class="font-mono text-[9px]" style="color: var(--text-muted);" data-i18n="sec3_sub">
+                        Bridging Intra-Harbour Short Routes (BAYWING-D2) to Cross-Boundary Macau Corridor (EF-150)
+                    </span>
+                </div>
+
+                <div class="card-box overflow-hidden">
+                    <table class="w-full text-left border-collapse text-[9.5px]">
+                        <thead>
+                            <tr class="border-b font-mono uppercase text-[9px]" style="border-color: var(--border-color); background-color: var(--bg-page); color: var(--text-muted);">
+                                <th class="py-1.5 px-2.5" data-i18n="th1">Pier / Waterfront Node</th>
+                                <th class="py-1.5 px-2.5" data-i18n="th2">Deployment Phase &amp; Vessel</th>
+                                <th class="py-1.5 px-2.5" data-i18n="th3">Continuous HKE Grid Draw</th>
+                                <th class="py-1.5 px-2.5" data-i18n="th4">On-Berth BESS &amp; DC Output</th>
+                                <th class="py-1.5 px-2.5" data-i18n="th5">Strategic Role &amp; Route Scope</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y font-mono" style="border-color: var(--border-color);">
+                            <tr>
+                                <td class="py-1.5 px-2.5 font-sans font-bold" style="color: var(--accent-primary);" data-i18n="r1_c1">
+                                    1A. Sheung Wan Landing No. 1 (Phase 1–2 Pilot)
+                                </td>
+                                <td class="py-1.5 px-2.5" data-i18n="r1_c2">Phase 1–2: BAYWING-D2 (25-Pax)</td>
+                                <td class="py-1.5 px-2.5 font-bold" style="color: var(--accent-secondary);" data-i18n="r1_c3">250 kW → 900 kW LV (380V AC)</td>
+                                <td class="py-1.5 px-2.5" data-i18n="r1_c4">400 kWh – 1.2 MWh BESS / 500 kW DC</td>
+                                <td class="py-1.5 px-2.5 font-sans" data-i18n="r1_c5">Public landing validation of HKE LV-to-BESS demarcation &amp; intra-city pilot trials</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1.5 px-2.5 font-sans font-bold" data-i18n="r2_c1">
+                                    1B. Sheung Wan / HK–Macau Terminal (Phase 3)
+                                </td>
+                                <td class="py-1.5 px-2.5" data-i18n="r2_c2">Phase 3: BAYWING EF-150 (150-Pax)</td>
+                                <td class="py-1.5 px-2.5 font-bold" data-i18n="r2_c3">1.5 MW – 3.0 MW (11kV HV / Dual TX)</td>
+                                <td class="py-1.5 px-2.5" data-i18n="r2_c4">4.0 MWh BESS / 3.5 MW MCS Arm</td>
+                                <td class="py-1.5 px-2.5 font-sans" data-i18n="r2_c5">20-min turnaround for cross-boundary HK–Macau &amp; GBA high-speed routes</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1.5 px-2.5 font-sans font-bold" data-i18n="r3_c1">
+                                    2. Central Piers (Pier 7–10 Corridor)
+                                </td>
+                                <td class="py-1.5 px-2.5" data-i18n="r3_c2">Phase 2: BAYWING-D2 Fleet</td>
+                                <td class="py-1.5 px-2.5 font-bold" style="color: var(--accent-secondary);" data-i18n="r3_c3">250 kW – 500 kW LV (380V AC)</td>
+                                <td class="py-1.5 px-2.5" data-i18n="r3_c4">500 kWh BESS / 500 kW DC Fast Charge</td>
+                                <td class="py-1.5 px-2.5 font-sans" data-i18n="r3_c5">High-frequency ultra-short cross-harbour &amp; outlying island commuter routes</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1.5 px-2.5 font-sans font-bold" data-i18n="r4_c1">
+                                    3. Wan Chai Ferry Pier Waterfront
+                                </td>
+                                <td class="py-1.5 px-2.5" data-i18n="r4_c2">Phase 2: BAYWING-D2 Fleet</td>
+                                <td class="py-1.5 px-2.5 font-bold" style="color: var(--accent-secondary);" data-i18n="r4_c3">250 kW – 500 kW LV (380V AC)</td>
+                                <td class="py-1.5 px-2.5" data-i18n="r4_c4">500 kWh BESS / 500 kW DC Fast Charge</td>
+                                <td class="py-1.5 px-2.5 font-sans" data-i18n="r4_c5">Cross-harbour &amp; East Harbour zero-emission commuter network</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- FOOTER / NEXT STEPS -->
+        <footer class="pt-2 border-t flex items-center justify-between text-[9.5px]" style="border-color: var(--border-color); color: var(--text-muted);">
+            <div data-i18n="foot_left">
+                <strong>Post-Walkover Action Item:</strong> Formal registration of phased load forecast (Form C.I. 141) &amp; preliminary HKE Supply Feasibility Note for HKSTP / Marine Dept submission.
+            </div>
+            <div class="font-mono font-bold shrink-0 ml-4" style="color: var(--accent-primary);">
+                https://boat-eg5.pages.dev/
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let isDark = false;
+        let lang = 'en';
+
+        const dict = {
+            en: {
+                doc_badge: "UTILITY INTERFACE & GRID DEMARCATION BRIEF",
+                doc_ref: "DOC REF: AM-EF150-HKE-2026 // FORM C.I. 141 PRE-CONSULTATION",
+                main_title: "SHORE-POWER FAST-CHARGING & BESS BUFFER INTERFACE",
+                sub_title: "Joint Site Walkover with HK Electric Distribution Planning Department — Sheung Wan Landing No. 1",
+                hdr_date: "Date: 21 Oct 2026 (Wed)",
+                hdr_loc: "Site: Sheung Wan Landing No. 1",
+                sec1_title: "1. UNIDIRECTIONAL SHORE-TO-BESS SINGLE-LINE TOPOLOGY (ZERO GRID EXPORT)",
+                sec1_tag: "EMSD CoP & HKE SUPPLY RULES COMPLIANT",
+                b1_title: "[1] HKE LV SUPPLY NODE",
+                b1_sub: "380V / 220V 50Hz 3-Ph 4-Wire",
+                b1_l1: "• Phase 1: 250–300 kW (~400A TPN)",
+                b1_l2: "• Phase 2: 600–900 kW (~1250A TPN)",
+                b1_l3: "• Drawn from nearest HKE LV pillar / local 1.5 MVA transformer",
+                b1_foot: "Flat 24/7 High-Load-Factor Profile",
+                b2_title: "[2] FIXED ONSHORE CABINET",
+                b2_sub: "Seawall Apron Demarcation",
+                b2_l1: "• Footprint: 1.5m (W) × 0.8m (D) IP66",
+                b2_l2: "• HKE CT Chamber & Smart Tariff Meter",
+                b2_l3: "• Main ACB/MCCB + Earth Leakage",
+                b2_l4: "• Reverse-Power Relay (ANSI 32R)",
+                b2_foot: "FIXED LAND BOUNDARY (NO PONTOON METER)",
+                b3_title: "[3] FLOATING BESS BUFFER",
+                b3_sub: "Unidirectional AC/DC Rectifier",
+                b3_l1: "• Zero Back-Feed: Dedicated AC-to-DC charger (No grid-tie inverter export)",
+                b3_l2: "• 400 kWh (Ph1) → 4.0 MWh (Ph3) Marine LFP Buffer",
+                b3_l3: "• Galvanic isolation + shore interlock",
+                b3_foot: "Eliminates Megawatt Spikes on HKE Grid",
+                b4_title: "[4] VESSEL DC DISPENSER",
+                b4_sub: "800V DC Ultra-Fast Turnaround",
+                b4_l1: "• Stage 1 (BAYWING-D2): 500 kW DC CCS2/MCS (25-Pax Intra-Harbour)",
+                b4_l2: "• Stage 2 (EF-150): 3.5 MW DC MCS Robotic Arm (150-Pax Macau)",
+                b4_l3: "• 10–15 min berth top-up (50% DoD)",
+                b4_foot: "Decouples Vessel Peak from Grid Draw",
+                sec2_left_title: "2A. WALKOVER TECHNICAL CHECKLIST",
+                chk1_t: "1. Nearest HKE Supply Take-Off Point",
+                chk1_d: "Identify nearest HKE LV Pillar / Shun Tak perimeter switchroom and measure cable trench distance to Landing No. 1 apron.",
+                chk1_fill: "Pillar / Sub ID: ______________________",
+                chk2_t: "2. 'Zero-Excavation' LV Headroom Ceiling",
+                chk2_d: "Confirm maximum continuous kW/Amp load available immediately from existing local transformer without major roadworks.",
+                chk2_fill: "Available LV Cap: ________ kW (_____ A)",
+                chk3_t: "3. Onshore Switchboard Demarcation",
+                chk3_d: "Confirm suitability of fixed concrete seawall apron behind Landing No. 1 for customer IP66 meter/isolator pillar (+5.0mPD flood clearance).",
+                chk4_t: "4. Passive 11kV Provisioning ('Dark Ducts')",
+                chk4_d: "Assess option to reserve spare cable ducts during upcoming Chung Kong Rd / waterfront works for Phase 3 (1.5–3.0 MW).",
+                sketch_title: "2B. SHEUNG WAN LANDING NO. 1 — CABLE ROUTE & PILLAR MARKUP SCHEMATIC",
+                sketch_hint: "[FOR ON-SITE PEN ANNOTATION]",
+                sketch_note1: "Est. Trench Distance: _________ m",
+                sketch_note2: "Target Demarcation: Fixed Seawall Apron (Zone A)",
+                sec3_title: "3. PHASED LOAD FORECAST & MULTI-PIER HK ISLAND ELECTRIFICATION ROADMAP",
+                sec3_sub: "Bridging Intra-Harbour Short Routes (BAYWING-D2) to Cross-Boundary Macau Corridor (EF-150)",
+                th1: "Pier / Waterfront Node",
+                th2: "Deployment Phase & Vessel",
+                th3: "Continuous HKE Grid Draw",
+                th4: "On-Berth BESS & DC Output",
+                th5: "Strategic Role & Route Scope",
+                r1_c1: "1A. Sheung Wan Landing No. 1 (Phase 1–2 Pilot)",
+                r1_c2: "Phase 1–2: BAYWING-D2 (25-Pax)",
+                r1_c3: "250 kW → 900 kW LV (380V AC)",
+                r1_c4: "400 kWh – 1.2 MWh BESS / 500 kW DC",
+                r1_c5: "Public landing validation of HKE LV-to-BESS demarcation & intra-city pilot trials",
+                r2_c1: "1B. Sheung Wan / HK–Macau Terminal (Phase 3)",
+                r2_c2: "Phase 3: BAYWING EF-150 (150-Pax)",
+                r2_c3: "1.5 MW – 3.0 MW (11kV HV / Dual TX)",
+                r2_c4: "4.0 MWh BESS / 3.5 MW MCS Arm",
+                r2_c5: "20-min turnaround for cross-boundary HK–Macau & GBA high-speed routes",
+                r3_c1: "2. Central Piers (Pier 7–10 Corridor)",
+                r3_c2: "Phase 2: BAYWING-D2 Fleet",
+                r3_c3: "250 kW – 500 kW LV (380V AC)",
+                r3_c4: "500 kWh BESS / 500 kW DC Fast Charge",
+                r3_c5: "High-frequency ultra-short cross-harbour & outlying island commuter routes",
+                r4_c1: "3. Wan Chai Ferry Pier Waterfront",
+                r4_c2: "Phase 2: BAYWING-D2 Fleet",
+                r4_c3: "250 kW – 500 kW LV (380V AC)",
+                r4_c4: "500 kWh BESS / 500 kW DC Fast Charge",
+                r4_c5: "Cross-harbour & East Harbour zero-emission commuter network",
+                foot_left: "Post-Walkover Action Item: Formal registration of phased load forecast (Form C.I. 141) & preliminary HKE Supply Feasibility Note for HKSTP / Marine Dept submission."
+            },
+            tc: {
+                doc_badge: "電力交界與岸電儲能技術簡報",
+                doc_ref: "文件編號: AM-EF150-HKE-2026 // 表格 C.I. 141 前期技術諮詢",
+                main_title: "岸電快速充電及浮動儲能緩衝系統 (BESS) 電網接口方案",
+                sub_title: "香港電燈 (HK Electric) 配電規劃部聯合現場勘察 — 上環一號梯台 (Sheung Wan Landing No. 1)",
+                hdr_date: "日期: 2026年10月21日 (星期三)",
+                hdr_loc: "地點: 上環一號梯台 (毗鄰信德中心)",
+                sec1_title: "1. 單向岸電儲能單線拓撲架構 (絕對單向負載 — 零逆向饋電回電網)",
+                sec1_tag: "符合機電署電力工作守則及港燈供電則例",
+                b1_title: "[1] 港燈低壓供電節點 (HKE LV)",
+                b1_sub: "380V / 220V 50Hz 三相四線",
+                b1_l1: "• 第一階段: 250–300 kW (~400A TPN)",
+                b1_l2: "• 第二階段: 600–900 kW (~1250A TPN)",
+                b1_l3: "• 由就近港燈低壓分配柱或現有 1.5 MVA 變壓器供電",
+                b1_foot: "24小時平穩高負載率曲線 (無尖峰衝擊)",
+                b2_title: "[2] 岸上固定交界電櫃 (Zone A)",
+                b2_sub: "海堤固定陸地電錶及總開關櫃",
+                b2_l1: "• 尺寸: 1.5m (闊) × 0.8m (深) IP66 不銹鋼",
+                b2_l2: "• 港燈電流互感器室 (CT) 及智能收費電錶",
+                b2_l3: "• 總斷路器 (ACB/MCCB) 及漏電保護",
+                b2_l4: "• 逆功率保護繼電器 (ANSI 32R)",
+                b2_foot: "固定陸地交界 (電錶不設於浮動躉船)",
+                b3_title: "[3] 浮動儲能緩衝系統 (Zone B)",
+                b3_sub: "單向 AC/DC 整流充電模組",
+                b3_l1: "• 零逆向饋電: 純單向 AC-DC 整流器 (無併網逆變器輸出)",
+                b3_l2: "• 400 kWh (第一階段) → 4.0 MWh 船用磷酸鐵鋰儲能",
+                b3_l3: "• 電氣隔離變壓器 + 岸電安全聯鎖迴路",
+                b3_foot: "徹底消除兆瓦級快充對港燈變壓器之衝擊",
+                b4_title: "[4] 船舶直流快充終端",
+                b4_sub: "800V DC 極速周轉補能",
+                b4_l1: "• 階段一 (BAYWING-D2): 500 kW 直流快充 (25座維港短途先導船)",
+                b4_l2: "• 階段二 (EF-150): 3.5 MW 兆瓦機械臂 (150座港澳高速旗艦船)",
+                b4_l3: "• 靠泊 10–15 分鐘極速補電 (50% 淺充放)",
+                b4_foot: "將船端兆瓦峰值與港燈電網負荷完全解耦",
+                sec2_left_title: "2A. 現場聯合勘察技術確認清單",
+                chk1_t: "1. 就近港燈低壓供電接入點位置",
+                chk1_d: "確認距離上環一號梯台最近之港燈低壓分配柱 (LV Pillar) 或信德中心外圍變壓器房，並評估電纜走線距離。",
+                chk1_fill: "分配柱 / 變電站編號: _________________",
+                chk2_t: "2. 「免掘路」現有低壓容量上限",
+                chk2_d: "確認在不觸發大型馬路開挖或新增變壓器前提下，現有低壓網絡可立即提供之最大持續功率 (kW / A)。",
+                chk2_fill: "現有可用低壓裕度: ______ kW (_____ A)",
+                chk3_t: "3. 岸上固定電錶櫃交界點 (Zone A)",
+                chk3_d: "確認於一號梯台後方固定混凝土海堤設置 IP66 不銹鋼客戶總開關及港燈電錶櫃之可行性 (+5.0mPD 防洪高度)。",
+                chk4_t: "4. 遠期 11kV 預留管道 (Passive Ducts)",
+                chk4_d: "探討於中港道/海濱未來道路工程中預留備用電纜管道之可行性，以配合第三階段 1.5–3.0 MW 擴展。",
+                sketch_title: "2B. 上環一號梯台 — 電纜走線與分配柱位置現場標註圖",
+                sketch_hint: "[供工程師現場手繪標註]",
+                sketch_note1: "預計走線距離: _________ 米",
+                sketch_note2: "目標交界點: 海堤固定混凝土平台 (Zone A)",
+                sec3_title: "3. 分階段負載預測及港島多碼頭電動化十年路線圖",
+                sec3_sub: "連接維港短途高頻航線 (BAYWING-D2) 與港澳跨境高速走廊 (EF-150)",
+                th1: "目標碼頭 / 海濱節點",
+                th2: "部署階段與船型",
+                th3: "港燈電網持續負載需求",
+                th4: "碼頭儲能容量與直流輸出",
+                th5: "戰略定位與航線範圍",
+                r1_c1: "1A. 上環一號梯台 (第 1–2 階段先導)",
+                r1_c2: "第 1–2 階段: BAYWING-D2 (25座)",
+                r1_c3: "250 kW → 900 kW 低壓 (380V AC)",
+                r1_c4: "400 kWh – 1.2 MWh 儲能 / 500 kW DC",
+                r1_c5: "利用公眾梯台驗證港燈低壓轉儲能交界標準，支援維港及離島先導試運",
+                r2_c1: "1B. 上環港澳碼頭走廊 (第 3 階段)",
+                r2_c2: "第 3 階段: BAYWING EF-150 (150座)",
+                r2_c3: "1.5 MW – 3.0 MW (11kV 高壓 / 雙變壓器)",
+                r2_c4: "4.0 MWh 儲能 / 3.5 MW MCS 機械臂",
+                r2_c5: "實現 20 分鐘極速周轉，全面替代港澳及大灣區傳統柴油高速客輪",
+                r3_c1: "2. 中環碼頭群 (7號至10號碼頭走廊)",
+                r3_c2: "第 2 階段: BAYWING-D2 船隊",
+                r3_c3: "250 kW – 500 kW 低壓 (380V AC)",
+                r3_c4: "500 kWh 儲能 / 500 kW 直流快充",
+                r3_c5: "高頻率超短途維港渡輪及離島零排放通勤航線",
+                r4_c1: "3. 灣仔渡輪碼頭海濱",
+                r4_c2: "第 2 階段: BAYWING-D2 船隊",
+                r4_c3: "250 kW – 500 kW 低壓 (380V AC)",
+                r4_c4: "500 kWh 儲能 / 500 kW 直流快充",
+                r4_c5: "跨維港及東維港零排放高速水上通勤網絡",
+                foot_left: "勘察後跟進事項：正式提交分階段負載申請表 (Form C.I. 141)，並向港燈申請初步供電可行性備忘錄，以供科學園及海事處審批。"
+            }
+        };
+
+        function toggleLang(selected) {
+            lang = selected;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const k = el.getAttribute('data-i18n');
+                if (dict[lang] && dict[lang][k]) {
+                    el.textContent = dict[lang][k];
+                }
+            });
+            document.getElementById('btn-en').className = lang === 'en'
+                ? "px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-500 text-slate-950"
+                : "px-2.5 py-1 rounded text-xs font-mono text-slate-300 hover:text-white border border-slate-700";
+            document.getElementById('btn-tc').className = lang === 'tc'
+                ? "px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-500 text-slate-950"
+                : "px-2.5 py-1 rounded text-xs font-mono text-slate-300 hover:text-white border border-slate-700";
+        }
+
+        function toggleTheme() {
+            isDark = !isDark;
+            document.body.classList.toggle('dark-mode', isDark);
+            document.getElementById('btn-theme').textContent = isDark
+                ? "Switch to Paper Print Mode"
+                : "Switch to iPad Dark Mode";
+        }
+    </script>
+</body>
+</html>
