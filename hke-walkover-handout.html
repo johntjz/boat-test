@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKE Site Walkover Brief — Sheung Wan Landing No. 1 (AM-EF150-HKE-2026)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #ffffff;
+            --bg-card: #f8fafc;
+            --bg-accent: #f0fdf4;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #cbd5e1;
+            --accent-primary: #0284c7;
+            --accent-secondary: #059669;
+            --grid-line: #e2e8f0;
+        }
+
+        body.dark-mode {
+            --bg-page: #060d1a;
+            --bg-card: #0f172a;
+            --bg-accent: #052e16;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --accent-primary: #00f2ff;
+            --accent-secondary: #10b981;
+            --grid-line: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #334155;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .a4-sheet {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 16px auto;
+            padding: 10mm 12mm;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            box-sizing: border-box;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            position: relative;
+        }
+
+        .card-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .sketch-grid {
+            background-color: var(--bg-page);
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 16px 16px;
+            border: 1.5px dashed var(--accent-primary);
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .a4-sheet {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 8mm 10mm;
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING TOOLBAR (HIDDEN WHEN PRINTED) -->
+    <div class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-700 px-4 py-2.5 text-white">
+        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-mono text-xs font-bold tracking-wider uppercase text-cyan-400">HKE Site Walkover Handout (1-Page A4)</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="toggleLang('en')" id="btn-en" class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-500 text-slate-950">EN</button>
+                <button onclick="toggleLang('tc')" id="btn-tc" class="px-2.5 py-1 rounded text-xs font-mono text-slate-300 hover:text-white border border-slate-700">繁體中文</button>
+                <span class="text-slate-600">|</span>
+                <button onclick="toggleTheme()" id="btn-theme" class="px-3 py-1 rounded text-xs font-mono bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200">
+                    Switch to iPad Dark Mode
+                </button>
+                <button onclick="window.print()" class="px-3.5 py-1 rounded text-xs font-mono font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow">
+                    Print / Save A4 PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SINGLE A4 PAGE CONTAINER -->
+    <div class="a4-sheet flex flex-col justify-between">
+        <div>
+            <!-- HEADER BLOCK -->
+            <header class="border-b-2 pb-2.5 mb-3 flex justify-between items-start gap-4" style="border-color: var(--accent-primary);">
+                <div>
+                    <div class="flex items-center gap-2 mb-0.5">
+                        <span class="font-mono text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider text-white" style="background-color: var(--accent-primary);" data-i18n="doc_badge">
+                            UTILITY INTERFACE &amp; GRID DEMARCATION BRIEF
+                        </span>
+                        <span class="font-mono text-[10px] font-semibold" style="color: var(--accent-secondary);" data-i18n="doc_ref">
+                            DOC REF: AM-EF150-HKE-2026 // FORM C.I. 141 PRE-CONSULTATION
+                        </span>
+                    </div>
+                    <h1 class="text-lg font-extrabold tracking-tight leading-snug" data-i18n="main_title">
+                        SHORE-POWER FAST-CHARGING &amp; BESS BUFFER INTERFACE
+                    </h1>
+                    <p class="text-[11px] font-medium" style="color: var(--text-muted);" data-i18n="sub_title">
+                        Joint Site Walkover with HK Electric Distribution Planning Department — Sheung Wan Landing No. 1
+                    </p>
+                </div>
+                <div class="text-right font-mono text-[10px] leading-tight shrink-0 card-box p-2">
+                    <div class="font-bold" style="color: var(--accent-primary);">AERO-MARINE SYSTEMS LTD</div>
+                    <div data-i18n="hdr_date">Date: 21 Oct 2026 (Wed)</div>
+                    <div data-i18n="hdr_loc">Site: Sheung Wan Landing No. 1</div>
+                    <div>Contact: John Tu (9679 1747)</div>
+                </div>
+            </header>
+
+            <!-- SECTION 1: SINGLE-LINE BLOCK DIAGRAM (GRID TO VESSEL) -->
+            <section class="mb-3">
+                <div class="flex items-center justify-between mb-1.5">
+                    <h2 class="font-mono text-[11px] font-bold uppercase tracking-wider" style="color: var(--accent-primary);" data-i18n="sec1_title">
+                        1. UNIDIRECTIONAL SHORE-TO-BESS SINGLE-LINE TOPOLOGY (ZERO GRID EXPORT)
+                    </h2>
+                    <span class="font-mono text-[9.5px] font-semibold px-2 py-0.5 rounded" style="background-color: var(--bg-accent); color: var(--accent-secondary); border: 1px solid var(--accent-secondary);" data-i18n="sec1_tag">
+                        EMSD CoP &amp; HKE SUPPLY RULES COMPLIANT
+                    </span>
+                </div>
+
+                <div class="card-box p-2.5">
+                    <div class="grid grid-cols-4 gap-2 items-stretch text-[10px]">
+                        <!-- BOX 1 -->
+                        <div class="border rounded p-2 flex flex-col justify-between relative" style="border-color: var(--border-color); background-color: var(--bg-page);">
+                            <div>
+                                <div class="font-mono font-bold text-[10px] mb-0.5" style="color: var(--accent-primary);" data-i18n="b1_title">[1] HKE LV SUPPLY NODE</div>
+                                <div class="font-semibold text-[10.5px] mb-1" data-i18n="b1_sub">380V / 220V 50Hz 3-Ph 4-Wire</div>
+                                <ul class="space-y-0.5 text-[9.5px]" style="color: var(--text-muted);">
+                                    <li data-i18n="b1_l1">• <strong>Phase 1:</strong> 250–300 kW (~400A TPN)</li>
+                                    <li data-i18n="b1_l2">• <strong>Phase 2:</strong> 600–900 kW (~1250A TPN)</li>
+                                    <li data-i18n="b1_l3">• Drawn from nearest HKE LV pillar / local 1.5 MVA transformer</li>
+                                </ul>
+                            </div>
+                            <div class="mt-1.5 pt-1 border-t font-mono text-[9px] font-semibold" style="border-color: var(--border-color); color: var(--accent-secondary);" data-i18n="b1_foot">
+                                Flat 24/7 High-Load-Factor Profile
+                            </div>
+                        </div>
+
+                        <!-- BOX 2 -->
+                        <div class="border-2 rounded p-2 flex flex-col justify-between relative" style="border-color: var(--accent-primary); background-color: var(--bg-page);">
+                            <div>
+                                <div class="font-mono font-bold text-[10px] mb-0.5" style="color: var(--accent-primary);" data-i18n="b2_title">[2] FIXED ONSHORE CABINET</div>
+                                <div class="font-semibold text-[10.5px] mb-1" data-i18n="b2_sub">Seawall Apron Demarcation</div>
+                                <ul class="space-y-0.5 text-[9.5px]" style="color: var(--text-muted);">
+                                    <li data-i18n="b2_l1">• <strong>Footprint:</strong> 1.5m (W) × 0.8m (D) IP66</li>
+                                    <li data-i18n="b2_l2">• HKE CT Chamber &amp; Smart Tariff Meter</li>
+                                    <li data-i18n="b2_l3">• Main ACB/MCCB + Earth Leakage</li>
+                                    <li data-i18n="b2_l4">• <strong>Reverse-Power Relay (ANSI 32R)</strong></li>
+                                </ul>
+                            </div>
+                            <div class="mt-1.5 pt-1 border-t font-mono text-[9px] font-bold" style="border-color: var(--border-color); color: var(--accent-primary);" data-i18n="b2_foot">
+                                FIXED LAND BOUNDARY (NO PONTOON METER)
+                            </div>
+                        </div>
+
+                        <!-- BOX 3 -->
+                        <div class="border rounded p-2 flex flex-col justify-between relative" style="border-color: var(--border-color); background-color: var(--bg-page);">
+                            <div>
+                                <div class="font-mono font-bold text-[10px] mb-0.5" style="color: var(--accent-secondary);" data-i18n="b3_title">[3] FLOATING BESS BUFFER</div>
+                                <div class="font-semibold text-[10.5px] mb-1" data-i18n="b3_sub">Unidirectional AC/DC Rectifier</div>
+                                <ul class="space-y-0.5 text-[9.5px]" style="color: var(--text-muted);">
+                                    <li data-i18n="b3_l1">• <strong>Zero Back-Feed:</strong> Dedicated AC-to-DC charger (No grid-tie inverter export)</li>
+                                    <li data-i18n="b3_l2">• 400 kWh (Ph1) → 4.0 MWh (Ph3) Marine LFP Buffer</li>
+                                    <li data-i18n="b3_l3">• Galvanic isolation + shore interlock</li>
+                                </ul>
+                            </div>
+                            <div class="mt-1.5 pt-1 border-t font-mono text-[9px] font-semibold" style="border-color: var(--border-color); color: var(--accent-secondary);" data-i18n="b3_foot">
+                                Eliminates Megawatt Spikes on HKE Grid
+                            </div>
+                        </div>
+
+                        <!-- BOX 4 -->
+                        <div class="border rounded p-2 flex flex-col justify-between relative" style="border-color: var(--border-color); background-color: var(--bg-page);">
+                            <div>
+                                <div class="font-mono font-bold text-[10px] mb-0.5" style="color: var(--accent-primary);" data-i18n="b4_title">[4] VESSEL DC DISPENSER</div>
+                                <div class="font-semibold text-[10.5px] mb-1" data-i18n="b4_sub">800V DC Ultra-Fast Turnaround</div>
+                                <ul class="space-y-0.5 text-[9.5px]" style="color: var(--text-muted);">
+                                    <li data-i18n="b4_l1">• <strong>Stage 1 (BAYWING-D2):</strong> 500 kW DC CCS2/MCS (25-Pax Intra-Harbour)</li>
+                                    <li data-i18n="b4_l2">• <strong>Stage 2 (EF-150):</strong> 3.5 MW DC MCS Robotic Arm (150-Pax Macau)</li>
+                                    <li data-i18n="b4_l3">• 10–15 min berth top-up (50% DoD)</li>
+                                </ul>
+                            </div>
+                            <div class="mt-1.5 pt-1 border-t font-mono text-[9px] font-semibold" style="border-color: var(--border-color); color: var(--accent-primary);" data-i18n="b4_foot">
+                                Decouples Vessel Peak from Grid Draw
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: SITE LAYOUT & ENGINEER LIVE MARKUP ZONE -->
+            <section class="mb-3 grid grid-cols-12 gap-3">
+                <!-- Left 5 Cols: Spatial & Engineering Checklist -->
+                <div class="col-span-5 flex flex-col justify-between card-box p-2.5 text-[10px]">
+                    <div>
+                        <h3 class="font-mono text-[10.5px] font-bold uppercase mb-1.5" style="color: var(--accent-primary);" data-i18n="sec2_left_title">
+                            2A. WALKOVER TECHNICAL CHECKLIST
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="p-1.5 rounded border" style="background-color: var(--bg-page); border-color: var(--border-color);">
+                                <div class="font-bold text-[10px]" data-i18n="chk1_t">1. Nearest HKE Supply Take-Off Point</div>
+                                <p class="text-[9px] mt-0.5" style="color: var(--text-muted);" data-i18n="chk1_d">
+                                    Identify nearest HKE LV Pillar / Shun Tak perimeter switchroom and measure cable trench distance to Landing No. 1 apron.
+                                </p>
+                                <div class="mt-1 font-mono text-[9px] border-b border-dashed pt-1" style="border-color: var(--border-color); color: var(--accent-primary);" data-i18n="chk1_fill">
+                                    Pillar / Sub ID: ______________________
+                                </div>
+                            </div>
+
+                            <div class="p-1.5 rounded border" style="background-color: var(--bg-page); border-color: var(--border-color);">
+                                <div class="font-bold text-[10px]" data-i18n="chk2_t">2. "Zero-Excavation" LV Headroom Ceiling</div>
+                                <p class="text-[9px] mt-0.5" style="color: var(--text-muted);" data-i18n="chk2_d">
+                                    Confirm maximum continuous kW/Amp load available immediately from existing local transformer without major roadworks.
+                                </p>
+                                <div class="mt-1 font-mono text-[9px] border-b border-dashed pt-1" style="border-color: var(--border-color); color: var(--accent-secondary);" data-i18n="chk2_fill">
+                                    Available LV Cap: ________ kW (_____ A)
+                                </div>
+                            </div>
+
+                            <div class="p-1.5 rounded border" style="background-color: var(--bg-page); border-color: var(--border-color);">
+                                <div class="font-bold text-[10px]" data-i18n="chk3_t">3. Onshore Switchboard Demarcation</div>
+                                <p class="text-[9px] mt-0.5" style="color: var(--text-muted);" data-i18n="chk3_d">
+                                    Confirm suitability of fixed concrete seawall apron behind Landing No. 1 for customer IP66 meter/isolator pillar (+5.0mPD flood clearance).
+                                </p>
+                            </div>
+
+                            <div class="p-1.5 rounded border" style="background-color: var(--bg-page); border-color: var(--border-color);">
+                                <div class="font-bold text-[10px]" data-i18n="chk4_t">4. Passive 11kV Provisioning ("Dark Ducts")</div>
+                                <p class="text-[9px] mt-0.5" style="color: var(--text-muted);" data-i18n="chk4_d">
+                                    Assess option to reserve spare cable ducts during upcoming Chung Kong Rd / waterfront works for Phase 3 (1.5–3.0 MW).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right 7 Cols: Schematic & Live Pen Markup Grid -->
+                <div class="col-span-7 sketch-grid rounded-md p-2.5 flex flex-col justify-between relative">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="font-mono text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-sky-500/10" style="color: var(--accent-primary);" data-i18n="sketch_title">
+                            2B. SHEUNG WAN LANDING NO. 1 — CABLE ROUTE &amp; PILLAR MARKUP SCHEMATIC
+                        </span>
+                        <span class="font-mono text-[9px]" style="color: var(--text-muted);" data-i18n="sketch_hint">
+                            [FOR ON-SITE PEN ANNOTATION]
+                        </span>
+                    </div>
+
+                    <!-- SCHEMATIC SVG FOR MARKUP -->
+                    <svg viewBox="0 0 520 215" class="w-full h-auto my-auto select-none">
+                        <!-- Water Area (Top) -->
+                        <rect x="5" y="5" width="510" height="68" fill="#0284c7" fill-opacity="0.08" stroke="#0284c7" stroke-width="1" stroke-dasharray="4,3"/>
+                        <text x="15" y="22" fill="#0284c7" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold">VICTORIA HARBOUR WATERFRONT (BERTHING ZONE)</text>
+
+                        <!-- Zone B: Floating BESS Pontoon -->
+                        <rect x="295" y="14" width="195" height="48" rx="4" fill="#10b981" fill-opacity="0.15"
