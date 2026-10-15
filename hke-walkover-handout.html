@@ -98,25 +98,28 @@
 <body>
 
     <!-- FLOATING TOOLBAR (HIDDEN WHEN PRINTED) -->
-    <div class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-700 px-4 py-2.5 text-white">
-        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="font-mono text-xs font-bold tracking-wider uppercase text-cyan-400">HKE Site Walkover Handout (1-Page A4)</span>
+   <div class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-700 px-4 py-2.5 text-white">
+    <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <a href="index.html" class="font-mono text-xs font-bold tracking-wider uppercase text-cyan-400 hover:underline">← Back to Baywing EF-150 Proposal</a>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="flex items-center bg-slate-800 border border-slate-700 rounded p-0.5 text-xs font-mono">
+                <button onclick="toggleLang('en')" id="btn-en" class="px-2.5 py-1 rounded bg-cyan-500 text-slate-950 font-bold transition-all">EN</button>
+                <button onclick="toggleLang('tc')" id="btn-tc" class="px-2.5 py-1 rounded text-slate-300 hover:text-white transition-all">繁</button>
+                <button onclick="toggleLang('sc')" id="btn-sc" class="px-2.5 py-1 rounded text-slate-300 hover:text-white transition-all">简</button>
             </div>
-            <div class="flex items-center gap-2">
-                <button onclick="toggleLang('en')" id="btn-en" class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-500 text-slate-950">EN</button>
-                <button onclick="toggleLang('tc')" id="btn-tc" class="px-2.5 py-1 rounded text-xs font-mono text-slate-300 hover:text-white border border-slate-700">繁體中文</button>
-                <span class="text-slate-600">|</span>
-                <button onclick="toggleTheme()" id="btn-theme" class="px-3 py-1 rounded text-xs font-mono bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200">
-                    Switch to iPad Dark Mode
-                </button>
-                <button onclick="window.print()" class="px-3.5 py-1 rounded text-xs font-mono font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow">
-                    Print / Save A4 PDF
-                </button>
-            </div>
+            <span class="text-slate-600">|</span>
+            <button onclick="toggleTheme()" id="btn-theme" class="px-3 py-1 rounded text-xs font-mono bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200">
+                iPad Dark Mode
+            </button>
+            <button onclick="window.print()" class="px-3.5 py-1 rounded text-xs font-mono font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow">
+                Print / PDF
+            </button>
         </div>
     </div>
+</div>
 
     <!-- SINGLE A4 PAGE CONTAINER -->
     <div class="a4-sheet flex flex-col justify-between">
@@ -414,7 +417,7 @@
         let isDark = false;
         let lang = 'en';
 
-        const dict = {
+       const dict = {
             en: {
                 doc_badge: "UTILITY INTERFACE & GRID DEMARCATION BRIEF",
                 doc_ref: "DOC REF: AM-EF150-HKE-2026 // FORM C.I. 141 PRE-CONSULTATION",
@@ -564,12 +567,90 @@
                 r3_c3: "250 kW – 500 kW 低壓 (380V AC)",
                 r3_c4: "500 kWh 儲能 / 500 kW 直流快充",
                 r3_c5: "高頻率超短途維港渡輪及離島零排放通勤航線",
-                r4_c1: "3. 灣仔渡輪碼頭海濱",
+                r4_c1: "3. 湾仔渡輪碼頭海濱",
                 r4_c2: "第 2 階段: BAYWING-D2 船隊",
                 r4_c3: "250 kW – 500 kW 低壓 (380V AC)",
                 r4_c4: "500 kWh 儲能 / 500 kW 直流快充",
                 r4_c5: "跨維港及東維港零排放高速水上通勤網絡",
                 foot_left: "勘察後跟進事項：正式提交分階段負載申請表 (Form C.I. 141)，並向港燈申請初步供電可行性備忘錄，以供科學園及海事處審批。"
+            },
+            sc: {
+                doc_badge: "电力交界与岸电储能技术简报",
+                doc_ref: "文件编号: AM-EF150-HKE-2026 // 表格 C.I. 141 前期技术咨询",
+                main_title: "岸电快速充电及浮动储能缓冲系统 (BESS) 电网接口方案",
+                sub_title: "香港电灯 (HK Electric) 配电规划部联合现场勘察 — 上环一号梯台 (Sheung Wan Landing No. 1)",
+                hdr_date: "日期: 2026年10月21日 (星期三)",
+                hdr_loc: "地点: 上环一号梯台 (毗邻信德中心)",
+                sec1_title: "1. 单向岸电储能单线拓扑架构 (绝对单向负载 — 零逆向馈电回电网)",
+                sec1_tag: "符合机电署电力工作守则及港灯供电条例",
+                b1_title: "[1] 港灯低压供电节点 (HKE LV)",
+                b1_sub: "380V / 220V 50Hz 三相四线",
+                b1_l1: "• 第一阶段: 250–300 kW (~400A TPN)",
+                b1_l2: "• 第二阶段: 600–900 kW (~1250A TPN)",
+                b1_l3: "• 由就近港灯低压分配柱或现有 1.5 MVA 变压器供电",
+                b1_foot: "24小时平稳高负载率曲线 (无尖峰冲击)",
+                b2_title: "[2] 岸上固定交界电柜 (Zone A)",
+                b2_sub: "海堤固定陆地电表及总开关柜",
+                b2_l1: "• 尺寸: 1.5m (宽) × 0.8m (深) IP66 不锈钢",
+                b2_l2: "• 港灯电流互感器室 (CT) 及智能收费电表",
+                b2_l3: "• 总断路器 (ACB/MCCB) 及漏电保护",
+                b2_l4: "• 逆功率保护继电器 (ANSI 32R)",
+                b2_foot: "固定陆地交界 (电表不设于浮动趸船)",
+                b3_title: "[3] 浮动储能缓冲系统 (Zone B)",
+                b3_sub: "单向 AC/DC 整流充电模块",
+                b3_l1: "• 零逆向馈电: 纯单向 AC-DC 整流器 (无并网逆变器输出)",
+                b3_l2: "• 400 kWh (第一阶段) → 4.0 MWh 船用磷酸铁锂储能",
+                b3_l3: "• 电气隔离变压器 + 岸电安全联锁回路",
+                b3_foot: "彻底消除兆瓦级快充对港灯变压器之冲击",
+                b4_title: "[4] 船舶直流快充终端",
+                b4_sub: "800V DC 极速周转补能",
+                b4_l1: "• 阶段一 (BAYWING-D2): 500 kW 直流快充 (25座维港短途先导船)",
+                b4_l2: "• 阶段二 (EF-150): 3.5 MW 兆瓦机械臂 (150座港澳高速旗舰船)",
+                b4_l3: "• 靠泊 10–15 分钟极速补电 (50% 浅充放)",
+                b4_foot: "将船端兆瓦峰值与港灯电网负荷完全解耦",
+                sec2_left_title: "2A. 现场联合勘察技术确认清单",
+                chk1_t: "1. 就近港灯低压供电接入点位置",
+                chk1_d: "确认距离上环一号梯台最近之港灯低压分配柱 (LV Pillar) 或信德中心外围变压器房，并评估电缆走线距离。",
+                chk1_fill: "分配柱 / 变电站编号: _________________",
+                chk2_t: "2. “免掘路”现有低压容量上限",
+                chk2_d: "确认在不触发大型马路开挖或新增变压器前提下，现有低压网络可立即提供之最大持续功率 (kW / A)。",
+                chk2_fill: "现有可用低压裕度: ______ kW (_____ A)",
+                chk3_t: "3. 岸上固定电表柜交界点 (Zone A)",
+                chk3_d: "确认于一号梯台后方固定混凝土海堤设置 IP66 不锈钢客户总开关及港灯电表柜之可行性 (+5.0mPD 防洪高度)。",
+                chk4_t: "4. 远期 11kV 预留管道 (Passive Ducts)",
+                chk4_d: "探讨于中港道/海滨未来道路工程中预留备用电缆管道之可行性，以配合第三阶段 1.5–3.0 MW 扩展。",
+                sketch_title: "2B. 上环一号梯台 — 电缆走线与分配柱位置现场标注图",
+                sketch_hint: "[供工程师现场手绘标注]",
+                sketch_note1: "预计走线距离: _________ 米",
+                sketch_note2: "目标交界点: 海堤固定混凝土平台 (Zone A)",
+                sec3_title: "3. 分阶段负载预测及港岛多码头电动化十年路线图",
+                sec3_sub: "连接维港短途高频航线 (BAYWING-D2) 与港澳跨境高速走廊 (EF-150)",
+                th1: "目标码头 / 海滨节点",
+                th2: "部署阶段与船型",
+                th3: "港灯电网持续负载需求",
+                th4: "码头储能容量与直流输出",
+                th5: "战略定位与航线范围",
+                r1_c1: "1A. 上环一号梯台 (第 1–2 阶段先导)",
+                r1_c2: "第 1–2 阶段: BAYWING-D2 (25座)",
+                r1_c3: "250 kW → 900 kW 低压 (380V AC)",
+                r1_c4: "400 kWh – 1.2 MWh 储能 / 500 kW DC",
+                r1_c5: "利用公众梯台验证港灯低压转储能交界标准，支援维港及离岛先导试运",
+                r2_c1: "1B. 上环港澳码头走廊 (第 3 阶段)",
+                r2_c2: "第 3 阶段: BAYWING EF-150 (150座)",
+                r2_c3: "1.5 MW – 3.0 MW (11kV 高压 / 双变压器)",
+                r2_c4: "4.0 MWh 储能 / 3.5 MW MCS 机械臂",
+                r2_c5: "实现 20 分钟极速周转，全面替代港澳及大湾区传统柴油高速客轮",
+                r3_c1: "2. 中环码头群 (7号至10号码头走廊)",
+                r3_c2: "第 2 阶段: BAYWING-D2 船队",
+                r3_c3: "250 kW – 500 kW 低压 (380V AC)",
+                r3_c4: "500 kWh 储能 / 500 kW 直流快充",
+                r3_c5: "高频率超短途维港渡轮及离岛零排放通勤航线",
+                r4_c1: "3. 湾仔渡轮码头海滨",
+                r4_c2: "第 2 阶段: BAYWING-D2 船队",
+                r4_c3: "250 kW – 500 kW 低压 (380V AC)",
+                r4_c4: "500 kWh 储能 / 500 kW 直流快充",
+                r4_c5: "跨维港及东维港零排放高速水上通勤网络",
+                foot_left: "勘察后跟进事项：正式提交分阶段负载申请表 (Form C.I. 141)，并向港灯申请初步供电可行性备忘录，以供科学园及海事处审批。"
             }
         };
 
@@ -581,12 +662,16 @@
                     el.textContent = dict[lang][k];
                 }
             });
-            document.getElementById('btn-en').className = lang === 'en'
-                ? "px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-500 text-slate-950"
-                : "px-2.5 py-1 rounded text-xs font-mono text-slate-300 hover:text-white border border-slate-700";
-            document.getElementById('btn-tc').className = lang === 'tc'
-                ? "px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-500 text-slate-950"
-                : "px-2.5 py-1 rounded text-xs font-mono text-slate-300 hover:text-white border border-slate-700";
+            ['en', 'tc', 'sc'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (btn) {
+                    if (l === lang) {
+                        btn.className = "px-2.5 py-1 rounded bg-cyan-500 text-slate-950 font-bold transition-all";
+                    } else {
+                        btn.className = "px-2.5 py-1 rounded text-slate-300 hover:text-white transition-all";
+                    }
+                }
+            });
         }
 
         function toggleTheme() {
