@@ -19,7 +19,6 @@
             --accent-green: #059669;
             --grid-line: #e2e8f0;
         }
-
         body.dark-mode {
             --bg-page: #090d16;
             --bg-card: #111827;
@@ -32,22 +31,19 @@
             --accent-green: #10b981;
             --grid-line: #1e293b;
         }
-
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background-color: #334155;
+            background-color: #1e293b;
             color: var(--text-main);
             margin: 0;
             padding: 0;
         }
-
         .font-mono { font-family: 'JetBrains Mono', monospace; }
-
         .a4-sheet {
             width: 210mm;
             min-height: 297mm;
-            margin: 14px auto;
-            padding: 9mm 11mm;
+            margin: 12px auto;
+            padding: 8.5mm 10.5mm;
             background-color: var(--bg-page);
             color: var(--text-main);
             box-sizing: border-box;
@@ -56,13 +52,11 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
         .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 8px;
         }
-
         .sketch-zone {
             background-color: var(--bg-page);
             background-image: 
@@ -72,7 +66,6 @@
             border: 2px dashed var(--accent-blue);
             border-radius: 8px;
         }
-
         @page { size: A4 portrait; margin: 0; }
         @media print {
             body {
@@ -93,11 +86,16 @@
 </head>
 <body>
 
-    <!-- FLOATING TOOLBAR (HIDDEN WHEN PRINTED) -->
-    <div class="no-print max-w-[210mm] mx-auto mt-3 mb-2 flex justify-between items-center px-2 text-xs font-mono">
-        <a href="index.html" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 border border-slate-600 font-bold">
-            ← Back to Main Master Plan (index.html)
-        </a>
+    <!-- FLOATING MULTI-PAGE TOOLBAR (HIDDEN WHEN PRINTED) -->
+    <div class="no-print max-w-[210mm] mx-auto mt-3 mb-2 flex flex-wrap justify-between items-center gap-2 px-2 text-xs font-mono">
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 border border-slate-600 font-bold">
+                ← Master Plan (index.html)
+            </a>
+            <a href="utilities-grid.html" class="px-3 py-1.5 rounded bg-slate-800 text-emerald-400 hover:bg-slate-700 border border-slate-600 font-bold">
+                Grid &amp; Port Works Portal →
+            </a>
+        </div>
         <div class="flex items-center gap-2">
             <button onclick="toggleTheme()" id="btn-theme" class="px-3 py-1.5 rounded bg-slate-700 text-white hover:bg-slate-600 transition-all shadow">
                 Switch to iPad Dark Mode
@@ -113,7 +111,7 @@
     <!-- SINGLE A4 PAGE -->
     <div class="a4-sheet">
         <div>
-            <!-- HEADER: WHAT WE WANT TO ACHIEVE TODAY -->
+            <!-- HEADER -->
             <header class="border-b-2 pb-2.5 mb-3 flex justify-between items-start gap-4" style="border-color: var(--accent-blue);">
                 <div>
                     <div class="flex items-center gap-2 mb-1">
@@ -128,7 +126,7 @@
                         ELECTRIC FERRY FAST-CHARGER: SHORE POWER SETUP
                     </h1>
                     <p class="text-xs font-medium mt-0.5" style="color: var(--text-muted);" data-i18n="goal">
-                        <strong>Goal Today:</strong> Agree on (1) Where to tap power, (2) How much power is ready now without digging roads, and (3) Where to place our meter box.
+                        Goal Today: Agree on (1) Where to tap power, (2) How much power is ready now without digging roads, and (3) Where to place our meter box.
                     </p>
                 </div>
                 <div class="card p-2 text-right font-mono text-[10px] leading-snug shrink-0">
@@ -138,7 +136,7 @@
                 </div>
             </header>
 
-            <!-- SECTION 1: HOW IT WORKS IN PLAIN ENGLISH (4 SIMPLE STEPS) -->
+            <!-- SECTION 1: 4 SIMPLE STEPS -->
             <section class="mb-3">
                 <div class="flex items-center justify-between mb-1.5">
                     <h2 class="text-xs font-extrabold uppercase tracking-wide" style="color: var(--accent-blue);" data-i18n="s1_title">
@@ -150,13 +148,12 @@
                 </div>
 
                 <div class="grid grid-cols-4 gap-2 text-[10.5px]">
-                    <!-- Step 1 -->
                     <div class="card p-2.5 flex flex-col justify-between">
                         <div>
                             <div class="font-mono font-bold text-[10px] uppercase mb-0.5" style="color: var(--accent-blue);" data-i18n="st1_t">STEP 1: STREET POWER</div>
                             <div class="font-bold text-xs mb-1" data-i18n="st1_h">Steady, Normal Supply</div>
                             <p class="text-[10px] leading-snug" style="color: var(--text-muted);" data-i18n="st1_d">
-                                We draw a <strong>steady 250–300 kW</strong> (like a small shop/office) from your nearest power box. Later scales to 600–900 kW.
+                                We draw a steady 250–300 kW (like a small shop/office) from your nearest power box. Later scales to 600–900 kW.
                             </p>
                         </div>
                         <div class="mt-2 pt-1 border-t font-mono text-[9px] font-bold" style="border-color: var(--border-color); color: var(--accent-green);" data-i18n="st1_f">
@@ -164,13 +161,12 @@
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
                     <div class="card p-2.5 flex flex-col justify-between border-2" style="border-color: var(--accent-blue);">
                         <div>
                             <div class="font-mono font-bold text-[10px] uppercase mb-0.5" style="color: var(--accent-blue);" data-i18n="st2_t">STEP 2: LAND METER BOX</div>
                             <div class="font-bold text-xs mb-1" data-i18n="st2_h">Fixed on Solid Seawall</div>
                             <p class="text-[10px] leading-snug" style="color: var(--text-muted);" data-i18n="st2_d">
-                                A small waterproof cabinet (<strong>1.5m wide × 0.8m deep</strong>) sits on the concrete seawall. HKE's meter stays on dry land.
+                                A small waterproof cabinet (1.5m wide × 0.8m deep) sits on the concrete seawall. HKE's meter stays on dry land.
                             </p>
                         </div>
                         <div class="mt-2 pt-1 border-t font-mono text-[9px] font-bold" style="border-color: var(--border-color); color: var(--accent-blue);" data-i18n="st2_f">
@@ -178,13 +174,12 @@
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
                     <div class="card p-2.5 flex flex-col justify-between">
                         <div>
                             <div class="font-mono font-bold text-[10px] uppercase mb-0.5" style="color: var(--accent-green);" data-i18n="st3_t">STEP 3: BATTERY BANK</div>
                             <div class="font-bold text-xs mb-1" data-i18n="st3_h">One-Way Power Buffer</div>
                             <p class="text-[10px] leading-snug" style="color: var(--text-muted);" data-i18n="st3_d">
-                                Our floating battery bank charges slowly 24/7. A one-way blocker guarantees <strong>zero electricity ever flows back into HKE</strong>.
+                                Our floating battery bank charges slowly 24/7. A one-way blocker guarantees zero electricity ever flows back into HKE.
                             </p>
                         </div>
                         <div class="mt-2 pt-1 border-t font-mono text-[9px] font-bold" style="border-color: var(--border-color); color: var(--accent-green);" data-i18n="st3_f">
@@ -192,7 +187,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
                     <div class="card p-2.5 flex flex-col justify-between">
                         <div>
                             <div class="font-mono font-bold text-[10px] uppercase mb-0.5" style="color: var(--accent-blue);" data-i18n="st4_t">STEP 4: BOAT CHARGER</div>
@@ -208,64 +202,42 @@
                 </div>
             </section>
 
-            <!-- SECTION 2: THE 4 DECISIONS WE NEED TODAY + VISUAL WALKOVER MAP -->
+            <!-- SECTION 2: 4 DECISIONS + PEN SKETCH MAP -->
             <section class="mb-3 grid grid-cols-12 gap-3">
-                <!-- Left 5 Cols: 4 Simple Decisions -->
                 <div class="col-span-5 card p-3 flex flex-col justify-between">
                     <div>
                         <h3 class="text-xs font-extrabold uppercase mb-2" style="color: var(--accent-blue);" data-i18n="s2_title">
                             2A. 4 DECISIONS TO CONFIRM ON SITE TODAY
                         </h3>
-
                         <div class="space-y-2 text-[10px]">
-                            <!-- Decision 1 -->
                             <div class="p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border-color);">
-                                <div class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="d1_q">
-                                    Q1. Where is the nearest HKE power point?
-                                </div>
-                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d1_sub">
-                                    Point out the closest HKE street pillar or Shun Tak transformer room.
-                                </p>
+                                <div class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="d1_q">Q1. Where is the nearest HKE power point?</div>
+                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d1_sub">Point out the closest HKE street pillar or Shun Tak transformer room.</p>
                                 <div class="mt-1.5 font-mono text-[9.5px] font-semibold flex justify-between border-t pt-1" style="border-color: var(--border-color);">
                                     <span data-i18n="d1_f1">Box ID: ____________</span>
                                     <span data-i18n="d1_f2">Distance: ______ m</span>
                                 </div>
                             </div>
 
-                            <!-- Decision 2 -->
                             <div class="p-2 rounded border" style="background-color: var(--bg-highlight); border-color: var(--accent-green);">
-                                <div class="font-bold text-[10.5px]" style="color: var(--accent-green);" data-i18n="d2_q">
-                                    Q2. How much power can we get NOW (No Road Digging)?
-                                </div>
-                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d2_sub">
-                                    What is the max spare power ready right now without heavy roadworks?
-                                </p>
+                                <div class="font-bold text-[10.5px]" style="color: var(--accent-green);" data-i18n="d2_q">Q2. How much power can we get NOW (No Road Digging)?</div>
+                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d2_sub">What is the max spare power ready right now without heavy roadworks?</p>
                                 <div class="mt-1.5 font-mono text-[9.5px] font-bold" style="color: var(--accent-green);" data-i18n="d2_f1">
                                     Ready Now: ________ kW  ( ☐ 250–300 kW OK )
                                 </div>
                             </div>
 
-                            <!-- Decision 3 -->
                             <div class="p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border-color);">
-                                <div class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="d3_q">
-                                    Q3. Is the Seawall spot OK for our Land Meter Box?
-                                </div>
-                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d3_sub">
-                                    Confirm our 1.5m × 0.8m waterproof box on the seawall behind Landing 1.
-                                </p>
+                                <div class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="d3_q">Q3. Is the Seawall spot OK for our Land Meter Box?</div>
+                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d3_sub">Confirm our 1.5m × 0.8m waterproof box on the seawall behind Landing 1.</p>
                                 <div class="mt-1 font-mono text-[9.5px] font-semibold" data-i18n="d3_f1">
                                     Location Check:  ☐ Spot Approved   ☐ Shift Slightly
                                 </div>
                             </div>
 
-                            <!-- Decision 4 -->
                             <div class="p-2 rounded border" style="background-color: var(--bg-page); border-color: var(--border-color);">
-                                <div class="font-bold text-[10.5px]" data-i18n="d4_q">
-                                    Q4. Can we reserve empty underground pipes for later?
-                                </div>
-                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d4_sub">
-                                    Put spare cable pipes in place for future expansion (Macau ferries).
-                                </p>
+                                <div class="font-bold text-[10.5px]" data-i18n="d4_q">Q4. Can we reserve empty underground pipes for later?</div>
+                                <p class="text-[9.5px] mt-0.5" style="color: var(--text-muted);" data-i18n="d4_sub">Put spare cable pipes in place for future expansion (Macau ferries).</p>
                                 <div class="mt-1 font-mono text-[9.5px] font-semibold" data-i18n="d4_f1">
                                     Future Expansion:  ☐ Yes, Good Idea   ☐ Check Later
                                 </div>
@@ -274,57 +246,45 @@
                     </div>
                 </div>
 
-                <!-- Right 7 Cols: Pen Sketch Map -->
                 <div class="col-span-7 sketch-zone p-3 flex flex-col justify-between">
                     <div class="flex justify-between items-center mb-1">
                         <span class="font-mono text-[10px] font-bold uppercase px-2 py-0.5 rounded" style="background-color: var(--bg-warn); color: var(--accent-blue);" data-i18n="map_title">
                             2B. SIMPLE SITE MAP — DRAW CABLE LINE FROM HKE BOX TO OUR METER
                         </span>
-                        <span class="font-mono text-[9px]" style="color: var(--text-muted);" data-i18n="map_hint">
-                            [PEN SKETCH AREA]
-                        </span>
+                        <span class="font-mono text-[9px]" style="color: var(--text-muted);" data-i18n="map_hint">[PEN SKETCH AREA]</span>
                     </div>
 
                     <svg viewBox="0 0 520 225" class="w-full h-auto my-auto select-none">
-                        <!-- Water Zone -->
                         <rect x="5" y="5" width="510" height="72" rx="4" fill="#0284c7" fill-opacity="0.1" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="4,3"/>
                         <text x="15" y="22" fill="#0284c7" font-family="'Inter', sans-serif" font-size="9.5" font-weight="800">WATER / HARBOUR (WHERE THE BOAT DOCKS)</text>
 
-                        <!-- Floating Battery & Charger -->
                         <rect x="285" y="14" width="210" height="52" rx="6" fill="#10b981" fill-opacity="0.18" stroke="#059669" stroke-width="2"/>
                         <text x="390" y="34" fill="#059669" font-family="'Inter', sans-serif" font-size="10" font-weight="800" text-anchor="middle">FLOATING BATTERY &amp; BOAT CHARGER</text>
-                        <text x="390" y="49" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">(Owned &amp; Maintained by Us — No HKE Meter Here)</text>
+                        <text x="390" y="49" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="8.5" text-anchor="middle">(CEDD Non-Permanent Pontoon — No HKE Meter Here)</text>
 
-                        <!-- Solid Seawall Line -->
                         <line x1="5" y1="78" x2="515" y2="78" stroke="#334155" stroke-width="3.5"/>
                         <text x="15" y="91" fill="#475569" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700">SOLID CONCRETE SEAWALL / WATERFRONT PROMENADE (DRY LAND)</text>
 
-                        <!-- Shun Tak Centre -->
                         <rect x="15" y="102" width="180" height="68" rx="5" fill="#64748b" fill-opacity="0.12" stroke="#64748b" stroke-width="1.5"/>
                         <text x="105" y="126" fill="#334155" font-family="'Inter', sans-serif" font-size="10" font-weight="800" text-anchor="middle">SHUN TAK CENTRE</text>
                         <text x="105" y="140" fill="#334155" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">(HK–Macau Ferry Terminal)</text>
                         <text x="105" y="155" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">Existing HKE Power Rooms Inside?</text>
 
-                        <!-- Landing No. 1 Steps -->
                         <rect x="315" y="78" width="150" height="20" fill="#94a3b8" fill-opacity="0.3" stroke="#475569" stroke-width="1"/>
                         <text x="390" y="91" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" text-anchor="middle">SHEUNG WAN LANDING NO. 1</text>
 
-                        <!-- Land Meter Box (Handover Point) -->
                         <rect x="305" y="108" width="170" height="50" rx="6" fill="#0284c7" fill-opacity="0.16" stroke="#0284c7" stroke-width="2.2"/>
                         <text x="390" y="126" fill="#0284c7" font-family="'Inter', sans-serif" font-size="9.5" font-weight="800" text-anchor="middle">OUR LAND METER BOX (1.5m × 0.8m)</text>
                         <text x="390" y="140" fill="#334155" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" text-anchor="middle">HKE Meter + Main Switch + One-Way Blocker</text>
                         <text x="390" y="152" fill="#059669" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">★ HKE RESPONSIBILITY ENDS HERE ★</text>
 
-                        <!-- Cable Connection Arrow -->
                         <path d="M 390 108 L 390 66" stroke="#059669" stroke-width="2.5" stroke-dasharray="3,2"/>
                         <polygon points="390,64 385,71 395,71" fill="#059669"/>
 
-                        <!-- Circle for Nearest HKE Pillar -->
                         <circle cx="245" cy="136" r="22" fill="#fef2f2" fill-opacity="0.7" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="3,3"/>
                         <text x="245" y="133" fill="#dc2626" font-family="'Inter', sans-serif" font-size="8" font-weight="800" text-anchor="middle">NEAREST</text>
                         <text x="245" y="143" fill="#dc2626" font-family="'Inter', sans-serif" font-size="8" font-weight="800" text-anchor="middle">HKE BOX?</text>
 
-                        <!-- Road Line -->
                         <line x1="5" y1="185" x2="515" y2="185" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/>
                         <text x="260" y="204" fill="#475569" font-family="'Inter', sans-serif" font-size="9" font-weight="700" text-anchor="middle">CHUNG KONG ROAD / PAVEMENT (CIRCLE NEAREST HKE PILLAR &amp; DRAW CABLE PATH)</text>
                     </svg>
@@ -336,62 +296,64 @@
                 </div>
             </section>
 
-            <!-- SECTION 3: BIG PICTURE — HOW THIS SCALES IN 3 SIMPLE STAGES -->
+            <!-- SECTION 3: NON-TABLE 3-STAGE VISUAL PROGRESSION CARDS (REPLACES OLD HTML TABLE) -->
             <section class="mb-2">
-                <div class="flex items-center justify-between mb-1">
+                <div class="flex items-center justify-between mb-1.5">
                     <h2 class="text-xs font-extrabold uppercase tracking-wide" style="color: var(--accent-blue);" data-i18n="s3_title">
-                        3. THE BIG PICTURE: OUR 3-STEP ROLLOUT WITH HK ELECTRIC
+                        3. THE BIG PICTURE: OUR 3-STAGE ROLLOUT WITH HK ELECTRIC (NON-TABLE ARCHITECTURE)
                     </h2>
                     <span class="font-mono text-[9px]" style="color: var(--text-muted);" data-i18n="s3_sub">
-                        Start Small Today → Expand to Central &amp; Wan Chai Piers → Scale to Macau Ferries
+                        Start Small Today → Replicate to Central &amp; Wan Chai Piers → Scale to Macau Flagship
                     </span>
                 </div>
 
-                <div class="card overflow-hidden">
-                    <table class="w-full text-left border-collapse text-[10px]">
-                        <thead>
-                            <tr class="border-b font-mono uppercase text-[9px]" style="border-color: var(--border-color); background-color: var(--bg-page); color: var(--text-muted);">
-                                <th class="py-1.5 px-3" data-i18n="th1">Rollout Step &amp; Pier</th>
-                                <th class="py-1.5 px-3" data-i18n="th2">What Boat We Run</th>
-                                <th class="py-1.5 px-3" data-i18n="th3">Steady Power Needed from HKE</th>
-                                <th class="py-1.5 px-3" data-i18n="th4">Why It's Easy to Approve</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y" style="border-color: var(--border-color);">
-                            <tr>
-                                <td class="py-2 px-3 font-bold" style="color: var(--accent-blue);" data-i18n="r1_1">
-                                    Step 1 (Now): Sheung Wan Landing 1
-                                </td>
-                                <td class="py-2 px-3 font-mono" data-i18n="r1_2">D2 Pilot Boat (25–40 Seats)</td>
-                                <td class="py-2 px-3 font-mono font-bold" style="color: var(--accent-green);" data-i18n="r1_3">250 – 300 kW (Standard Low-Voltage)</td>
-                                <td class="py-2 px-3" data-i18n="r1_4">Uses existing spare street power. Zero major roadworks.</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-3 font-bold" style="color: var(--accent-blue);" data-i18n="r2_1">
-                                    Step 2 (Next): Central Piers &amp; Wan Chai
-                                </td>
-                                <td class="py-2 px-3 font-mono" data-i18n="r2_2">D3 / D4 / D5 Harbour &amp; Island Fleet</td>
-                                <td class="py-2 px-3 font-mono font-bold" style="color: var(--accent-green);" data-i18n="r2_3">300 – 900 kW (Standard Low-Voltage)</td>
-                                <td class="py-2 px-3" data-i18n="r2_4">Copy-pastes the exact same Land Meter + Battery Bank setup.</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-3 font-bold" style="color: var(--accent-blue);" data-i18n="r3_1">
-                                    Step 3 (Future): HK–Macau Terminal
-                                </td>
-                                <td class="py-2 px-3 font-mono" data-i18n="r3_2">EF-150 High-Speed Macau Ferry</td>
-                                <td class="py-2 px-3 font-mono font-bold" data-i18n="r3_3">1.5 – 3.0 MW (11kV Dedicated Feed)</td>
-                                <td class="py-2 px-3" data-i18n="r3_4">Planned ahead of time with spare underground pipes.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="grid grid-cols-3 gap-2.5 text-[10px]">
+                    <!-- Stage 1 Card -->
+                    <div class="card p-2.5 border-l-4" style="border-left-color: var(--accent-green);">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="r1_1">Stage 1 (Now): Sheung Wan No. 1</span>
+                            <span class="font-mono text-[8.5px] px-1.5 py-0.5 rounded font-bold" style="background-color: var(--bg-highlight); color: var(--accent-green);">PHASE 1 LV</span>
+                        </div>
+                        <div class="font-mono text-[9.5px] font-semibold mb-1" data-i18n="r1_2">Vessel: D2 Pilot Boat (25–40 Seats)</div>
+                        <div class="font-mono text-[9.5px] font-bold mb-1" style="color: var(--accent-green);" data-i18n="r1_3">250 – 300 kW (Standard LV)</div>
+                        <p class="text-[9.5px] leading-snug" style="color: var(--text-muted);" data-i18n="r1_4">
+                            Uses existing spare street transformer capacity. Zero major roadworks or seawall excavation.
+                        </p>
+                    </div>
+
+                    <!-- Stage 2 Card -->
+                    <div class="card p-2.5 border-l-4" style="border-left-color: var(--accent-blue);">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="r2_1">Stage 2 (Next): Central &amp; Wan Chai</span>
+                            <span class="font-mono text-[8.5px] px-1.5 py-0.5 rounded font-bold" style="background-color: var(--bg-warn); color: var(--accent-blue);">PHASE 2 LV</span>
+                        </div>
+                        <div class="font-mono text-[9.5px] font-semibold mb-1" data-i18n="r2_2">Vessel: D3 / D4 / D5 Harbour &amp; Islands</div>
+                        <div class="font-mono text-[9.5px] font-bold mb-1" style="color: var(--accent-green);" data-i18n="r2_3">300 – 900 kW (Standard LV)</div>
+                        <p class="text-[9.5px] leading-snug" style="color: var(--text-muted);" data-i18n="r2_4">
+                            Replicates the exact same Land Meter Box + Floating BESS Pontoon across Central Piers 7–10 &amp; Wan Chai.
+                        </p>
+                    </div>
+
+                    <!-- Stage 3 Card -->
+                    <div class="card p-2.5 border-l-4" style="border-left-color: #64748b;">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="r3_1">Stage 3 (Future): Macau Terminal</span>
+                            <span class="font-mono text-[8.5px] px-1.5 py-0.5 rounded font-bold" style="background-color: var(--bg-page); color: var(--text-muted); border: 1px solid var(--border-color);">PHASE 3 HV</span>
+                        </div>
+                        <div class="font-mono text-[9.5px] font-semibold mb-1" data-i18n="r3_2">Vessel: EF-150 High-Speed Macau Ferry</div>
+                        <div class="font-mono text-[9.5px] font-bold mb-1" data-i18n="r3_3">1.5 – 3.0 MW (11kV Dedicated)</div>
+                        <p class="text-[9.5px] leading-snug" style="color: var(--text-muted);" data-i18n="r3_4">
+                            Planned ahead of time with passive underground cable ducts ("dark conduits") reserved in Q4.
+                        </p>
+                    </div>
                 </div>
             </section>
         </div>
 
-        <!-- FOOTER: CLEAR NEXT STEP -->
+        <!-- FOOTER -->
         <footer class="pt-2.5 border-t flex items-center justify-between text-[10px]" style="border-color: var(--border-color);">
             <div data-i18n="foot_action">
-                <strong>Agreed Next Step After Walkover:</strong> We submit Form C.I. 141 using the kW number agreed in Q2 above → HKE provides a brief <em>Supply Feasibility Confirmation</em> for our HKSTP &amp; Marine Dept filing.
+                Agreed Next Step After Walkover: We submit Form C.I. 141 using the kW number agreed in Q2 above → HKE provides a brief Supply Feasibility Confirmation for our HKSTP, CEDD &amp; Marine Dept filings.
             </div>
             <div class="font-mono text-[9.5px] shrink-0 ml-4 px-2.5 py-1 rounded border" style="border-color: var(--border-color); color: var(--text-muted);" data-i18n="sign_box">
                 HKE Contact / Initials: _____________
@@ -447,25 +409,21 @@
                 map_hint: "[PEN SKETCH AREA]",
                 map_f1: "Agreed Cable Length: _________ meters",
                 map_f2: "Road Digging Needed?  ☐ Minimal Footpath   ☐ None",
-                s3_title: "3. THE BIG PICTURE: OUR 3-STEP ROLLOUT WITH HK ELECTRIC",
-                s3_sub: "Start Small Today → Expand to Central & Wan Chai Piers → Scale to Macau Ferries",
-                th1: "Rollout Step & Pier",
-                th2: "What Boat We Run",
-                th3: "Steady Power Needed from HKE",
-                th4: "Why It's Easy to Approve",
-                r1_1: "Step 1 (Now): Sheung Wan Landing 1",
-                r1_2: "D2 Pilot Boat (25–40 Seats)",
-                r1_3: "250 – 300 kW (Standard Low-Voltage)",
-                r1_4: "Uses existing spare street power. Zero major roadworks.",
-                r2_1: "Step 2 (Next): Central Piers & Wan Chai",
-                r2_2: "D3 / D4 / D5 Harbour & Island Fleet",
-                r2_3: "300 – 900 kW (Standard Low-Voltage)",
-                r2_4: "Copy-pastes the exact same Land Meter + Battery Bank setup.",
-                r3_1: "Step 3 (Future): HK–Macau Terminal",
-                r3_2: "EF-150 High-Speed Macau Ferry",
-                r3_3: "1.5 – 3.0 MW (11kV Dedicated Feed)",
-                r3_4: "Planned ahead of time with spare underground pipes.",
-                foot_action: "Agreed Next Step After Walkover: We submit Form C.I. 141 using the kW number agreed in Q2 above → HKE provides a brief Supply Feasibility Confirmation for our HKSTP & Marine Dept filing.",
+                s3_title: "3. THE BIG PICTURE: OUR 3-STAGE ROLLOUT WITH HK ELECTRIC (NON-TABLE ARCHITECTURE)",
+                s3_sub: "Start Small Today → Replicate to Central & Wan Chai Piers → Scale to Macau Flagship",
+                r1_1: "Stage 1 (Now): Sheung Wan No. 1",
+                r1_2: "Vessel: D2 Pilot Boat (25–40 Seats)",
+                r1_3: "250 – 300 kW (Standard LV)",
+                r1_4: "Uses existing spare street transformer capacity. Zero major roadworks or seawall excavation.",
+                r2_1: "Stage 2 (Next): Central & Wan Chai",
+                r2_2: "Vessel: D3 / D4 / D5 Harbour & Islands",
+                r2_3: "300 – 900 kW (Standard LV)",
+                r2_4: "Replicates the exact same Land Meter Box + Floating BESS Pontoon across Central Piers 7–10 & Wan Chai.",
+                r3_1: "Stage 3 (Future): Macau Terminal",
+                r3_2: "Vessel: EF-150 High-Speed Macau Ferry",
+                r3_3: "1.5 – 3.0 MW (11kV Dedicated)",
+                r3_4: "Planned ahead of time with passive underground cable ducts ('dark conduits') reserved in Q4.",
+                foot_action: "Agreed Next Step After Walkover: We submit Form C.I. 141 using the kW number agreed in Q2 above → HKE provides a brief Supply Feasibility Confirmation for our HKSTP, CEDD & Marine Dept filings.",
                 sign_box: "HKE Contact / Initials: _____________"
             },
             tc: {
@@ -487,7 +445,7 @@
                 st2_f: "✓ 權責分界清晰明確",
                 st3_t: "第三步：儲能電池庫",
                 st3_h: "24小時單向慢充儲電",
-                st3_d: "浮動電池庫像巨型尿袋24小時慢充儲電，並設單向防逆流保護，保證零電力倒灌回港燈電網。",
+                st3_d: "浮動電池庫24小時慢充儲電，並設單向防逆流保護，保證零電力倒灌回港燈電網。",
                 st3_f: "✓ 100% 單向用電零倒灌",
                 st4_t: "第四步：電動船快充",
                 st4_h: "10分鐘靠岸極速補電",
@@ -511,25 +469,21 @@
                 map_hint: "[手繪標註區]",
                 map_f1: "預計拉線長度: _________ 米",
                 map_f2: "需否掘路？  ☐ 只需行人路短溝   ☐ 免掘路",
-                s3_title: "3. 長遠藍圖：與港燈合作的三階段擴展計劃",
+                s3_title: "3. 長遠藍圖：與港燈合作的三階段擴展卡片矩陣",
                 s3_sub: "今日小規模試點 → 複製至中環及灣仔碼頭 → 升級港澳跨境高速船",
-                th1: "階段與碼頭位置",
-                th2: "營運船型",
-                th3: "所需港燈平穩電力",
-                th4: "為何容易落實審批",
                 r1_1: "第一階段 (現在)：上環一號梯台",
-                r1_2: "D2 先導電動船 (25–40座)",
+                r1_2: "營運船型：D2 先導電動船 (25–40座)",
                 r1_3: "250 – 300 kW (普通低壓街電)",
-                r1_4: "直接用現成變壓器餘量，免除大型馬路開挖。",
+                r1_4: "直接用現成變壓器餘量，免除大型馬路或海堤開挖工程。",
                 r2_1: "第二階段 (下一步)：中環及灣仔碼頭",
-                r2_2: "D3 / D4 / D5 維港及離島船隊",
+                r2_2: "營運船型：D3 / D4 / D5 維港及離島船隊",
                 r2_3: "300 – 900 kW (普通低壓街電)",
-                r2_4: "100% 複製上環「岸上電錶 + 儲能緩衝」成功模式。",
+                r2_4: "100% 複製上環「岸上電錶箱 + 浮動儲能橋」模式至中環 7–10 號及灣仔碼頭。",
                 r3_1: "第三階段 (遠期)：上環港澳碼頭",
-                r3_2: "EF-150 港澳高速水翼船",
+                r3_2: "營運船型：EF-150 港澳高速水翼船",
                 r3_3: "1.5 – 3.0 MW (11kV 專線)",
-                r3_4: "提早規劃預留管道，配合跨境高速船隊全面電動化。",
-                foot_action: "會後下一步：我方按問題 2 確認的 kW 數值提交表格 C.I. 141 → 港燈發出簡短《供電可行性確認函》供科學園及海事處存檔。",
+                r3_4: "提早於 Q4 規劃預留地下管道，配合跨境高速船隊全面電動化。",
+                foot_action: "會後下一步：我方按問題 2 確認的 kW 數值提交表格 C.I. 141 → 港燈發出簡短《供電可行性確認函》供科學園、土木工程拓展署及海事處存檔。",
                 sign_box: "港燈代表 / 備註: _____________"
             },
             sc: {
@@ -551,7 +505,7 @@
                 st2_f: "✓ 权责分界清晰明确",
                 st3_t: "第三步：储能电池库",
                 st3_h: "24小时单向慢充储电",
-                st3_d: "浮动电池库像巨型充电宝24小时慢充储电，并设单向防逆流保护，保证零电力倒灌回港灯电网。",
+                st3_d: "浮动电池库24小时慢充储电，并设单向防逆流保护，保证零电力倒灌回港灯电网。",
                 st3_f: "✓ 100% 单向用电零倒灌",
                 st4_t: "第四步：电动船快充",
                 st4_h: "10分钟靠岸极速补电",
@@ -575,25 +529,21 @@
                 map_hint: "[手绘标注区]",
                 map_f1: "预计拉线长度: _________ 米",
                 map_f2: "需否挖路？  ☐ 只需人行道短沟   ☐ 免挖路",
-                s3_title: "3. 长远蓝图：与港灯合作的三阶段扩展计划",
+                s3_title: "3. 长远蓝图：与港灯合作的三阶段扩展卡片矩阵",
                 s3_sub: "今日小规模试点 → 复制至中环及湾仔码头 → 升级港澳跨境高速船",
-                th1: "阶段与码头位置",
-                th2: "运营船型",
-                th3: "所需港灯平稳电力",
-                th4: "为何容易落实审批",
                 r1_1: "第一阶段 (现在)：上环一号梯台",
-                r1_2: "D2 先导电动船 (25–40座)",
+                r1_2: "运营船型：D2 先导电动船 (25–40座)",
                 r1_3: "250 – 300 kW (普通低压街电)",
-                r1_4: "直接用现成变压器余量，免除大型马路开挖。",
+                r1_4: "直接用现成变压器余量，免除大型马路或海堤开挖工程。",
                 r2_1: "第二阶段 (下一步)：中环及湾仔码头",
-                r2_2: "D3 / D4 / D5 维港及离岛船队",
+                r2_2: "运营船型：D3 / D4 / D5 维港及离岛船队",
                 r2_3: "300 – 900 kW (普通低压街电)",
-                r2_4: "100% 复制上环“岸上电表 + 储能缓冲”成功模式。",
+                r2_4: "100% 复制上环“岸上电表箱 + 浮动储能桥”模式至中环 7–10 号及湾仔码头。",
                 r3_1: "第三阶段 (远期)：上环港澳码头",
-                r3_2: "EF-150 港澳高速水翼船",
+                r3_2: "运营船型：EF-150 港澳高速水翼船",
                 r3_3: "1.5 – 3.0 MW (11kV 专线)",
-                r3_4: "提早规划预留管道，配合跨境高速船队全面电动化。",
-                foot_action: "会后下一步：我方按问题 2 确认的 kW 数值提交表格 C.I. 141 → 港灯发出简短《供电可行性确认函》供科学园及海事处存档。",
+                r3_4: "提早于 Q4 规划预留地下管道，配合跨境高速船队全面电动化。",
+                foot_action: "会后下一步：我方按问题 2 确认的 kW 数值提交表格 C.I. 141 → 港灯发出简短《供电可行性确认函》供科学园、土木工程拓展署及海事处存档。",
                 sign_box: "港灯代表 / 备注: _____________"
             }
         };
