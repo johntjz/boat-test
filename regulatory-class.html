@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYWING Regulatory & Classification Portal | DNV HSC & HKMPB Strategic Alignment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { tech: { cyan: '#00f2ff', emerald: '#10b981', amber: '#f59e0b', slate: '#94a3b8' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c0e12; color: #d4d4d8; }
+        .data-card { background-color: #11141b; border: 1px solid #222733; transition: all 0.2s ease; }
+        .data-card:hover { border-color: #384152; }
+        .cad-grid-bg {
+            background-size: 36px 36px;
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL MULTI-PAGE HEADER (ENGLISH ONLY, HKD STANDARD) -->
+    <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-3">
+                <a href="index.html" class="flex items-center space-x-3 shrink-0">
+                    <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
+                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
+                            <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-purple-400 border border-zinc-800 rounded">CLASS &amp; POLICY (HKD)</span>
+                        </div>
+                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">DNV HSLC • HKMD • HKMPB</span>
+                    </div>
+                </a>
+
+                <nav class="hidden xl:flex items-center space-x-2 text-[10.5px] font-mono uppercase tracking-wider">
+                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Master Plan &amp; 28 Routes</a>
+                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. R&amp;D &amp; Blueprints</a>
+                    <a href="hkstp-itf.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-emerald hover:bg-zinc-900 transition-colors">03. HKSTP / ESS / GTF</a>
+                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. Investors &amp; VC</a>
+                    <a href="utilities-grid.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors">05. HKE / CLP / AAHK / CEDD</a>
+                    <a href="regulatory-class.html" class="px-2.5 py-1.5 rounded bg-purple-500/15 text-purple-400 border border-purple-500/40 font-bold">06. DNV &amp; HKMPB</a>
+                    <a href="stakeholder-tracker.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">07. Active Comms</a>
+                </nav>
+
+                <div class="flex items-center space-x-2 shrink-0">
+                    <a href="hke-walkover-handout.html" target="_blank" class="inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
+                        HKE Walkover Sheet ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="pt-28 pb-14 md:pt-36 md:pb-20 border-b border-zinc-800/80 cad-grid-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-purple-400 bg-purple-500/10 border border-purple-500/30 px-3 py-1 rounded mb-6">
+                    <span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+                    <span class="font-bold uppercase tracking-wider">CLASSIFICATION &amp; SOVEREIGN MARITIME POLICY // DNV, HKMD &amp; HKMPB</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-mono font-bold text-white uppercase tracking-tight max-w-4xl">
+                    DNV High-Speed Craft Advisory &amp; HKMPB Green Maritime Hub Roadmap
+                </h1>
+                <p class="text-sm sm:text-base text-zinc-300 max-w-3xl mt-4 leading-relaxed">
+                    Following our October 16, 2026 filings with the DNV Hong Kong Advisory Team and the Hong Kong Maritime and Port Board (HKMPB) Secretariat, this portal details our High-Speed Craft (HSC) classification architecture, 800V LFP battery containment, 100Hz RTOS software certification, and Hong Kong OPEX economics in HKD.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 1: DNV HONG KONG CLASSIFICATION ADVISORY -->
+        <section class="py-16 md:py-24 bg-[#090b0f] border-b border-zinc-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+                    <div class="max-w-3xl">
+                        <div class="text-xs font-mono text-tech-cyan uppercase tracking-widest mb-2">PARTNER 01 // DNV HONG KONG ADVISORY TEAM (FILED OCT 16, 2026)</div>
+                        <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                            High-Speed &amp; Light Craft (HSLC) Classification &amp; Software Certification
+                        </h2>
+                        <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                            Our Phase 2 commercial pilot (`BAYWING-D2`, HK$ 20.0M total capital including HK$ 1.5M dedicated to testing and HKMD/DNV certification) and Phase 3 flagship (`EF-150`) are engineered around three core DNV marine classification pillars:
+                        </p>
+                    </div>
+                    <div class="data-card p-4 rounded-xl bg-zinc-950 font-mono text-xs shrink-0">
+                        <span class="text-zinc-500 block text-[10px]">D2 CERTIFICATION BUDGET ALLOCATION</span>
+                        <span class="text-tech-emerald font-bold text-base">HK$ 1,500,000</span>
+                        <span class="text-zinc-400 block text-[10px] mt-0.5">Part of HK$ 20.0M D2 Pilot Capital Stack</span>
+                    </div>
+                </div>
+
+                <!-- 3 Non-Table DNV Compliance Cards -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="data-card p-6 rounded-2xl border-t-4 border-t-tech-cyan">
+                        <span class="font-mono text-xs text-tech-cyan font-bold uppercase">01. POWERTRAIN &amp; BATTERY RULES</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">800V DC Marine LFP &amp; Dual-Redundant Pods</h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+                            Designed under DNV Rules for Classification of High-Speed, Light Craft (HSLC) and Battery-Powered Vessels. Integrates thermally isolated 800V DC Lithium Iron Phosphate (LFP) battery bays (400 kWh on D2; 1.2 MWh on EF-150) paired with dual-redundant electric rim-drive / pod propulsors.
+                        </p>
+                        <div class="p-3 rounded bg-zinc-950 border border-zinc-800 font-mono text-[11px] text-zinc-400 flex justify-between">
+                            <span>Thermal Runaway Mitigation:</span>
+                            <span class="text-tech-emerald font-bold">LFP Cell-Level Isolation</span>
+                        </div>
+                    </div>
+
+                    <div class="data-card p-6 rounded-2xl border-t-4 border-t-purple-400">
+                        <span class="font-mono text-xs text-purple-400 font-bold uppercase">02. FLIGHT CONTROL SOFTWARE IP</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">100Hz Triple-Redundant Fly-by-Wire RTOS</h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+                            Deterministic C++/RTOS active surface control loops operating at 100Hz (<8ms actuator response) across dual STM32H7 and NVIDIA Jetson compute nodes. Features triple-modular sensor voting (dual SBG IMUs, forward LiDAR, and ultrasonic ride-height sensors) and fail-safe hull-borne displacement fallback.
+                        </p>
+                        <div class="p-3 rounded bg-zinc-950 border border-zinc-800 font-mono text-[11px] text-zinc-400 flex justify-between">
+                            <span>Fail-Safe Mode:</span>
+                            <span class="text-purple-400 font-bold">Graceful Displacement Settle</span>
+                        </div>
+                    </div>
+
+                    <div class="data-card p-6 rounded-2xl border-t-4 border-t-tech-emerald">
+                        <span class="font-mono text-xs text-tech-emerald font-bold uppercase">03. SHORE-SIDE FAST CHARGING</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">Dockside MCS &amp; Unidirectional BESS Pontoons</h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+                            Interfaces 500 kW (D2) up to 3.5–3.8 MW Megawatt Charging System (MCS) DC shore power via floating BESS buffer pontoons. Hardware-interlocked reverse-power protection ensures 100% unidirectional grid draw from HK Electric and CLP low-voltage feeders.
+                        </p>
+                        <div class="p-3 rounded bg-zinc-950 border border-zinc-800 font-mono text-[11px] text-zinc-400 flex justify-between">
+                            <span>Grid Export Protection:</span>
+                            <span class="text-tech-emerald font-bold">Zero Backfeed Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: HONG KONG MARITIME AND PORT BOARD (HKMPB) STRATEGIC BRIEFING -->
+        <section class="py-16 md:py-24 bg-[#0c0e12]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-10">
+                    <div class="text-xs font-mono text-tech-amber uppercase tracking-widest mb-2">PARTNER 02 // HONG KONG MARITIME AND PORT BOARD (HKMPB) SECRETARIAT</div>
+                    <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                        Sovereign Green Maritime Hub Leadership &amp; Fleet Modernization (HKD)
+                    </h2>
+                    <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                        As communicated to the HKMPB Secretariat on October 16, 2026, BAYWING provides a Hong Kong-engineered technological solution to modernize all 23 local passenger ferry routes and 5 Greater Bay Area cross-border corridors over a 10-year master plan:
+                    </p>
+                </div>
+
+                <!-- 3 Non-Table Strategic Impact Cards in HKD -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="data-card p-6 rounded-2xl border-l-4 border-l-tech-emerald">
+                        <span class="font-mono text-xs text-tech-emerald font-bold uppercase">01. 78% OPEX REDUCTION (HKD)</span>
+                        <div class="text-2xl font-mono font-extrabold text-white mt-1 mb-2">HK$ 38.2 / NM</div>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Slashes energy operating costs by 78%—from approximately <strong>HK$ 175.50 per nautical mile</strong> (legacy marine diesel gas oil) down to <strong>HK$ 38.22 per nautical mile</strong> (electric hydrofoil), saving <strong>HK$ 6.79M to HK$ 14.43M per vessel annually</strong> on trunk island and Macau routes.
+                        </p>
+                    </div>
+
+                    <div class="data-card p-6 rounded-2xl border-l-4 border-l-tech-cyan">
+                        <span class="font-mono text-xs text-tech-cyan font-bold uppercase">02. LOCAL HK IP + GBA MANUFACTURING</span>
+                        <div class="text-2xl font-mono font-extrabold text-white mt-1 mb-2">HK$ 3.20M R&amp;D</div>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Combines high-margin 100Hz fly-by-wire flight control software and avionics developed at Hong Kong Science Park (HK$ 3,198,000 Phase 0–1 R&amp;D budget; HK$ 278,000 PCT patent allocation) with established Pearl River Delta carbon-composite shipyards for global export.
+                        </p>
+                    </div>
+
+                    <div class="data-card p-6 rounded-2xl border-l-4 border-l-tech-amber">
+                        <span class="font-mono text-xs text-tech-amber font-bold uppercase">03. EAST ASIA GREEN MARITIME HUB</span>
+                        <div class="text-2xl font-mono font-extrabold text-white mt-1 mb-2">23 HK + 5 GBA</div>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Positions Hong Kong as the premier early adopter of megawatt marine fast-charging and active hydrofoil electrification in East Asia—eliminating 168,000 tonnes of CO₂ annually across Victoria Harbour, Outlying Islands, and SkyPier/Macau terminals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span>AERO-MARINE SYSTEMS LIMITED © 2026 // DNV CLASSIFICATION &amp; HKMPB BRIEFING (HKD)</span>
+            <a href="stakeholder-tracker.html" class="text-tech-cyan hover:underline">Proceed to 07. Live October 2026 Stakeholder Correspondence Log →</a>
+        </div>
+    </footer>
+</body>
+</html>
