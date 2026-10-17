@@ -3,159 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAYWING D1–D5 & EF-150 | 10-Year HK & GBA Electric Maritime Master Plan</title>
-    
+    <title>BAYWING D1–D5 & EF-150 | Hong Kong & GBA Electric Hydrofoil Portal (HKD)</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    },
-                    colors: {
-                        tech: {
-                            cyan: '#00f2ff',
-                            emerald: '#10b981',
-                            amber: '#f59e0b',
-                            rose: '#f43f5e',
-                            slate: '#94a3b8'
-                        }
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { tech: { cyan: '#00f2ff', emerald: '#10b981', amber: '#f59e0b', slate: '#94a3b8' } }
                 }
             }
         }
     </script>
-    
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0c0e12; color: #d4d4d8; }
         .data-card { background-color: #11141b; border: 1px solid #222733; transition: all 0.2s ease; }
         .data-card:hover { border-color: #384152; }
-        .glass-card { background-color: rgba(17, 20, 27, 0.88); backdrop-filter: blur(8px); border: 1px solid #222733; }
         .cad-grid-bg {
             background-size: 36px 36px;
-            background-image: 
-                linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
         }
-        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 18px; width: 10px; border-radius: 2px; background: #00f2ff; cursor: pointer; margin-top: -7px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: #27272a; border-radius: 2px; }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #0c0e12; }
-        ::-webkit-scrollbar-thumb { background: #2e3545; border-radius: 3px; }
-
-        .route-row-active { background-color: rgba(0, 242, 255, 0.08) !important; border-left: 3px solid #00f2ff !important; }
-        @keyframes dash-flow { to { stroke-dashoffset: -24; } }
-        .active-fairway-line { animation: dash-flow 1.2s linear infinite; }
     </style>
 </head>
-<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col relative">
+<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
 
-    <!-- GLOBAL MULTI-PAGE HEADER (LINKS ALL 7 PORTAL PAGES + WALKOVER HANDOUT) -->
+    <!-- FIXED SINGLE-LINE TOP BAR (WHITESPACE-NOWRAP + EXPANDABLE DROPDOWN MENU) -->
     <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 gap-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-4">
                 
                 <!-- Brand -->
                 <a href="index.html" class="flex items-center space-x-3 shrink-0">
                     <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
                         <svg class="w-4 h-4 text-tech-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col whitespace-nowrap">
                         <div class="flex items-center space-x-2">
                             <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
                             <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-cyan border border-zinc-800 rounded">D1–D5 / EF-150</span>
                         </div>
-                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase" data-i18n="nav_subtitle">10-Year Electric Maritime Master Plan</span>
+                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">HK &amp; GBA Electric Maritime Hub</span>
                     </div>
                 </a>
 
-                <!-- Multi-Page Architecture Navigation -->
-                <nav class="hidden xl:flex items-center space-x-2 text-[10.5px] font-mono uppercase tracking-wider">
-                    <a href="index.html" class="px-2.5 py-1.5 rounded bg-tech-cyan/15 text-tech-cyan border border-tech-cyan/40 font-bold" data-i18n="nav_home">01. Master Plan &amp; 28 Routes</a>
-                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors" data-i18n="nav_eng">02. R&amp;D &amp; Blueprints (SIL/D1/D2)</a>
-                    <a href="hkstp-itf.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-emerald hover:bg-zinc-900 transition-colors" data-i18n="nav_grants">03. HKSTP / ESS / GTF / RTH</a>
-                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors" data-i18n="nav_vc">04. Investors &amp; VC</a>
-                    <a href="utilities-grid.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors" data-i18n="nav_grid">05. HKE / CLP / AAHK / CEDD</a>
-                    <a href="regulatory-class.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors" data-i18n="nav_reg">06. DNV &amp; HKMPB</a>
-                    <a href="stakeholder-tracker.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors" data-i18n="nav_tracker">07. Active Comms</a>
+                <!-- Single-Line Desktop Nav (Never Wraps) -->
+                <nav class="hidden lg:flex items-center space-x-1.5 text-[11px] font-mono uppercase tracking-wider whitespace-nowrap">
+                    <a href="index.html" class="px-2.5 py-1.5 rounded bg-tech-cyan/15 text-tech-cyan border border-tech-cyan/40 font-bold">01. Overview</a>
+                    <a href="master-plan-fleet.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. 10-Yr Plan &amp; Fleet</a>
+                    <a href="routes-calculator.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-emerald hover:bg-zinc-900 transition-colors">03. 28 Routes &amp; OPEX</a>
+                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. R&amp;D Blueprints</a>
+                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">05. Investors</a>
+
+                    <!-- Expandable Stakeholder Portals Dropdown (Add New Pages Here Anytime) -->
+                    <div class="relative group">
+                        <button class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors inline-flex items-center gap-1">
+                            <span>Stakeholder Portals</span>
+                            <svg class="w-3.5 h-3.5 text-tech-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="absolute right-0 mt-1 w-64 bg-zinc-950 border border-zinc-800 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="hkstp-itf.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-emerald">06. HKSTP / ESS / GTF / RTH</a>
+                            <a href="utilities-grid.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-cyan">07. HKE / CLP / AAHK / CEDD</a>
+                            <a href="regulatory-class.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-purple-400">08. DNV Class &amp; HKMPB</a>
+                            <a href="stakeholder-tracker.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">09. Oct 2026 Comms Log</a>
+                            <div class="border-t border-zinc-800 my-1"></div>
+                            <a href="hke-walkover-handout.html" class="block px-4 py-2 text-[11px] text-tech-cyan font-bold hover:bg-zinc-900">10. HKE Site Walkover Sheet ↗</a>
+                        </div>
+                    </div>
                 </nav>
 
-                <!-- Right Controls -->
-                <div class="flex items-center space-x-2 shrink-0">
-                    <a href="hke-walkover-handout.html" class="hidden sm:inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all" data-i18n="nav_handout">
-                        HKE Walkover Sheet ↗
+                <!-- Right Action & Currency Badge -->
+                <div class="flex items-center space-x-2 shrink-0 whitespace-nowrap">
+                    <a href="hke-walkover-handout.html" class="hidden sm:inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
+                        HKE Walkover ↗
                     </a>
-                    <div class="flex bg-zinc-950 border border-zinc-800 rounded p-0.5 text-[10px] font-mono shrink-0">
-                        <button onclick="setLang('en')" id="btn-lang-en" class="px-2 py-1 rounded bg-zinc-800 text-white font-semibold transition-colors">EN (USD)</button>
-                        <button onclick="setLang('tc')" id="btn-lang-tc" class="px-2 py-1 rounded text-zinc-500 hover:text-white transition-colors">繁 (HKD)</button>
-                        <button onclick="setLang('sc')" id="btn-lang-sc" class="px-2 py-1 rounded text-zinc-500 hover:text-white transition-colors">简 (RMB)</button>
-                    </div>
-                    <button onclick="toggleMobileMenu()" class="xl:hidden text-zinc-400 hover:text-white p-1.5 border border-zinc-800 rounded bg-zinc-900">
-                        <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400">EN • HKD</span>
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="lg:hidden text-zinc-400 hover:text-white p-1.5 border border-zinc-800 rounded bg-zinc-900">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden xl:hidden bg-zinc-950 border-b border-zinc-800 px-4 py-4 space-y-1.5 font-mono text-xs uppercase tracking-wider">
-            <a href="index.html" class="block p-2 text-tech-cyan font-bold rounded bg-zinc-900" data-i18n="nav_home">01. Master Plan &amp; 28 Routes</a>
-            <a href="engineering-rd.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900" data-i18n="nav_eng">02. R&amp;D &amp; Blueprints (SIL/D1/D2/EF-150)</a>
-            <a href="hkstp-itf.html" class="block p-2 text-tech-emerald hover:text-white rounded hover:bg-zinc-900" data-i18n="nav_grants">03. HKSTP / ITC ESS / Green Tech Fund / RTH</a>
-            <a href="investors.html" class="block p-2 text-tech-amber hover:text-white rounded hover:bg-zinc-900" data-i18n="nav_vc">04. Investors &amp; 93.5% Non-Dilutive Stack</a>
-            <a href="utilities-grid.html" class="block p-2 text-tech-cyan hover:text-white rounded hover:bg-zinc-900" data-i18n="nav_grid">05. HKE / CLP / AAHK SkyPier / CEDD</a>
-            <a href="regulatory-class.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900" data-i18n="nav_reg">06. DNV Class &amp; HKMPB Policy</a>
-            <a href="stakeholder-tracker.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900" data-i18n="nav_tracker">07. Live Stakeholder Correspondence</a>
-            <a href="hke-walkover-handout.html" class="block p-2 text-tech-cyan border-t border-zinc-800 pt-3" data-i18n="nav_handout">HKE Walkover Decision Sheet ↗</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950 border-b border-zinc-800 px-4 py-4 space-y-1.5 font-mono text-xs uppercase tracking-wider">
+            <a href="index.html" class="block p-2 text-tech-cyan font-bold rounded bg-zinc-900">01. Executive Overview</a>
+            <a href="master-plan-fleet.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">02. 10-Yr Master Plan &amp; D2–D5 Fleet</a>
+            <a href="routes-calculator.html" class="block p-2 text-tech-emerald hover:text-white rounded hover:bg-zinc-900">03. All 28 Routes Map &amp; OPEX Calculator</a>
+            <a href="engineering-rd.html" class="block p-2 text-tech-amber hover:text-white rounded hover:bg-zinc-900">04. R&amp;D &amp; CAD Blueprints (SIL/D1/D2/EF-150)</a>
+            <a href="investors.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">05. Investors &amp; 93.5% Non-Dilutive Stack</a>
+            <a href="hkstp-itf.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">06. HKSTP / ITC ESS / Green Tech Fund / RTH</a>
+            <a href="utilities-grid.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">07. HKE / CLP / AAHK SkyPier / CEDD</a>
+            <a href="regulatory-class.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">08. DNV Class &amp; HKMPB Policy</a>
+            <a href="stakeholder-tracker.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">09. Oct 2026 Correspondence Log</a>
+            <a href="hke-walkover-handout.html" class="block p-2 text-tech-cyan border-t border-zinc-800 pt-3">10. HKE Walkover Decision Sheet ↗</a>
         </div>
     </header>
 
     <main>
-        <!-- SECTION 1: PLATFORM OVERVIEW (#vessel) — FULL PROSE RESTORED -->
-        <section id="vessel" class="relative pt-28 pb-16 md:pt-36 md:pb-24 border-b border-zinc-800/80 cad-grid-bg">
+        <!-- SECTION 1: PLATFORM HERO & DIRECTORY HUB -->
+        <section class="relative pt-28 pb-16 md:pt-36 md:pb-20 border-b border-zinc-800/80 cad-grid-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
                     <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-zinc-300 bg-zinc-900 border border-zinc-700 px-3 py-1 rounded">
                         <span class="w-2 h-2 bg-tech-emerald rounded-full animate-pulse"></span>
-                        <span class="font-semibold uppercase tracking-wider" data-i18n="badge_hkstp">Decarbonizing Hong Kong &amp; GBA Ferry Transport</span>
+                        <span class="font-semibold uppercase tracking-wider">DECARBONIZING HONG KONG &amp; GBA FERRY TRANSPORT (ALL FIGURES IN HKD)</span>
                     </div>
                     <div class="text-[11px] font-mono text-zinc-500">
-                        <span data-i18n="doc_id_label">DOC ID:</span> <span class="text-white font-bold">AM-EF150-FS-2026</span>
+                        DOC ID: <span class="text-white font-bold">AM-EF150-FS-2026</span>
                     </div>
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-10 items-start">
                     <div class="lg:col-span-7 space-y-5">
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-mono font-bold text-white tracking-tight leading-tight uppercase">
-                            <span data-i18n="hero_title">BAYWING EF-150 EXPRESS</span>
-                            <span class="block text-zinc-400 text-xl sm:text-2xl font-sans font-normal mt-2" data-i18n="hero_subtitle">Active Fly-by-Wire Electric Hydrofoil Platform</span>
+                            BAYWING EF-150 EXPRESS
+                            <span class="block text-zinc-400 text-xl sm:text-2xl font-sans font-normal mt-2">Active Fly-by-Wire Electric Hydrofoil Platform</span>
                         </h1>
-                        <p class="text-sm md:text-base text-zinc-300 leading-relaxed font-sans max-w-2xl" data-i18n="hero_desc">
-                            Aero-Marine Systems is building the software-defined future of Hong Kong and GBA maritime transit. By integrating aerospace-grade 100Hz flight control algorithms with Pearl River Delta carbon-composite supply chains, the BAYWING architecture completely decouples the hull from hydrodynamic drag—slashing energy requirements by 80% and making high-speed electric passenger and cargo routes commercially unstoppable.
+                        <p class="text-sm md:text-base text-zinc-300 leading-relaxed max-w-2xl">
+                            Aero-Marine Systems is building the software-defined future of Hong Kong and GBA maritime transit. By integrating aerospace-grade 100Hz flight control algorithms with Pearl River Delta carbon-composite supply chains, the BAYWING architecture completely decouples the hull from hydrodynamic drag—slashing energy requirements by 80% (from <strong>HK$ 175.50/NM</strong> down to <strong>HK$ 38.22/NM</strong>) and making high-speed electric passenger and cargo routes commercially unstoppable.
                         </p>
                         <div class="pt-2 flex flex-wrap gap-3">
-                            <a href="#vision-10yr" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-tech-emerald text-slate-950 font-bold text-xs font-mono rounded hover:bg-emerald-400 transition-colors">
-                                <span data-i18n="hero_btn_vision">10-YR "EV ON WATER" VISION</span>
-                                <span>↓</span>
+                            <a href="master-plan-fleet.html" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-tech-emerald text-slate-950 font-bold text-xs font-mono rounded hover:bg-emerald-400 transition-colors">
+                                <span>10-YR MASTER PLAN &amp; FLEET</span>
+                                <span>→</span>
                             </a>
-                            <a href="#hk-routes-master" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-tech-cyan/15 border border-tech-cyan/50 text-tech-cyan text-xs font-mono rounded hover:bg-tech-cyan/25 transition-colors">
-                                <span data-i18n="hero_btn_hk23">ALL 23 HK ROUTES + MAP</span>
-                                <span>↓</span>
+                            <a href="routes-calculator.html" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-tech-cyan/15 border border-tech-cyan/50 text-tech-cyan text-xs font-mono rounded hover:bg-tech-cyan/25 transition-colors">
+                                <span>ALL 23 HK ROUTES + OPEX SIMULATOR</span>
+                                <span>→</span>
                             </a>
                             <a href="engineering-rd.html" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-tech-amber/15 border border-tech-amber/50 text-tech-amber text-xs font-mono rounded hover:bg-tech-amber/25 transition-colors">
-                                <span data-i18n="hero_btn_sil">SIL, D1 &amp; D2 BLUEPRINTS</span>
+                                <span>SIL, D1 &amp; D2 BLUEPRINTS</span>
                                 <span>→</span>
                             </a>
                             <a href="investors.html" class="inline-flex items-center space-x-2 px-4 py-2.5 bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-mono rounded hover:border-white transition-colors">
-                                <span data-i18n="hero_btn_vc">VC &amp; GRANT STACK (93.5%)</span>
+                                <span>VC &amp; GRANT STACK (93.5%)</span>
                                 <span>→</span>
                             </a>
                         </div>
@@ -163,813 +146,159 @@
 
                     <div class="lg:col-span-5 data-card p-6 rounded-xl">
                         <div class="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4">
-                            <span class="text-xs font-mono font-bold text-white uppercase tracking-wider" data-i18n="spec_title">Flagship Operational Envelope</span>
-                            <span class="text-[10px] font-mono text-tech-cyan bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800" data-i18n="spec_class">150 PASSENGER CLASS</span>
+                            <span class="text-xs font-mono font-bold text-white uppercase tracking-wider">Flagship Operational Envelope</span>
+                            <span class="text-[10px] font-mono text-tech-cyan bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">150 PASSENGER CLASS</span>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="p-3.5 bg-zinc-950 rounded border border-zinc-800">
-                                <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="spec_speed">Target Cruise Speed</div>
-                                <div class="text-2xl font-mono font-bold text-white mt-1"><span data-i18n="unit_38">38.0</span> <span class="text-xs text-zinc-400" data-i18n="unit_knots">KNOTS</span></div>
-                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1" data-i18n="spec_speed_sub">(70.3 km/h Foil-borne)</div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Target Cruise Speed</div>
+                                <div class="text-2xl font-mono font-bold text-white mt-1">38.0 <span class="text-xs text-zinc-400">KNOTS</span></div>
+                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1">(70.3 km/h Foil-borne)</div>
                             </div>
                             <div class="p-3.5 bg-zinc-950 rounded border border-zinc-800">
-                                <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="spec_range">Effective Operational Range</div>
-                                <div class="text-2xl font-mono font-bold text-white mt-1">38.0 <span class="text-xs text-zinc-400" data-i18n="unit_nm">NM</span></div>
-                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1" data-i18n="spec_range_sub">(w/ 20% Reserve | 45 NM Max)</div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Effective Operational Range</div>
+                                <div class="text-2xl font-mono font-bold text-white mt-1">38.0 <span class="text-xs text-zinc-400">NM</span></div>
+                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1">(w/ 20% Reserve | 45 NM Max)</div>
                             </div>
                             <div class="p-3.5 bg-zinc-950 rounded border border-zinc-800">
-                                <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="spec_battery">Est. Battery Capacity</div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Est. Battery Capacity</div>
                                 <div class="text-2xl font-mono font-bold text-white mt-1">1.2 <span class="text-xs text-zinc-400">MWh</span></div>
-                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1" data-i18n="spec_battery_sub">800V Marine LFP Architecture</div>
+                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1">800V Marine LFP Architecture</div>
                             </div>
                             <div class="p-3.5 bg-zinc-950 rounded border border-zinc-800">
-                                <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="spec_turnaround">Turnaround Target</div>
-                                <div class="text-2xl font-mono font-bold text-white mt-1">20 <span class="text-xs text-zinc-400" data-i18n="unit_mins">MINS</span></div>
-                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1" data-i18n="spec_turnaround_sub">3.5 MW MCS + BESS Buffer</div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Turnaround Target</div>
+                                <div class="text-2xl font-mono font-bold text-white mt-1">20 <span class="text-xs text-zinc-400">MINS</span></div>
+                                <div class="text-[9.5px] font-mono text-zinc-500 mt-1">3.5 MW MCS + BESS Buffer</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- DEDICATED MULTI-PAGE STAKEHOLDER PORTAL DIRECTORY -->
-                <div class="mt-12 pt-8 border-t border-zinc-800/80">
-                    <div class="text-[11px] font-mono text-tech-cyan uppercase tracking-widest mb-4" data-i18n="portal_dir_title">
-                        DEDICATED STAKEHOLDER &amp; TECHNICAL DATA ROOM PORTALS (SELECT YOUR BRIEFING)
+                <!-- 8-PAGE MODULAR PORTAL DIRECTORY -->
+                <div class="mt-14 pt-10 border-t border-zinc-800/80">
+                    <div class="text-[11px] font-mono text-tech-cyan uppercase tracking-widest mb-4">
+                        MODULAR MULTI-PAGE PORTAL ARCHITECTURE (SELECT ANY MODULE)
                     </div>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <a href="engineering-rd.html" class="data-card p-4 rounded-xl hover:border-tech-amber group block">
-                            <div class="flex justify-between items-center font-mono text-xs font-bold text-tech-amber mb-1">
-                                <span data-i18n="pd_1_t">02. R&amp;D, SIL, D1, D2 &amp; EF-150 Blueprints</span>
-                                <span>→</span>
-                            </div>
-                            <p class="text-xs text-zinc-400" data-i18n="pd_1_d">Interactive 1600×900 CAD schematics, Phase 0 MIL/SIL/HIL pipeline, Froude scaling (Fn=1.17), Tolo Harbour sea trials &amp; full spec matrix.</p>
-                        </a>
-
-                        <a href="hkstp-itf.html" class="data-card p-4 rounded-xl hover:border-tech-emerald group block">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <a href="master-plan-fleet.html" class="data-card p-4 rounded-xl hover:border-tech-emerald block">
                             <div class="flex justify-between items-center font-mono text-xs font-bold text-tech-emerald mb-1">
-                                <span data-i18n="pd_2_t">03. HKSTP, ITC ESS, Green Tech Fund &amp; Universities</span>
-                                <span>→</span>
+                                <span>02. 10-Yr Master Plan &amp; Fleet</span><span>→</span>
                             </div>
-                            <p class="text-xs text-zinc-400" data-i18n="pd_2_d">Incu-Tech milestones, ESS 1:1 matching grant (HK$20M D2 pilot), EEB Green Tech Fund (168,000T CO₂/yr cut) &amp; HKUST/PolyU RTH hiring.</p>
+                            <p class="text-xs text-zinc-400">2026–2036 Hong Kong electrification timeline &amp; modular D2, D3, D4, D5, and EF-150 vessel lineup.</p>
                         </a>
 
-                        <a href="investors.html" class="data-card p-4 rounded-xl hover:border-tech-cyan group block">
+                        <a href="routes-calculator.html" class="data-card p-4 rounded-xl hover:border-tech-cyan block">
                             <div class="flex justify-between items-center font-mono text-xs font-bold text-tech-cyan mb-1">
-                                <span data-i18n="pd_3_t">04. VC, Angel &amp; Green Lease Data Room</span>
-                                <span>→</span>
+                                <span>03. 28 Routes Map &amp; OPEX Simulator</span><span>→</span>
                             </div>
-                            <p class="text-xs text-zinc-400" data-i18n="pd_3_d">93.5% non-dilutive leverage (only HK$208k net equity gap on HK$3.20M Phase 0–1 budget), Tranche 1–3 capital stack &amp; risk mitigations.</p>
+                            <p class="text-xs text-zinc-400">Interactive CAD hydrographic chart of all 23 HK routes + 5 GBA corridors &amp; HKD fleet OPEX calculator.</p>
                         </a>
 
-                        <a href="utilities-grid.html" class="data-card p-4 rounded-xl hover:border-sky-400 group block">
-                            <div class="flex justify-between items-center font-mono text-xs font-bold text-sky-400 mb-1">
-                                <span data-i18n="pd_4_t">05. HKE, CLP, AAHK SkyPier, CEDD &amp; EMSD</span>
-                                <span>→</span>
+                        <a href="engineering-rd.html" class="data-card p-4 rounded-xl hover:border-tech-amber block">
+                            <div class="flex justify-between items-center font-mono text-xs font-bold text-tech-amber mb-1">
+                                <span>04. R&amp;D, SIL, D1 &amp; D2 Blueprints</span><span>→</span>
                             </div>
-                            <p class="text-xs text-zinc-400" data-i18n="pd_4_d">Oct 21 Sheung Wan Landing No. 1 HKE site walkover, CLP Kowloon/Lantau nodes, SkyPier 3.8 MW MCS &amp; CEDD non-permanent BESS pontoons.</p>
+                            <p class="text-xs text-zinc-400">1600×900 interactive schematics, Phase 0 MIL/SIL/HIL, Froude scaling (Fn=1.17) &amp; spec matrix.</p>
                         </a>
 
-                        <a href="regulatory-class.html" class="data-card p-4 rounded-xl hover:border-purple-400 group block">
-                            <div class="flex justify-between items-center font-mono text-xs font-bold text-purple-400 mb-1">
-                                <span data-i18n="pd_5_t">06. DNV Classification &amp; HKMPB Strategic Briefing</span>
-                                <span>→</span>
-                            </div>
-                            <p class="text-xs text-zinc-400" data-i18n="pd_5_d">High-Speed Craft (HSC) compliance, 800V marine LFP thermal containment, triple-redundant 100Hz RTOS software certification &amp; HKMPB alignment.</p>
-                        </a>
-
-                        <a href="stakeholder-tracker.html" class="data-card p-4 rounded-xl hover:border-white group block">
+                        <a href="investors.html" class="data-card p-4 rounded-xl hover:border-white block">
                             <div class="flex justify-between items-center font-mono text-xs font-bold text-white mb-1">
-                                <span data-i18n="pd_6_t">07. October 2026 Official Correspondence Log</span>
-                                <span>→</span>
+                                <span>05. VC &amp; Angel Data Room (HKD)</span><span>→</span>
                             </div>
-                            <p class="text-xs text-zinc-400" data-i18n="pd_6_d">Verified email correspondence &amp; active threads with HK Electric, Green Tech Fund (EEB), AAHK SkyPier, ITC ESS, CLP, CEDD, EMSD &amp; DNV.</p>
+                            <p class="text-xs text-zinc-400">HK$ 3.198M Phase 0–1 budget, 93.5% non-dilutive leverage (HK$ 208k net gap) &amp; HK$ 20M D2 ESS match.</p>
+                        </a>
+
+                        <a href="hkstp-itf.html" class="data-card p-4 rounded-xl hover:border-tech-emerald block">
+                            <div class="flex justify-between items-center font-mono text-xs font-bold text-tech-emerald mb-1">
+                                <span>06. HKSTP, ESS, GTF &amp; Universities</span><span>→</span>
+                            </div>
+                            <p class="text-xs text-zinc-400">Incu-Tech gates, ITC ESS 1:1 matching, EEB Green Tech Fund &amp; HKUST/PolyU HK$ 1.45M RTH hiring.</p>
+                        </a>
+
+                        <a href="utilities-grid.html" class="data-card p-4 rounded-xl hover:border-sky-400 block">
+                            <div class="flex justify-between items-center font-mono text-xs font-bold text-sky-400 mb-1">
+                                <span>07. HKE, CLP, AAHK &amp; CEDD</span><span>→</span>
+                            </div>
+                            <p class="text-xs text-zinc-400">Oct 21 Sheung Wan Landing No. 1 HKE walkover, CLP Kowloon/Lantau piers, SkyPier 3.8 MW MCS &amp; CEDD pontoons.</p>
+                        </a>
+
+                        <a href="regulatory-class.html" class="data-card p-4 rounded-xl hover:border-purple-400 block">
+                            <div class="flex justify-between items-center font-mono text-xs font-bold text-purple-400 mb-1">
+                                <span>08. DNV Class &amp; HKMPB Policy</span><span>→</span>
+                            </div>
+                            <p class="text-xs text-zinc-400">High-Speed Craft (HSC) rules, 800V LFP containment, 100Hz RTOS software certification &amp; HKMPB briefing.</p>
+                        </a>
+
+                        <a href="stakeholder-tracker.html" class="data-card p-4 rounded-xl hover:border-tech-cyan block">
+                            <div class="flex justify-between items-center font-mono text-xs font-bold text-tech-cyan mb-1">
+                                <span>09. Oct 2026 Comms &amp; Audit Log</span><span>→</span>
+                            </div>
+                            <p class="text-xs text-zinc-400">Verbatim correspondence &amp; status tracker across all 10 Hong Kong utilities, agencies &amp; universities.</p>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: 10-YEAR "EV ON WATER" MASTER PLAN (#vision-10yr) — FULL PROSE RESTORED -->
-        <section id="vision-10yr" class="py-20 md:py-28 bg-[#090b0f] border-b border-zinc-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-12 gap-8 items-center mb-12">
-                    <div class="lg:col-span-7 space-y-4">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-tech-cyan/10 border border-tech-cyan/30 text-tech-cyan font-mono text-xs" data-i18n="vis_badge">
-                            HONG KONG 2026–2036 // THE "EV ON WATER" MASTER PLAN
-                        </div>
-                        <h2 class="text-2xl sm:text-4xl font-mono font-bold text-white uppercase leading-tight" data-i18n="vis_title">
-                            Transforming Every HK Ferry &amp; Island Cargo Route in 10 Years
-                        </h2>
-                        <p class="text-sm sm:text-base text-zinc-300 leading-relaxed" data-i18n="vis_desc">
-                            Just as electric cars and commercial trucks transformed Hong Kong's roads over the past decade, BAYWING is engineered to electrify 100% of Hong Kong's waterways over the next ten years. Think of our platform as an EV on water: an unsinkable, modular carbon-aluminium "skateboard" hull packed with safe LFP marine batteries, lifted above the waves on computer-controlled hydrofoils, and recharged in 8–15 minutes via floating dockside battery buffers—carrying commuters by day and roll-on/roll-off (Ro-Ro) island freight by night.
-                        </p>
-                    </div>
-
-                    <div class="lg:col-span-5 grid grid-cols-2 gap-3.5">
-                        <div class="data-card p-4 rounded-xl border-l-4 border-l-tech-cyan">
-                            <div class="text-[10px] font-mono text-tech-cyan uppercase font-bold" data-i18n="vp1_tag">01. RADICAL EFFICIENCY</div>
-                            <div class="text-2xl font-mono font-extrabold text-white mt-1" data-i18n="vp1_val">-78% OPEX</div>
-                            <p class="text-xs text-zinc-400 mt-1" data-i18n="vp1_desc">Hydrofoils lift the hull out of the water, cutting drag by 80% and slashing energy cost from $22.50/NM to $4.90/NM.</p>
-                        </div>
-                        <div class="data-card p-4 rounded-xl border-l-4 border-l-tech-emerald">
-                            <div class="text-[10px] font-mono text-tech-emerald uppercase font-bold" data-i18n="vp2_tag">02. RAPID CHARGING</div>
-                            <div class="text-2xl font-mono font-extrabold text-white mt-1" data-i18n="vp2_val">8–15 MIN</div>
-                            <p class="text-xs text-zinc-400 mt-1" data-i18n="vp2_desc">Dockside BESS buffers trickle-charge off standard HKE LV street power and deliver megawatt DC top-ups while boarding.</p>
-                        </div>
-                        <div class="data-card p-4 rounded-xl border-l-4 border-l-tech-amber">
-                            <div class="text-[10px] font-mono text-tech-amber uppercase font-bold" data-i18n="vp3_tag">03. PAX + RO-RO CARGO</div>
-                            <div class="text-2xl font-mono font-extrabold text-white mt-1" data-i18n="vp3_val">25–400 PAX</div>
-                            <p class="text-xs text-zinc-400 mt-1" data-i18n="vp3_desc">Modular flat deck carries fast commuters by day and 4t–50t of silent zero-emission island freight pallets by night.</p>
-                        </div>
-                        <div class="data-card p-4 rounded-xl border-l-4 border-l-purple-400">
-                            <div class="text-[10px] font-mono text-purple-400 uppercase font-bold" data-i18n="vp4_tag">04. ULTRA-SAFE &amp; SMOOTH</div>
-                            <div class="text-2xl font-mono font-extrabold text-white mt-1" data-i18n="vp4_val">100Hz AI</div>
-                            <p class="text-xs text-zinc-400 mt-1" data-i18n="vp4_desc">Active fly-by-wire sensors adjust submerged flaps 100x/sec—eliminating seasickness, harbour wake, and black smoke.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10-YEAR MASTER ROLLOUT BAR -->
-                <div class="data-card p-6 rounded-xl">
-                    <div class="text-xs font-mono font-bold text-tech-cyan uppercase mb-4" data-i18n="timeline_header">
-                        10-YEAR HONG KONG &amp; GBA MARITIME ELECTRIFICATION MASTER TIMELINE (2026–2036)
-                    </div>
-                    <div class="grid md:grid-cols-4 gap-4 text-xs">
-                        <div class="p-4 rounded-lg bg-zinc-950 border border-zinc-800">
-                            <span class="font-mono text-[10px] text-tech-amber font-bold" data-i18n="tl1_yr">YEARS 1–2 (2026–2027)</span>
-                            <div class="font-bold text-white mt-1" data-i18n="tl1_title">SIL, D1 Drone &amp; D2 Harbour Pilot</div>
-                            <p class="text-[11px] text-zinc-400 mt-1" data-i18n="tl1_desc">Validate 100Hz flight control in Tolo Harbour (D1), energize Sheung Wan Landing No. 1 HKE BESS charger, launch D2 on Water Taxi &amp; Regional routes.</p>
-                        </div>
-                        <div class="p-4 rounded-lg bg-zinc-950 border border-zinc-800">
-                            <span class="font-mono text-[10px] text-tech-cyan font-bold" data-i18n="tl2_yr">YEARS 3–4 (2028–2029)</span>
-                            <div class="font-bold text-white mt-1" data-i18n="tl2_title">D3 &amp; D4 Victoria Harbour + Islands</div>
-                            <p class="text-[11px] text-zinc-400 mt-1" data-i18n="tl2_desc">Electrify all 8 Victoria Harbour crossings with D3 (120-pax) and fast Outlying Island commuter routes (Discovery Bay, Lamma, Peng Chau, Ma Wan) with D4 (220-pax).</p>
-                        </div>
-                        <div class="p-4 rounded-lg bg-zinc-950 border border-zinc-800">
-                            <span class="font-mono text-[10px] text-tech-emerald font-bold" data-i18n="tl3_yr">YEARS 5–6 (2030–2031)</span>
-                            <div class="font-bold text-white mt-1" data-i18n="tl3_title">D5 Heavy Liners &amp; Cargo Freighter</div>
-                            <p class="text-[11px] text-zinc-400 mt-1" data-i18n="tl3_desc">Deploy 400-pax D5 vessels on Central–Cheung Chau &amp; Mui Wo trunk routes plus D5-Cargo Ro-Ro freighters for zero-emission island logistics.</p>
-                        </div>
-                        <div class="p-4 rounded-lg bg-zinc-950 border border-zinc-800">
-                            <span class="font-mono text-[10px] text-purple-400 font-bold" data-i18n="tl4_yr">YEARS 7–10 (2032–2036)</span>
-                            <div class="font-bold text-white mt-1" data-i18n="tl4_title">EF-150 GBA High-Speed Network</div>
-                            <p class="text-[11px] text-zinc-400 mt-1" data-i18n="tl4_desc">Full 3.5 MW MCS robotic charging at Sheung Wan &amp; SkyPier. EF-150 fleet replaces legacy diesel jets across Macau, Shenzhen, Zhuhai &amp; Nansha.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: MODULAR VESSEL LINEUP (D2, D3, D4, D5, EF-150) (#fleet-lineup) -->
-        <section id="fleet-lineup" class="py-20 bg-[#0c0e12] border-b border-zinc-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-                    <div>
-                        <div class="text-xs font-mono text-tech-cyan uppercase tracking-widest mb-1" data-i18n="fl_tag">MODULAR PRODUCT ARCHITECTURE (D2 → D3 → D4 → D5 → EF-150)</div>
-                        <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase" data-i18n="fl_title">
-                            One Core Tech Stack. Five Vessel Classes Fitting Every Route.
-                        </h2>
-                    </div>
-                    <p class="text-xs text-zinc-400 max-w-xl leading-relaxed" data-i18n="fl_desc">
-                        Sharing standardized 800V Marine LFP battery packs, rim/pod drive units, and 100Hz flight-control software across five hull lengths allows BAYWING to serve all 23 Hong Kong ferry routes and 5 GBA corridors with minimal custom engineering overhead.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-                    <!-- D2 -->
-                    <div class="data-card p-5 rounded-xl border-t-4 border-t-tech-cyan flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-mono font-extrabold text-lg text-white">BAYWING-D2</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-tech-cyan/10 text-tech-cyan">15m | 32 KT</span>
-                            </div>
-                            <div class="text-xs font-bold text-zinc-200 mb-2" data-i18n="fl_d2_sub">Regional Shuttle &amp; Water Taxi</div>
-                            <p class="text-[11px] text-zinc-400 mb-4" data-i18n="fl_d2_desc">Fits regional coastal routes, Aberdeen–Lamma, DB–Peng Chau, Tsuen Wan–Ma Wan, Sai Wan Ho–Sam Ka Tsuen, and Victoria Harbour Water Taxi.</p>
-                        </div>
-                        <div class="border-t border-zinc-800 pt-3 font-mono text-[10px] space-y-1">
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_cap">Capacity:</span><span class="text-white" data-i18n="fl_d2_cap">25–40 Pax / 4t Cargo</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_bat">Battery:</span><span class="text-white">400 kWh LFP</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_chg">Fast Charge:</span><span class="text-tech-emerald" data-i18n="fl_d2_chg">500 kW (6–8m)</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_fit">HK Routes:</span><span class="text-tech-cyan" data-i18n="fl_d2_fit">7 Routes</span></div>
-                        </div>
-                    </div>
-
-                    <!-- D3 -->
-                    <div class="data-card p-5 rounded-xl border-t-4 border-t-sky-400 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-mono font-extrabold text-lg text-white">BAYWING-D3</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/10 text-sky-400">20m | 28 KT</span>
-                            </div>
-                            <div class="text-xs font-bold text-zinc-200 mb-2" data-i18n="fl_d3_sub">Cross-Harbour Rapid Commuter</div>
-                            <p class="text-[11px] text-zinc-400 mb-4" data-i18n="fl_d3_desc">Double-ended wide-gangway shuttle purpose-built to replace smoky diesel ferries across Victoria Harbour crossings and the Inter-Islands loop.</p>
-                        </div>
-                        <div class="border-t border-zinc-800 pt-3 font-mono text-[10px] space-y-1">
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_cap">Capacity:</span><span class="text-white" data-i18n="fl_d3_cap">100–120 Pax / 15t</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_bat">Battery:</span><span class="text-white">600 kWh LFP</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_chg">Fast Charge:</span><span class="text-tech-emerald" data-i18n="fl_d3_chg">800 kW (3–5m)</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_fit">HK Routes:</span><span class="text-sky-400" data-i18n="fl_d3_fit">8 Routes</span></div>
-                        </div>
-                    </div>
-
-                    <!-- D4 -->
-                    <div class="data-card p-5 rounded-xl border-t-4 border-t-tech-emerald flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-mono font-extrabold text-lg text-white">BAYWING-D4</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-tech-emerald/10 text-tech-emerald">24m | 35 KT</span>
-                            </div>
-                            <div class="text-xs font-bold text-zinc-200 mb-2" data-i18n="fl_d4_sub">Outlying Island Fast Hydrofoil</div>
-                            <p class="text-[11px] text-zinc-400 mb-4" data-i18n="fl_d4_desc">High-speed commuter foil for Central to Discovery Bay, Lamma (Yung Shue Wan &amp; Sok Kwu Wan), Peng Chau, Ma Wan, and Tuen Mun–Tai O.</p>
-                        </div>
-                        <div class="border-t border-zinc-800 pt-3 font-mono text-[10px] space-y-1">
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_cap">Capacity:</span><span class="text-white" data-i18n="fl_d4_cap">220 Pax / 25t Cargo</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_bat">Battery:</span><span class="text-white">900 kWh LFP</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_chg">Fast Charge:</span><span class="text-tech-emerald" data-i18n="fl_d4_chg">1.5 MW (8–11m)</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_fit">HK Routes:</span><span class="text-tech-emerald" data-i18n="fl_d4_fit">6 Routes</span></div>
-                        </div>
-                    </div>
-
-                    <!-- D5 -->
-                    <div class="data-card p-5 rounded-xl border-t-4 border-t-tech-amber flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-mono font-extrabold text-lg text-white">BAYWING-D5</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-tech-amber/10 text-tech-amber">28m | 34 KT</span>
-                            </div>
-                            <div class="text-xs font-bold text-zinc-200 mb-2" data-i18n="fl_d5_sub">Heavy Island Liner &amp; Ro-Ro Freighter</div>
-                            <p class="text-[11px] text-zinc-400 mb-4" data-i18n="fl_d5_desc">High-capacity trunk liner for Central–Cheung Chau &amp; Central–Mui Wo, plus Ro-Ro Cargo Freighter variant for island trucks, pallets &amp; freight.</p>
-                        </div>
-                        <div class="border-t border-zinc-800 pt-3 font-mono text-[10px] space-y-1">
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_cap">Capacity:</span><span class="text-white" data-i18n="fl_d5_cap">400 Pax OR 50t Cargo</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_bat">Battery:</span><span class="text-white">1.5 MWh LFP</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_chg">Fast Charge:</span><span class="text-tech-emerald" data-i18n="fl_d5_chg">2.5 MW MCS (9m)</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_fit">HK Routes:</span><span class="text-tech-amber" data-i18n="fl_d5_fit">2 Trunk Routes</span></div>
-                        </div>
-                    </div>
-
-                    <!-- EF-150 -->
-                    <div class="data-card p-5 rounded-xl border-t-4 border-t-purple-400 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-mono font-extrabold text-lg text-white">EF-150</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">28.5m | 38 KT</span>
-                            </div>
-                            <div class="text-xs font-bold text-zinc-200 mb-2" data-i18n="fl_ef_sub">GBA Cross-Border Flagship</div>
-                            <p class="text-[11px] text-zinc-400 mb-4" data-i18n="fl_ef_desc">38-knot active hydrofoil flagship replacing legacy 4,000-kW diesel waterjets across HK–Macau, Shenzhen, Zhuhai &amp; SkyPier.</p>
-                        </div>
-                        <div class="border-t border-zinc-800 pt-3 font-mono text-[10px] space-y-1">
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_cap">Capacity:</span><span class="text-white" data-i18n="fl_ef_cap">150 VIP Pax</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_bat">Battery:</span><span class="text-white">1.2 MWh 800V LFP</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_chg">Fast Charge:</span><span class="text-tech-emerald" data-i18n="fl_ef_chg">3.5 MW MCS (15m)</span></div>
-                            <div class="flex justify-between"><span class="text-zinc-500" data-i18n="fl_lbl_fit">GBA Routes:</span><span class="text-purple-400" data-i18n="fl_ef_fit">5+ Corridors</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: COMPETITIVE MOAT & DEFENSIBLE OPEX ADVANTAGES (#moat) — 100% RESTORED FROM 2.TXT -->
-        <section id="moat" class="py-20 bg-[#090b0f] border-b border-zinc-800/80">
+        <!-- SECTION 2: DEEP TECH MOAT & THERMODYNAMIC ECONOMICS (HKD) -->
+        <section id="moat" class="py-16 md:py-24 bg-[#090b0f]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="max-w-3xl mb-12">
-                    <div class="text-xs font-mono text-tech-cyan uppercase tracking-widest mb-2" data-i18n="moat_tag">DEEP TECH MOAT &amp; THERMODYNAMIC ECONOMICS</div>
-                    <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase" data-i18n="moat_title">
+                    <div class="text-xs font-mono text-tech-cyan uppercase tracking-widest mb-2">DEEP TECH MOAT &amp; THERMODYNAMIC ECONOMICS (HKD)</div>
+                    <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
                         Defensible OPEX Advantages
                     </h2>
-                    <p class="text-sm text-zinc-400 mt-3 font-sans leading-relaxed" data-i18n="moat_desc">
+                    <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
                         Legacy fast ferries rely on multi-megawatt diesel gas turbines pushing heavy displacement hulls. High marine fuel costs and escalating engine overhaul expenses compress operating margins. Our Fly-by-Wire control system enables a thermodynamic shift.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="data-card p-6 rounded-xl relative overflow-hidden">
-                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1" data-i18n="p1_tag">01. Platform Dynamics</div>
-                        <div class="text-3xl font-mono font-bold text-white mb-2" data-i18n="p1_metric">80%</div>
-                        <h3 class="text-sm font-mono font-bold text-tech-cyan mb-2 uppercase" data-i18n="p1_title">Drag Reduction</h3>
-                        <p class="text-xs text-zinc-400 leading-relaxed font-sans" data-i18n="p1_desc">
+                    <div class="data-card p-6 rounded-xl">
+                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1">01. Platform Dynamics</div>
+                        <div class="text-3xl font-mono font-bold text-white mb-2">80%</div>
+                        <h3 class="text-sm font-mono font-bold text-tech-cyan mb-2 uppercase">Drag Reduction</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
                             Fully submerged T-foils lift the hull completely above the waves at 18+ knots, decoupling the vessel from hydrodynamic displacement drag.
                         </p>
                         <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
-                            <span data-i18n="p1_sub">Cruise Power:</span>
-                            <span class="text-white font-bold" data-i18n="p1_val">~1,050 kW</span>
+                            <span>Cruise Power:</span><span class="text-white font-bold">~1,050 kW</span>
                         </div>
                     </div>
 
-                    <div class="data-card p-6 rounded-xl relative overflow-hidden">
-                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1" data-i18n="p2_tag">02. Core IP Moat</div>
+                    <div class="data-card p-6 rounded-xl">
+                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1">02. Core IP Moat</div>
                         <div class="text-3xl font-mono font-bold text-white mb-2">100<span class="text-lg">Hz</span></div>
-                        <h3 class="text-sm font-mono font-bold text-tech-cyan mb-2 uppercase" data-i18n="p2_title">Active FCS Loop</h3>
-                        <p class="text-xs text-zinc-400 leading-relaxed font-sans" data-i18n="p2_desc">
+                        <h3 class="text-sm font-mono font-bold text-tech-cyan mb-2 uppercase">Active FCS Loop</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
                             Triple-redundant Fly-by-Wire software reads IMUs and LiDAR, adjusting submerged flaps 100x/sec to neutralize Victoria Harbour wake pitch and roll.
                         </p>
                         <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
-                            <span data-i18n="p2_sub">Wake Wash:</span>
-                            <span class="text-white font-bold" data-i18n="p2_val">&lt;0.15m (CEDD Safe)</span>
+                            <span>Wake Wash:</span><span class="text-white font-bold">&lt;0.15m (CEDD Safe)</span>
                         </div>
                     </div>
 
-                    <div class="data-card p-6 rounded-xl relative overflow-hidden">
-                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1" data-i18n="p3_tag">03. Infrastructure</div>
+                    <div class="data-card p-6 rounded-xl">
+                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1">03. Infrastructure</div>
                         <div class="text-3xl font-mono font-bold text-white mb-2">4.0<span class="text-lg">MWh</span></div>
-                        <h3 class="text-sm font-mono font-bold text-tech-emerald mb-2 uppercase" data-i18n="p3_title">Shore BESS Buffer</h3>
-                        <p class="text-xs text-zinc-400 leading-relaxed font-sans" data-i18n="p3_desc">
-                            Floating/dockside BESS trickle-charges continuously off existing 300–900 kW LV municipal transformers, delivering 3.5 MW DC bursts without HV grid bottlenecks.
+                        <h3 class="text-sm font-mono font-bold text-tech-emerald mb-2 uppercase">Shore BESS Buffer</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Floating/dockside BESS trickle-charges continuously off existing 250–900 kW LV municipal transformers, delivering 3.5 MW DC bursts without HV grid bottlenecks.
                         </p>
                         <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
-                            <span data-i18n="p3_sub">Charge Rate:</span>
-                            <span class="text-white font-bold" data-i18n="p3_val">500 kW → 3.5 MW DC</span>
+                            <span>Charge Rate:</span><span class="text-white font-bold">500 kW → 3.5 MW DC</span>
                         </div>
                     </div>
 
-                    <div class="data-card p-6 rounded-xl relative overflow-hidden">
-                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1" data-i18n="p4_tag">04. Route Yield</div>
-                        <div class="text-3xl font-mono font-bold text-white mb-2" data-i18n="p4_metric">78%</div>
-                        <h3 class="text-sm font-mono font-bold text-tech-emerald mb-2 uppercase" data-i18n="p4_title">OPEX Savings</h3>
-                        <p class="text-xs text-zinc-400 leading-relaxed font-sans" id="ui-p4-desc" data-i18n="p4_desc">
-                            Direct electric pod drives yield ~$4.90 USD/NM energy costs, compared to ~$22.50 USD/NM for legacy marine gas oil turbines.
+                    <div class="data-card p-6 rounded-xl">
+                        <div class="text-xs font-mono text-zinc-500 uppercase mb-1">04. Route Yield (HKD)</div>
+                        <div class="text-3xl font-mono font-bold text-white mb-2">78%</div>
+                        <h3 class="text-sm font-mono font-bold text-tech-emerald mb-2 uppercase">OPEX Savings</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Direct electric pod drives yield ~HK$ 38.22/NM energy costs, compared to ~HK$ 175.50/NM for legacy marine gas oil turbines.
                         </p>
                         <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
-                            <span data-i18n="p4_sub">Energy OPEX:</span>
-                            <span class="text-tech-emerald font-bold" id="ui-p4-metric" data-i18n="p4_val">~$4.90 USD / NM</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- SECTION 5: ROUTE NETWORK & DISRUPTION CALCULATOR (#routes) — 100% RESTORED -->
-        <section id="routes" class="py-20 md:py-28 bg-[#0c0e12] border-b border-zinc-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl mb-12" id="calculator">
-                    <div class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2" data-i18n="calc_tag">STRATEGIC ROUTE ANALYTICS</div>
-                    <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase" data-i18n="calc_title">
-                        HK &amp; GBA Fleet OPEX Feasibility Calculator
-                    </h2>
-                    <p class="text-sm text-zinc-400 mt-2 font-sans" data-i18n="calc_desc">
-                        Simulate the financial viability of replacing legacy diesel vessels with the BAYWING platform. Data is calibrated for HKMD COLREGs speed restrictions and 50% LFP battery Depth-of-Discharge cycles.
-                    </p>
-                </div>
-
-                <div class="data-card p-6 sm:p-8 rounded-xl bg-zinc-950">
-                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 pb-4 mb-6">
-                        <div>
-                            <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest" data-i18n="calc_sim_tag">INTERACTIVE FINANCIAL SIMULATOR</span>
-                            <h3 class="text-lg font-mono font-bold text-white" data-i18n="calc_sim_title">Fleet OPEX Projection Model</h3>
-                        </div>
-                        <div class="text-[11px] font-mono text-zinc-500">
-                            <span data-i18n="calc_sim_base">BASELINE MGO DIESEL:</span> <span class="text-zinc-300 font-bold" id="ui-calc-diesel-price">$22.50 USD / NM</span>
-                        </div>
-                    </div>
-
-                    <div class="grid lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-5 space-y-6">
-                            <div>
-                                <label class="block text-xs font-mono text-zinc-400 uppercase mb-2" data-i18n="calc_input_1">1. Select HK or GBA Express Route</label>
-                                <select id="calc-route" onchange="runRouteCalculator()" class="w-full bg-zinc-900 border border-zinc-700 rounded p-2.5 text-xs font-mono text-white focus:border-zinc-500 outline-none">
-                                    <option value="hk-shenzhen" selected>HK Central ⟷ Shenzhen Shekou (22 NM | EF-150)</option>
-                                    <option value="hkg-szx">HKG SkyPier ⟷ Shenzhen Airport (25 NM | EF-150)</option>
-                                    <option value="hk-macau">HK Sheung Wan ⟷ Macau Taipa (36 NM | EF-150)</option>
-                                    <option value="hk-airport">HK Central ⟷ HKG SkyPier Airport (17 NM | EF-150)</option>
-                                    <option value="hk-zhuhai">HK Sheung Wan ⟷ Zhuhai Jiuzhou (35 NM | EF-150)</option>
-                                    <option value="hk-cheungchau">Central ⟷ Cheung Chau (10.2 NM | BAYWING-D5)</option>
-                                    <option value="hk-muiwo">Central ⟷ Mui Wo (9.5 NM | BAYWING-D5)</option>
-                                    <option value="hk-db">Central ⟷ Discovery Bay (8.2 NM | BAYWING-D4)</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <div class="flex justify-between text-xs font-mono mb-2">
-                                    <span class="text-zinc-400 uppercase" data-i18n="calc_input_2">2. Active Fleet Size</span>
-                                    <span id="calc-fleet-val" class="text-white font-bold">4 VESSELS</span>
-                                </div>
-                                <input id="calc-fleet" type="range" min="1" max="12" value="4" step="1" oninput="runRouteCalculator()">
-                                <div class="flex justify-between text-[9px] font-mono text-zinc-600 mt-1">
-                                    <span data-i18n="calc_input_2_min">1 Unit</span>
-                                    <span data-i18n="calc_input_2_mid">6 Units</span>
-                                    <span data-i18n="calc_input_2_max">12 Units</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="flex justify-between text-xs font-mono mb-2">
-                                    <span class="text-zinc-400 uppercase" data-i18n="calc_input_3">3. Daily Round Trips / Vessel</span>
-                                    <span id="calc-trips-val" class="text-white font-bold">4 TRIPS</span>
-                                </div>
-                                <input id="calc-trips" type="range" min="2" max="16" value="4" step="1" oninput="runRouteCalculator()">
-                                <div class="flex justify-between text-[9px] font-mono text-zinc-600 mt-1">
-                                    <span data-i18n="calc_input_3_min">2 Trips</span>
-                                    <span data-i18n="calc_input_3_mid">8 Trips</span>
-                                    <span data-i18n="calc_input_3_max">16 Trips</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lg:col-span-7 bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
-                                    <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="calc_out_1_title">Annual Energy Savings</div>
-                                    <div id="calc-out-savings" class="text-2xl sm:text-3xl font-mono font-bold text-white mt-1">$4.34 M</div>
-                                    <div class="text-[9px] font-mono text-zinc-500 mt-1" data-i18n="calc_out_1_sub">VS Legacy Diesel Catamaran</div>
-                                </div>
-
-                                <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
-                                    <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="calc_out_2_title">Est. CapEx Premium Payback</div>
-                                    <div id="calc-out-payback" class="text-2xl sm:text-3xl font-mono font-bold text-tech-emerald mt-1">3.2 YRS</div>
-                                    <div class="text-[9px] font-mono text-zinc-500 mt-1" data-i18n="calc_out_2_sub">On EV Platform Premium Cost</div>
-                                </div>
-
-                                <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
-                                    <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="calc_out_3_title">Annual CO2 Avoided</div>
-                                    <div id="calc-out-co2" class="text-xl sm:text-2xl font-mono font-bold text-zinc-300 mt-1">10,817 T</div>
-                                    <div class="text-[9px] font-mono text-zinc-500 mt-1" data-i18n="calc_out_3_sub">Metric Tons GHG / Year</div>
-                                </div>
-
-                                <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
-                                    <div class="text-[10px] font-mono text-zinc-500 uppercase" data-i18n="calc_out_4_title">Est. BAYWING Transit Time</div>
-                                    <div id="calc-out-time" class="text-xl sm:text-2xl font-mono font-bold text-zinc-300 mt-1">45 MINS</div>
-                                    <div id="calc-out-time-diff" class="text-[9px] font-mono text-zinc-500 mt-1" data-i18n="calc_out_4_sub">Faster &amp; Zero Seasickness</div>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3 font-mono text-[10px]">
-                                <div>
-                                    <div class="flex justify-between text-zinc-400 mb-1">
-                                        <span data-i18n="calc_bar_diesel">Annual Energy Cost (Legacy Diesel Fleet)</span>
-                                        <span id="calc-bar-diesel-text" class="text-white font-bold">$5.54M</span>
-                                    </div>
-                                    <div class="w-full bg-zinc-950 h-2.5 rounded overflow-hidden border border-zinc-800">
-                                        <div id="calc-bar-diesel" class="bg-zinc-600 h-full rounded" style="width: 100%;"></div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="flex justify-between text-zinc-400 mb-1">
-                                        <span data-i18n="calc_bar_ef150">Annual Energy Cost (BAYWING Electric Fleet)</span>
-                                        <span id="calc-bar-ef150-text" class="text-tech-emerald font-bold">$1.21M</span>
-                                    </div>
-                                    <div class="w-full bg-zinc-950 h-2.5 rounded overflow-hidden border border-zinc-800">
-                                        <div id="calc-bar-ef150" class="bg-tech-emerald h-full rounded" style="width: 22%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6: ALL 23 HK ROUTES + 5 GBA CORRIDORS (#hk-routes-master) — CURVED MAP & NON-TABLE DIRECTORY -->
-        <section id="hk-routes-master" class="py-20 md:py-28 bg-[#090b0f] border-b border-zinc-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl mb-10" id="route-explorer">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-tech-emerald/10 border border-tech-emerald/30 text-tech-emerald font-mono text-xs mb-2" data-i18n="rm_badge">
-                        COMPLETE HONG KONG &amp; GBA ROUTE-BY-ROUTE ELECTRIFICATION BLUEPRINT
-                    </div>
-                    <h2 class="text-2xl sm:text-4xl font-mono font-bold text-white uppercase" data-i18n="rm_title">
-                        All 23 HK Ferry Routes + 5 GBA Corridors: Interactive Map &amp; Spec Sheet
-                    </h2>
-                    <p class="text-sm text-zinc-400 mt-2" data-i18n="map_hdr_hint">
-                        Select any corridor below to inspect its curved marine navigation path, vessel assignment, dockside BESS power draw, and annual operating cost reduction.
-                    </p>
-                </div>
-
-                <!-- CATEGORY FILTER TABS -->
-                <div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
-                    <button onclick="filterRoutes('all')" id="tab-all" class="px-4 py-2 rounded-lg bg-white text-zinc-950 font-bold transition-all" data-i18n="tab_all">
-                        ALL ROUTES (28)
-                    </button>
-                    <button onclick="filterRoutes('harbour')" id="tab-harbour" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-sky-400 transition-all" data-i18n="tab_vh">
-                        🏙️ Victoria Harbour Crossings (8)
-                    </button>
-                    <button onclick="filterRoutes('island')" id="tab-island" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-tech-emerald transition-all" data-i18n="tab_isl">
-                        🏝️ Outlying Islands from Central (9)
-                    </button>
-                    <button onclick="filterRoutes('regional')" id="tab-regional" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-tech-amber transition-all" data-i18n="tab_reg">
-                        🌊 Regular Regional Routes (6)
-                    </button>
-                    <button onclick="filterRoutes('gba')" id="tab-gba" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-purple-400 transition-all" data-i18n="tab_gba">
-                        ⚡ Phase 3+ GBA Cross-Border (5)
-                    </button>
-                </div>
-
-                <!-- MAP + SPEC PANEL -->
-                <div class="data-card rounded-xl p-4 sm:p-6 bg-[#070d17] border border-zinc-800 mb-8">
-                    <div class="flex flex-wrap justify-between items-center mb-3 pb-3 border-b border-zinc-800/80 text-[11px] font-mono">
-                        <span class="text-zinc-300 font-bold uppercase tracking-wider" data-i18n="map_hdr_title">
-                            CAD HYDROGRAPHIC CHART // HONG KONG HARBOUR, OUTLYING ISLANDS &amp; PEARL RIVER ESTUARY
-                        </span>
-                        <span class="text-tech-cyan">
-                            ACTIVE CORRIDOR: <strong id="map-top-active-label" class="text-white">Central ⟷ Cheung Chau</strong>
-                        </span>
-                    </div>
-
-                    <!-- CURVED TRANSIT-STYLE BLUEPRINT SVG MAP -->
-                    <svg id="hk-network-map" viewBox="0 0 1000 520" class="w-full h-auto rounded bg-[#040912] border border-[#152338] select-none">
-                        <defs>
-                            <pattern id="hydroGrid" width="50" height="50" patternUnits="userSpaceOnUse">
-                                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1e3a5f" stroke-width="0.5" stroke-opacity="0.35"/>
-                            </pattern>
-                            <filter id="routeGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="3" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-                        <rect width="1000" height="520" fill="url(#hydroGrid)"/>
-
-                        <g transform="translate(910, 45)" stroke="#475569" fill="none" font-family="'JetBrains Mono', monospace" font-size="8">
-                            <circle cx="0" cy="0" r="18" stroke-opacity="0.5"/>
-                            <path d="M 0 -22 L 0 22 M -22 0 L 22 0" stroke-opacity="0.4"/>
-                            <polygon points="0,-18 -4,-6 4,-6" fill="#00f2ff" stroke="none"/>
-                            <text x="-3" y="-25" fill="#00f2ff" stroke="none" font-weight="bold">N</text>
-                        </g>
-
-                        <!-- LANDMASS CONTOURS -->
-                        <path d="M 15 20 L 185 20 L 210 75 L 165 120 L 95 130 L 15 110 Z" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.5"/>
-                        <text x="95" y="65" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">SHENZHEN / SZX</text>
-
-                        <path d="M 15 340 L 125 345 L 140 415 L 95 475 L 15 475 Z" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.5"/>
-                        <text x="75" y="425" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" text-anchor="middle">MACAU / ZHUHAI</text>
-
-                        <path d="M 255 25 L 880 25 L 935 165 L 845 235 L 775 230 L 725 205 L 675 195 L 620 225 L 595 220 L 575 180 L 520 155 L 445 160 L 365 155 L 270 150 Z" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.5"/>
-                        <text x="580" y="95" fill="#334155" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" letter-spacing="2" text-anchor="middle">NEW TERRITORIES &amp; KOWLOON PENINSULA</text>
-
-                        <path d="M 455 182 C 468 178, 480 185, 476 198 C 468 204, 452 198, 455 182 Z" fill="#0f1d30" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.5"/>
-
-                        <path d="M 445 215 C 420 215, 395 230, 365 245 L 305 255 L 255 285 L 220 325 C 215 345, 235 365, 265 365 L 335 350 L 385 335 L 415 305 L 435 265 Z" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.6"/>
-                        <text x="330" y="305" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" letter-spacing="1.5" text-anchor="middle">LANTAU ISLAND</text>
-
-                        <circle cx="468" cy="272" r="9" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.4"/>
-                        <path d="M 418 378 C 425 372, 435 378, 432 390 C 435 402, 425 408, 418 402 C 412 394, 412 384, 418 378 Z" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.4"/>
-
-                        <path d="M 565 268 C 605 260, 665 255, 735 258 L 785 275 L 795 335 L 735 365 L 665 355 L 605 338 L 565 305 Z" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.6"/>
-                        <text x="685" y="312" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="bold" letter-spacing="1" text-anchor="middle">HONG KONG ISLAND</text>
-
-                        <path d="M 555 375 C 572 370, 592 382, 590 405 L 595 445 C 580 455, 560 445, 558 420 Z" fill="#0b1524" stroke="#1e3a5f" stroke-width="1.4"/>
-                        <text x="576" y="470" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle">LAMMA ISLAND</text>
-
-                        <!-- INACTIVE & ACTIVE CURVED ROUTE PATHS -->
-                        <g id="map-routes-layer"></g>
-                        <path id="map-active-path" d="M 585 265 C 530 295, 480 355, 425 390" fill="none" stroke="#00f2ff" stroke-width="3.5" stroke-linecap="round" filter="url(#routeGlow)"/>
-                        <path id="map-active-flow" class="active-fairway-line" d="M 585 265 C 530 295, 480 355, 425 390" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="6,18" stroke-linecap="round"/>
-
-                        <!-- PIER NODES -->
-                        <g font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" fill="#cbd5e1">
-                            <circle cx="585" cy="265" r="5.5" fill="#00f2ff" stroke="#040912" stroke-width="1.5"/>
-                            <text x="585" y="283" fill="#00f2ff" font-weight="bold" text-anchor="middle">CENTRAL / SHEUNG WAN</text>
-                            <circle cx="640" cy="262" r="3.5" fill="#94a3b8"/><text x="640" y="276" text-anchor="middle">WAN CHAI</text>
-                            <circle cx="695" cy="259" r="3.5" fill="#94a3b8"/><text x="695" y="273" text-anchor="middle">NORTH PT</text>
-                            <circle cx="748" cy="264" r="3.5" fill="#94a3b8"/><text x="768" y="276">SAI WAN HO</text>
-                            <circle cx="602" cy="222" r="4" fill="#94a3b8"/><text x="588" y="216" text-anchor="end">TST</text>
-                            <circle cx="642" cy="212" r="3.5" fill="#94a3b8"/><text x="642" y="202" text-anchor="middle">HUNG HOM</text>
-                            <circle cx="672" cy="198" r="3.5" fill="#94a3b8"/><text x="672" y="187" text-anchor="middle">KOWLOON CITY</text>
-                            <circle cx="722" cy="204" r="3.5" fill="#94a3b8"/><text x="735" y="194">KWUN TONG / KAI TAK</text>
-                            <circle cx="765" cy="225" r="3.5" fill="#94a3b8"/><text x="775" y="228">SAM KA TSUEN</text>
-                            <circle cx="612" cy="336" r="4" fill="#94a3b8"/><text x="622" y="346">ABERDEEN</text>
-                            <circle cx="565" cy="382" r="4" fill="#10b981"/><text x="553" y="385" text-anchor="end">YUNG SHUE WAN</text>
-                            <circle cx="585" cy="422" r="4" fill="#10b981"/><text x="600" y="426">SOK KWU WAN</text>
-                            <circle cx="430" cy="252" r="4" fill="#10b981"/><text x="422" y="244" text-anchor="end">DISCOVERY BAY</text>
-                            <circle cx="468" cy="272" r="4" fill="#10b981"/><text x="482" y="275">PENG CHAU</text>
-                            <circle cx="392" cy="292" r="4" fill="#10b981"/><text x="382" y="295" text-anchor="end">MUI WO</text>
-                            <circle cx="425" cy="390" r="4.5" fill="#10b981"/><text x="425" y="416" text-anchor="middle">CHEUNG CHAU</text>
-                            <circle cx="468" cy="192" r="4" fill="#94a3b8"/><text x="468" y="177" text-anchor="middle">MA WAN</text>
-                            <circle cx="505" cy="156" r="4" fill="#94a3b8"/><text x="515" y="148">TSUEN WAN</text>
-                            <circle cx="305" cy="152" r="4" fill="#94a3b8"/><text x="305" y="140" text-anchor="middle">TUEN MUN</text>
-                            <circle cx="325" cy="248" r="4.5" fill="#00f2ff"/><text x="325" y="264" fill="#00f2ff" text-anchor="middle">TUNG CHUNG / SKYPIER</text>
-                            <circle cx="222" cy="332" r="4" fill="#94a3b8"/><text x="208" y="336" text-anchor="end">TAI O</text>
-                            <circle cx="155" cy="95" r="5" fill="#00f2ff"/><text x="155" y="114" fill="#00f2ff" text-anchor="middle">SHEKOU / SZX AIRPORT</text>
-                            <circle cx="115" cy="395" r="5" fill="#00f2ff"/><text x="115" y="382" fill="#00f2ff" text-anchor="middle">MACAU / ZHUHAI</text>
-                        </g>
-                    </svg>
-
-                    <!-- SPEC PANEL -->
-                    <div class="mt-5 pt-5 border-t border-zinc-800 grid lg:grid-cols-12 gap-6 items-center">
-                        <div class="lg:col-span-4">
-                            <span id="spec-cat-badge" class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-700">
-                                OUTLYING ISLANDS CORRIDOR
-                            </span>
-                            <h3 id="spec-route-name" class="text-xl font-mono font-bold text-white mt-1.5">
-                                Central ⟷ Cheung Chau
-                            </h3>
-                            <p id="spec-notes" class="text-xs text-zinc-400 mt-2 leading-relaxed">
-                                Replaces both slow 55-min displacement vessels and 35-min diesel fast ferries with a 20-minute hydrofoil run. Off-peak D5-Freighter variant carries island supermarket pallets and municipal freight.
-                            </p>
-                        </div>
-
-                        <div class="lg:col-span-8 grid sm:grid-cols-4 gap-3 font-mono">
-                            <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800/90">
-                                <span class="text-[9.5px] text-zinc-500 block uppercase" data-i18n="sp_lbl_vessel">ASSIGNED VESSEL</span>
-                                <span id="spec-vessel" class="text-base font-bold text-tech-cyan mt-1 block">BAYWING-D5</span>
-                                <span id="spec-dist-speed" class="text-[10.5px] text-zinc-400 mt-0.5 block">10.2 NM @ 34 KT</span>
-                            </div>
-                            <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800/90">
-                                <span class="text-[9.5px] text-zinc-500 block uppercase" data-i18n="sp_lbl_time">TRANSIT TIME</span>
-                                <span id="spec-time" class="text-base font-bold text-white mt-1 block">20 mins</span>
-                                <span id="spec-time-sub" class="text-[10.5px] text-tech-emerald mt-0.5 block">vs 35–55m Diesel</span>
-                            </div>
-                            <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800/90">
-                                <span class="text-[9.5px] text-zinc-500 block uppercase" data-i18n="sp_lbl_kwh">ENERGY &amp; BERTH CHARGE</span>
-                                <span id="spec-energy" class="text-base font-bold text-white mt-1 block">310 kWh / 9m</span>
-                                <span id="spec-charger" class="text-[10.5px] text-zinc-400 mt-0.5 block">2.5 MW BESS (800kW LV)</span>
-                            </div>
-                            <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800/90">
-                                <span class="text-[9.5px] text-zinc-500 block uppercase" data-i18n="sp_imp_1">SAVINGS / VESSEL</span>
-                                <span id="spec-save-money" class="text-base font-bold text-tech-emerald mt-1 block">$0.87M/yr</span>
-                                <span id="spec-co2" class="text-[10.5px] text-zinc-400 mt-0.5 block">2,450 T CO₂/yr</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ROUTE DIRECTORY -->
-                <div class="data-card rounded-xl overflow-hidden">
-                    <div class="px-5 py-3.5 bg-zinc-950 border-b border-zinc-800 flex justify-between items-center font-mono text-xs">
-                        <span class="text-zinc-300 uppercase tracking-wider" data-i18n="tbl28_hdr">
-                            ROUTE SPECIFICATION DIRECTORY (SELECT ANY ROW TO INSPECT ON CHART)
-                        </span>
-                        <span class="text-zinc-500">
-                            <span id="route-count-label" class="text-white font-bold">28</span> <span data-i18n="tbl28_routes">Corridors</span>
-                        </span>
-                    </div>
-                    <div class="divide-y divide-zinc-800/60 max-h-[460px] overflow-y-auto" id="routes-table-body"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 7: VC FUNDING & CAPITALIZATION STRATEGY (#funding) -->
-        <section id="funding" class="py-20 md:py-28 bg-[#0c0e12] border-b border-zinc-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl mb-12">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-tech-emerald/10 border border-tech-emerald/30 text-tech-emerald font-mono text-xs mb-2" data-i18n="sec6_tag">
-                        06. VC FUNDING &amp; PUBLIC-PRIVATE CAPITALIZATION STRATEGY
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase" data-i18n="sec6_title">
-                        93.5% Non-Dilutive Leverage &amp; Staged VC Architecture
-                    </h2>
-                    <p class="text-sm text-zinc-400 mt-3 leading-relaxed" data-i18n="sec6_desc">
-                        Our staged capital stack uses 93.5% non-dilutive HKSTP and ITF grants for Phase 0–1 IP creation, then unlocks 1:1 ITF Enterprise Support Scheme (ESS) co-matching for Phase 2 (D2) VC syndicate investors.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div class="lg:col-span-7 data-card rounded-xl overflow-hidden">
-                        <div class="p-6 bg-zinc-950 border-b border-zinc-800 flex flex-wrap justify-between items-center gap-4">
-                            <div>
-                                <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-400 block mb-1" data-i18n="p0_table_sub">PHASE 0–1 (18-MONTH INCUBATION): SIL, HIL &amp; D1 PROTOTYPE</span>
-                                <h3 class="text-lg font-bold text-white" data-i18n="p0_table_title">Compliance-Audited R&amp;D Budget Breakdown</h3>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-[10px] font-mono text-zinc-500 block" data-i18n="p0_total_label">TOTAL PHASE 0 BUDGET</span>
-                                <span class="text-xl font-mono font-bold text-tech-emerald" data-i18n="p0_total_val">HK$ 3,198,000</span>
-                            </div>
-                        </div>
-
-                        <div class="divide-y divide-zinc-800/70 text-xs">
-                            <div class="p-4 flex justify-between items-center gap-4">
-                                <div><h4 class="font-semibold text-white" data-i18n="b_cat1">01. R&amp;D Engineering Talent (ITF RTH Subsidized)</h4><p class="text-zinc-400 mt-0.5" data-i18n="b_desc1">2x Full-Time Control Systems &amp; Marine Mechatronics Engineers (100% covered via ITF RTH)</p></div>
-                                <div class="font-mono font-bold text-white shrink-0" data-i18n="b_val1">HK$ 1,450,000</div>
-                            </div>
-                            <div class="p-4 flex justify-between items-center gap-4">
-                                <div><h4 class="font-semibold text-white" data-i18n="b_cat2">02. Simulation Software &amp; Multi-Physics Cloud</h4><p class="text-zinc-400 mt-0.5" data-i18n="b_desc2">MATLAB/Simulink Control Toolboxes, Star-CCM+ / ANSYS CFD licenses, Gazebo/ROS2 compute</p></div>
-                                <div class="font-mono font-bold text-white shrink-0" data-i18n="b_val2">HK$ 280,000</div>
-                            </div>
-                            <div class="p-4 flex justify-between items-center gap-4">
-                                <div><h4 class="font-semibold text-white" data-i18n="b_cat3">03. HIL Benchtop &amp; D1 Avionics/Sub-Scale Rig</h4><p class="text-zinc-400 mt-0.5" data-i18n="b_desc3">NVIDIA Jetson Orin Nano, dual STM32H7 ECUs, SBG IMU, LiDAR sensors &amp; carbon T-foil rig</p></div>
-                                <div class="font-mono font-bold text-white shrink-0" data-i18n="b_val3">HK$ 320,000</div>
-                            </div>
-                            <div class="p-4 flex justify-between items-center gap-4 bg-zinc-950/60">
-                                <div><h4 class="font-semibold text-white" data-i18n="b_cat4">04. Systems Architecture, Project Management &amp; Operational Runway</h4><p class="text-zinc-400 mt-0.5" data-i18n="b_desc4">Principal Systems Architect leadership, HKE/HKMD regulatory interfacing &amp; 18-mo runway</p></div>
-                                <div class="font-mono font-bold text-tech-emerald shrink-0" data-i18n="b_val4">HK$ 720,000</div>
-                            </div>
-                            <div class="p-4 flex justify-between items-center gap-4">
-                                <div><h4 class="font-semibold text-white" data-i18n="b_cat5">05. Intellectual Property &amp; Freedom-to-Operate</h4><p class="text-zinc-400 mt-0.5" data-i18n="b_desc5">PCT &amp; regional patent filings for 100Hz active foil stabilization &amp; BESS telemetry (90% PAG)</p></div>
-                                <div class="font-mono font-bold text-white shrink-0" data-i18n="b_val5">HK$ 278,000</div>
-                            </div>
-                            <div class="p-4 flex justify-between items-center gap-4">
-                                <div><h4 class="font-semibold text-white" data-i18n="b_cat6">06. HKSTP Lab Setup, Marine Insurance &amp; Tolo Trials</h4><p class="text-zinc-400 mt-0.5" data-i18n="b_desc6">Science Park bench space, third-party marine test insurance, and Tolo Harbour slipway logistics</p></div>
-                                <div class="font-mono font-bold text-white shrink-0" data-i18n="b_val6">HK$ 150,000</div>
-                            </div>
-                        </div>
-
-                        <div class="p-5 bg-zinc-950 border-t border-zinc-800 flex flex-wrap justify-between items-center gap-4">
-                            <div class="max-w-md">
-                                <span class="font-mono text-[10px] font-bold uppercase text-tech-emerald block" data-i18n="nd_badge">93.5% NON-DILUTIVE COVERAGE RATIO</span>
-                                <h4 class="text-sm font-bold text-white mt-0.5" data-i18n="nd_title">Net Unsubsidized Equity Gap: Only HK$ 208,000 (6.5%)</h4>
-                                <p class="text-xs text-zinc-400 mt-1" data-i18n="nd_desc">Public grants reimburse HK$ 2,990,000 of the HK$ 3,198,000 budget. Angel capital serves primarily as a low-risk working-capital reimbursement float.</p>
-                            </div>
-                            <div class="font-mono text-right bg-[#11141b] px-4 py-2.5 rounded border border-zinc-800">
-                                <div class="text-[10px] text-zinc-500" data-i18n="nd_stat_label">PUBLIC GRANT STACK</div>
-                                <div class="text-base font-bold text-white" data-i18n="nd_stat_val">HK$ 2.99M / 3.20M</div>
-                                <div class="text-[10px] text-tech-cyan" data-i18n="nd_stat_sub">15.4x Equity Leverage</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 space-y-6">
-                        <div class="data-card rounded-xl p-6">
-                            <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-zinc-300 mb-4" data-i18n="stack_title">
-                                LEVERAGED PUBLIC CAPITAL STACK (PHASE 0–1)
-                            </h3>
-                            <div class="space-y-3 text-xs">
-                                <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800">
-                                    <div class="flex justify-between font-mono mb-1"><span class="font-bold text-white" data-i18n="g1_name">HKSTP Incu-Tech Programme</span><span class="text-tech-emerald font-bold" data-i18n="g1_val">HK$ 1,290,000</span></div>
-                                    <p class="text-zinc-400" data-i18n="g1_desc">Direct grant &amp; subsidy covering lab rent, HIL hardware tooling, and R&amp;D milestones.</p>
-                                </div>
-                                <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800">
-                                    <div class="flex justify-between font-mono mb-1"><span class="font-bold text-white" data-i18n="g2_name">ITF Research Talent Hub (RTH)</span><span class="text-tech-emerald font-bold" data-i18n="g2_val">HK$ 1,450,000</span></div>
-                                    <p class="text-zinc-400" data-i18n="g2_desc">100% salary reimbursement for 2 full-time control &amp; mechatronics engineers.</p>
-                                </div>
-                                <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800">
-                                    <div class="flex justify-between font-mono mb-1"><span class="font-bold text-white" data-i18n="g3_name">Patent Application Grant (PAG)</span><span class="text-tech-emerald font-bold" data-i18n="g3_val">HK$ 250,000</span></div>
-                                    <p class="text-zinc-400" data-i18n="g3_desc">Covers 90% of up to HK$ 278k in PCT and regional patent filings.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="data-card rounded-xl p-6">
-                            <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-zinc-300 mb-4" data-i18n="vc_roadmap_title">
-                                Staged Private VC &amp; Green Lease Tranches
-                            </h4>
-                            <div class="space-y-3 text-xs">
-                                <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800">
-                                    <div class="font-mono font-bold text-white mb-0.5" data-i18n="tranche1_title">Tranche 1 (Now): HK$ 1.5M – 2.0M Angel Float</div>
-                                    <p class="text-zinc-400" data-i18n="tranche1_desc">Covers the HK$ 208k net gap + working-capital float ahead of HKSTP/ITF reimbursement cycles.</p>
-                                </div>
-                                <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800">
-                                    <div class="font-mono font-bold text-white mb-0.5" data-i18n="tranche2_title">Tranche 2 (Month 12): HK$ 10M Seed + HK$ 10M ITF ESS</div>
-                                    <p class="text-zinc-400" data-i18n="tranche2_desc">1:1 matching via HK Innovation &amp; Technology Fund (ESS) to build the BAYWING-D2 and Sheung Wan 500 kW BESS charger.</p>
-                                </div>
-                                <div class="p-3.5 rounded bg-zinc-950 border border-zinc-800">
-                                    <div class="font-mono font-bold text-white mb-0.5" data-i18n="tranche3_title">Tranche 3 (Month 26+): Series A &amp; Maritime Green Lease</div>
-                                    <p class="text-zinc-400" data-i18n="tranche3_desc">Scales D3–D5 &amp; EF-150 fleets across all 23 HK routes and GBA corridors with green shipping finance.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 11: HKE WALKOVER TRACTION & RISK MITIGATION (#merits) -->
-        <section id="merits" class="py-20 md:py-28 bg-[#090b0f]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-14 p-6 sm:p-8 rounded-xl data-card border-l-4 border-l-tech-cyan">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                        <div class="space-y-2 max-w-3xl">
-                            <div class="text-xs font-mono text-tech-cyan uppercase tracking-wider font-bold" data-i18n="hke_badge">
-                                LIVE INFRASTRUCTURE TRACTION // HK ELECTRIC DISTRIBUTION PLANNING
-                            </div>
-                            <h3 class="text-xl font-bold text-white" data-i18n="hke_banner_title">
-                                Sheung Wan Landing No. 1 Grid Interface Walkover Scheduled (Oct 2026)
-                            </h3>
-                            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed" data-i18n="hke_banner_desc">
-                                HK Electric’s Distribution Planning Department has initiated technical feasibility review and scheduled a joint site walkover at Sheung Wan Landing No. 1 for our 250 kW – 900 kW continuous Low-Voltage (380V AC) supply profile—validating both the 500 kW charger for our BAYWING-D2 pilot and the first modular floating BESS buffer for the EF-150 without multi-year 11kV road excavations.
-                            </p>
-                        </div>
-                        <div class="shrink-0">
-                            <a href="hke-walkover-handout.html" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded bg-white hover:bg-zinc-200 text-zinc-950 font-mono text-xs font-bold transition-all">
-                                <span data-i18n="hke_btn_text">Open 1-Page HKE Walkover Brief</span>
-                                <span>→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="data-card rounded-xl p-7">
-                        <h3 class="text-base font-mono font-bold text-white uppercase mb-1" data-i18n="bull_title">Institutional Investment Merits</h3>
-                        <p class="text-xs text-zinc-500 font-mono mb-6" data-i18n="bull_sub">STRUCTURAL MOAT &amp; CAPITAL EFFICIENCY</p>
-                        <div class="space-y-4">
-                            <div class="p-4 rounded bg-zinc-950 border border-zinc-800/80">
-                                <h4 class="font-bold text-white text-xs mb-1" data-i18n="bull_1_t">1. 93.5% Non-Dilutive R&amp;D Leverage</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="bull_1_d">HK$ 2.99M of our HK$ 3.20M Phase 0–1 budget is covered by HKSTP Incu-Tech, ITF RTH, and PAG grants. Investor equity is preserved for commercial scaling.</p>
-                            </div>
-                            <div class="p-4 rounded bg-zinc-950 border border-zinc-800/80">
-                                <h4 class="font-bold text-white text-xs mb-1" data-i18n="bull_2_t">2. Froude-Scaled Physics De-Risking (Fn = 1.17)</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="bull_2_d">Proving 100Hz active flap stabilization on the 3.56m D1 in Tolo Harbour mathematically solves hydrofoil control stability before carrying passengers on the D2.</p>
-                            </div>
-                            <div class="p-4 rounded bg-zinc-950 border border-zinc-800/80">
-                                <h4 class="font-bold text-white text-xs mb-1" data-i18n="bull_3_t">3. 78% OPEX Reduction Across All 23 HK Routes</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="bull_3_d">Decoupling the hull cuts energy burn to ~$4.90 USD/NM vs ~$22.50 USD/NM for diesel vessels, delivering a ~3.1-year payback on EV CapEx.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="data-card rounded-xl p-7">
-                        <h3 class="text-base font-mono font-bold text-white uppercase mb-1" data-i18n="risk_title">Engineering &amp; Execution Mitigations</h3>
-                        <p class="text-xs text-zinc-500 font-mono mb-6" data-i18n="risk_sub">GRID, CERTIFICATION &amp; MANUFACTURING DE-RISKING</p>
-                        <div class="space-y-4">
-                            <div class="p-4 rounded bg-zinc-950 border border-zinc-800/80">
-                                <h4 class="font-bold text-white text-xs mb-1" data-i18n="risk_1_t">1. Modular Avionics &amp; ITF RTH Engineering Team</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="risk_1_d">ITF Research Talent Hub funds 2 full-time control/mechatronics engineers from Day 1, built on modular ROS2/AUTOSAR C++ architecture and COTS hardware.</p>
-                            </div>
-                            <div class="p-4 rounded bg-zinc-950 border border-zinc-800/80">
-                                <h4 class="font-bold text-white text-xs mb-1" data-i18n="risk_2_t">2. Zero-Excavation Low-Voltage BESS Buffering</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="risk_2_d">Rather than waiting years for 11kV substations, our unidirectional BESS draws 250–900 kW continuous LV power from existing HKE transformers.</p>
-                            </div>
-                            <div class="p-4 rounded bg-zinc-950 border border-zinc-800/80">
-                                <h4 class="font-bold text-white text-xs mb-1" data-i18n="risk_3_t">3. Asset-Light OEM Manufacturing Model</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="risk_3_d">Hull layup is contracted to established Pearl River Delta (PRD) composite shipyards under DNV HSLC classification, while we retain high-margin FCS and powertrain IP.</p>
-                            </div>
+                            <span>Energy OPEX:</span><span class="text-tech-emerald font-bold">~HK$ 38.22 / NM</span>
                         </div>
                     </div>
                 </div>
@@ -978,1151 +307,11 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
+    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500 mt-auto">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span data-i18n="footer_copy">AERO-MARINE SYSTEMS LIMITED © 2026 // HONG KONG &amp; GREATER BAY AREA</span>
-            <span class="text-zinc-500" data-i18n="footer_doc">DOC REF: AM-EF150-FS-2026 (REV 5.1) | MULTI-PAGE PORTAL MASTER EDITION</span>
+            <span>AERO-MARINE SYSTEMS LIMITED © 2026 // HONG KONG &amp; GREATER BAY AREA (HKD EDITION)</span>
+            <a href="master-plan-fleet.html" class="text-tech-emerald hover:underline">Proceed to 02. 10-Year Master Plan &amp; D2–D5 Fleet Lineup →</a>
         </div>
     </footer>
-
-    <!-- TRI-LINGUAL ENGINE, HYDROGRAPHIC MAP & CALCULATOR SCRIPT -->
-    <script>
-        let currentLang = 'en';
-        let currentFilter = 'all';
-        let selectedRouteId = 'isl-1';
-
-        const currencyConfig = {
-            en: { rate: 1.0, symbol: '$', suffix: 'M', unit: 'USD', kSuffix: 'k', yr: '/yr' },
-            tc: { rate: 7.8, symbol: 'HK$', suffix: 'M', unit: 'HKD', kSuffix: 'k', yr: '/年' },
-            sc: { rate: 7.2, symbol: '¥', suffix: 'M', unit: 'RMB', kSuffix: 'k', yr: '/年' }
-        };
-
-        const i18nData = {
-            en: {
-                nav_subtitle: "10-Year Electric Maritime Master Plan",
-                nav_home: "01. Master Plan & 28 Routes",
-                nav_eng: "02. R&D & Blueprints (SIL/D1/D2/EF-150)",
-                nav_grants: "03. HKSTP / ITC ESS / Green Tech Fund / RTH",
-                nav_vc: "04. Investors & 93.5% Non-Dilutive Stack",
-                nav_grid: "05. HKE / CLP / AAHK SkyPier / CEDD",
-                nav_reg: "06. DNV Class & HKMPB Policy",
-                nav_tracker: "07. Live Stakeholder Correspondence",
-                nav_handout: "HKE Walkover Sheet ↗",
-
-                badge_hkstp: "Decarbonizing Hong Kong & GBA Ferry Transport",
-                doc_id_label: "DOC ID:",
-                hero_title: "BAYWING EF-150 EXPRESS",
-                hero_subtitle: "Active Fly-by-Wire Electric Hydrofoil Platform",
-                hero_desc: "Aero-Marine Systems is building the software-defined future of Hong Kong and GBA maritime transit. By integrating aerospace-grade 100Hz flight control algorithms with Pearl River Delta carbon-composite supply chains, the BAYWING architecture completely decouples the hull from hydrodynamic drag—slashing energy requirements by 80% and making high-speed electric passenger and cargo routes commercially unstoppable.",
-                hero_btn_vision: "10-YR 'EV ON WATER' VISION",
-                hero_btn_hk23: "ALL 23 HK ROUTES + MAP",
-                hero_btn_sil: "SIL, D1 & D2 BLUEPRINTS",
-                hero_btn_vc: "VC & GRANT STACK (93.5%)",
-                spec_title: "Flagship Operational Envelope",
-                spec_class: "150 PASSENGER CLASS",
-                spec_speed: "Target Cruise Speed",
-                unit_38: "38.0",
-                unit_knots: "KNOTS",
-                spec_speed_sub: "(70.3 km/h Foil-borne)",
-                spec_range: "Effective Operational Range",
-                unit_nm: "NM",
-                spec_range_sub: "(w/ 20% Reserve | 45 NM Max)",
-                spec_battery: "Est. Battery Capacity",
-                spec_battery_sub: "800V Marine LFP Architecture",
-                spec_turnaround: "Turnaround Target",
-                unit_mins: "MINS",
-                spec_turnaround_sub: "3.5 MW MCS + BESS Buffer",
-
-                portal_dir_title: "DEDICATED STAKEHOLDER & TECHNICAL DATA ROOM PORTALS (SELECT YOUR BRIEFING)",
-                pd_1_t: "02. R&D, SIL, D1, D2 & EF-150 Blueprints",
-                pd_1_d: "Interactive 1600×900 CAD schematics, Phase 0 MIL/SIL/HIL pipeline, Froude scaling (Fn=1.17), Tolo Harbour sea trials & full spec matrix.",
-                pd_2_t: "03. HKSTP, ITC ESS, Green Tech Fund & Universities",
-                pd_2_d: "Incu-Tech milestones, ESS 1:1 matching grant (HK$20M D2 pilot), EEB Green Tech Fund (168,000T CO₂/yr cut) & HKUST/PolyU RTH hiring.",
-                pd_3_t: "04. VC, Angel & Green Lease Data Room",
-                pd_3_d: "93.5% non-dilutive leverage (only HK$208k net equity gap on HK$3.20M Phase 0–1 budget), Tranche 1–3 capital stack & risk mitigations.",
-                pd_4_t: "05. HKE, CLP, AAHK SkyPier, CEDD & EMSD",
-                pd_4_d: "Oct 21 Sheung Wan Landing No. 1 HKE site walkover, CLP Kowloon/Lantau nodes, SkyPier 3.8 MW MCS & CEDD non-permanent BESS pontoons.",
-                pd_5_t: "06. DNV Classification & HKMPB Strategic Briefing",
-                pd_5_d: "High-Speed Craft (HSC) compliance, 800V marine LFP thermal containment, triple-redundant 100Hz RTOS software certification & HKMPB alignment.",
-                pd_6_t: "07. October 2026 Official Correspondence Log",
-                pd_6_d: "Verified email correspondence & active threads with HK Electric, Green Tech Fund (EEB), AAHK SkyPier, ITC ESS, CLP, CEDD, EMSD & DNV.",
-
-                vis_badge: "HONG KONG 2026–2036 // THE 'EV ON WATER' MASTER PLAN",
-                vis_title: "Transforming Every HK Ferry & Island Cargo Route in 10 Years",
-                vis_desc: "Just as electric cars and commercial trucks transformed Hong Kong's roads over the past decade, BAYWING is engineered to electrify 100% of Hong Kong's waterways over the next ten years. Think of our platform as an EV on water: an unsinkable, modular carbon-aluminium 'skateboard' hull packed with safe LFP marine batteries, lifted above the waves on computer-controlled hydrofoils, and recharged in 8–15 minutes via floating dockside battery buffers—carrying commuters by day and roll-on/roll-off (Ro-Ro) island freight by night.",
-                vp1_tag: "01. RADICAL EFFICIENCY",
-                vp1_val: "-78% OPEX",
-                vp1_desc: "Hydrofoils lift the hull out of the water, cutting drag by 80% and slashing energy cost from $22.50/NM to $4.90/NM.",
-                vp2_tag: "02. RAPID CHARGING",
-                vp2_val: "8–15 MIN",
-                vp2_desc: "Dockside BESS buffers trickle-charge off standard HKE LV street power and deliver megawatt DC top-ups while boarding.",
-                vp3_tag: "03. PAX + RO-RO CARGO",
-                vp3_val: "25–400 PAX",
-                vp3_desc: "Modular flat deck carries fast commuters by day and 4t–50t of silent zero-emission island freight pallets by night.",
-                vp4_tag: "04. ULTRA-SAFE & SMOOTH",
-                vp4_val: "100Hz AI",
-                vp4_desc: "Active fly-by-wire sensors adjust submerged flaps 100x/sec—eliminating seasickness, harbour wake, and black smoke.",
-                timeline_header: "10-YEAR HONG KONG & GBA MARITIME ELECTRIFICATION MASTER TIMELINE (2026–2036)",
-                tl1_yr: "YEARS 1–2 (2026–2027)",
-                tl1_title: "SIL, D1 Drone & D2 Harbour Pilot",
-                tl1_desc: "Validate 100Hz flight control in Tolo Harbour (D1), energize Sheung Wan Landing No. 1 HKE BESS charger, launch D2 on Water Taxi & Regional routes.",
-                tl2_yr: "YEARS 3–4 (2028–2029)",
-                tl2_title: "D3 & D4 Victoria Harbour + Islands",
-                tl2_desc: "Electrify all 8 Victoria Harbour crossings with D3 (120-pax) and fast Outlying Island commuter routes (Discovery Bay, Lamma, Peng Chau, Ma Wan) with D4 (220-pax).",
-                tl3_yr: "YEARS 5–6 (2030–2031)",
-                tl3_title: "D5 Heavy Liners & Cargo Freighter",
-                tl3_desc: "Deploy 400-pax D5 vessels on Central–Cheung Chau & Mui Wo trunk routes plus D5-Cargo Ro-Ro freighters for zero-emission island logistics.",
-                tl4_yr: "YEARS 7–10 (2032–2036)",
-                tl4_title: "EF-150 GBA High-Speed Network",
-                tl4_desc: "Full 3.5 MW MCS robotic charging at Sheung Wan & SkyPier. EF-150 fleet replaces legacy diesel jets across Macau, Shenzhen, Zhuhai & Nansha.",
-
-                fl_tag: "MODULAR PRODUCT ARCHITECTURE (D2 → D3 → D4 → D5 → EF-150)",
-                fl_title: "One Core Tech Stack. Five Vessel Classes Fitting Every Route.",
-                fl_desc: "Like Tesla sharing battery packs, drive units, and autopilot software across Model 3, Model Y, and Semi, BAYWING scales the exact same 800V Marine LFP modules, rim/pod drives, and 100Hz FCS across all 23 Hong Kong ferry routes and 5 GBA corridors.",
-                fl_lbl_cap: "Capacity:",
-                fl_lbl_bat: "Battery:",
-                fl_lbl_chg: "Fast Charge:",
-                fl_lbl_fit: "Routes Fit:",
-                fl_d2_sub: "Regional Shuttle & Water Taxi",
-                fl_d2_desc: "Fits regional coastal routes, Aberdeen–Lamma, DB–Peng Chau, Tsuen Wan–Ma Wan, Sai Wan Ho–Sam Ka Tsuen, and Victoria Harbour Water Taxi.",
-                fl_d2_cap: "25–40 Pax / 4t Cargo",
-                fl_d2_chg: "500 kW (6–8m)",
-                fl_d2_fit: "7 HK Routes",
-                fl_d3_sub: "Cross-Harbour Rapid Commuter",
-                fl_d3_desc: "Double-ended wide-gangway shuttle purpose-built to replace smoky diesel ferries across Victoria Harbour crossings and the Inter-Islands loop.",
-                fl_d3_cap: "100–120 Pax / 15t",
-                fl_d3_chg: "800 kW (3–5m)",
-                fl_d3_fit: "8 HK Routes",
-                fl_d4_sub: "Outlying Island Fast Hydrofoil",
-                fl_d4_desc: "High-speed commuter foil for Central to Discovery Bay, Lamma (Yung Shue Wan & Sok Kwu Wan), Peng Chau, Ma Wan, and Tuen Mun–Tai O.",
-                fl_d4_cap: "220 Pax / 25t Cargo",
-                fl_d4_chg: "1.5 MW (8–11m)",
-                fl_d4_fit: "6 HK Routes",
-                fl_d5_sub: "Heavy Island Liner & Cargo Freighter",
-                fl_d5_desc: "High-capacity trunk liner for Central–Cheung Chau & Central–Mui Wo, plus Ro-Ro Cargo Freighter variant for island trucks, pallets & freight.",
-                fl_d5_cap: "400 Pax OR 50t Cargo",
-                fl_d5_chg: "2.5 MW MCS (9m)",
-                fl_d5_fit: "2 Trunk Routes",
-                fl_ef_sub: "GBA Cross-Border Flagship",
-                fl_ef_desc: "38-knot active hydrofoil flagship replacing legacy 4,000-kW diesel waterjets across HK–Macau, Shenzhen, Zhuhai & SkyPier.",
-                fl_ef_cap: "150 VIP Pax",
-                fl_ef_chg: "3.5 MW MCS (15m)",
-                fl_ef_fit: "5+ GBA Routes",
-
-                moat_tag: "DEEP TECH MOAT & THERMODYNAMIC ECONOMICS",
-                moat_title: "Defensible OPEX Advantages",
-                moat_desc: "Legacy fast ferries rely on multi-megawatt diesel gas turbines pushing heavy displacement hulls. High marine fuel costs and escalating engine overhaul expenses compress operating margins. Our Fly-by-Wire control system enables a thermodynamic shift.",
-                p1_tag: "01. Platform Dynamics",
-                p1_metric: "80%",
-                p1_title: "Drag Reduction",
-                p1_desc: "Fully submerged T-foils lift the hull completely above the waves at 18+ knots, decoupling the vessel from hydrodynamic displacement drag.",
-                p1_sub: "Cruise Power:",
-                p1_val: "~1,050 kW",
-                p2_tag: "02. Core IP Moat",
-                p2_title: "Active FCS Loop",
-                p2_desc: "Triple-redundant Fly-by-Wire software reads IMUs and LiDAR, adjusting submerged flaps 100x/sec to neutralize Victoria Harbour wake pitch and roll.",
-                p2_sub: "Wake Wash:",
-                p2_val: "<0.15m (CEDD Safe)",
-                p3_tag: "03. Infrastructure",
-                p3_title: "Shore BESS Buffer",
-                p3_desc: "Floating/dockside BESS trickle-charges continuously off existing 300–900 kW LV municipal transformers, delivering 3.5 MW DC bursts without HV grid bottlenecks.",
-                p3_sub: "Charge Rate:",
-                p3_val: "500 kW → 3.5 MW DC",
-                p4_tag: "04. Route Yield",
-                p4_metric: "78%",
-                p4_title: "OPEX Savings",
-                p4_desc: "Direct electric pod drives yield ~$4.90 USD/NM energy costs, compared to ~$22.50 USD/NM for legacy marine gas oil turbines.",
-                p4_sub: "Energy OPEX:",
-                p4_val: "~$4.90 USD / NM",
-
-                calc_tag: "STRATEGIC ROUTE ANALYTICS",
-                calc_title: "HK & GBA Fleet OPEX Feasibility Calculator",
-                calc_desc: "Simulate the financial viability of replacing legacy diesel vessels with the BAYWING platform. Data is calibrated for HKMD COLREGs speed restrictions and 50% LFP battery Depth-of-Discharge cycles.",
-                calc_sim_tag: "INTERACTIVE FINANCIAL SIMULATOR",
-                calc_sim_title: "Fleet OPEX Projection Model",
-                calc_sim_base: "BASELINE MGO DIESEL:",
-                calc_input_1: "1. Select HK or GBA Express Route",
-                calc_input_2: "2. Active Fleet Size",
-                calc_input_2_min: "1 Unit",
-                calc_input_2_mid: "6 Units",
-                calc_input_2_max: "12 Units",
-                calc_input_3: "3. Daily Round Trips / Vessel",
-                calc_input_3_min: "2 Trips",
-                calc_input_3_mid: "8 Trips",
-                calc_input_3_max: "16 Trips",
-                calc_out_1_title: "Annual Energy Savings",
-                calc_out_1_sub: "VS Legacy Diesel Catamaran",
-                calc_out_2_title: "Est. CapEx Premium Payback",
-                calc_out_2_sub: "On EV Platform Premium Cost",
-                calc_out_3_title: "Annual CO2 Avoided",
-                calc_out_3_sub: "Metric Tons GHG / Year",
-                calc_out_4_title: "Est. BAYWING Transit Time",
-                calc_out_4_sub: "Faster & Zero Seasickness",
-                calc_bar_diesel: "Annual Energy Cost (Legacy Diesel Fleet)",
-                calc_bar_ef150: "Annual Energy Cost (BAYWING Electric Fleet)",
-
-                rm_badge: "COMPLETE HONG KONG & GBA ROUTE-BY-ROUTE ELECTRIFICATION BLUEPRINT",
-                rm_title: "All 23 HK Ferry Routes + 5 GBA Corridors: Interactive Map & Spec Sheet",
-                tab_all: "ALL ROUTES (28)",
-                tab_vh: "🏙️ Victoria Harbour Crossings (8)",
-                tab_isl: "🏝️ Outlying Islands from Central (9)",
-                tab_reg: "🌊 Regular Regional Routes (6)",
-                tab_gba: "⚡ Phase 3+ GBA Cross-Border (5)",
-                map_hdr_title: "CAD HYDROGRAPHIC CHART // HONG KONG HARBOUR, OUTLYING ISLANDS & PEARL RIVER ESTUARY",
-                map_hdr_hint: "Select any corridor below to inspect its curved marine navigation path, vessel assignment, dockside BESS power draw, and annual operating cost reduction.",
-                sp_lbl_vessel: "ASSIGNED VESSEL",
-                sp_lbl_time: "TRANSIT TIME",
-                sp_lbl_kwh: "ENERGY & BERTH CHARGE",
-                sp_imp_1: "SAVINGS / VESSEL",
-                tbl28_hdr: "ROUTE SPECIFICATION DIRECTORY (SELECT ANY ROW TO INSPECT ON CHART)",
-                tbl28_routes: "Corridors",
-
-                sec6_tag: "06. VC FUNDING & PUBLIC-PRIVATE CAPITALIZATION STRATEGY",
-                sec6_title: "93.5% Non-Dilutive Leverage & Staged VC Architecture",
-                sec6_desc: "Our staged capital stack uses 93.5% non-dilutive HKSTP and ITF grants for Phase 0–1 IP creation, then unlocks 1:1 ITF Enterprise Support Scheme (ESS) co-matching for Phase 2 (D2) VC syndicate investors.",
-                p0_table_sub: "PHASE 0–1 (18-MONTH INCUBATION): SIL, HIL & D1 PROTOTYPE",
-                p0_table_title: "Compliance-Audited R&D Budget Breakdown",
-                p0_total_label: "TOTAL PHASE 0 BUDGET",
-                p0_total_val: "HK$ 3,198,000 (~$410k USD)",
-                b_cat1: "01. R&D Engineering Talent (ITF RTH Subsidized)",
-                b_desc1: "2x Full-Time Control Systems & Marine Mechatronics Engineers (100% covered via ITF RTH)",
-                b_val1: "HK$ 1,450,000",
-                b_cat2: "02. Simulation Software & Multi-Physics Cloud",
-                b_desc2: "MATLAB/Simulink Control Toolboxes, Star-CCM+ / ANSYS CFD licenses, Gazebo/ROS2 compute",
-                b_val2: "HK$ 280,000",
-                b_cat3: "03. HIL Benchtop & D1 Avionics/Sub-Scale Rig",
-                b_desc3: "NVIDIA Jetson Orin Nano, dual STM32H7 ECUs, SBG IMU, LiDAR sensors & carbon T-foil rig",
-                b_val3: "HK$ 320,000",
-                b_cat4: "04. Systems Architecture, Project Management & Operational Runway",
-                b_desc4: "Principal Systems Architect leadership, HKE/HKMD regulatory interfacing & 18-mo runway",
-                b_val4: "HK$ 720,000",
-                b_cat5: "05. Intellectual Property & Freedom-to-Operate",
-                b_desc5: "PCT & regional patent filings for 100Hz active foil stabilization & BESS telemetry (90% PAG)",
-                b_val5: "HK$ 278,000",
-                b_cat6: "06. HKSTP Lab Setup, Marine Insurance & Tolo Trials",
-                b_desc6: "Science Park bench space, third-party marine test insurance, and Tolo Harbour slipway logistics",
-                b_val6: "HK$ 150,000",
-                nd_badge: "93.5% NON-DILUTIVE COVERAGE RATIO",
-                nd_title: "Net Unsubsidized Equity Gap: Only HK$ 208,000 (6.5%)",
-                nd_desc: "Public grants reimburse HK$ 2,990,000 of the HK$ 3,198,000 budget. Angel capital serves primarily as a low-risk working-capital reimbursement float.",
-                nd_stat_label: "PUBLIC GRANT STACK",
-                nd_stat_val: "HK$ 2.99M / 3.20M",
-                nd_stat_sub: "15.4x Equity Leverage",
-                stack_title: "LEVERAGED PUBLIC CAPITAL STACK (PHASE 0–1)",
-                g1_name: "HKSTP Incu-Tech Programme",
-                g1_val: "HK$ 1,290,000",
-                g1_desc: "Direct grant & subsidy covering lab rent, HIL hardware tooling, and R&D milestones.",
-                g2_name: "ITF Research Talent Hub (RTH)",
-                g2_val: "HK$ 1,450,000",
-                g2_desc: "100% salary reimbursement for 2 full-time control & mechatronics engineers.",
-                g3_name: "Patent Application Grant (PAG)",
-                g3_val: "HK$ 250,000",
-                g3_desc: "Covers 90% of up to HK$ 278k in PCT and regional patent filings.",
-                vc_roadmap_title: "Staged Private VC & Green Lease Tranches",
-                tranche1_title: "Tranche 1 (Now): HK$ 1.5M – 2.0M Angel Float",
-                tranche1_desc: "Covers the HK$ 208k net gap + working-capital float ahead of HKSTP/ITF reimbursement cycles.",
-                tranche2_title: "Tranche 2 (Month 12): HK$ 10M Seed + HK$ 10M ITF ESS",
-                tranche2_desc: "1:1 matching via HK Innovation & Technology Fund (ESS) to build the BAYWING-D2 and Sheung Wan 500 kW BESS charger.",
-                tranche3_title: "Tranche 3 (Month 26+): Series A & Maritime Green Lease",
-                tranche3_desc: "Scales D3–D5 & EF-150 fleets across all 23 HK routes and GBA corridors with green shipping finance.",
-
-                hke_badge: "LIVE INFRASTRUCTURE TRACTION // HK ELECTRIC DISTRIBUTION PLANNING",
-                hke_banner_title: "Sheung Wan Landing No. 1 Grid Interface Walkover Scheduled (Oct 2026)",
-                hke_banner_desc: "HK Electric’s Distribution Planning Department has initiated technical feasibility review and scheduled a joint site walkover at Sheung Wan Landing No. 1 for our 250 kW – 900 kW continuous Low-Voltage (380V AC) supply profile—validating both the 500 kW charger for our BAYWING-D2 pilot and the first modular floating BESS buffer for the EF-150 without multi-year 11kV road excavations.",
-                hke_btn_text: "Open 1-Page HKE Walkover Brief",
-                bull_title: "Institutional Investment Merits",
-                bull_sub: "STRUCTURAL MOAT & CAPITAL EFFICIENCY",
-                bull_1_t: "1. 93.5% Non-Dilutive R&D Leverage",
-                bull_1_d: "HK$ 2.99M of our HK$ 3.20M Phase 0–1 budget is covered by HKSTP Incu-Tech, ITF RTH, and PAG grants. Investor equity is preserved for commercial scaling.",
-                bull_2_t: "2. Froude-Scaled Physics De-Risking (Fn = 1.17)",
-                bull_2_d: "Proving 100Hz active flap stabilization on the 3.56m D1 in Tolo Harbour mathematically solves hydrofoil control stability before carrying passengers on the D2.",
-                bull_3_t: "3. 78% OPEX Reduction Across All 23 HK Routes",
-                bull_3_d: "Decoupling the hull cuts energy burn to ~$4.90 USD/NM vs ~$22.50 USD/NM for diesel vessels, delivering a ~3.1-year payback on EV CapEx.",
-                risk_title: "Engineering & Execution Mitigations",
-                risk_sub: "GRID, CERTIFICATION & MANUFACTURING DE-RISKING",
-                risk_1_t: "1. Modular Avionics & ITF RTH Engineering Team",
-                risk_1_d: "ITF Research Talent Hub funds 2 full-time control/mechatronics engineers from Day 1, built on modular ROS2/AUTOSAR C++ architecture and COTS hardware.",
-                risk_2_t: "2. Zero-Excavation Low-Voltage BESS Buffering",
-                risk_2_d: "Rather than waiting years for 11kV substations, our unidirectional BESS draws 250–900 kW continuous LV power from existing HKE transformers.",
-                risk_3_t: "3. Asset-Light OEM Manufacturing Model",
-                risk_3_d: "Hull layup is contracted to established Pearl River Delta (PRD) composite shipyards under DNV HSLC classification, while we retain high-margin FCS and powertrain IP.",
-                footer_copy: "AERO-MARINE SYSTEMS LIMITED © 2026 // HONG KONG & GREATER BAY AREA",
-                footer_doc: "DOC REF: AM-EF150-FS-2026 (REV 5.1) | MULTI-PAGE PORTAL MASTER EDITION"
-            },
-
-            tc: {
-                nav_subtitle: "香港及大灣區十年電動航運總體規劃",
-                nav_home: "01. 總體規劃與 28 航線",
-                nav_eng: "02. 研發與藍圖 (SIL/D1/D2/EF-150)",
-                nav_grants: "03. 科學園 / ESS / 綠色科技基金 / RTH",
-                nav_vc: "04. 創投與 93.5% 非稀釋資金",
-                nav_grid: "05. 港燈 / 中電 / 機管局 / 土拓署",
-                nav_reg: "06. DNV 船級社與海運港口局",
-                nav_tracker: "07. 官方信件與會議紀錄",
-                nav_handout: "港燈勘察簡報 ↗",
-
-                badge_hkstp: "香港及大灣區渡輪全面零碳電動化方案",
-                doc_id_label: "文件編號:",
-                hero_title: "BAYWING EF-150 高速電動水翼船",
-                hero_subtitle: "主動飛控線傳 (Fly-by-Wire) 純電水翼平台",
-                hero_desc: "Aero-Marine Systems 正在打造軟件定義的香港與大灣區水上交通未來。透過結合航空級 100Hz 主動飛控算法與珠三角碳纖維複合材料供應鏈，BAYWING 架構令船體完全脫離水面波浪阻力——大幅削減 80% 能耗，令全港高速客運與離島貨運航線實現無可匹敵的商業回報。",
-                hero_btn_vision: "十年「水上 EV」藍圖",
-                hero_btn_hk23: "全港 23 條渡輪航線地圖",
-                hero_btn_sil: "SIL、D1 及 D2 工程藍圖",
-                hero_btn_vc: "創投與政府資助 (93.5%)",
-                spec_title: "旗艦船營運性能指標",
-                spec_class: "150 座高速客輪級別",
-                spec_speed: "目標巡航航速",
-                unit_38: "38.0",
-                unit_knots: "節",
-                spec_speed_sub: "(70.3 公里/小時 水翼起飛狀態)",
-                spec_range: "有效營運航程",
-                unit_nm: "海里",
-                spec_range_sub: "(含 20% 安全備用電量 | 最大 45 海里)",
-                spec_battery: "電池系統容量",
-                spec_battery_sub: "800V 船用磷酸鐵鋰 (LFP) 架構",
-                spec_turnaround: "靠泊極速補電周轉",
-                unit_mins: "分鐘",
-                spec_turnaround_sub: "3.5 MW MCS 機械臂 + 儲能緩衝",
-
-                portal_dir_title: "專屬利益相關者與技術資料室入口（請選擇您的簡報內容）",
-                pd_1_t: "02. 研發階段、SIL、D1、D2 及 EF-150 工程藍圖",
-                pd_1_d: "互動 1600×900 CAD 圖則、第 0 階段 MIL/SIL/HIL 流水線、弗勞德縮尺 (Fn=1.17)、吐露港海試及完整規格矩陣。",
-                pd_2_t: "03. 香港科學園、創新科技署 ESS、綠色科技基金及大學",
-                pd_2_d: "培育計劃里程碑、ESS 1:1 配對資助 (HK$20M D2先導)、環境局綠色科技基金 (年減碳16.8萬噸) 及科大/理大研究人才庫招聘。",
-                pd_3_t: "04. 創投、天使輪與綠色船舶租賃數據室",
-                pd_3_d: "93.5% 非稀釋性槓桿（HK$320萬預算僅需 HK$20.8萬淨自籌）、第一至三輪融資架構及風險緩釋方案。",
-                pd_4_t: "05. 港燈、中電、機管局海天碼頭、土拓署及機電署",
-                pd_4_d: "10月21日上環一號梯台港燈現場勘察、中電九龍/大嶼山節點、機管局海天碼頭 3.5 MW MCS 及土拓署非永久浮動儲能浮橋。",
-                pd_5_t: "06. DNV 船級社認證與海運港口局戰略簡報",
-                pd_5_d: "高速船 (HSC) 合規性、800V LFP 熱控防護、三冗餘 100Hz RTOS 軟件認證及海運港口局發展對接。",
-                pd_6_t: "07. 2026年10月官方往來信件與會議紀錄日誌",
-                pd_6_d: "已驗證之電子郵件往來與港燈、綠色科技基金、機管局海天碼頭、創新科技署 ESS、中電、土拓署及 DNV 之對話紀錄。",
-
-                vis_badge: "香港 2026–2036 // 「水上 EV」十年電動化總體藍圖",
-                vis_title: "十年內全面革新香港每一條渡輪及離島貨運航線",
-                vis_desc: "正如過去十年電動私家車及商用車徹底改變香港陸路交通，BAYWING 旨在未來十年將香港水上航線 100% 電動化。請將我們的平台想像成「水上的 EV」：採用永不沉沒的模組化碳纖維/鋁合金滑板式船體、內置高安全性磷酸鐵鋰電池、由電腦控制的隱形水翼托舉飛越海浪，並透過碼頭浮動電池庫在 8–15 分鐘內極速補電——日間高速載客通勤，夜間則化身為零排放離島滾裝貨船 (Ro-Ro Cargo)。",
-                vp1_tag: "01. 極致節能減阻",
-                vp1_val: "-78% 燃料費",
-                vp1_desc: "水翼將船體托離水面減阻 80%，每海里能源成本由柴油 $22.50 美元暴降至 $4.90 美元。",
-                vp2_tag: "02. 靠岸極速快充",
-                vp2_val: "8–15 分鐘",
-                vp2_desc: "碼頭儲能庫 24 小時從港燈普通街電慢充，船隻靠岸上落客期間輸出兆瓦級直流快充。",
-                vp3_tag: "03. 客貨兩用模組化",
-                vp3_val: "25–400 座",
-                vp3_desc: "平坦甲板日間接載 25–400 名乘客，非繁忙時段可運載 4 至 50 噸離島超市物資及貨櫃。",
-                vp4_tag: "04. 100Hz 防暈船穩定",
-                vp4_val: "100Hz AI",
-                vp4_desc: "飛控系統每秒調整水下襟翼 100 次，徹底消除維港及風浪區搖晃、零黑煙、零湧浪。",
-                timeline_header: "香港及大灣區水上交通電動化十年推進時間表 (2026–2036)",
-                tl1_yr: "第 1–2 年 (2026–2027)",
-                tl1_title: "SIL 仿真、D1 測試艇及 D2 維港先導",
-                tl1_desc: "於科學園吐露港驗證 D1 100Hz 飛控，落實上環一號梯台港燈儲能充電站，投入 D2 水上的士及區域航線。",
-                tl2_yr: "第 3–4 年 (2028–2029)",
-                tl2_title: "D3 維港跨海及 D4 離島高速船隊",
-                tl2_desc: "以 D3 (120座) 全面電動化 8 條維港渡輪線，並以 D4 (220座) 升級愉景灣、南丫島、坪洲及馬灣高速航線。",
-                tl3_yr: "第 5–6 年 (2030–2031)",
-                tl3_title: "D5 大型離島客輪及純電貨船",
-                tl3_desc: "於中環至長洲及梅窩主幹線部署 400 座 D5 旗艦船，並推出 D5-Cargo 滾裝貨船取代傳統柴油貨船。",
-                tl4_yr: "第 7–10 年 (2032–2036)",
-                tl4_title: "EF-150 大灣區跨境高速網絡",
-                tl4_desc: "於港澳碼頭及海天碼頭落實 3.5 MW 自動充電臂，EF-150 全面替代港澳、深圳蛇口、珠海及南沙柴油噴射船。",
-
-                fl_tag: "模組化船隊產品線 (D2 → D3 → D4 → D5 → EF-150)",
-                fl_title: "一套核心飛控與電池架構，五款船型覆蓋全港所有航線",
-                fl_desc: "如同 Tesla 在 Model 3、Model Y 與 Semi 重卡之間共用電池模組、電驅與自動駕駛軟件，BAYWING 將同一套 800V 船用 LFP 電池、吊艙推進器與 100Hz 飛控系統按比例擴展至全港 23 條航線及 5 大跨境走廊。",
-                fl_lbl_cap: "載客/載貨:",
-                fl_lbl_bat: "電池容量:",
-                fl_lbl_chg: "極速補電:",
-                fl_d2_sub: "區域穿梭艇及水上的士",
-                fl_d2_desc: "專為香港仔至南丫島、愉景灣至坪洲、荃灣至馬灣、西灣河至三家村及維港水上的士設計。",
-                fl_d2_cap: "40 座 / 4噸",
-                fl_d2_chg: "500 kW (6分)",
-                fl_d3_sub: "維港高頻跨海渡輪",
-                fl_d3_desc: "雙頭對開闊跳板設計，專為全面替代維多利亞港 8 條跨海航線及橫水渡的老舊黑煙柴油船而設。",
-                fl_d3_cap: "120 座 / 15噸",
-                fl_d3_chg: "800 kW (4分)",
-                fl_d4_sub: "離島高速通勤水翼船",
-                fl_d4_desc: "服務中環至愉景灣、南丫島（榕樹灣/索罟灣）、坪洲、馬灣及屯門至大澳的高速水翼通勤船。",
-                fl_d4_cap: "220 座 / 25噸",
-                fl_d4_chg: "1.5 MW (8分)",
-                fl_d5_sub: "大型離島幹線客輪及滾裝貨船",
-                fl_d5_desc: "中環至長洲、中環至梅窩高載量主力船型，另設 D5-Freighter 滾裝貨運版運載離島物資及工程車。",
-                fl_d5_cap: "400 座 / 50噸",
-                fl_d5_chg: "2.5 MW MCS (9分)",
-                fl_ef_sub: "大灣區跨境高速旗艦",
-                fl_ef_desc: "38 節主動式水翼旗艦，全面取代港澳、深圳蛇口、深圳機場、珠海及南沙的高油耗柴油噴射船。",
-                fl_ef_cap: "150 尊尚座",
-                fl_ef_chg: "3.5 MW MCS (15分)",
-
-                moat_tag: "深科技護城河與熱力學經濟效益",
-                moat_title: "無可匹敵的營運成本 (OPEX) 優勢",
-                moat_desc: "傳統高速客輪依賴數兆瓦柴油燃氣輪機推動笨重排水型船體，高昂燃油及引擎大修費用嚴重壓縮利潤。我們的線傳飛控水翼系統帶來根本性的熱力學與流體力學革命。",
-                p1_tag: "01. 流體力學突破",
-                p1_metric: "80%",
-                p1_title: "興波阻力削減",
-                p1_desc: "全浸式 T 型水翼於 18 節以上將船體完全托離海面，徹底擺脫傳統船體的水動力阻力。",
-                p1_sub: "巡航功率:",
-                p1_val: "~1,050 kW",
-                p2_tag: "02. 核心專利壁壘",
-                p2_title: "主動飛控迴路",
-                p2_desc: "三冗餘線傳飛控軟件結合 IMU 與激光雷達，每秒調節水下襟翼 100 次，徹底抵消維港風浪顛簸。",
-                p2_sub: "尾浪高度:",
-                p2_val: "<0.15米 (土拓署安全)",
-                p3_tag: "03. 岸電儲能基建",
-                p3_title: "浮動儲能緩衝庫",
-                p3_desc: "浮動/岸上 BESS 24 小時從港燈現有 300–900 kW 低壓變壓器平穩取電，靠岸時輸出 3.5 MW 直流快充，免除高壓掘路瓶頸。",
-                p3_sub: "快充功率:",
-                p3_val: "500 kW → 3.5 MW DC",
-                p4_tag: "04. 航線盈利能力",
-                p4_metric: "78%",
-                p4_title: "能源成本節省",
-                p4_desc: "純電直驅吊艙每海里電費僅約 $4.90 美元，而傳統柴油噴射船高達 $22.50 美元/海里。",
-                p4_sub: "每海里電費:",
-                p4_val: "~$4.90 USD / NM",
-
-                calc_tag: "戰略航線效益模擬",
-                calc_title: "香港及大灣區船隊營運效益計算機",
-                calc_desc: "模擬以 BAYWING 純電水翼船隊取代傳統柴油客輪之財務回報。數據已計入海事處維港限速區及磷酸鐵鋰電池 50% 淺充放循環壽命。",
-                calc_sim_tag: "互動財務模擬器",
-                calc_sim_title: "船隊能源開支及回本模型",
-                calc_sim_base: "傳統船用柴油基準:",
-                calc_input_1: "1. 選擇香港或大灣區航線",
-                calc_input_2: "2. 營運船隊規模",
-                calc_input_3: "3. 每艘船每日往返班次",
-                calc_out_1_title: "每年節省燃料開支",
-                calc_out_1_sub: "對比傳統柴油雙體船隊",
-                calc_out_2_title: "電動船溢價回本期",
-                calc_out_2_sub: "靠節省油費及維修收回差價",
-                calc_out_3_title: "每年減少碳排放量",
-                calc_out_3_sub: "公噸溫室氣體 / 年",
-                calc_out_4_title: "預計單程航行時間",
-                calc_out_4_sub: "更快速且零暈船顛簸",
-                calc_bar_diesel: "傳統柴油船隊每年燃油總開支",
-                calc_bar_ef150: "BAYWING 純電船隊每年電費總開支",
-
-                rm_badge: "全港 23 條常規渡輪航線 + 5 條大灣區跨境線完整電動化藍圖",
-                rm_title: "全港 23 航線 + 大灣區走廊：互動航線圖與單線效益規格表",
-                tab_all: "全部航線 (28)",
-                tab_vh: "🏙️ 維多利亞港港內線 (8)",
-                tab_isl: "🏝️ 中環出發離島航線 (9)",
-                tab_reg: "🌊 其他常規區域航線 (6)",
-                tab_gba: "⚡ 第 3 階段大灣區跨境線 (5)",
-                map_hdr_title: "CAD 海道測量藍圖 // 維多利亞港、離島群島及珠江口水域",
-                map_hdr_hint: "點擊下方名冊內任何一條航線，即可在海圖上檢視其彎曲航道軌跡、匹配船型、岸電功率及每年節省開支。",
-                sp_lbl_vessel: "配置船型",
-                sp_lbl_time: "單程航行時間",
-                sp_lbl_kwh: "單程耗電及快充",
-                sp_imp_1: "每船每年節省油費",
-                tbl28_hdr: "航線工程規格名冊（點擊任何一行以載入海圖軌跡及數據）",
-                tbl28_routes: "條航線走廊",
-
-                sec6_tag: "06. 創投融資與公私營資本槓桿策略",
-                sec6_title: "93.5% 非稀釋性政府資助槓桿與分階段創投架構",
-                sec6_desc: "我們在第 0–1 階段利用 93.5% 非稀釋性香港科學園及創新科技署資助完成核心飛控 IP，再於第 2 階段 (D2) 啟動創新科技署 ESS 1:1 配對基金，為創投提供雙倍資金槓桿。",
-                p0_table_sub: "第 0–1 階段 (18個月孵化期)：SIL、HIL 及 D1 樣機驗證",
-                p0_table_title: "符合香港科學園審計標準之研發預算明細",
-                p0_total_label: "第 0 階段總預算",
-                p0_total_val: "HK$ 3,198,000",
-                b_cat1: "01. 研發工程人才薪酬 (ITF RTH 全額資助)",
-                b_desc1: "2名全職飛控系統及船舶機電工程師 (由創新科技署 RTH 100% 資助)",
-                b_val1: "HK$ 1,450,000",
-                b_cat2: "02. 多物理場仿真軟件及雲端算力",
-                b_desc2: "MATLAB/Simulink 控制工具箱、Star-CCM+ / ANSYS 水動力授權及雲端算力",
-                b_val2: "HK$ 280,000",
-                b_cat3: "03. HIL 硬件測試台及 D1 航電水翼組件",
-                b_desc3: "NVIDIA Jetson Orin Nano、雙 STM32H7 控制器、慣導 IMU、激光雷達及碳纖維水翼架",
-                b_val3: "HK$ 320,000",
-                b_cat4: "04. 系統架構研發、項目工程管理及營運資金儲備",
-                b_desc4: "首席系統架構師技術攻關、港燈/海事處監管對接及 18 個月企業合規營運支出",
-                b_val4: "HK$ 720,000",
-                b_cat5: "05. 知識產權佈局及專利申請 (PAG 90%資助)",
-                b_desc5: "100Hz 主動水翼穩定算法及儲能調度系統之 PCT 國際與地區專利申請",
-                b_val5: "HK$ 278,000",
-                b_cat6: "06. 科學園實驗室配置、海事保險及吐露港海試",
-                b_desc6: "科學園研發工位租賃、第三方水上測試保險及吐露港滑道測試後勤",
-                b_val6: "HK$ 150,000",
-                nd_badge: "93.5% 非稀釋性資金覆蓋率",
-                nd_title: "淨自籌股權資金缺口：僅 HK$ 208,000 (6.5%)",
-                nd_desc: "公共資助合共報銷 HK$ 2,990,000（總預算 HK$ 3,198,000）。早期天使資金主要作為低風險營運周轉過橋資金。",
-                nd_stat_label: "公共資助總額",
-                nd_stat_val: "HK$ 2.99M / 3.20M",
-                nd_stat_sub: "15.4倍 股權資金槓桿",
-                stack_title: "公共資本槓桿組合 (第 0–1 階段)",
-                g1_name: "香港科學園 Incu-Tech 創科培育計劃",
-                g1_val: "HK$ 1,290,000",
-                g1_desc: "直接資助及營運津貼，涵蓋實驗室租金、HIL 硬件設備及研發里程碑。",
-                g2_name: "創新科技署「研究人才庫」(ITF RTH)",
-                g2_val: "HK$ 1,450,000",
-                g2_desc: "由政府 100% 報銷 2 名全職飛控與機電工程師薪酬。",
-                g3_name: "專利申請資助計劃 (PAG)",
-                g3_val: "HK$ 250,000",
-                g3_desc: "資助高達 HK$ 278,000 國際及地區專利申請費用的 90%。",
-                vc_roadmap_title: "分階段私募創投与綠色船舶租賃架構",
-                tranche1_title: "第一輪 (當前)：HK$ 150萬 – 200萬 天使周轉過橋融資",
-                tranche1_desc: "覆蓋 HK$ 20.8萬淨缺口及政府資助報銷周期周轉金，啟動 SIL 及 D1 海試。",
-                tranche2_title: "第二輪 (第12個月)：HK$ 1,000萬 種子輪 + HK$ 1,000萬 ITF ESS",
-                tranche2_desc: "透過創新科技署 ESS 1:1 配對建造 BAYWING-D2 並落實上環 500 kW 儲能快充站。",
-                tranche3_title: "第三輪 (第26個月+)：A輪融資及綠色航運租賃銀團",
-                tranche3_desc: "聯同珠三角複合材料船廠及綠色航運基金，規模化部署 D3–D5 及 EF-150 船隊。",
-
-                hke_badge: "基建實質進展 // 香港電燈 (HK ELECTRIC) 配電規劃部聯合勘察",
-                hke_banner_title: "上環一號梯台岸電快充接口現場勘察已排期 (2026年10月)",
-                hke_banner_desc: "香港電燈配電規劃部已受理技術可行性評估，並定於上環一號梯台進行聯合現場勘察，審視我們 250 kW – 900 kW 持續低壓 (380V AC) 供電方案——同步驗證 D2 港內線 500 kW 快充及 EF-150 首個浮動儲能緩衝節點，免除耗時數年的 11kV 掘路工程。",
-                hke_btn_text: "打開港燈現場勘察一頁簡報",
-                bull_title: "機構投資者核心亮點",
-                bull_sub: "結構性技術護城河與資本效率",
-                bull_1_t: "1. 93.5% 非稀釋性研發槓桿",
-                bull_1_d: "首階段 HK$ 320萬預算中有 HK$ 299萬由科學園及創新科技署資助覆蓋，保護早期股權。",
-                bull_2_t: "2. 弗勞德數 (Fn = 1.17) 物理縮尺除險",
-                bull_2_d: "於吐露港驗證 3.56米 D1 的 100Hz 主動襟翼控制，在載客前徹底解決高速水翼穩定性。",
-                bull_3_t: "3. 全港 23 條航線削減 78% 能源開支",
-                bull_3_d: "船體離水減阻將每海里能耗降至 ~$4.90 美元（傳統柴油船 ~$22.50 美元），約 3.1 年收回電動船溢價。",
-                risk_title: "工程與執行風險緩釋方案",
-                risk_sub: "電網、海事認證與輕資產製造模式",
-                risk_1_t: "1. 模組化航電與 ITF RTH 工程團隊",
-                risk_1_d: "由第 1 天起透過 ITF RTH 聘請 2 名全職飛控與機電工程師，採用 ROS2/AUTOSAR 架構及商用現成硬件。",
-                risk_2_t: "2. 免掘路低壓儲能緩衝架構",
-                risk_2_d: "無需等待數年興建 11kV 變電站，單向儲能系統直接利用港燈現有變壓器 250–900 kW 低壓裕度。",
-                risk_3_t: "3. 輕資產 OEM 製造模式",
-                risk_3_d: "船體由珠三角成熟複合材料船廠按 DNV HSLC 規範代工，我們專注持有高毛利飛控軟件、水翼總成及儲能 IP。",
-                footer_copy: "AERO-MARINE SYSTEMS LIMITED © 2026 // 香港及粵港澳大灣區",
-                footer_doc: "文件編號: AM-EF150-FS-2026 (REV 5.1) | 多頁門戶主版本"
-            },
-
-            sc: {
-                nav_subtitle: "纯电主动水翼船工程架构",
-                nav_home: "01. 总体规划与 28 航线",
-                nav_eng: "02. 研发与蓝图 (SIL/D1/D2/EF-150)",
-                nav_grants: "03. 科学园 / ESS / 绿色科技基金 / RTH",
-                nav_vc: "04. 创投与 93.5% 非稀释资金",
-                nav_grid: "05. 港灯 / 中电 / 机管局 / 土拓署",
-                nav_reg: "06. DNV 船级社与海运港口局",
-                nav_tracker: "07. 官方信件与会议纪录",
-                nav_handout: "港灯勘察简报 ↗",
-
-                badge_hkstp: "香港及大湾区渡轮全面零碳电动化方案",
-                doc_id_label: "文件编号:",
-                hero_title: "BAYWING EF-150 高速电动水翼船",
-                hero_subtitle: "主动线传飞控 (Fly-by-Wire) 纯电水翼平台",
-                hero_desc: "Aero-Marine Systems 正在打造软件定义的香港与大湾区水上交通未来。通过结合航空级 100Hz 主动飞控算法与珠三角碳纤维复合材料供应链，BAYWING 架构令船体完全脱离水面波浪阻力——大幅削减 80% 能耗，令全港高速客运与离岛货运航线实现无可匹敌的商业回报。",
-                hero_btn_vision: "十年“水上 EV”蓝图",
-                hero_btn_hk23: "全港 23 条渡轮航线地图",
-                hero_btn_sil: "SIL、D1 及 D2 工程蓝图",
-                hero_btn_vc: "创投与政府资助 (93.5%)",
-                spec_title: "旗舰船运营性能指标",
-                spec_class: "150 座高速客轮级别",
-                spec_speed: "目标巡航航速",
-                unit_38: "38.0",
-                unit_knots: "节",
-                spec_speed_sub: "(70.3 公里/小时 水翼起飞状态)",
-                spec_range: "有效运营航程",
-                unit_nm: "海里",
-                spec_range_sub: "(含 20% 安全备用电量 | 最大 45 海里)",
-                spec_battery: "电池系统容量",
-                spec_battery_sub: "800V 船用磷酸铁锂 (LFP) 架构",
-                spec_turnaround: "靠泊极速补电周转",
-                unit_mins: "分钟",
-                spec_turnaround_sub: "3.5 MW MCS 机械臂 + 储能缓冲",
-
-                portal_dir_title: "专属利益相关者与技术资料室入口（请选择您的简报内容）",
-                pd_1_t: "02. 研发阶段、SIL、D1、D2 及 EF-150 工程蓝图",
-                pd_1_d: "互动 1600×900 CAD 图则、第 0 阶段 MIL/SIL/HIL 流水线、弗劳德缩尺 (Fn=1.17)、吐露港海试及完整规格矩阵。",
-                pd_2_t: "03. 香港科学园、创新科技署 ESS、绿色科技基金及大学",
-                pd_2_d: "培育计划里程碑、ESS 1:1 配对资助 (HK$20M D2先导)、环境局绿色科技基金 (年减碳16.8万吨) 及科大/理大研究人才库招聘。",
-                pd_3_t: "04. 创投、天使轮与绿色船舶租赁数据室",
-                pd_3_d: "93.5% 非稀释性杠杆（HK$320万预算仅需 HK$20.8万净自筹）、第一至三轮融资架构及风险缓释方案。",
-                pd_4_t: "05. 港灯、中电、机管局海天码头、土拓署及机电署",
-                pd_4_d: "10月21日上环一号梯台港灯现场勘察、中电九龙/大屿山节点、机管局海天码头 3.5 MW MCS 及土拓署非永久浮动储能浮桥。",
-                pd_5_t: "06. DNV 船级社认证与海运港口局战略简报",
-                pd_5_d: "高速船 (HSC) 合规性、800V LFP 热控防护、三冗余 100Hz RTOS 软件认证及海运港口局发展对接。",
-                pd_6_t: "07. 2026年10月官方往来信件与会议纪录日志",
-                pd_6_d: "已验证之电子邮件往来与港灯、绿色科技基金、机管局海天码头、创新科技署 ESS、中电、土拓署及 DNV 之对话纪录。",
-
-                vis_badge: "香港 2026–2036 // “水上 EV”十年电动化总体蓝图",
-                vis_title: "十年内全面革新香港每一条渡轮及离岛货运航线",
-                vis_desc: "正如过去十年电动汽车及商用车彻底改变香港陆路交通，BAYWING 旨在未来十年将香港水上航线 100% 电动化。请将我们的平台想象成“水上的 EV”：采用永不沉没的模块化碳纤维/铝合金滑板式船体、内置高安全性磷酸铁锂电池、由电脑控制的隐形水翼托举飞越海浪，并通过码头浮动电池库在 8–15 分钟内极速补电——日间高速载客通勤，夜间则化身为零排放离岛滚装货船 (Ro-Ro Cargo)。",
-                vp1_tag: "01. 极致节能减阻",
-                vp1_val: "-78% 燃料费",
-                vp1_desc: "水翼将船体托离水面减阻 80%，每海里能源成本由柴油 $22.50 美元暴降至 $4.90 美元。",
-                vp2_tag: "02. 靠岸极速快充",
-                vp2_val: "8–15 分钟",
-                vp2_desc: "码头储能库 24 小时从港灯普通街电慢充，船只靠岸上下客期间输出兆瓦级直流快充。",
-                vp3_tag: "03. 客货两用模块化",
-                vp3_val: "25–400 座",
-                vp3_desc: "平坦甲板日间接载 25–400 名乘客，非繁忙时段可运载 4 至 50 吨离岛超市物资及货柜。",
-                vp4_tag: "04. 100Hz 防晕船稳定",
-                vp4_val: "100Hz AI",
-                vp4_desc: "飞控系统每秒调整水下襟翼 100 次，彻底消除维港及风浪区摇晃、零黑烟、零涌浪。",
-                timeline_header: "香港及大湾区水上交通电动化十年推进时间表 (2026–2036)",
-                tl1_yr: "第 1–2 年 (2026–2027)",
-                tl1_title: "SIL 仿真、D1 测试艇及 D2 维港先导",
-                tl1_desc: "于科学园吐露港验证 D1 100Hz 飞控，落实上环一号梯台港灯储能充电站，投入 D2 水上的士及区域航线。",
-                tl2_yr: "第 3–4 年 (2028–2029)",
-                tl2_title: "D3 维港跨海及 D4 离岛高速船队",
-                tl2_desc: "以 D3 (120座) 全面电动化 8 条维港渡轮线，并以 D4 (220座) 升级愉景湾、南丫岛、坪洲及马湾高速航线。",
-                tl3_yr: "第 5–6 年 (2030–2031)",
-                tl3_title: "D5 大型离岛客轮及纯电货船",
-                tl3_desc: "于中环至长洲及梅窝主干线部署 400 座 D5 旗舰船，并推出 D5-Cargo 滚装货船取代传统柴油货船。",
-                tl4_yr: "第 7–10 年 (2032–2036)",
-                tl4_title: "EF-150 大湾区跨境高速网络",
-                tl4_desc: "于港澳码头及海天码头落实 3.5 MW 自动充电臂，EF-150 全面替代港澳、深圳蛇口、珠海及南沙柴油喷射船。",
-
-                fl_tag: "模块化船队产品线 (D2 → D3 → D4 → D5 → EF-150)",
-                fl_title: "一套核心飞控与电池架构，五款船型覆盖全港所有航线",
-                fl_desc: "如同 Tesla 在 Model 3、Model Y 与 Semi 重卡之间共用电池模组、电驱与自动驾驶软件，BAYWING 将同一套 800V 船用 LFP 电池、吊舱推进器与 100Hz 飞控系统按比例扩展至全港 23 条航线及 5 大跨境走廊。",
-                fl_lbl_cap: "载客/载货:",
-                fl_lbl_bat: "电池容量:",
-                fl_lbl_chg: "极速补电:",
-                fl_d2_sub: "区域穿梭艇及水上的士",
-                fl_d2_desc: "专为香港仔至南丫岛、愉景湾至坪洲、荃湾至马湾、西湾河至三家村及维港水上的士设计。",
-                fl_d2_cap: "40 座 / 4吨",
-                fl_d2_chg: "500 kW (6分)",
-                fl_d3_sub: "维港高频跨海渡轮",
-                fl_d3_desc: "双头对开宽跳板设计，专为全面替代维多利亚港 8 条跨海航线及横水渡的老旧黑烟柴油船而设。",
-                fl_d3_cap: "120 座 / 15吨",
-                fl_d3_chg: "800 kW (4分)",
-                fl_d4_sub: "离岛高速通勤水翼船",
-                fl_d4_desc: "服务中环至愉景湾、南丫岛（榕树湾/索罟湾）、坪洲、马湾及屯门至大澳的高速水翼通勤船。",
-                fl_d4_cap: "220 座 / 25吨",
-                fl_d4_chg: "1.5 MW (8分)",
-                fl_d5_sub: "大型离岛干线客轮及滚装货船",
-                fl_d5_desc: "中环至长洲、中环至梅窝高载量主力船型，另设 D5-Freighter 滚装货运版运载离岛物资及工程车。",
-                fl_d5_cap: "400 座 / 50吨",
-                fl_d5_chg: "2.5 MW MCS (9分)",
-                fl_ef_sub: "大湾区跨境高速旗舰",
-                fl_ef_desc: "38 节主动式水翼旗舰，全面取代港澳、深圳蛇口、深圳机场、珠海及南沙的高油耗柴油喷射船。",
-                fl_ef_cap: "150 尊尚座",
-                fl_ef_chg: "3.5 MW MCS (15分)",
-
-                moat_tag: "深科技护城河与热力学经济效益",
-                moat_title: "无可匹敌的运营成本 (OPEX) 优势",
-                moat_desc: "传统高速客轮依赖数兆瓦柴油燃气轮机推动笨重排水型船体，高昂燃油及引擎大修费用严重压缩利润。我们的线传飞控水翼系统带来根本性的热力学与流体力学革命。",
-                p1_tag: "01. 流体力学突破",
-                p1_metric: "80%",
-                p1_title: "兴波阻力削减",
-                p1_desc: "全浸式 T 型水翼于 18 节以上将船体完全托离海面，彻底摆脱传统船体的水动力阻力。",
-                p1_sub: "巡航功率:",
-                p1_val: "~1,050 kW",
-                p2_tag: "02. 核心专利壁垒",
-                p2_title: "主动飞控回路",
-                p2_desc: "三冗余线传飞控软件结合 IMU 与激光雷达，每秒调节水下襟翼 100 次，彻底抵消维港风浪颠簸。",
-                p2_sub: "尾浪高度:",
-                p2_val: "<0.15米 (土拓署安全)",
-                p3_tag: "03. 岸电储能基建",
-                p3_title: "浮动储能缓冲库",
-                p3_desc: "浮动/岸上 BESS 24 小时从港灯现有 300–900 kW 低压变压器平稳取电，靠岸时输出 3.5 MW 直流快充，免除高压挖路瓶颈。",
-                p3_sub: "快充功率:",
-                p3_val: "500 kW → 3.5 MW DC",
-                p4_tag: "04. 航线盈利能力",
-                p4_metric: "78%",
-                p4_title: "能源成本节省",
-                p4_desc: "纯电直驱吊舱每海里电费仅约 $4.90 美元，而传统柴油喷射船高达 $22.50 美元/海里。",
-                p4_sub: "每海里电费:",
-                p4_val: "~$4.90 USD / NM",
-
-                calc_tag: "战略航线效益模拟",
-                calc_title: "香港及大湾区船队运营效益计算器",
-                calc_desc: "模拟以 BAYWING 纯电水翼船队取代传统柴油客轮之财务回报。数据已计入海事处维港限速区及磷酸铁锂电池 50% 浅充放循环寿命。",
-                calc_sim_tag: "互动财务模拟器",
-                calc_sim_title: "船队能源开支及回本模型",
-                calc_sim_base: "传统船用柴油基准:",
-                calc_input_1: "1. 选择香港或大湾区航线",
-                calc_input_2: "2. 运营船队规模",
-                calc_input_3: "3. 每艘船每日往返班次",
-                calc_out_1_title: "每年节省燃料开支",
-                calc_out_1_sub: "对比传统柴油双体船队",
-                calc_out_2_title: "电动船溢价回本期",
-                calc_out_2_sub: "靠节省油费及维修收回差价",
-                calc_out_3_title: "每年减少碳排放量",
-                calc_out_3_sub: "公吨温室气体 / 年",
-                calc_out_4_title: "预计单程航行时间",
-                calc_out_4_sub: "更快速且零晕船颠簸",
-                calc_bar_diesel: "传统柴油船队每年燃油总开支",
-                calc_bar_ef150: "BAYWING 纯电船队每年电费总开支",
-
-                rm_badge: "全港 23 条常规渡轮航线 + 5 条大湾区跨境线完整电动化蓝图",
-                rm_title: "全港 23 航线 + 大湾区走廊：互动航线图与单线效益规格表",
-                tab_all: "全部航线 (28)",
-                tab_vh: "🏙️ 维多利亚港港内线 (8)",
-                tab_isl: "🏝️ 中环出发离岛航线 (9)",
-                tab_reg: "🌊 其他常规区域航线 (6)",
-                tab_gba: "⚡ 第 3 阶段大湾区跨境线 (5)",
-                map_hdr_title: "CAD 海道测量蓝图 // 维多利亚港、离岛群岛及珠江口水域",
-                map_hdr_hint: "点击下方名册内任何一条航线，即可在海图上查看其弯曲航道轨迹、匹配船型、岸电功率及每年节省开支。",
-                sp_lbl_vessel: "配置船型",
-                sp_lbl_time: "单程航行时间",
-                sp_lbl_kwh: "单程耗电及快充",
-                sp_imp_1: "每船每年节省油费",
-                tbl28_hdr: "航线工程规格名册（点击任何一行以载入海图轨迹及数据）",
-                tbl28_routes: "条航线走廊",
-
-                sec6_tag: "06. 创投融资与公私营资本杠杆策略",
-                sec6_title: "93.5% 非稀释性政府资助杠杆与分阶段创投架构",
-                sec6_desc: "我们在第 0–1 阶段利用 93.5% 非稀释性香港科学园及创新科技署资助完成核心飞控 IP，再于第 2 阶段 (D2) 启动创新科技署 ESS 1:1 配对基金，为创投提供双倍资金杠杆。",
-                p0_table_sub: "第 0–1 阶段 (18个月孵化期)：SIL、HIL 及 D1 样机验证",
-                p0_table_title: "符合香港科学园审计标准之研发预算明细",
-                p0_total_label: "第 0 阶段总预算",
-                p0_total_val: "HK$ 3,198,000",
-                b_cat1: "01. 研发工程人才薪酬 (ITF RTH 全额资助)",
-                b_desc1: "2名全职飞控系统及船舶机电工程师 (由创新科技署 RTH 100% 资助)",
-                b_val1: "HK$ 1,450,000",
-                b_cat2: "02. 多物理场仿真软件及云端算力",
-                b_desc2: "MATLAB/Simulink 控制工具箱、Star-CCM+ / ANSYS 水动力授权及云端算力",
-                b_val2: "HK$ 280,000",
-                b_cat3: "03. HIL 硬件测试台及 D1 航电水翼组件",
-                b_desc3: "NVIDIA Jetson Orin Nano、双 STM32H7 控制器、惯导 IMU、激光雷达及碳纤维水翼架",
-                b_val3: "HK$ 320,000",
-                b_cat4: "04. 系统架构研发、项目工程管理及运营资金储备",
-                b_desc4: "首席系统架构师技术攻关、港灯/海事处监管对接及 18 个月企业合规运营支出",
-                b_val4: "HK$ 720,000",
-                b_cat5: "05. 知识产权布局及专利申请 (PAG 90%资助)",
-                b_desc5: "100Hz 主动水翼稳定算法及储能调度系统之 PCT 国际与地区专利申请",
-                b_val5: "HK$ 278,000",
-                b_cat6: "06. 科学园实验室配置、海事保险及吐露港海试",
-                b_desc6: "科学园研发工位租赁、第三方水上测试保险及吐露港滑道测试后勤",
-                b_val6: "HK$ 150,000",
-                nd_badge: "93.5% 非稀释性资金覆盖率",
-                nd_title: "净自筹股权资金缺口：仅 HK$ 208,000 (6.5%)",
-                nd_desc: "公共资助合计报销 HK$ 2,990,000（总预算 HK$ 3,198,000）。早期天使资金主要作为低风险运营周转过桥资金。",
-                nd_stat_label: "公共资助总额",
-                nd_stat_val: "HK$ 2.99M / 3.20M",
-                nd_stat_sub: "15.4倍 股权资金杠杆",
-                stack_title: "公共资本杠杆组合 (第 0–1 阶段)",
-                g1_name: "香港科学园 Incu-Tech 创科培育计划",
-                g1_val: "HK$ 1,290,000",
-                g1_desc: "直接资助及运营津贴，涵盖实验室租金、HIL 硬件设备及研发里程碑。",
-                g2_name: "创新科技署“研究人才库” (ITF RTH)",
-                g2_val: "HK$ 1,450,000",
-                g2_desc: "由政府 100% 报销 2 名全职飞控与机电工程师薪酬。",
-                g3_name: "专利申请资助计划 (PAG)",
-                g3_val: "HK$ 250,000",
-                g3_desc: "资助高达 HK$ 278,000 国际及地区专利申请费用的 90%。",
-                vc_roadmap_title: "分阶段私募创投与绿色船舶租赁架构",
-                tranche1_title: "第一轮 (当前)：HK$ 150万 – 200万 天使周转过桥融资",
-                tranche1_desc: "覆盖 HK$ 20.8万净缺口及政府资助报销周期周转金，启动 SIL 及 D1 海试。",
-                tranche2_title: "第二轮 (第12个月)：HK$ 1,000万 种子轮 + HK$ 1,000万 ITF ESS",
-                tranche2_desc: "通过创新科技署 ESS 1:1 配对建造 BAYWING-D2 并落实上环 500 kW 储能快充站。",
-                tranche3_title: "第三轮 (第26个月+)：A轮融资及绿色航运租赁银团",
-                tranche3_desc: "联合珠三角复合材料船厂及绿色航运基金，规模化部署 D3–D5 及 EF-150 船队。",
-
-                hke_badge: "基建实质进展 // 香港电灯 (HK ELECTRIC) 配电规划部联合勘察",
-                hke_banner_title: "上环一号梯台岸电快充接口现场勘察已排期 (2026年10月)",
-                hke_banner_desc: "香港电灯配电规划部已受理技术可行性评估，并定于上环一号梯台进行现场勘察，审视我们 250 kW – 900 kW 持续低压 (380V AC) 供电方案——同步验证 D2 港内线 500 kW 快充及 EF-150 首个浮动储能缓冲节点，免除耗时数年的 11kV 挖路工程。",
-                hke_btn_text: "打开港灯现场勘察一页简报",
-                bull_title: "机构投资者核心亮点",
-                bull_sub: "结构性技术护城河与资本效率",
-                bull_1_t: "1. 93.5% 非稀释性研发杠杆",
-                bull_1_d: "首阶段 HK$ 320万预算中有 HK$ 299万由科学园及创新科技署资助覆盖，保护早期股权。",
-                bull_2_t: "2. 弗劳德数 (Fn = 1.17) 物理缩尺除险",
-                bull_2_d: "于吐露港验证 3.56米 D1 的 100Hz 主动襟翼控制，在载客前彻底解决高速水翼稳定性。",
-                bull_3_t: "3. 全港 23 条航线削减 78% 能源开支",
-                bull_3_d: "船体离水减阻将每海里能耗降至 ~$4.90 美元（传统柴油船 ~$22.50 美元），约 3.1 年收回电动船溢价。",
-                risk_title: "工程与执行风险缓释方案",
-                risk_sub: "电网、海事认证与轻资产制造模式",
-                risk_1_t: "1. 模块化航电与 ITF RTH 工程团队",
-                risk_1_d: "从第 1 天起通过 ITF RTH 聘请 2 名全职飞控与机电工程师，采用 ROS2/AUTOSAR 架构及商用现成硬件。",
-                risk_2_t: "2. 免挖路低压储能缓冲架构",
-                risk_2_d: "无需等待数年兴建 11kV 变电站，单向储能系统直接利用港灯现有变压器 250–900 kW 低压裕度。",
-                risk_3_t: "3. 轻资产 OEM 制造模式",
-                risk_3_d: "船体由珠三角成熟复合材料船厂按 DNV HSLC 规范代工，我们专注持有高毛利飞控软件、水翼总成及储能 IP。",
-                footer_copy: "AERO-MARINE SYSTEMS LIMITED © 2026 // 香港及粤港澳大湾区",
-                footer_doc: "文件编号: AM-EF150-FS-2026 (REV 5.1) | 多页门户主版本"
-            }
-        };
-
-        const allRoutes = [
-            {
-                id: 'vh-1', code: 'VH-01', cat: 'harbour', dist: 0.8, vessel: 'BAYWING-D3', speed: 24, kwh: 22, saveUSD: 0.38, co2: 980,
-                pathD: 'M 585 265 C 588 245, 596 235, 602 222',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'Central ⟷ Tsim Sha Tsui', cap: '120 Pax', evTime: '3 mins', dieselTime: '7 mins', chargeMin: '3m', charger: '800 kW BESS (250kW LV)', notes: 'Core cross-harbour shuttle upgraded to zero-emission silent electric propulsion, cutting transit time in half while eliminating exhaust at Central Pier 7 and TST.' },
-                tc: { catLabel: '維多利亞港走廊', name: '中環 ⟷ 尖沙咀', cap: '120 座', evTime: '3 分鐘', dieselTime: '7 分鐘', chargeMin: '3分', charger: '800 kW 儲能 (250kW 低壓)', notes: '核心過海航線升級為零排放靜音純電穿梭船，過海時間縮短一半，徹底消除中環 7 號碼頭與尖沙咀黑煙。' },
-                sc: { catLabel: '维多利亚港走廊', name: '中环 ⟷ 尖沙咀', cap: '120 座', evTime: '3 分钟', dieselTime: '7 分钟', chargeMin: '3分', charger: '800 kW 储能 (250kW 低压)', notes: '核心过海航线升级为零排放静音纯电穿梭船，过海时间缩短一半，彻底消除中环 7 号码头与尖沙咀黑烟。' }
-            },
-            {
-                id: 'vh-2', code: 'VH-02', cat: 'harbour', dist: 1.0, vessel: 'BAYWING-D3', speed: 25, kwh: 26, saveUSD: 0.44, co2: 1120,
-                pathD: 'M 640 262 C 625 245, 615 235, 602 222',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'Wan Chai ⟷ Tsim Sha Tsui', cap: '120 Pax', evTime: '3.5 mins', dieselTime: '8 mins', chargeMin: '3m', charger: '800 kW BESS (250kW LV)', notes: 'High-frequency convention and commuter link between Wan Chai Pier and TST using the standardized 300kW HKE low-voltage BESS template.' },
-                tc: { catLabel: '維多利亞港走廊', name: '灣仔 ⟷ 尖沙咀', cap: '120 座', evTime: '3.5 分鐘', dieselTime: '8 分鐘', chargeMin: '3分', charger: '800 kW 儲能 (250kW 低壓)', notes: '連接灣仔會展及尖沙咀的高頻通勤航線，直接複製上環一號梯台驗證的港燈 300kW 低壓儲能標準。' },
-                sc: { catLabel: '维多利亚港走廊', name: '湾仔 ⟷ 尖沙咀', cap: '120 座', evTime: '3.5 分钟', dieselTime: '8 分钟', chargeMin: '3分', charger: '800 kW 储能 (250kW 低压)', notes: '连接湾仔会展及尖沙咀的高频通勤航线，直接复制上环一号梯台验证的港灯 300kW 低压储能标准。' }
-            },
-            {
-                id: 'vh-3', code: 'VH-03', cat: 'harbour', dist: 1.8, vessel: 'BAYWING-D3', speed: 28, kwh: 45, saveUSD: 0.52, co2: 1340,
-                pathD: 'M 585 265 C 605 238, 625 224, 642 212',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'Central ⟷ Hung Hom', cap: '100 Pax', evTime: '4.5 mins', dieselTime: '16 mins', chargeMin: '4m', charger: '800 kW BESS (250kW LV)', notes: 'Reduces Central–Hung Hom crossing time from 16 minutes to 4.5 minutes with negligible wake wash inside the harbour.' },
-                tc: { catLabel: '維多利亞港走廊', name: '中環 ⟷ 紅磡', cap: '100 座', evTime: '4.5 分鐘', dieselTime: '16 分鐘', chargeMin: '4分', charger: '800 kW 儲能 (250kW 低壓)', notes: '將中環至紅磡航程由 16 分鐘大幅縮短至 4.5 分鐘，且在維港內實現極低尾浪干擾。' },
-                sc: { catLabel: '维多利亚港走廊', name: '中环 ⟷ 红磡', cap: '100 座', evTime: '4.5 分钟', dieselTime: '16 分钟', chargeMin: '4分', charger: '800 kW 储能 (250kW 低压)', notes: '将中环至红磡航程由 16 分钟大幅缩短至 4.5 分钟，且在维港内实现极低尾浪干扰。' }
-            },
-            {
-                id: 'vh-4', code: 'VH-04', cat: 'harbour', dist: 1.3, vessel: 'BAYWING-D3', speed: 26, kwh: 32, saveUSD: 0.36, co2: 920,
-                pathD: 'M 695 259 C 675 238, 658 224, 642 212',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'North Point ⟷ Hung Hom', cap: '100 Pax', evTime: '3.5 mins', dieselTime: '8 mins', chargeMin: '3m', charger: '600 kW BESS (200kW LV)', notes: 'Rapid East-Harbour commuter link replacing slow displacement vessels with quiet air-conditioned electric shuttles.' },
-                tc: { catLabel: '維多利亞港走廊', name: '北角 ⟷ 紅磡', cap: '100 座', evTime: '3.5 分鐘', dieselTime: '8 分鐘', chargeMin: '3分', charger: '600 kW 儲能 (200kW 低壓)', notes: '東維港高速通勤線，以靜音全空調純電穿梭船取代老舊慢速柴油渡輪。' },
-                sc: { catLabel: '维多利亚港走廊', name: '北角 ⟷ 红磡', cap: '100 座', evTime: '3.5 分钟', dieselTime: '8 分钟', chargeMin: '3分', charger: '600 kW 储能 (200kW 低压)', notes: '东维港高速通勤线，以静音全空调纯电穿梭船取代老旧慢速柴油渡轮。' }
-            },
-            {
-                id: 'vh-5', code: 'VH-05', cat: 'harbour', dist: 1.4, vessel: 'BAYWING-D3', speed: 26, kwh: 35, saveUSD: 0.39, co2: 990,
-                pathD: 'M 695 259 C 690 232, 680 214, 672 198',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'North Point ⟷ Kowloon City', cap: '100 Pax', evTime: '4 mins', dieselTime: '9 mins', chargeMin: '3.5m', charger: '600 kW BESS (200kW LV)', notes: 'Direct cross-harbour link connecting North Point to Kowloon City and Kai Tak residential district in 4 minutes.' },
-                tc: { catLabel: '維多利亞港走廊', name: '北角 ⟷ 九龍城', cap: '100 座', evTime: '4 分鐘', dieselTime: '9 分鐘', chargeMin: '3.5分', charger: '600 kW 儲能 (200kW 低壓)', notes: '4 分鐘直達跨海走廊，緊密連接北角與九龍城及啟德住宅區。' },
-                sc: { catLabel: '维多利亚港走廊', name: '北角 ⟷ 九龙城', cap: '100 座', evTime: '4 分钟', dieselTime: '9 分钟', chargeMin: '3.5分', charger: '600 kW 储能 (200kW 低压)', notes: '4 分钟直达跨海走廊，紧密连接北角与九龙城及启德住宅区。' }
-            },
-            {
-                id: 'vh-6', code: 'VH-06', cat: 'harbour', dist: 1.9, vessel: 'BAYWING-D3', speed: 28, kwh: 48, saveUSD: 0.55, co2: 1410,
-                pathD: 'M 695 259 C 705 234, 715 218, 722 204',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'North Point ⟷ Kwun Tong ⟷ Kai Tak', cap: '120 Pax + Bikes', evTime: '5 mins', dieselTime: '15 mins', chargeMin: '4m', charger: '800 kW BESS (250kW LV)', notes: 'Vital CBD2 commuter artery linking Hong Kong Island East with Kwun Tong Business Area and Kai Tak Sports Park.' },
-                tc: { catLabel: '維多利亞港走廊', name: '北角 ⟷ 觀塘 ⟷ 啟德', cap: '120 座 + 單車', evTime: '5 分鐘', dieselTime: '15 分鐘', chargeMin: '4分', charger: '800 kW 儲能 (250kW 低壓)', notes: '東九龍 CBD2 核心水上動脈，5 分鐘連接港島東、觀塘商貿區及啟德體育園。' },
-                sc: { catLabel: '维多利亚港走廊', name: '北角 ⟷ 观塘 ⟷ 启德', cap: '120 座 + 单车', evTime: '5 分钟', dieselTime: '15 分钟', chargeMin: '4分', charger: '800 kW 储能 (250kW 低压)', notes: '东九龙 CBD2 核心水上动脉，5 分钟连接港岛东、观塘商贸区及启德体育园。' }
-            },
-            {
-                id: 'vh-7', code: 'VH-07', cat: 'harbour', dist: 1.2, vessel: 'BAYWING-D2', speed: 26, kwh: 22, saveUSD: 0.29, co2: 740,
-                pathD: 'M 748 264 C 755 248, 760 236, 765 225',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'Sai Wan Ho ⟷ Sam Ka Tsuen', cap: '40 Pax', evTime: '3.5 mins', dieselTime: '10 mins', chargeMin: '3m', charger: '500 kW BESS (200kW LV)', notes: 'Eastern harbour gateway linking Sai Wan Ho to Lei Yue Mun / Sam Ka Tsuen district in 3.5 minutes.' },
-                tc: { catLabel: '維多利亞港走廊', name: '西灣河 ⟷ 三家村', cap: '40 座', evTime: '3.5 分鐘', dieselTime: '10 分鐘', chargeMin: '3分', charger: '500 kW 儲能 (200kW 低壓)', notes: '鯉魚門東部門戶航線，3.5 分鐘快速連接西灣河與三家村。' },
-                sc: { catLabel: '维多利亚港走廊', name: '西湾河 ⟷ 三家村', cap: '40 座', evTime: '3.5 分钟', dieselTime: '10 分钟', chargeMin: '3分', charger: '500 kW 储能 (200kW 低压)', notes: '鲤鱼门东部门户航线，3.5 分钟快速连接西湾河与三家村。' }
-            },
-            {
-                id: 'vh-8', code: 'VH-08', cat: 'harbour', dist: 1.8, vessel: 'BAYWING-D3', speed: 28, kwh: 44, saveUSD: 0.48, co2: 1220,
-                pathD: 'M 748 264 C 740 240, 730 220, 722 204',
-                en: { catLabel: 'VICTORIA HARBOUR CORRIDOR', name: 'Sai Wan Ho ⟷ Kwun Tong', cap: '100 Pax', evTime: '4.5 mins', dieselTime: '15 mins', chargeMin: '4m', charger: '600 kW BESS (250kW LV)', notes: 'Cuts East Harbour commute time by 70% while saving HK$ 3.7M/year per vessel in diesel fuel.' },
-                tc: { catLabel: '維多利亞港走廊', name: '西灣河 ⟷ 觀塘', cap: '100 座', evTime: '4.5 分鐘', dieselTime: '15 分鐘', chargeMin: '4分', charger: '600 kW 儲能 (200kW 低壓)', notes: '將東維港跨海時間縮短 70%，每艘船每年節省高達 HK$ 370萬柴油開支。' },
-                sc: { catLabel: '维多利亚港走廊', name: '西湾河 ⟷ 观塘', cap: '100 座', evTime: '4.5 分钟', dieselTime: '15 分钟', chargeMin: '4分', charger: '600 kW 储能 (200kW 低压)', notes: '将东维港跨海时间缩短 70%，每艘船每年节省高达 HK$ 370万柴油开支。' }
-            },
-            {
-                id: 'isl-1', code: 'ISL-01', cat: 'island', dist: 10.2, vessel: 'BAYWING-D5', speed: 34, kwh: 310, saveUSD: 0.87, co2: 2450,
-                pathD: 'M 585 265 C 525 255, 495 345, 425 390',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Central ⟷ Cheung Chau', cap: '400 Pax / 50t Freight', evTime: '20 mins', dieselTime: '35–55 mins', chargeMin: '9m', charger: '2.5 MW BESS (800kW LV)', notes: 'Replaces both slow 55-min displacement ferries and expensive 35-min diesel catamarans with a 20-minute hydrofoil run. Off-peak D5-Freighter variant carries Cheung Chau palletized goods.' },
-                tc: { catLabel: '中環離島走廊', name: '中環 ⟷ 長洲', cap: '400 座 / 50噸貨', evTime: '20 分鐘', dieselTime: '35–55 分鐘', chargeMin: '9分', charger: '2.5 MW 儲能 (800kW 低壓)', notes: '以 20 分鐘高速水翼航程同時取代 55 分鐘慢船及 35 分鐘柴油快船；非繁忙時段以 D5-Freighter 滾裝貨船運載長洲超市卡板及市政物資。' },
-                sc: { catLabel: '中环离岛走廊', name: '中环 ⟷ 长洲', cap: '400 座 / 50吨货', evTime: '20 分钟', dieselTime: '35–55 分钟', chargeMin: '9分', charger: '2.5 MW 储能 (800kW 低压)', notes: '以 20 分钟高速水翼航程同时取代 55 分钟慢船及 35 分钟柴油快船；非繁忙时段以 D5-Freighter 滚装货船运载长洲超市卡板及市政物资。' }
-            },
-            {
-                id: 'isl-2', code: 'ISL-02', cat: 'island', dist: 9.5, vessel: 'BAYWING-D5', speed: 34, kwh: 290, saveUSD: 0.82, co2: 2310,
-                pathD: 'M 585 265 C 520 250, 455 282, 392 292',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Central ⟷ Mui Wo (Lantau Island)', cap: '400 Pax / 50t Freight', evTime: '18 mins', dieselTime: '35–55 mins', chargeMin: '8.5m', charger: '2.5 MW BESS (800kW LV)', notes: 'Transforms South Lantau commuting into an 18-minute smooth hydrofoil transit, paired with off-peak Ro-Ro freight runs.' },
-                tc: { catLabel: '中環離島走廊', name: '中環 ⟷ 梅窩 (大嶼山)', cap: '400 座 / 50噸貨', evTime: '18 分鐘', dieselTime: '35–55 分鐘', chargeMin: '8.5分', charger: '2.5 MW 儲能 (800kW 低壓)', notes: '將大嶼山梅窩通勤縮短至 18 分鐘平穩水翼航程，並配備滾裝貨運配置支援大嶼山零排放物流。' },
-                sc: { catLabel: '中环离岛走廊', name: '中环 ⟷ 梅窝 (大屿山)', cap: '400 座 / 50吨货', evTime: '18 分钟', dieselTime: '35–55 分钟', chargeMin: '8.5分', charger: '2.5 MW 储能 (800kW 低压)', notes: '将大屿山梅窝通勤缩短至 18 分钟平稳水翼航程，并配备滚装货运配置支援大屿山零排放物流。' }
-            },
-            {
-                id: 'isl-3', code: 'ISL-03', cat: 'island', dist: 8.0, vessel: 'BAYWING-D4', speed: 35, kwh: 195, saveUSD: 0.68, co2: 1890,
-                pathD: 'M 585 265 C 540 252, 505 262, 468 272',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Central ⟷ Peng Chau', cap: '220 Pax / 20t Freight', evTime: '15 mins', dieselTime: '27–40 mins', chargeMin: '8m', charger: '1.5 MW BESS (500kW LV)', notes: '15-minute express hydrofoil service to Peng Chau, slashing fuel burn by 78% compared to legacy diesel catamarans.' },
-                tc: { catLabel: '中環離島走廊', name: '中環 ⟷ 坪洲', cap: '220 座 / 20噸貨', evTime: '15 分鐘', dieselTime: '27–40 分鐘', chargeMin: '8分', charger: '1.5 MW 儲能 (500kW 低壓)', notes: '15 分鐘極速直達坪洲，相比現有柴油雙體船節省 78% 燃料開支。' },
-                sc: { catLabel: '中环离岛走廊', name: '中环 ⟷ 坪洲', cap: '220 座 / 20吨货', evTime: '15 分钟', dieselTime: '27–40 分钟', chargeMin: '8分', charger: '1.5 MW 储能 (500kW 低压)', notes: '15 分钟极速直达坪洲，相比现有柴油双体船节省 78% 燃料开支。' }
-            },
-            {
-                id: 'isl-4', code: 'ISL-04', cat: 'island', dist: 6.2, vessel: 'BAYWING-D4', speed: 35, kwh: 150, saveUSD: 0.64, co2: 1760,
-                pathD: 'M 585 265 C 535 262, 535 335, 565 382',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Central ⟷ Yung Shue Wan (Lamma)', cap: '220 Pax / 20t Freight', evTime: '12 mins', dieselTime: '27 mins', chargeMin: '7m', charger: '1.5 MW BESS (500kW LV)', notes: 'Routes smoothly around Kennedy Town through the East Lamma Channel in 12 minutes, eliminating wave rolling with 100Hz active foils.' },
-                tc: { catLabel: '中環離島走廊', name: '中環 ⟷ 榕樹灣 (南丫島)', cap: '220 座 / 20噸貨', evTime: '12 分鐘', dieselTime: '27 分鐘', chargeMin: '7分', charger: '1.5 MW 儲能 (500kW 低壓)', notes: '繞經堅尼地城水道直達榕樹灣僅需 12 分鐘，100Hz 主動水翼徹底消除東博寮海峽風浪顛簸。' },
-                sc: { catLabel: '中环离岛走廊', name: '中环 ⟷ 榕树湾 (南丫岛)', cap: '220 座 / 20吨货', evTime: '12 分钟', dieselTime: '27 分钟', chargeMin: '7分', charger: '1.5 MW 储能 (500kW 低压)', notes: '绕经坚尼地城水道直达榕树湾仅需 12 分钟，100Hz 主动水翼彻底消除东博寮海峡风浪颠簸。' }
-            },
-            {
-                id: 'isl-5', code: 'ISL-05', cat: 'island', dist: 7.8, vessel: 'BAYWING-D4', speed: 35, kwh: 185, saveUSD: 0.61, co2: 1680,
-                pathD: 'M 585 265 C 525 262, 520 385, 585 422',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Central ⟷ Sok Kwu Wan (Lamma)', cap: '200 Pax', evTime: '15 mins', dieselTime: '30–35 mins', chargeMin: '8m', charger: '1.5 MW BESS (500kW LV)', notes: '15-minute high-speed foil transit around western Hong Kong Island to Sok Kwu Wan with zero harbour emissions.' },
-                tc: { catLabel: '中環離島走廊', name: '中環 ⟷ 索罟灣 (南丫島)', cap: '200 座', evTime: '15 分鐘', dieselTime: '30–35 分鐘', chargeMin: '8分', charger: '1.5 MW 儲能 (500kW 低壓)', notes: '15 分鐘高速水翼直達索罟灣，以零排放綠色航運帶動離島生態旅遊。' },
-                sc: { catLabel: '中环离岛走廊', name: '中环 ⟷ 索罟湾 (南丫岛)', cap: '200 座', evTime: '15 分钟', dieselTime: '30–35 分钟', chargeMin: '8分', charger: '1.5 MW 储能 (500kW 低压)', notes: '15 分钟高速水翼直达索罟湾，以零排放绿色航运带动离岛生态旅游。' }
-            },
-            {
-                id: 'isl-6', code: 'ISL-06', cat: 'island', dist: 8.2, vessel: 'BAYWING-D4', speed: 35, kwh: 200, saveUSD: 0.79, co2: 2180,
-                pathD: 'M 585 265 C 530 245, 480 245, 430 252',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Central ⟷ Discovery Bay', cap: '220 Pax', evTime: '15 mins', dieselTime: '25 mins', chargeMin: '8m', charger: '1.5 MW BESS (600kW LV)', notes: 'Zero-emission commuter flagship for Discovery Bay residents, cutting transit time to 15 minutes and saving over HK$ 6.1M/yr per vessel.' },
-                tc: { catLabel: '中環離島走廊', name: '中環 ⟷ 愉景灣', cap: '220 座', evTime: '15 分鐘', dieselTime: '25 分鐘', chargeMin: '8分', charger: '1.5 MW 儲能 (600kW 低壓)', notes: '配合愉景灣零碳社區定位的高速純電水翼船，15 分鐘直達中環，單船每年節省逾 HK$ 610萬油費。' },
-                sc: { catLabel: '中环离岛走廊', name: '中环 ⟷ 愉景湾', cap: '220 座', evTime: '15 分钟', dieselTime: '25 分钟', chargeMin: '8分', charger: '1.5 MW 储能 (600kW 低压)', notes: '配合愉景湾零碳社区定位的高速纯电水翼船，15 分钟直达中环，单船每年节省逾 HK$ 610万油费。' }
-            },
-            {
-                id: 'isl-7', code: 'ISL-07', cat: 'island', dist: 7.5, vessel: 'BAYWING-D4', speed: 35, kwh: 180, saveUSD: 0.66, co2: 1820,
-                pathD: 'M 585 265 C 520 245, 485 225, 468 192',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Central ⟷ Ma Wan (Park Island)', cap: '200 Pax', evTime: '14 mins', dieselTime: '25 mins', chargeMin: '7.5m', charger: '1.5 MW BESS (500kW LV)', notes: '14-minute curved fairway link from Central Pier 2 through Kap Shui Mun to Park Island (Ma Wan).' },
-                tc: { catLabel: '中環離島走廊', name: '中環 ⟷ 馬灣 (珀麗灣)', cap: '200 座', evTime: '14 分鐘', dieselTime: '25 分鐘', chargeMin: '7.5分', charger: '1.5 MW 儲能 (500kW 低壓)', notes: '14 分鐘由中環 2 號碼頭經汲水門水道平穩直達馬灣珀麗灣。' },
-                sc: { catLabel: '中环离岛走廊', name: '中环 ⟷ 马湾 (珀丽湾)', cap: '200 座', evTime: '14 分钟', dieselTime: '25 分钟', chargeMin: '7.5分', charger: '1.5 MW 储能 (500kW 低压)', notes: '14 分钟由中环 2 号码头经汲水门水道平稳直达马湾珀丽湾。' }
-            },
-            {
-                id: 'isl-8', code: 'ISL-08', cat: 'island', dist: 9.8, vessel: 'BAYWING-D3', speed: 30, kwh: 190, saveUSD: 0.49, co2: 1350,
-                pathD: 'M 468 272 C 435 278, 410 285, 392 292 C 395 335, 405 365, 425 390',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Peng Chau ⟷ Mui Wo ⟷ Chi Ma Wan ⟷ Cheung Chau', cap: '100 Pax + Freight', evTime: '24 mins total', dieselTime: '50 mins total', chargeMin: '9m', charger: '800 kW Mui Wo BESS', notes: 'Electrifies the Inter-Islands coastal loop with rapid top-ups at the Mui Wo and Cheung Chau BESS nodes.' },
-                tc: { catLabel: '中環離島走廊', name: '坪洲 ⟷ 梅窩 ⟷ 芝麻灣 ⟷ 長洲 (橫水渡)', cap: '100 座 + 貨物', evTime: '全程 24 分鐘', dieselTime: '全程 50 分鐘', chargeMin: '9分', charger: '800 kW 梅窩儲能站', notes: '全面電動化離島橫水渡環線，利用梅窩及長洲儲能站快速補電，全程時間縮短一半。' },
-                sc: { catLabel: '中环离岛走廊', name: '坪洲 ⟷ 梅窝 ⟷ 芝麻湾 ⟷ 长洲 (横水渡)', cap: '100 座 + 货物', evTime: '全程 24 分钟', dieselTime: '全程 50 分钟', chargeMin: '9分', charger: '800 kW 梅窝储能站', notes: '全面电动化离岛横水渡环线，利用梅窝及长洲储能站快速补电，全程时间缩短一半。' }
-            },
-            {
-                id: 'isl-9', code: 'ISL-09', cat: 'island', dist: 6.5, vessel: 'BAYWING-D2', speed: 30, kwh: 95, saveUSD: 0.41, co2: 1100,
-                pathD: 'M 585 265 C 590 230, 625 215, 675 215 C 710 215, 722 204, 695 250 C 655 260, 615 262, 585 265',
-                en: { catLabel: 'OUTLYING ISLANDS CORRIDOR', name: 'Water Taxi (Circular Harbour Loop)', cap: '40 VIP Pax', evTime: '18 mins loop', dieselTime: '45 mins loop', chargeMin: '8m', charger: '500 kW Sheung Wan / Central', notes: 'Silent panoramic electric hydrofoil loop connecting Central, West Kowloon, TST East, and Kai Tak.' },
-                tc: { catLabel: '中環離島走廊', name: '香港水上的士 (維港環線)', cap: '40 尊尚座', evTime: '18 分鐘環線', dieselTime: '45 分鐘環線', chargeMin: '8分', charger: '500 kW 上環 / 中環充電站', notes: '超靜音全景式純電水翼觀光及接駁環線，串聯中環、西九、尖東及啟德。' },
-                sc: { catLabel: '中环离岛走廊', name: '香港水上的士 (维港环线)', cap: '40 尊尚座', evTime: '18 分钟环线', dieselTime: '45 分钟环线', chargeMin: '8分', charger: '500 kW 上环 / 中环充电站', notes: '超静音全景式纯电水翼观光及接驳环线，串联中环、西九、尖东及启德。' }
-            },
-            {
-                id: 'reg-1', code: 'REG-01', cat: 'regional', dist: 14.5, vessel: 'BAYWING-D4', speed: 35, kwh: 320, saveUSD: 0.74, co2: 2040,
-                pathD: 'M 305 152 C 315 190, 322 220, 325 248 C 275 242, 215 265, 202 305 C 200 322, 210 330, 222 332',
-                en: { catLabel: 'REGIONAL COASTAL CORRIDOR', name: 'Tuen Mun ⟷ Tung Chung ⟷ Sha Lo Wan ⟷ Tai O', cap: '200 Pax', evTime: '26 mins', dieselTime: '55 mins', chargeMin: '11m', charger: '1.5 MW Tuen Mun / Tung Chung', notes: 'Curves around North and West Lantau coast in 26 minutes while eliminating underwater diesel noise in the Chinese White Dolphin marine park.' },
-                tc: { catLabel: '區域常規走廊', name: '屯門 ⟷ 東涌 ⟷ 沙螺灣 ⟷ 大澳', cap: '200 座', evTime: '26 分鐘', dieselTime: '55 分鐘', chargeMin: '11分', charger: '1.5 MW 屯門 / 東涌儲能站', notes: '沿大嶼山北岸及西岸彎曲航道行駛，航程縮短一半，並以靜音電驅保護中華白海豚海岸公園。' },
-                sc: { catLabel: '区域常规走廊', name: '屯门 ⟷ 东涌 ⟷ 沙螺湾 ⟷ 大澳', cap: '200 座', evTime: '26 分钟', dieselTime: '55 分钟', chargeMin: '11分', charger: '1.5 MW 屯门 / 东涌储能站', notes: '沿大屿山北岸及西岸弯曲航道行驶，航程缩短一半，并以静音电驱保护中华白海豚海岸公园。' }
-            },
-            {
-                id: 'reg-2', code: 'REG-02', cat: 'regional', dist: 2.8, vessel: 'BAYWING-D2', speed: 30, kwh: 42, saveUSD: 0.34, co2: 890,
-                pathD: 'M 505 156 C 492 168, 480 180, 468 192',
-                en: { catLabel: 'REGIONAL COASTAL CORRIDOR', name: 'Tsuen Wan ⟷ Ma Wan (Park Island)', cap: '40 Pax', evTime: '6 mins', dieselTime: '13 mins', chargeMin: '5m', charger: '500 kW BESS (200kW LV)', notes: '6-minute rapid shuttle between Tsuen Wan West and Park Island using the compact 15m BAYWING-D2.' },
-                tc: { catLabel: '區域常規走廊', name: '荃灣 ⟷ 馬灣 (珀麗灣)', cap: '40 座', evTime: '6 分鐘', dieselTime: '13 分鐘', chargeMin: '5分', charger: '500 kW 儲能 (200kW 低壓)', notes: '採用 15 米 BAYWING-D2，6 分鐘極速穿梭荃灣西與馬灣珀麗灣。' },
-                sc: { catLabel: '区域常规走廊', name: '荃湾 ⟷ 马湾 (珀丽湾)', cap: '40 座', evTime: '6 分钟', dieselTime: '13 分钟', chargeMin: '5分', charger: '500 kW 储能 (200kW 低压)', notes: '采用 15 米 BAYWING-D2，6 分钟极速穿梭荃湾西与马湾珀丽湾。' }
-            },
-            {
-                id: 'reg-3', code: 'REG-03', cat: 'regional', dist: 4.5, vessel: 'BAYWING-D2', speed: 32, kwh: 68, saveUSD: 0.39, co2: 1020,
-                pathD: 'M 612 336 C 590 350, 578 365, 565 382',
-                en: { catLabel: 'REGIONAL COASTAL CORRIDOR', name: 'Aberdeen ⟷ Pak Kok Tsuen ⟷ Yung Shue Wan', cap: '40 Pax + Freight', evTime: '9 mins', dieselTime: '25 mins', chargeMin: '6m', charger: '500 kW Aberdeen BESS', notes: 'Replaces noisy diesel kaito ferries with a 9-minute stabilized hydrofoil shuttle between Aberdeen and North Lamma.' },
-                tc: { catLabel: '區域常規走廊', name: '香港仔 ⟷ 北角村 ⟷ 榕樹灣 (南丫島)', cap: '40 座 + 貨物', evTime: '9 分鐘', dieselTime: '25 分鐘', chargeMin: '6分', charger: '500 kW 香港仔儲能站', notes: '以 9 分鐘平穩水翼快船取代傳統柴油街渡，快速連接港島南區與南丫島。' },
-                sc: { catLabel: '区域常规走廊', name: '香港仔 ⟷ 北角村 ⟷ 榕树湾 (南丫岛)', cap: '40 座 + 货物', evTime: '9 分钟', dieselTime: '25 分钟', chargeMin: '6分', charger: '500 kW 香港仔储能站', notes: '以 9 分钟平稳水翼快船取代传统柴油街渡，快速连接港岛南区与南丫岛。' }
-            },
-            {
-                id: 'reg-4', code: 'REG-04', cat: 'regional', dist: 4.8, vessel: 'BAYWING-D2', speed: 32, kwh: 72, saveUSD: 0.41, co2: 1080,
-                pathD: 'M 612 336 C 615 375, 605 405, 585 422',
-                en: { catLabel: 'REGIONAL COASTAL CORRIDOR', name: 'Aberdeen ⟷ Sok Kwu Wan (via Mo Tat)', cap: '40 Pax + Freight', evTime: '10 mins', dieselTime: '28 mins', chargeMin: '6.5m', charger: '500 kW Aberdeen BESS', notes: '10-minute South Hong Kong Island link to Mo Tat and Sok Kwu Wan, eliminating East Lamma Channel rolling.' },
-                tc: { catLabel: '區域常規走廊', name: '香港仔 ⟷ 索罟灣 (經模達灣)', cap: '40 座 + 貨物', evTime: '10 分鐘', dieselTime: '28 分鐘', chargeMin: '6.5分', charger: '500 kW 香港仔儲能站', notes: '10 分鐘連接香港仔、模達灣及索罟灣，徹底消除東博寮海峽橫風浪搖晃。' },
-                sc: { catLabel: '区域常规走廊', name: '香港仔 ⟷ 索罟湾 (经模达湾)', cap: '40 座 + 货物', evTime: '10 分钟', dieselTime: '28 分钟', chargeMin: '6.5分', charger: '500 kW 香港仔储能站', notes: '10 分钟连接香港仔、模达湾及索罟湾，彻底消除东博寮海峡横风浪摇晃。' }
-            },
-            {
-                id: 'reg-5', code: 'REG-05', cat: 'regional', dist: 3.2, vessel: 'BAYWING-D2', speed: 30, kwh: 48, saveUSD: 0.31, co2: 810,
-                pathD: 'M 430 252 C 442 268, 425 285, 392 292',
-                en: { catLabel: 'REGIONAL COASTAL CORRIDOR', name: 'Discovery Bay ⟷ Mui Wo', cap: '40 Pax + Bikes', evTime: '7 mins', dieselTime: '20 mins', chargeMin: '5m', charger: 'Shared DB / Mui Wo BESS', notes: '7-minute inter-Lantau zero-emission connector utilizing the Discovery Bay and Mui Wo charging hubs.' },
-                tc: { catLabel: '區域常規走廊', name: '愉景灣 ⟷ 梅窩', cap: '40 座 + 單車', evTime: '7 分鐘', dieselTime: '20 分鐘', chargeMin: '5分', charger: '共用愉景灣 / 梅窩儲能站', notes: '7 分鐘大嶼山區內零排放接駁線，直接共用愉景灣及梅窩碼頭快充設施。' },
-                sc: { catLabel: '区域常规走廊', name: '愉景湾 ⟷ 梅窝', cap: '40 座 + 单车', evTime: '7 分钟', dieselTime: '20 分钟', chargeMin: '5分', charger: '共用愉景湾 / 梅窝储能站', notes: '7 分钟大屿山区内零排放接驳线，直接共用愉景湾及梅窝码头快充设施。' }
-            },
-            {
-                id: 'reg-6', code: 'REG-06', cat: 'regional', dist: 1.6, vessel: 'BAYWING-D2', speed: 26, kwh: 24, saveUSD: 0.26, co2: 680,
-                pathD: 'M 430 252 C 448 258, 458 265, 468 272',
-                en: { catLabel: 'REGIONAL COASTAL CORRIDOR', name: 'Discovery Bay ⟷ Peng Chau / Trappist Monastery', cap: '40 Pax', evTime: '4 mins', dieselTime: '10 mins', chargeMin: '3m', charger: 'Shared DB / Peng Chau BESS', notes: 'Replaces diesel kaito service with a 4-minute silent electric shuttle hop between Discovery Bay and Peng Chau.' },
-                tc: { catLabel: '區域常規走廊', name: '愉景灣 ⟷ 坪洲 / 神樂院', cap: '40 座', evTime: '4 分鐘', dieselTime: '10 分鐘', chargeMin: '3分', charger: '共用愉景灣 / 坪洲儲能站', notes: '以 4 分鐘純電靜音穿梭艇取代傳統柴油街渡，緊密連接愉景灣、神樂院與坪洲。' },
-                sc: { catLabel: '区域常规走廊', name: '愉景湾 ⟷ 坪洲 / 神乐院', cap: '40 座', evTime: '4 分钟', dieselTime: '10 分钟', chargeMin: '3分', charger: '共用愉景湾 / 坪洲储能站', notes: '以 4 分钟纯电静音穿梭艇取代传统柴油街渡，紧密连接愉景湾、神乐院与坪洲。' }
-            },
-            {
-                id: 'gba-1', code: 'GBA-01', cat: 'gba', dist: 36.0, vessel: 'BAYWING EF-150', speed: 38, kwh: 640, saveUSD: 1.85, co2: 5120,
-                pathD: 'M 585 265 C 510 255, 475 385, 360 412 C 260 430, 185 412, 115 395',
-                en: { catLabel: 'GBA CROSS-BORDER CORRIDOR', name: 'HK Sheung Wan ⟷ Macau (Taipa / Outer Harbour)', cap: '150 VIP Pax', evTime: '55 mins', dieselTime: '60 mins', chargeMin: '15m', charger: '3.5 MW MCS (4MWh BESS)', notes: 'Flagship cross-boundary fairway routing south of Lantau Island. Uses our Sheung Wan 4.0 MWh BESS & 3.5 MW MCS arm to replace 4,000-kW diesel waterjets, saving over HK$ 14.4M/yr per vessel.' },
-                tc: { catLabel: '大灣區跨境走廊', name: '香港上環 ⟷ 澳門 (氹仔 / 外港)', cap: '150 尊尚座', evTime: '55 分鐘', dieselTime: '60 分鐘', chargeMin: '15分', charger: '3.5 MW MCS (4MWh 儲能)', notes: '經大嶼山南水道之港澳核心旗艦走廊，利用上環 4.0 MWh 儲能庫及 3.5 MW 機械臂全面取代 4,000kW 柴油噴射船，單船每年節省逾 HK$ 1,440萬油費。' },
-                sc: { catLabel: '大湾区跨境走廊', name: '香港上环 ⟷ 澳门 (氹仔 / 外港)', cap: '150 尊尚座', evTime: '55 分钟', dieselTime: '60 分钟', chargeMin: '15分', charger: '3.5 MW MCS (4MWh 储能)', notes: '经大屿山南水道之港澳核心旗舰走廊，利用上环 4.0 MWh 储能库及 3.5 MW 机械臂全面取代 4,000kW 柴油喷射船，单船每年节省逾 HK$ 1,440万油费。' }
-            },
-            {
-                id: 'gba-2', code: 'GBA-02', cat: 'gba', dist: 22.0, vessel: 'BAYWING EF-150', speed: 38, kwh: 390, saveUSD: 1.32, co2: 3650,
-                pathD: 'M 585 265 C 515 245, 485 195, 435 182 C 335 165, 235 135, 155 95',
-                en: { catLabel: 'GBA CROSS-BORDER CORRIDOR', name: 'HK Central / Sheung Wan ⟷ Shenzhen Shekou', cap: '150 VIP Pax', evTime: '38 mins', dieselTime: '50 mins', chargeMin: '11m', charger: '3.5 MW MCS (4MWh BESS)', notes: 'Routes through Kap Shui Mun and Urmston Road fairway to connect Central/Sheung Wan with Shenzhen Qianhai/Shekou in 38 minutes.' },
-                tc: { catLabel: '大灣區跨境走廊', name: '香港中上環 ⟷ 深圳蛇口', cap: '150 尊尚座', evTime: '38 分鐘', dieselTime: '50 分鐘', chargeMin: '11分', charger: '3.5 MW MCS (4MWh 儲能)', notes: '經汲水門及龍鼓水道，38 分鐘連接香港核心金融區與深圳前海/蛇口科創中心。' },
-                sc: { catLabel: '大湾区跨境走廊', name: '香港中上环 ⟷ 深圳蛇口', cap: '150 尊尚座', evTime: '38 分钟', dieselTime: '50 分钟', chargeMin: '11分', charger: '3.5 MW MCS (4MWh 储能)', notes: '经汲水门及龙鼓水道，38 分钟连接香港核心金融区与深圳前海/蛇口科创中心。' }
-            },
-            {
-                id: 'gba-3', code: 'GBA-03', cat: 'gba', dist: 25.0, vessel: 'BAYWING EF-150', speed: 38, kwh: 440, saveUSD: 1.45, co2: 4010,
-                pathD: 'M 325 248 C 285 205, 225 145, 155 95',
-                en: { catLabel: 'GBA CROSS-BORDER CORRIDOR', name: 'HKG SkyPier ⟷ Shenzhen Airport (SZX)', cap: '150 Pax + Luggage', evTime: '40 mins', dieselTime: '50 mins', chargeMin: '12m', charger: '3.5 MW SkyPier MCS', notes: 'Zero-emission air-to-sea international transfer link between Hong Kong International Airport and Shenzhen Baoan Airport.' },
-                tc: { catLabel: '大灣區跨境走廊', name: '香港機場海天碼頭 ⟷ 深圳寶安機場', cap: '150 座 + 行李艙', evTime: '40 分鐘', dieselTime: '50 分鐘', chargeMin: '12分', charger: '3.5 MW 海天碼頭 MCS', notes: '連接香港國際機場與深圳機場的零排放海天聯運國際轉機走廊。' },
-                sc: { catLabel: '大湾区跨境走廊', name: '香港机场海天码头 ⟷ 深圳宝安机场', cap: '150 座 + 行李舱', evTime: '40 分钟', dieselTime: '50 分钟', chargeMin: '12分', charger: '3.5 MW 海天码头 MCS', notes: '连接香港国际机场与深圳机场的零排放海天联运国际转机走廊。' }
-            },
-            {
-                id: 'gba-4', code: 'GBA-04', cat: 'gba', dist: 35.0, vessel: 'BAYWING EF-150', speed: 38, kwh: 620, saveUSD: 1.78, co2: 4920,
-                pathD: 'M 585 265 C 510 255, 470 375, 355 402 C 255 418, 185 405, 115 395',
-                en: { catLabel: 'GBA CROSS-BORDER CORRIDOR', name: 'HK Sheung Wan ⟷ Zhuhai Jiuzhou', cap: '150 VIP Pax', evTime: '54 mins', dieselTime: '65 mins', chargeMin: '15m', charger: '3.5 MW MCS (4MWh BESS)', notes: 'Direct CBD-to-CBD hydrofoil fairway from Sheung Wan to Zhuhai Jiuzhou Port with active 100Hz wave stabilization.' },
-                tc: { catLabel: '大灣區跨境走廊', name: '香港上環 ⟷ 珠海九洲港', cap: '150 尊尚座', evTime: '54 分鐘', dieselTime: '65 分鐘', chargeMin: '15分', charger: '3.5 MW MCS (4MWh 儲能)', notes: '由上環直達珠海九洲港的零暈船高速水翼航線，比傳統雙體船快超過 10 分鐘。' },
-                sc: { catLabel: '大湾区跨境走廊', name: '香港上环 ⟷ 珠海九洲港', cap: '150 尊尚座', evTime: '54 分钟', dieselTime: '65 分钟', chargeMin: '15分', charger: '3.5 MW MCS (4MWh 储能)', notes: '由上环直达珠海九洲港的零晕船高速水翼航线，比传统双体船快超过 10 分钟。' }
-            },
-            {
-                id: 'gba-5', code: 'GBA-05', cat: 'gba', dist: 34.0, vessel: 'BAYWING EF-150', speed: 38, kwh: 600, saveUSD: 1.72, co2: 4780,
-                pathD: 'M 325 248 C 265 210, 200 150, 155 95',
-                en: { catLabel: 'GBA CROSS-BORDER CORRIDOR', name: 'HKG SkyPier ⟷ Dongguan Humen / Guangzhou Nansha', cap: '150 Pax + Luggage', evTime: '52 mins', dieselTime: '65 mins', chargeMin: '14m', charger: '3.5 MW SkyPier MCS', notes: 'Connects Pearl River Delta manufacturing and technology hubs directly to HKIA SkyPier international departures.' },
-                tc: { catLabel: '大灣區跨境走廊', name: '香港機場海天碼頭 ⟷ 東莞虎門 / 廣州南沙', cap: '150 座 + 行李艙', evTime: '52 分鐘', dieselTime: '65 分鐘', chargeMin: '14分', charger: '3.5 MW 海天碼頭 MCS', notes: '直接連通廣州南沙及東莞製造業基地至香港國際機場禁區口岸。' },
-                sc: { catLabel: '大湾区跨境走廊', name: '香港机场海天码头 ⟷ 东莞虎门 / 广州南沙', cap: '150 座 + 行李舱', evTime: '52 分钟', dieselTime: '65 分钟', chargeMin: '14分', charger: '3.5 MW 海天码头 MCS', notes: '直接连通广州南沙及东莞制造业基地至香港国际机场禁区口岸。' }
-            }
-        ];
-
-        function formatMoneyPerBoat(usdMillions) {
-            const curr = currencyConfig[currentLang] || currencyConfig.en;
-            const val = usdMillions * curr.rate;
-            return `${curr.symbol}${val.toFixed(2)}${curr.suffix}${curr.yr}`;
-        }
-
-        function renderMapBackgroundLines(filtered) {
-            const layer = document.getElementById('map-routes-layer');
-            if (!layer) return;
-            layer.innerHTML = filtered.map(r => `
-                <path d="${r.pathD}" fill="none" stroke="#38bdf8" stroke-width="1.4" stroke-opacity="0.28" stroke-dasharray="4,3" class="cursor-pointer hover:stroke-opacity-80" onclick="selectRoute('${r.id}')"/>
-            `).join('');
-        }
-
-        function selectRoute(routeId) {
-            selectedRouteId = routeId;
-            const r = allRoutes.find(x => x.id === routeId) || allRoutes[0];
-            const loc = r[currentLang] || r.en;
-            const knotUnit = currentLang === 'en' ? 'KT' : currentLang === 'tc' ? '節' : '节';
-            const nmUnit = currentLang === 'en' ? 'NM' : '海里';
-
-            const topLabel = document.getElementById('map-top-active-label');
-            if (topLabel) topLabel.textContent = `${r.code} // ${loc.name}`;
-
-            document.getElementById('spec-cat-badge').textContent = `${r.code} // ${loc.catLabel}`;
-            document.getElementById('spec-route-name').textContent = loc.name;
-            document.getElementById('spec-vessel').textContent = r.vessel;
-            document.getElementById('spec-dist-speed').textContent = `${r.dist} ${nmUnit} @ ${r.speed} ${knotUnit} (${loc.cap})`;
-            document.getElementById('spec-time').textContent = loc.evTime;
-            document.getElementById('spec-time-sub').textContent = `vs ${loc.dieselTime} (Diesel)`;
-            document.getElementById('spec-energy').textContent = `${r.kwh} kWh / ${loc.chargeMin}`;
-            document.getElementById('spec-charger').textContent = loc.charger;
-            document.getElementById('spec-save-money').textContent = formatMoneyPerBoat(r.saveUSD);
-            document.getElementById('spec-co2').textContent = `-${r.co2.toLocaleString()} T CO₂${currencyConfig[currentLang].yr}`;
-            document.getElementById('spec-notes').textContent = loc.notes;
-
-            const activePath = document.getElementById('map-active-path');
-            const activeFlow = document.getElementById('map-active-flow');
-            if (activePath) activePath.setAttribute('d', r.pathD);
-            if (activeFlow) activeFlow.setAttribute('d', r.pathD);
-
-            document.querySelectorAll('#routes-table-body > div').forEach(row => {
-                row.classList.toggle('route-row-active', row.getAttribute('data-route-id') === routeId);
-            });
-        }
-
-        function filterRoutes(cat) {
-            currentFilter = cat;
-            ['all', 'harbour', 'island', 'regional', 'gba'].forEach(c => {
-                const btn = document.getElementById(`tab-${c}`);
-                if (btn) {
-                    btn.className = (c === cat)
-                        ? "px-4 py-2 rounded-lg bg-white text-zinc-950 font-bold transition-all"
-                        : "px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:text-white transition-all";
-                }
-            });
-
-            const filtered = cat === 'all' ? allRoutes : allRoutes.filter(r => r.cat === cat);
-            const countEl = document.getElementById('route-count-label');
-            if (countEl) countEl.textContent = filtered.length;
-
-            const nmUnit = currentLang === 'en' ? 'NM' : '海里';
-            const container = document.getElementById('routes-table-body');
-            if (container) {
-                container.innerHTML = filtered.map(r => {
-                    const loc = r[currentLang] || r.en;
-                    return `
-                        <div data-route-id="${r.id}" onclick="selectRoute('${r.id}')" class="px-5 py-3.5 cursor-pointer hover:bg-zinc-900/70 transition-colors grid grid-cols-1 md:grid-cols-12 gap-2 items-center font-mono text-xs ${r.id === selectedRouteId ? 'route-row-active' : ''}">
-                            <div class="md:col-span-5 flex items-center gap-3">
-                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-zinc-900 border border-zinc-700 text-zinc-400 shrink-0">${r.code}</span>
-                                <span class="font-bold text-white truncate">${loc.name}</span>
-                            </div>
-                            <div class="md:col-span-2 text-zinc-400 text-[11px]">
-                                ${r.dist} ${nmUnit} | ${loc.cap}
-                            </div>
-                            <div class="md:col-span-2 text-zinc-200 text-[11px] font-semibold">
-                                ${r.vessel}
-                            </div>
-                            <div class="md:col-span-2 text-zinc-300 text-[11px]">
-                                ${loc.evTime} <span class="text-zinc-500">(${loc.chargeMin} chg)</span>
-                            </div>
-                            <div class="md:col-span-1 text-right text-zinc-200 font-bold text-[11px]">
-                                ${formatMoneyPerBoat(r.saveUSD)}
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-            }
-
-            renderMapBackgroundLines(filtered);
-            if (!filtered.some(r => r.id === selectedRouteId) && filtered.length > 0) {
-                selectRoute(filtered[0].id);
-            } else {
-                selectRoute(selectedRouteId);
-            }
-        }
-
-        function setLang(lang) {
-            currentLang = lang;
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (i18nData[lang] && i18nData[lang][key]) {
-                    el.textContent = i18nData[lang][key];
-                }
-            });
-
-            ['en', 'tc', 'sc'].forEach(l => {
-                const btn = document.getElementById(`btn-lang-${l}`);
-                if (btn) {
-                    btn.className = (l === lang)
-                        ? "px-2 py-1 rounded bg-zinc-800 text-white font-semibold transition-colors"
-                        : "px-2 py-1 rounded text-zinc-500 hover:text-white transition-colors";
-                }
-            });
-
-            filterRoutes(currentFilter);
-            runRouteCalculator();
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const openIcon = document.getElementById('menu-icon-open');
-            const closeIcon = document.getElementById('menu-icon-close');
-            if (menu) menu.classList.toggle('hidden');
-            if (openIcon) openIcon.classList.toggle('hidden');
-            if (closeIcon) closeIcon.classList.toggle('hidden');
-        }
-
-        function runRouteCalculator() {
-            const routeSelect = document.getElementById('calc-route');
-            const fleetInput = document.getElementById('calc-fleet');
-            const tripsInput = document.getElementById('calc-trips');
-            if (!routeSelect || !fleetInput || !tripsInput) return;
-
-            const distances = {
-                'hk-shenzhen': 22.0,
-                'hkg-szx': 25.0,
-                'hk-macau': 36.0,
-                'hk-zhuhai': 35.0,
-                'hk-cheungchau': 10.2,
-                'hk-muiwo': 9.5,
-                'hk-db': 8.2
-            };
-
-            const distanceNM = distances[routeSelect.value] || 22.0;
-            const fleetSize = parseInt(fleetInput.value) || 4;
-            const dailyRoundTrips = parseInt(tripsInput.value) || 4;
-
-            const fleetVal = document.getElementById('calc-fleet-val');
-            const tripsVal = document.getElementById('calc-trips-val');
-            if (fleetVal) fleetVal.textContent = `${fleetSize} ${currentLang === 'en' ? 'VESSELS' : '艘船'}`;
-            if (tripsVal) tripsVal.textContent = `${dailyRoundTrips} ${currentLang === 'en' ? 'TRIPS' : '往返/日'}`;
-
-            const annualNM = distanceNM * 2 * dailyRoundTrips * fleetSize * 350;
-            const dieselCostPerNM = 22.50;
-            const electricCostPerNM = 4.90;
-
-            const annualDieselUSD = (annualNM * dieselCostPerNM) / 1e6;
-            const annualElectricUSD = (annualNM * electricCostPerNM) / 1e6;
-            const annualSavingsUSD = annualDieselUSD - annualElectricUSD;
-
-            const annualCO2Tons = Math.round(annualNM * 0.0439);
-            const totalCapexPremiumUSD = fleetSize * 3.5;
-            const paybackYears = (totalCapexPremiumUSD / Math.max(annualSavingsUSD, 0.1)).toFixed(1);
-
-            const harbourNM = Math.min(distanceNM * 0.2, 4.0);
-            const openWaterNM = Math.max(distanceNM - harbourNM, 1.0);
-            const transitMins = Math.round(((harbourNM / 12.0) + (openWaterNM / 38.0)) * 60 + 4);
-
-            const curr = currencyConfig[currentLang] || currencyConfig.en;
-            const fmtMoney = (valUSD) => `${curr.symbol}${(valUSD * curr.rate).toFixed(2)} ${curr.suffix}`;
-
-            const elSavings = document.getElementById('calc-out-savings');
-            const elPayback = document.getElementById('calc-out-payback');
-            const elCo2 = document.getElementById('calc-out-co2');
-            const elTime = document.getElementById('calc-out-time');
-            const elDieselText = document.getElementById('calc-bar-diesel-text');
-            const elEfText = document.getElementById('calc-bar-ef150-text');
-
-            if (elSavings) elSavings.textContent = fmtMoney(annualSavingsUSD);
-            if (elPayback) elPayback.textContent = `${paybackYears} ${currentLang === 'en' ? 'YRS' : '年'}`;
-            if (elCo2) elCo2.textContent = `${annualCO2Tons.toLocaleString()} T`;
-            if (elTime) elTime.textContent = `${transitMins} ${currentLang === 'en' ? 'MINS' : currentLang === 'tc' ? '分鐘' : '分钟'}`;
-            if (elDieselText) elDieselText.textContent = fmtMoney(annualDieselUSD);
-            if (elEfText) elEfText.textContent = fmtMoney(annualElectricUSD);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            filterRoutes('all');
-            selectRoute('isl-1');
-            runRouteCalculator();
-        });
-    </script>
 </body>
 </html>
-        
