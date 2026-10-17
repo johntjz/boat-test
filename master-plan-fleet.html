@@ -29,55 +29,9 @@
 </head>
 <body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
 
-    <!-- FIXED SINGLE-LINE TOP BAR -->
-    <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 gap-4">
-                <a href="index.html" class="flex items-center space-x-3 shrink-0">
-                    <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
-                        <svg class="w-4 h-4 text-tech-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    </div>
-                    <div class="flex flex-col whitespace-nowrap">
-                        <div class="flex items-center space-x-2">
-                            <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
-                            <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-emerald border border-zinc-800 rounded">10-YR PLAN &amp; FLEET</span>
-                        </div>
-                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">Modular Vessel Architecture</span>
-                    </div>
-                </a>
-
-                <nav class="hidden lg:flex items-center space-x-1.5 text-[11px] font-mono uppercase tracking-wider whitespace-nowrap">
-                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Overview</a>
-                    <a href="master-plan-fleet.html" class="px-2.5 py-1.5 rounded bg-tech-emerald/15 text-tech-emerald border border-tech-emerald/40 font-bold">02. 10-Yr Plan &amp; Fleet</a>
-                    <a href="routes-calculator.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors">03. 28 Routes &amp; OPEX</a>
-                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. R&amp;D Blueprints</a>
-                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">05. Investors</a>
-
-                    <div class="relative group">
-                        <button class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors inline-flex items-center gap-1">
-                            <span>Stakeholder Portals</span>
-                            <svg class="w-3.5 h-3.5 text-tech-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="absolute right-0 mt-1 w-64 bg-zinc-950 border border-zinc-800 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                            <a href="hkstp-itf.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-emerald">06. HKSTP / ESS / GTF / RTH</a>
-                            <a href="utilities-grid.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-cyan">07. HKE / CLP / AAHK / CEDD</a>
-                            <a href="regulatory-class.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-purple-400">08. DNV Class &amp; HKMPB</a>
-                            <a href="stakeholder-tracker.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">09. Oct 2026 Comms Log</a>
-                            <div class="border-t border-zinc-800 my-1"></div>
-                            <a href="hke-walkover-handout.html" class="block px-4 py-2 text-[11px] text-tech-cyan font-bold hover:bg-zinc-900">10. HKE Site Walkover Sheet ↗</a>
-                        </div>
-                    </div>
-                </nav>
-
-                <div class="flex items-center space-x-2 shrink-0 whitespace-nowrap">
-                    <a href="hke-walkover-handout.html" class="hidden sm:inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
-                        HKE Walkover ↗
-                    </a>
-                    <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400">EN • HKD</span>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- REUSABLE DEDICATED ARCHITECTURE TOP BAR -->
+    <script src="header.js"></script>
+    <site-header></site-header>
 
     <main>
         <!-- HERO -->
@@ -105,7 +59,7 @@
                         Five Vessel Classes Scaled from One Core Powertrain
                     </h2>
                     <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
-                        Sharing standardized 800V marine LFP battery packs, rim/pod drive units, and 100Hz flight-control software across five hull lengths allows BAYWING to serve all 23 Hong Kong ferry routes and 5 GBA corridors.
+                        Sharing standardized 800V marine LFP battery packs, rim/pod drive units, and 100Hz flight-control software across five hull lengths allows BAYWING to serve all 23 Hong Kong ferry routes and 5 GBA corridors[cite: 3].
                     </p>
                 </div>
 
@@ -206,5 +160,12 @@
             <a href="routes-calculator.html" class="text-tech-cyan hover:underline">Proceed to 03. All 28 Routes Map &amp; OPEX Calculator →</a>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
