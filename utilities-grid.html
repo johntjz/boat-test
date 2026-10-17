@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYWING Utilities & Port Works Portal | HKE, CLP, AAHK SkyPier, CEDD & EMSD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { tech: { cyan: '#00f2ff', emerald: '#10b981', amber: '#f59e0b', slate: '#94a3b8' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c0e12; color: #d4d4d8; }
+        .data-card { background-color: #11141b; border: 1px solid #222733; transition: all 0.2s ease; }
+        .data-card:hover { border-color: #384152; }
+        .cad-grid-bg {
+            background-size: 36px 36px;
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
 
+    <!-- GLOBAL MULTI-PAGE HEADER -->
+    <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-3">
+                <a href="index.html" class="flex items-center space-x-3 shrink-0">
+                    <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
+                        <svg class="w-4 h-4 text-tech-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
+                            <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-cyan border border-zinc-800 rounded">UTILITIES &amp; PORT WORKS</span>
+                        </div>
+                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">HKE • CLP • AAHK SkyPier • CEDD • EMSD</span>
+                    </div>
+                </a>
+
+                <nav class="hidden xl:flex items-center space-x-2 text-[10.5px] font-mono uppercase tracking-wider">
+                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Master Plan &amp; 28 Routes</a>
+                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. R&amp;D &amp; Blueprints</a>
+                    <a href="hkstp-itf.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-emerald hover:bg-zinc-900 transition-colors">03. HKSTP / ESS / GTF</a>
+                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. Investors &amp; VC</a>
+                    <a href="utilities-grid.html" class="px-2.5 py-1.5 rounded bg-tech-cyan/15 text-tech-cyan border border-tech-cyan/40 font-bold">05. HKE / CLP / AAHK / CEDD</a>
+                    <a href="regulatory-class.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">06. DNV &amp; HKMPB</a>
+                    <a href="stakeholder-tracker.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">07. Active Comms</a>
+                </nav>
+
+                <div class="flex items-center space-x-2 shrink-0">
+                    <a href="hke-walkover-handout.html" target="_blank" class="inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
+                        HKE Walkover Sheet ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="pt-28 pb-14 md:pt-36 md:pb-20 border-b border-zinc-800/80 cad-grid-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-tech-cyan bg-tech-cyan/10 border border-tech-cyan/30 px-3 py-1 rounded mb-6">
+                    <span class="w-2 h-2 bg-tech-cyan rounded-full animate-pulse"></span>
+                    <span class="font-bold uppercase tracking-wider">INFRASTRUCTURE &amp; UTILITY INTEGRATION // HKE, CLP, AAHK, CEDD &amp; EMSD</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-mono font-bold text-white uppercase tracking-tight max-w-4xl">
+                    Shore-Power BESS Buffering &amp; Waterfront Grid Infrastructure Portal
+                </h1>
+                <p class="text-sm sm:text-base text-zinc-300 max-w-3xl mt-4 leading-relaxed">
+                    Aero-Marine Systems interfaces directly with Hong Kong's electrical utilities (HK Electric, CLP Power), airport facility operators (AAHK SkyPier), and civil engineering departments (CEDD Port Works, EMSD) to establish modular, non-permanent shore-power and BESS charging nodes across Victoria Harbour and Outlying Island waterfronts.
+                </p>
+            </div>
+        </section>
+
+        <!-- UTILITY & PORT WORKS ENTITY GRID (NO TABLES) -->
+        <section class="py-16 md:py-24 bg-[#090b0f]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+                <!-- 1. HK Electric (HKE) -->
+                <div class="data-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-tech-cyan">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                        <div>
+                            <span class="text-xs font-mono text-tech-cyan uppercase font-bold">UTILITY PARTNER 01 // HONG KONG ELECTRIC (HKE)</span>
+                            <h2 class="text-xl font-bold text-white mt-1">Sheung Wan Landing No. 1 Site Walkover &amp; Form C.I. 141 Review</h2>
+                        </div>
+                        <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
+                            <span>Contact: Howard Leung (Assistant Customer Business Support Manager)</span><br>
+                            <span class="text-tech-cyan font-bold">Confirmed Walkover: October 21, 2026</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
+                        Following our formal Form C.I. 141 load demand submission (250 kW – 300 kW Phase 1 continuous load scaling to 600–900 kW Phase 2), HK Electric’s Distribution Planning Department arranged a joint site walkover at Sheung Wan Landing No. 1. This public landing adjacent to the HK–Macau Ferry Terminal serves as our primary initial node: drawing steady low-voltage AC power into a land-based meter box and unidirectional BESS buffer to recharge our D2 pilot vessels and future EF-150 flagship without major road excavations[cite: 1].
+                    </p>
+                    <div class="pt-3 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+                        <span class="text-zinc-400">Action: <strong class="text-white">Submit Supply Feasibility Confirmation following Oct 21 walkover</strong></span>
+                        <a href="hke-walkover-handout.html" target="_blank" class="text-tech-cyan font-bold hover:underline">Open Official HKE Site Walkover Decision Handout ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2. CLP Power -->
+                <div class="data-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-tech-amber">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                        <div>
+                            <span class="text-xs font-mono text-tech-amber uppercase font-bold">UTILITY PARTNER 02 // CLP POWER HONG KONG</span>
+                            <h2 class="text-xl font-bold text-white mt-1">Kowloon &amp; New Territories Grid Capacity Inquiry</h2>
+                        </div>
+                        <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
+                            <span>Target Nodes: Tsim Sha Tsui China Ferry Terminal, Tuen Mun Ferry Pier, Lantau</span><br>
+                            <span class="text-tech-amber font-bold">Phased Demand: 250 kW → 3.8 MW Megawatt Charging</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
+                        Aero-Marine Systems initiated early grid capacity inquiries with CLP’s Commercial &amp; Customer Technical Services and Distribution Planning teams[cite: 1]. Our infrastructure framework utilizes onshore BESS buffers to smooth demand spikes during 15–20 minute rapid vessel turnarounds, preventing localized grid overload across TST and Tuen Mun waterfront nodes[cite: 1].
+                    </p>
+                    <div class="pt-3 border-t border-zinc-800 font-mono text-xs text-zinc-400">
+                        Status: <strong class="text-white">Active preliminary load profile review for regional GBA and Lantau ferry piers</strong>
+                    </div>
+                </div>
+
+                <!-- 3. AAHK SkyPier -->
+                <div class="data-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-purple-400">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                        <div>
+                            <span class="text-xs font-mono text-purple-400 uppercase font-bold">FACILITY PARTNER 03 // AIRPORT AUTHORITY HONG KONG (AAHK)</span>
+                            <h2 class="text-xl font-bold text-white mt-1">SkyPier Terminal Megawatt Charging &amp; Pier Interface Routing</h2>
+                        </div>
+                        <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
+                            <span>Department: Landside Department / Intermodal Connectivity</span><br>
+                            <span class="text-purple-400 font-bold">Routed to AAHK Engineering &amp; Technology Division</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
+                        In response to our inquiry regarding 3.8 MW Megawatt Charging System (MCS) integration at SkyPier (which provides speedy ferry services for air transfer passengers), AAHK Landside Department confirmed that berthing facilities are managed directly by Airport Authority Hong Kong[cite: 1]. Our technical inquiry has been routed to AAHK’s Engineering &amp; Technology Division to evaluate high-voltage shore-side infrastructure and pier electrification roadmaps[cite: 1].
+                    </p>
+                    <div class="pt-3 border-t border-zinc-800 font-mono text-xs text-zinc-400">
+                        Status: <strong class="text-white">Active routing with AAHK Engineering for SkyPier berthing electrical provisions</strong>
+                    </div>
+                </div>
+
+                <!-- 4. CEDD Port Works Division -->
+                <div class="data-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-tech-emerald">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                        <div>
+                            <span class="text-xs font-mono text-tech-emerald uppercase font-bold">CIVIL ENGINEERING PARTNER 04 // CEDD PORT WORKS DIVISION</span>
+                            <h2 class="text-xl font-bold text-white mt-1">Floating BESS Pontoons &amp; Zero Wake-Wash Seawall Protection</h2>
+                        </div>
+                        <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
+                            <span>Scope: Sheung Wan, Central Piers 7–10, Wan Chai Ferry Pier</span><br>
+                            <span class="text-tech-emerald font-bold">Non-Permanent Civil Integration</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
+                        Aero-Marine Systems briefed the CEDD Port Works Division regarding our non-permanent structural integration approach: utilizing modular floating pontoons housing Battery Energy Storage Systems (BESS) to eliminate major civil works on existing seawalls[cite: 1]. Furthermore, active hydrofoil stabilization eliminates hull wake during approach and transit, protecting surrounding public seawalls and marine structures from hydrodynamic erosion[cite: 1].
+                    </p>
+                    <div class="pt-3 border-t border-zinc-800 font-mono text-xs text-zinc-400">
+                        Status: <strong class="text-white">Structural drawings and pier-interface engineering models submitted for review</strong>
+                    </div>
+                </div>
+
+                <!-- 5. EMSD -->
+                <div class="data-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-zinc-400">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                        <div>
+                            <span class="text-xs font-mono text-zinc-400 uppercase font-bold">REGULATORY PARTNER 05 // ELECTRICAL AND MECHANICAL SERVICES DEPARTMENT (EMSD)</span>
+                            <h2 class="text-xl font-bold text-white mt-1">Electrical Installation Safety &amp; Compliance Acknowledgment</h2>
+                        </div>
+                        <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
+                            <span>Filing: E&amp;M Safety Compliance</span><br>
+                            <span class="text-zinc-200 font-bold">Auto-Acknowledgment Received</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
+                        Official e-mail correspondence transmitted to EMSD regarding our 800V DC marine battery architecture and dockside charging interface has been formally acknowledged, ensuring full alignment with Hong Kong electrical safety ordinances[cite: 1].
+                    </p>
+                    <div class="pt-3 border-t border-zinc-800 font-mono text-xs text-zinc-400">
+                        Status: <strong class="text-white">Acknowledged and registered for upcoming statutory electrical installation inspections</strong>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span>AERO-MARINE SYSTEMS LIMITED © 2026 // HKE • CLP • AAHK SKYPIER • CEDD • EMSD</span>
+            <a href="regulatory-class.html" class="text-tech-cyan hover:underline">Proceed to 06. DNV Classification &amp; HKMPB Portal →</a>
+        </div>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            ['en', 'tc', 'sc'].forEach(l => {
+                const btn = document.getElementById(`btn-lang-${l}`);
+                if (btn) btn.className = (l === lang) ? "px-2 py-1 rounded bg-zinc-800 text-white font-semibold" : "px-2 py-1 rounded text-zinc-500 hover:text-white";
+            });
+        }
+    </script>
+</body>
+</html>
