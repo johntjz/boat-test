@@ -29,15 +29,17 @@
 </head>
 <body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
 
-    <!-- GLOBAL MULTI-PAGE HEADER -->
+    <!-- FIXED SINGLE-LINE TOP BAR -->
     <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 gap-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-4">
+                
+                <!-- Brand -->
                 <a href="index.html" class="flex items-center space-x-3 shrink-0">
                     <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
                         <svg class="w-4 h-4 text-tech-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col whitespace-nowrap">
                         <div class="flex items-center space-x-2">
                             <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
                             <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-cyan border border-zinc-800 rounded">UTILITIES &amp; PORT WORKS</span>
@@ -46,22 +48,55 @@
                     </div>
                 </a>
 
-                <nav class="hidden xl:flex items-center space-x-2 text-[10.5px] font-mono uppercase tracking-wider">
-                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Master Plan &amp; 28 Routes</a>
-                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. R&amp;D &amp; Blueprints</a>
-                    <a href="hkstp-itf.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-emerald hover:bg-zinc-900 transition-colors">03. HKSTP / ESS / GTF</a>
-                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. Investors &amp; VC</a>
-                    <a href="utilities-grid.html" class="px-2.5 py-1.5 rounded bg-tech-cyan/15 text-tech-cyan border border-tech-cyan/40 font-bold">05. HKE / CLP / AAHK / CEDD</a>
-                    <a href="regulatory-class.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">06. DNV &amp; HKMPB</a>
-                    <a href="stakeholder-tracker.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">07. Active Comms</a>
+                <!-- Single-Line Desktop Nav -->
+                <nav class="hidden lg:flex items-center space-x-1.5 text-[11px] font-mono uppercase tracking-wider whitespace-nowrap">
+                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Overview</a>
+                    <a href="master-plan-fleet.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. 10-Yr Plan &amp; Fleet</a>
+                    <a href="routes-calculator.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors">03. 28 Routes &amp; OPEX</a>
+                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. R&amp;D Blueprints</a>
+                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">05. Investors</a>
+
+                    <!-- Expandable Stakeholder Portals Dropdown -->
+                    <div class="relative group">
+                        <button class="px-2.5 py-1.5 rounded bg-tech-cyan/15 text-tech-cyan border border-tech-cyan/40 font-bold inline-flex items-center gap-1">
+                            <span>Stakeholder Portals</span>
+                            <svg class="w-3.5 h-3.5 text-tech-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="absolute right-0 mt-1 w-64 bg-zinc-950 border border-zinc-800 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="hkstp-itf.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-emerald">06. HKSTP / ESS / GTF / RTH</a>
+                            <a href="utilities-grid.html" class="block px-4 py-2 text-[11px] text-tech-cyan font-bold bg-zinc-900">07. HKE / CLP / AAHK / CEDD</a>
+                            <a href="regulatory-class.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-purple-400">08. DNV Class &amp; HKMPB</a>
+                            <a href="stakeholder-tracker.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">09. Oct 2026 Comms Log</a>
+                            <div class="border-t border-zinc-800 my-1"></div>
+                            <a href="hke-walkover-handout.html" class="block px-4 py-2 text-[11px] text-tech-cyan font-bold hover:bg-zinc-900">10. HKE Site Walkover Sheet ↗</a>
+                        </div>
+                    </div>
                 </nav>
 
-                <div class="flex items-center space-x-2 shrink-0">
-                    <a href="hke-walkover-handout.html" target="_blank" class="inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
-                        HKE Walkover Sheet ↗
+                <!-- Right Action & Currency Badge -->
+                <div class="flex items-center space-x-2 shrink-0 whitespace-nowrap">
+                    <a href="hke-walkover-handout.html" class="hidden sm:inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
+                        HKE Walkover ↗
                     </a>
+                    <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400">EN • HKD</span>
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="lg:hidden text-zinc-400 hover:text-white p-1.5 border border-zinc-800 rounded bg-zinc-900">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950 border-b border-zinc-800 px-4 py-4 space-y-1.5 font-mono text-xs uppercase tracking-wider">
+            <a href="index.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">01. Overview</a>
+            <a href="master-plan-fleet.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">02. 10-Yr Plan &amp; Fleet</a>
+            <a href="routes-calculator.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">03. 28 Routes Map &amp; OPEX</a>
+            <a href="engineering-rd.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">04. R&amp;D Blueprints</a>
+            <a href="investors.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">05. Investors &amp; 93.5% Stack</a>
+            <a href="hkstp-itf.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">06. HKSTP / ESS / GTF / RTH</a>
+            <a href="utilities-grid.html" class="block p-2 text-tech-cyan font-bold rounded bg-zinc-900">07. HKE / CLP / AAHK / CEDD</a>
+            <a href="regulatory-class.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">08. DNV Class &amp; HKMPB Policy</a>
+            <a href="stakeholder-tracker.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">09. Oct 2026 Comms Log</a>
         </div>
     </header>
 
@@ -94,16 +129,16 @@
                             <h2 class="text-xl font-bold text-white mt-1">Sheung Wan Landing No. 1 Site Walkover &amp; Form C.I. 141 Review</h2>
                         </div>
                         <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
-                            <span>Contact: Howard Leung (Assistant Customer Business Support Manager)</span><br>
+                            <span>Contact: Howard Leung (Distribution Planning)</span><br>
                             <span class="text-tech-cyan font-bold">Confirmed Walkover: October 21, 2026</span>
                         </div>
                     </div>
                     <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
-                        Following our formal Form C.I. 141 load demand submission (250 kW – 300 kW Phase 1 continuous load scaling to 600–900 kW Phase 2), HK Electric’s Distribution Planning Department arranged a joint site walkover at Sheung Wan Landing No. 1. This public landing adjacent to the HK–Macau Ferry Terminal serves as our primary initial node: drawing steady low-voltage AC power into a land-based meter box and unidirectional BESS buffer to recharge our D2 pilot vessels and future EF-150 flagship without major road excavations[cite: 1].
+                        Following our formal Form C.I. 141 load demand submission (250 kW – 300 kW Phase 1 continuous load scaling to 600–900 kW Phase 2), HK Electric’s Distribution Planning Department arranged a joint site walkover at Sheung Wan Landing No. 1[cite: 1]. This public landing adjacent to the HK–Macau Ferry Terminal serves as our primary initial node: drawing steady low-voltage AC power into a land-based meter box and unidirectional BESS buffer to recharge our D2 pilot vessels and future EF-150 flagship without major road excavations[cite: 1].
                     </p>
                     <div class="pt-3 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
                         <span class="text-zinc-400">Action: <strong class="text-white">Submit Supply Feasibility Confirmation following Oct 21 walkover</strong></span>
-                        <a href="hke-walkover-handout.html" target="_blank" class="text-tech-cyan font-bold hover:underline">Open Official HKE Site Walkover Decision Handout ↗</a>
+                        <a href="hke-walkover-handout.html" class="text-tech-cyan font-bold hover:underline">Open Official HKE Site Walkover Decision Handout ↗</a>
                     </div>
                 </div>
 
@@ -115,7 +150,7 @@
                             <h2 class="text-xl font-bold text-white mt-1">Kowloon &amp; New Territories Grid Capacity Inquiry</h2>
                         </div>
                         <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
-                            <span>Target Nodes: Tsim Sha Tsui China Ferry Terminal, Tuen Mun Ferry Pier, Lantau</span><br>
+                            <span>Target Nodes: TST China Ferry Terminal, Tuen Mun, Lantau</span><br>
                             <span class="text-tech-amber font-bold">Phased Demand: 250 kW → 3.8 MW Megawatt Charging</span>
                         </div>
                     </div>
@@ -140,7 +175,7 @@
                         </div>
                     </div>
                     <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
-                        In response to our inquiry regarding 3.8 MW Megawatt Charging System (MCS) integration at SkyPier (which provides speedy ferry services for air transfer passengers), AAHK Landside Department confirmed that berthing facilities are managed directly by Airport Authority Hong Kong[cite: 1]. Our technical inquiry has been routed to AAHK’s Engineering &amp; Technology Division to evaluate high-voltage shore-side infrastructure and pier electrification roadmaps[cite: 1].
+                        In response to our inquiry regarding 3.8 MW Megawatt Charging System (MCS) integration at SkyPier, AAHK Landside Department confirmed that berthing facilities are managed directly by Airport Authority Hong Kong[cite: 1]. Our technical inquiry has been routed to AAHK’s Engineering &amp; Technology Division to evaluate high-voltage shore-side infrastructure and pier electrification roadmaps[cite: 1].
                     </p>
                     <div class="pt-3 border-t border-zinc-800 font-mono text-xs text-zinc-400">
                         Status: <strong class="text-white">Active routing with AAHK Engineering for SkyPier berthing electrical provisions</strong>
@@ -195,16 +230,14 @@
     <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <span>AERO-MARINE SYSTEMS LIMITED © 2026 // HKE • CLP • AAHK SKYPIER • CEDD • EMSD</span>
-            <a href="regulatory-class.html" class="text-tech-cyan hover:underline">Proceed to 06. DNV Classification &amp; HKMPB Portal →</a>
+            <a href="regulatory-class.html" class="text-tech-cyan hover:underline">Proceed to 08. DNV Classification &amp; HKMPB Portal →</a>
         </div>
     </footer>
 
     <script>
-        function setLang(lang) {
-            ['en', 'tc', 'sc'].forEach(l => {
-                const btn = document.getElementById(`btn-lang-${l}`);
-                if (btn) btn.className = (l === lang) ? "px-2 py-1 rounded bg-zinc-800 text-white font-semibold" : "px-2 py-1 rounded text-zinc-500 hover:text-white";
-            });
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
         }
     </script>
 </body>
