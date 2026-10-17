@@ -1,7 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<script src="header.js"></script>
-<site-header></site-header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYWING Utilities & Port Works Portal | HKE, CLP, AAHK SkyPier, CEDD & EMSD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { tech: { cyan: '#00f2ff', emerald: '#10b981', amber: '#f59e0b', slate: '#94a3b8' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c0e12; color: #d4d4d8; }
+        .data-card { background-color: #11141b; border: 1px solid #222733; transition: all 0.2s ease; }
+        .data-card:hover { border-color: #384152; }
+        .cad-grid-bg {
+            background-size: 36px 36px;
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
+
+    <!-- REUSABLE DEDICATED ARCHITECTURE TOP BAR -->
+    <script src="header.js"></script>
+    <site-header></site-header>
 
     <main>
         <!-- HERO -->
@@ -32,7 +62,7 @@
                             <h2 class="text-xl font-bold text-white mt-1">Sheung Wan Landing No. 1 Site Walkover &amp; Form C.I. 141 Review</h2>
                         </div>
                         <div class="font-mono text-xs text-zinc-400 bg-zinc-950 px-3 py-2 rounded border border-zinc-800 shrink-0">
-                            <span>Contact: Howard Leung (Distribution Planning)</span><br>
+                            <span>Contact: Distribution Planning Department</span><br>
                             <span class="text-tech-cyan font-bold">Confirmed Walkover: October 21, 2026</span>
                         </div>
                     </div>
@@ -132,16 +162,9 @@
     <!-- FOOTER -->
     <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span>AERO-MARINE SYSTEMS LIMITED © 2026 // HKE • CLP • AAHK SKYPIER • CEDD • EMSD</span>
+            <span>AERO-MARINE SYSTEMS LIMITED © 2026 // HONG KONG &amp; GREATER BAY AREA</span>
             <a href="regulatory-class.html" class="text-tech-cyan hover:underline">Proceed to 08. DNV Classification &amp; HKMPB Portal →</a>
         </div>
     </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu) menu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>
