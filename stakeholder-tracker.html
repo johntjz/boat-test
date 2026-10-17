@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYWING Stakeholder Command Center | October 2026 Official Correspondence Log (HKD)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { tech: { cyan: '#00f2ff', emerald: '#10b981', amber: '#f59e0b', slate: '#94a3b8' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c0e12; color: #d4d4d8; }
+        .data-card { background-color: #11141b; border: 1px solid #222733; transition: all 0.2s ease; }
+        .data-card:hover { border-color: #384152; }
+        .cad-grid-bg {
+            background-size: 36px 36px;
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
+
+    <!-- GLOBAL MULTI-PAGE HEADER (ENGLISH ONLY, HKD STANDARD) -->
+    <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-3">
+                <a href="index.html" class="flex items-center space-x-3 shrink-0">
+                    <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
+                        <svg class="w-4 h-4 text-tech-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
+                            <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-cyan border border-zinc-800 rounded">ACTIVE COMMS LOG (HKD)</span>
+                        </div>
+                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">Verified Institutional &amp; Utility Audit Trail</span>
+                    </div>
+                </a>
+
+                <nav class="hidden xl:flex items-center space-x-2 text-[10.5px] font-mono uppercase tracking-wider">
+                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Master Plan &amp; 28 Routes</a>
+                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. R&amp;D &amp; Blueprints</a>
+                    <a href="hkstp-itf.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-emerald hover:bg-zinc-900 transition-colors">03. HKSTP / ESS / GTF</a>
+                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. Investors &amp; VC</a>
+                    <a href="utilities-grid.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors">05. HKE / CLP / AAHK / CEDD</a>
+                    <a href="regulatory-class.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">06. DNV &amp; HKMPB</a>
+                    <a href="stakeholder-tracker.html" class="px-2.5 py-1.5 rounded bg-white text-zinc-950 font-bold">07. Active Comms</a>
+                </nav>
+
+                <div class="flex items-center space-x-2 shrink-0">
+                    <a href="hke-walkover-handout.html" target="_blank" class="inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
+                        HKE Walkover Sheet ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="pt-28 pb-12 md:pt-36 md:pb-16 border-b border-zinc-800/80 cad-grid-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-tech-emerald bg-tech-emerald/10 border border-tech-emerald/30 px-3 py-1 rounded mb-5">
+                    <span class="w-2 h-2 bg-tech-emerald rounded-full animate-ping"></span>
+                    <span class="font-bold uppercase tracking-wider">DATA ROOM VERIFICATION LOG // SEPT–OCT 2026 STAKEHOLDER DISPATCHES</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-mono font-bold text-white uppercase tracking-tight max-w-4xl">
+                    Official Government, Utility &amp; Classification Correspondence Tracker
+                </h1>
+                <p class="text-sm sm:text-base text-zinc-300 max-w-3xl mt-3 leading-relaxed">
+                    Complete non-table audit trail of Aero-Marine Systems Limited's active institutional engagements across Hong Kong utilities, statutory grant secretariats, airport authorities, marine classification societies, and university robotics departments (all financial figures standardized in HKD).
+                </p>
+
+                <!-- 4 Summary KPI Cards (HKD) -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 font-mono">
+                    <div class="data-card p-4 rounded-xl border-l-4 border-l-tech-cyan">
+                        <span class="text-[10px] text-zinc-500 uppercase block">CONFIRMED SITE WALKOVER</span>
+                        <span class="text-lg font-extrabold text-white mt-0.5 block">21 Oct 2026 (HKE)</span>
+                        <span class="text-[11px] text-tech-cyan">Sheung Wan Landing No. 1 (900 kW)</span>
+                    </div>
+                    <div class="data-card p-4 rounded-xl border-l-4 border-l-tech-emerald">
+                        <span class="text-[10px] text-zinc-500 uppercase block">GRANT &amp; TALENT PIPELINE</span>
+                        <span class="text-lg font-extrabold text-white mt-0.5 block">HK$ 12.99M + GTF</span>
+                        <span class="text-[11px] text-tech-emerald">HK$ 2.99M Ph0 + HK$ 10M ESS Match</span>
+                    </div>
+                    <div class="data-card p-4 rounded-xl border-l-4 border-l-tech-amber">
+                        <span class="text-[10px] text-zinc-500 uppercase block">OPEX UNIT ECONOMICS (HKD)</span>
+                        <span class="text-lg font-extrabold text-white mt-0.5 block">HK$ 38.22 / NM</span>
+                        <span class="text-[11px] text-tech-amber">vs HK$ 175.50 / NM Diesel (-78%)</span>
+                    </div>
+                    <div class="data-card p-4 rounded-xl border-l-4 border-l-purple-400">
+                        <span class="text-[10px] text-zinc-500 uppercase block">ACTIVE INSTITUTIONAL THREADS</span>
+                        <span class="text-lg font-extrabold text-white mt-0.5 block">10 Agencies Engaged</span>
+                        <span class="text-[11px] text-purple-400">Utilities • Grants • Class • Universities</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTER BAR & NON-TABLE CORRESPONDENCE CARDS -->
+        <section class="py-14 md:py-20 bg-[#090b0f]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mb-8 font-mono text-xs">
+                    <button onclick="filterLogs('all')" id="btn-f-all" class="px-4 py-2 rounded-lg bg-white text-zinc-950 font-bold transition-all">ALL DISPATCHES (10)</button>
+                    <button onclick="filterLogs('utility')" id="btn-f-utility" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-tech-cyan transition-all">⚡ Utilities, Airport &amp; Civil (5)</button>
+                    <button onclick="filterLogs('grant')" id="btn-f-grant" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-tech-emerald transition-all">🏛️ Grants &amp; Universities (3)</button>
+                    <button onclick="filterLogs('class')" id="btn-f-class" class="px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-purple-400 transition-all">⚓ Classification &amp; Maritime Board (2)</button>
+                </div>
+
+                <!-- Non-Table Correspondence Ledger -->
+                <div class="space-y-5" id="comms-container">
+
+                    <!-- 01. HK ELECTRIC (HKE) -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-tech-cyan comm-item" data-cat="utility">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-tech-cyan/20 text-tech-cyan font-bold">SITE MEETING CONFIRMED</span>
+                                <span class="text-zinc-400">27 Sept → 15 Oct 2026</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">HK Electric Distribution Planning (EV@hkelectric.com / Howard Leung)</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            1. Sheung Wan Landing No. 1 Shore-Power Fast-Charging Interface (250 kW – 900 kW LV → 3.0 MW MCS)
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+                            Following our initial 27 Sept inquiry and 29 Sept Form C.I. 141 phased load submission, Assistant Customer Business Support Manager Howard Leung confirmed on 15 Oct 2026 that HK Electric's Distribution Planning Department has scheduled a joint site meeting at <strong>Sheung Wan Landing No. 1 on Wednesday, 21 October 2026</strong> to evaluate the 250–900 kW low-voltage supply, onshore meter demarcation, and concurrent grid checks for Central Piers 7–10 and Wan Chai Ferry Pier (supporting the HK$ 20.0M BAYWING-D2 pilot).
+                        </p>
+                        <details class="bg-zinc-950 rounded-xl border border-zinc-800 p-4 font-mono text-[11px] text-zinc-300">
+                            <summary class="cursor-pointer text-tech-cyan font-bold flex justify-between items-center">
+                                <span>+ View Verbatim Email Thread (Howard Leung / HK Electric &amp; John Tu — 27 Sept to 15 Oct 2026)</span>
+                                <span class="text-[10px] text-zinc-500">Click to Expand</span>
+                            </summary>
+                            <div class="mt-3 pt-3 border-t border-zinc-800 space-y-3 whitespace-pre-line text-zinc-400 leading-relaxed">
+<strong>On Thu, Oct 15, 2026 at 11:19 AM John Tu &lt;johntjz@gmail.com&gt; wrote:</strong>
+Dear Howard, Thank you and the Distribution Planning Department for arranging this site walkover. I would like to confirm Wednesday, 21 October 2026 at Sheung Wan Landing No. 1... During our meeting at Sheung Wan Landing No. 1, I look forward to reviewing: (1) Phase 1/2 Low-Voltage Supply &amp; BESS Interface (250 kW – 900 kW continuous load profile), (2) Long-Term High-Capacity Provisioning (Macau Corridor - EF-150, 1.5 MW – 3.0 MW MCS), and (3) Multi-Pier Intra-Harbour Rollout (Central Pier 7–10 &amp; Wan Chai Ferry Pier - BAYWING-D2, 500 kW charging class).
+
+<strong>On Thu, Oct 15, 2026 at 10:58 AM EV@hkelectric.com wrote:</strong>
+Dear Mr. Tu, We refer to your email dated 29 September 2026. After reviewing the proposed supply location and load demand forecast of 900 kW, our Distribution Planning Department would like to arrange a site meeting with you to explore the different options and the technical feasibility for provision of electricity supply to the proposed on-shore fast charging platform. Date: 21/10/2026 (Wed) or 22/10/2026 (Thu) | Time: 10:00 am | Location: Sheung Wan Landing No. 1. — Howard Leung, Assistant Customer Business Support Manager, HK Electric.
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- 02. GREEN TECH FUND (EEB) -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-tech-emerald comm-item" data-cat="grant">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-tech-emerald/20 text-tech-emerald font-bold">REGISTERED ON NOTIFICATION LIST</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:15 AM → 10:32 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">Green Tech Fund Secretariat / EEB (gtf@eeb.gov.hk)</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            2. Green Tech Fund (GTF) Alignment: Zero-Emission Hydrofoil &amp; Shore-Side BESS Infrastructure
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+                            Submitted formal inquiry detailing BAYWING's 168,000 tonnes/year CO₂ reduction, 80% drag reduction (slashing energy cost from ~HK$ 175.50/NM down to ~HK$ 38.22/NM), and floating BESS grid integration. The GTF Secretariat confirmed eligibility for local companies and registered Aero-Marine Systems Limited for the upcoming Q4 2026 GTF application round and applicant webinar.
+                        </p>
+                        <details class="bg-zinc-950 rounded-xl border border-zinc-800 p-4 font-mono text-[11px] text-zinc-300">
+                            <summary class="cursor-pointer text-tech-emerald font-bold flex justify-between items-center">
+                                <span>+ View Verbatim Email Thread (Green Tech Fund Secretariat / EEB — 16 Oct 2026)</span>
+                                <span class="text-[10px] text-zinc-500">Click to Expand</span>
+                            </summary>
+                            <div class="mt-3 pt-3 border-t border-zinc-800 space-y-3 whitespace-pre-line text-zinc-400 leading-relaxed">
+<strong>On Fri, Oct 16, 2026 at 10:31 AM greentechfund/EEB &lt;gtf@eeb.gov.hk&gt; wrote:</strong>
+Dear Mr Tu, Thank you for your email and your interest in the Green Tech Fund (GTF). GTF is open for application from (a) designated local public research institutes; (b) R&amp;D Centres; and (c) local companies. With the new round of GTF application to commence later this quarter, we will hold a webinar for all potential applicants to introduce the application procedures of the GTF. We have included your email address in our notification list for the next round of GTF applications. — Green Tech Fund Secretariat.
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- 03. AIRPORT AUTHORITY HONG KONG (AAHK SKYPIER) -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-sky-400 comm-item" data-cat="utility">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-400 font-bold">FACILITY ENGINEERING ROUTING</span>
+                                <span class="text-zinc-400">16 Oct 2026 (9:54 AM → 10:10 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">AAHK Landside / Intermodal Connectivity (SPCB@hkairport.com)</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            3. HKIA SkyPier Terminal: 3.8 MW Megawatt Charging System (MCS) Berthing Infrastructure
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+                            AAHK Intermodal Connectivity confirmed that SkyPier berthing facilities are managed directly by Airport Authority Hong Kong while vessels are operated by ferry operators. Aero-Marine Systems requested routing of the 3.8 MW MCS shore-side electrical and physical pier modification brief to AAHK’s Engineering &amp; Technology Division and Sustainability / Infrastructure Planning Team.
+                        </p>
+                        <details class="bg-zinc-950 rounded-xl border border-zinc-800 p-4 font-mono text-[11px] text-zinc-300">
+                            <summary class="cursor-pointer text-sky-400 font-bold flex justify-between items-center">
+                                <span>+ View Verbatim Email Thread (AAHK Intermodal Connectivity — 16 Oct 2026)</span>
+                                <span class="text-[10px] text-zinc-500">Click to Expand</span>
+                            </summary>
+                            <div class="mt-3 pt-3 border-t border-zinc-800 space-y-3 whitespace-pre-line text-zinc-400 leading-relaxed">
+<strong>On Fri, Oct 16, 2026 at 10:10 AM John Tu &lt;johntjz@gmail.com&gt; wrote:</strong>
+Dear Intermodal Connectivity Team, Thank you for your guidance. We are actively engaging the SkyPier ferry operators regarding vessel deployment and fleet transition. However, our primary inquiry regarding the 3.8 MW Megawatt Charging System (MCS) involves physical pier modifications, high-voltage shore-side infrastructure, and electrical grid integration at SkyPier. As these fall entirely under AAHK's facility management and engineering purview... could you kindly forward or route our inquiry to AAHK’s Engineering &amp; Technology Division or Sustainability / Infrastructure Planning Team?
+
+<strong>On Fri, Oct 16, 2026 at 9:54 AM Intermodal Connectivity &lt;SPCB@hkairport.com&gt; wrote:</strong>
+Dear John, Thank you for your email. SkyPier Terminal at Hong Kong International Airport provides speedy ferry services for air transfer passengers. The berthing facilities are managed by Airport Authority Hong Kong, while the ferry services including the vessels are operated by the ferry operators.
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- 04. ITC ENTERPRISE SUPPORT SCHEME (ESS) -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-tech-amber comm-item" data-cat="grant">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-tech-amber/20 text-tech-amber font-bold">1:1 MATCHING CONSULTATION FILED</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:15 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">Innovation and Technology Commission — ESS Secretariat</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            4. ITC Enterprise Support Scheme (ESS): HK$ 20.0M Co-Matching for Phase 2 BAYWING-D2 Pilot
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Requested preliminary consultation to align HK$ 10.0M in private seed/angel capitalization with HK$ 10.0M in ESS 1:1 matching grant funds (HK$ 20.0M total) to execute Phase 2 R&amp;D: hardening the triple-redundant 100Hz C++/RTOS flight controller and validating the 500 kW fast-charging BESS interface at Sheung Wan Landing No. 1 for the 15-meter, 25–40 passenger BAYWING-D2.
+                        </p>
+                    </div>
+
+                    <!-- 05. EMSD -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-zinc-400 comm-item" data-cat="utility">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-zinc-800 text-zinc-200 font-bold">RECEIPT ACKNOWLEDGED</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:22 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">Electrical and Mechanical Services Department (info@emsd.gov.hk)</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            5. EMSD High-Voltage Shore-Side Charging &amp; BESS Safety Filing
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Official receipt acknowledged by the Electrical and Mechanical Services Department (機電工程署) regarding electrical safety and regulatory compliance for our shore-side BESS cabinet, unidirectional reverse-power protection, and marine high-voltage charging interface.
+                        </p>
+                    </div>
+
+                    <!-- 06. HKUST ROBOTICS INSTITUTE & POLYU MECHANICAL ENGINEERING -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-tech-emerald comm-item" data-cat="grant">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-tech-emerald/20 text-tech-emerald font-bold">HK$ 1.45M ITF RTH RECRUITMENT</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:23 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">HKUST Robotics Institute &amp; PolyU Mechanical Engineering</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            6. Academic R&amp;D Collaboration &amp; Research Talent Hub (HK$ 1,450,000 Grant Allocation)
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Initiated recruitment and joint research outreach to hire two full-time Control Systems / Marine Mechatronics Engineers (BSc/MSc/PhD graduates) 100% funded under our HK$ 1.45M ITF Research Talent Hub allocation, focusing on 100Hz C++/RTOS loops on STM32H7/Jetson hardware, 6-DOF MATLAB/ROS2 digital twins, and Tolo Harbour sub-scale sea trials.
+                        </p>
+                    </div>
+
+                    <!-- 07. CEDD PORT WORKS DIVISION -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-tech-cyan comm-item" data-cat="utility">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-tech-cyan/20 text-tech-cyan font-bold">ADVANCE TECHNICAL BRIEFING</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:24 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">Civil Engineering and Development Department (CEDD) — Port Works Division</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            7. CEDD Port Works: Non-Permanent Floating BESS Pontoons &amp; Zero Wake-Wash Seawall Protection
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Submitted advance briefing covering our zero-digging civil works approach at Sheung Wan Landing No. 1, Central Piers, and Wan Chai: (1) temporary floating BESS pontoons eliminating seawall excavation, (2) low-impact surface-mounted cable containment, and (3) <0.15m active hydrofoil wake wash protecting public seawalls from hydrodynamic erosion.
+                        </p>
+                    </div>
+
+                    <!-- 08. CLP POWER HONG KONG -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-tech-cyan comm-item" data-cat="utility">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-tech-cyan/20 text-tech-cyan font-bold">KOWLOON &amp; NT GRID INQUIRY</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:24 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">CLP Commercial &amp; Customer Technical Services Team</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            8. CLP Service Territory Grid Capacity Inquiry (TST China Ferry Terminal, Tuen Mun &amp; Lantau)
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Initiated distribution planning consultation across CLP's Kowloon and New Territories waterfront piers, detailing our phased load profile: Phase 1 (250–300 kW continuous LV supply with onshore BESS peak-shaving) scaling to Phase 2/3 (1.5 MW – 3.8 MW Megawatt Charging System demand).
+                        </p>
+                    </div>
+
+                    <!-- 09. HONG KONG MARITIME AND PORT BOARD (HKMPB) -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-purple-400 comm-item" data-cat="class">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-400 font-bold">STRATEGIC BOARD UPDATE</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:25 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">Hong Kong Maritime and Port Board (HKMPB) Secretariat</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            9. HKMPB Strategic Briefing: 78% OPEX Reduction (HK$ 38.22/NM) &amp; Sovereign HK IP Export
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Presented BAYWING's 10-year fleet modernization roadmap to the HKMPB Secretariat, highlighting the 78% energy cost reduction (from ~HK$ 175.50/NM marine diesel down to ~HK$ 38.22/NM electric hydrofoil), local Hong Kong 100Hz flight-control IP paired with GBA composite manufacturing, and East Asia green maritime leadership.
+                        </p>
+                    </div>
+
+                    <!-- 10. DNV HONG KONG ADVISORY TEAM -->
+                    <div class="data-card rounded-2xl p-6 border-l-4 border-l-purple-400 comm-item" data-cat="class">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-400 font-bold">CLASSIFICATION ADVISORY FILED</span>
+                                <span class="text-zinc-400">16 Oct 2026 (10:26 AM)</span>
+                            </div>
+                            <span class="text-zinc-400">Counterparty: <strong class="text-white">DNV Hong Kong Advisory Team</strong></span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            10. DNV High-Speed Craft (HSC) Classification: 800V LFP Containment &amp; 100Hz RTOS Certification
+                        </h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">
+                            Requested preliminary classification advisory consultation covering Phase 1/2 engineering parameters (funded under our HK$ 1.50M D2 certification budget): 800V DC marine LFP battery containment, dual-redundant electric pod propulsion, 100Hz triple-redundant RTOS software certification, and dockside MCS BESS pontoon rules.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span>AERO-MARINE SYSTEMS LIMITED © 2026 // VERIFIED STAKEHOLDER DATA ROOM (HKD)</span>
+            <a href="index.html" class="text-tech-cyan hover:underline">← Return to 01. Master Plan &amp; 28-Route Explorer (index.html)</a>
+        </div>
+    </footer>
+
+    <script>
+        function filterLogs(cat) {
+            ['all', 'utility', 'grant', 'class'].forEach(c => {
+                const btn = document.getElementById(`btn-f-${c}`);
+                if (btn) {
+                    btn.className = (c === cat)
+                        ? "px-4 py-2 rounded-lg bg-white text-zinc-950 font-bold transition-all"
+                        : "px-4 py-2 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-tech-cyan transition-all";
+                }
+            });
+            document.querySelectorAll('.comm-item').forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
