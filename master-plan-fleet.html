@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYWING 10-Year Master Plan & Fleet Lineup | HK & GBA Maritime Electrification (HKD)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { tech: { cyan: '#00f2ff', emerald: '#10b981', amber: '#f59e0b', slate: '#94a3b8' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c0e12; color: #d4d4d8; }
+        .data-card { background-color: #11141b; border: 1px solid #222733; transition: all 0.2s ease; }
+        .data-card:hover { border-color: #384152; }
+        .cad-grid-bg {
+            background-size: 36px 36px;
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
+
+    <!-- FIXED SINGLE-LINE TOP BAR -->
+    <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-4">
+                <a href="index.html" class="flex items-center space-x-3 shrink-0">
+                    <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
+                        <svg class="w-4 h-4 text-tech-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <div class="flex flex-col whitespace-nowrap">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
+                            <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-emerald border border-zinc-800 rounded">10-YR PLAN &amp; FLEET</span>
+                        </div>
+                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">Modular Vessel Architecture</span>
+                    </div>
+                </a>
+
+                <nav class="hidden lg:flex items-center space-x-1.5 text-[11px] font-mono uppercase tracking-wider whitespace-nowrap">
+                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Overview</a>
+                    <a href="master-plan-fleet.html" class="px-2.5 py-1.5 rounded bg-tech-emerald/15 text-tech-emerald border border-tech-emerald/40 font-bold">02. 10-Yr Plan &amp; Fleet</a>
+                    <a href="routes-calculator.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors">03. 28 Routes &amp; OPEX</a>
+                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. R&amp;D Blueprints</a>
+                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">05. Investors</a>
+
+                    <div class="relative group">
+                        <button class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors inline-flex items-center gap-1">
+                            <span>Stakeholder Portals</span>
+                            <svg class="w-3.5 h-3.5 text-tech-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="absolute right-0 mt-1 w-64 bg-zinc-950 border border-zinc-800 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="hkstp-itf.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-emerald">06. HKSTP / ESS / GTF / RTH</a>
+                            <a href="utilities-grid.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-cyan">07. HKE / CLP / AAHK / CEDD</a>
+                            <a href="regulatory-class.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-purple-400">08. DNV Class &amp; HKMPB</a>
+                            <a href="stakeholder-tracker.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">09. Oct 2026 Comms Log</a>
+                            <div class="border-t border-zinc-800 my-1"></div>
+                            <a href="hke-walkover-handout.html" class="block px-4 py-2 text-[11px] text-tech-cyan font-bold hover:bg-zinc-900">10. HKE Site Walkover Sheet ↗</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="flex items-center space-x-2 shrink-0 whitespace-nowrap">
+                    <a href="hke-walkover-handout.html" class="hidden sm:inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
+                        HKE Walkover ↗
+                    </a>
+                    <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400">EN • HKD</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="pt-28 pb-16 md:pt-36 md:pb-20 border-b border-zinc-800/80 cad-grid-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-tech-emerald bg-tech-emerald/10 border border-tech-emerald/30 px-3 py-1 rounded mb-4">
+                    <span class="w-2 h-2 bg-tech-emerald rounded-full"></span>
+                    <span class="font-bold uppercase tracking-wider">HONG KONG &amp; GBA 10-YEAR MASTER PLAN (2026–2036)</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-mono font-bold text-white uppercase tracking-tight max-w-4xl">
+                    Transforming Every HK Ferry &amp; Island Cargo Route in 10 Years
+                </h1>
+                <p class="text-sm sm:text-base text-zinc-300 max-w-3xl mt-4 leading-relaxed">
+                    Just as electric cars and commercial trucks transformed Hong Kong's roads over the past decade, BAYWING is engineered to electrify 100% of Hong Kong's waterways over the next ten years. Think of our platform as an EV on water: an unsinkable, modular carbon-aluminium hull packed with safe LFP marine batteries, lifted above the waves on computer-controlled hydrofoils, and recharged in 8–15 minutes via floating dockside battery buffers.
+                </p>
+            </div>
+        </section>
+
+        <!-- MODULAR VESSEL LINEUP (D2 → EF-150) -->
+        <section class="py-16 md:py-24 bg-[#090b0f] border-b border-zinc-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-12">
+                    <div class="text-xs font-mono text-tech-cyan uppercase tracking-widest mb-2">MODULAR PRODUCT ARCHITECTURE</div>
+                    <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                        Five Vessel Classes Scaled from One Core Powertrain
+                    </h2>
+                    <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
+                        Sharing standardized 800V marine LFP battery packs, rim/pod drive units, and 100Hz flight-control software across five hull lengths allows BAYWING to serve all 23 Hong Kong ferry routes and 5 GBA corridors.
+                    </p>
+                </div>
+
+                <div class="space-y-4 font-mono">
+                    <!-- D2 -->
+                    <div class="data-card p-6 rounded-xl grid md:grid-cols-12 gap-6 items-center border-l-4 border-l-tech-cyan">
+                        <div class="md:col-span-3">
+                            <div class="text-lg font-bold text-white">BAYWING-D2</div>
+                            <div class="text-xs text-zinc-400">Regional Shuttle &amp; Water Taxi</div>
+                            <div class="text-tech-cyan text-xs mt-1">15.0m LOA | 32 Knots</div>
+                        </div>
+                        <div class="md:col-span-5 text-xs text-zinc-300 font-sans leading-relaxed">
+                            Designed for coastal regional feeders: Aberdeen–Lamma, Discovery Bay–Peng Chau, Tsuen Wan–Ma Wan, Sai Wan Ho–Sam Ka Tsuen, and Victoria Harbour Water Taxi[cite: 3].
+                        </div>
+                        <div class="md:col-span-4 grid grid-cols-3 gap-2 text-center text-xs bg-zinc-950 p-3 rounded border border-zinc-800">
+                            <div><span class="text-zinc-500 block text-[9px]">PAYLOAD</span><span class="text-white">40 Pax / 4t</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">BATTERY</span><span class="text-white">400 kWh</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">CHARGE</span><span class="text-tech-emerald">500kW (6m)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- D3 -->
+                    <div class="data-card p-6 rounded-xl grid md:grid-cols-12 gap-6 items-center border-l-4 border-l-sky-400">
+                        <div class="md:col-span-3">
+                            <div class="text-lg font-bold text-white">BAYWING-D3</div>
+                            <div class="text-xs text-zinc-400">Cross-Harbour Rapid Commuter</div>
+                            <div class="text-sky-400 text-xs mt-1">20.0m LOA | 28 Knots</div>
+                        </div>
+                        <div class="md:col-span-5 text-xs text-zinc-300 font-sans leading-relaxed">
+                            Double-ended wide-gangway shuttle built for high-frequency turnarounds across all 8 Victoria Harbour crossings and the Inter-Islands loop[cite: 3].
+                        </div>
+                        <div class="md:col-span-4 grid grid-cols-3 gap-2 text-center text-xs bg-zinc-950 p-3 rounded border border-zinc-800">
+                            <div><span class="text-zinc-500 block text-[9px]">PAYLOAD</span><span class="text-white">120 Pax / 15t</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">BATTERY</span><span class="text-white">600 kWh</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">CHARGE</span><span class="text-tech-emerald">800kW (4m)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- D4 -->
+                    <div class="data-card p-6 rounded-xl grid md:grid-cols-12 gap-6 items-center border-l-4 border-l-tech-emerald">
+                        <div class="md:col-span-3">
+                            <div class="text-lg font-bold text-white">BAYWING-D4</div>
+                            <div class="text-xs text-zinc-400">Outlying Island Fast Hydrofoil</div>
+                            <div class="text-tech-emerald text-xs mt-1">24.0m LOA | 35 Knots</div>
+                        </div>
+                        <div class="md:col-span-5 text-xs text-zinc-300 font-sans leading-relaxed">
+                            High-speed commuter foil for Central to Discovery Bay, Lamma (Yung Shue Wan &amp; Sok Kwu Wan), Peng Chau, Ma Wan, and Tuen Mun–Tai O[cite: 3].
+                        </div>
+                        <div class="md:col-span-4 grid grid-cols-3 gap-2 text-center text-xs bg-zinc-950 p-3 rounded border border-zinc-800">
+                            <div><span class="text-zinc-500 block text-[9px]">PAYLOAD</span><span class="text-white">220 Pax / 25t</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">BATTERY</span><span class="text-white">900 kWh</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">CHARGE</span><span class="text-tech-emerald">1.5MW (8m)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- D5 -->
+                    <div class="data-card p-6 rounded-xl grid md:grid-cols-12 gap-6 items-center border-l-4 border-l-tech-amber">
+                        <div class="md:col-span-3">
+                            <div class="text-lg font-bold text-white">BAYWING-D5</div>
+                            <div class="text-xs text-zinc-400">Trunk Island Liner &amp; Ro-Ro Freighter</div>
+                            <div class="text-tech-amber text-xs mt-1">28.0m LOA | 34 Knots</div>
+                        </div>
+                        <div class="md:col-span-5 text-xs text-zinc-300 font-sans leading-relaxed">
+                            High-capacity trunk liner for Central–Cheung Chau &amp; Central–Mui Wo, plus dedicated Ro-Ro Cargo Freighter variant for island trucks, pallets &amp; freight[cite: 3].
+                        </div>
+                        <div class="md:col-span-4 grid grid-cols-3 gap-2 text-center text-xs bg-zinc-950 p-3 rounded border border-zinc-800">
+                            <div><span class="text-zinc-500 block text-[9px]">PAYLOAD</span><span class="text-white">400 Pax / 50t</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">BATTERY</span><span class="text-white">1.5 MWh</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">CHARGE</span><span class="text-tech-emerald">2.5MW (9m)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- EF-150 -->
+                    <div class="data-card p-6 rounded-xl grid md:grid-cols-12 gap-6 items-center border-l-4 border-l-purple-400">
+                        <div class="md:col-span-3">
+                            <div class="text-lg font-bold text-white">BAYWING EF-150</div>
+                            <div class="text-xs text-zinc-400">GBA Cross-Border Flagship</div>
+                            <div class="text-purple-400 text-xs mt-1">28.5m LOA | 38 Knots</div>
+                        </div>
+                        <div class="md:col-span-5 text-xs text-zinc-300 font-sans leading-relaxed">
+                            38-knot active hydrofoil flagship replacing legacy 4,000-kW diesel waterjets across HK–Macau, Shenzhen, Zhuhai &amp; SkyPier[cite: 3].
+                        </div>
+                        <div class="md:col-span-4 grid grid-cols-3 gap-2 text-center text-xs bg-zinc-950 p-3 rounded border border-zinc-800">
+                            <div><span class="text-zinc-500 block text-[9px]">PAYLOAD</span><span class="text-white">150 VIP Pax</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">BATTERY</span><span class="text-white">1.2 MWh</span></div>
+                            <div><span class="text-zinc-500 block text-[9px]">CHARGE</span><span class="text-tech-emerald">3.5MW (15m)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span>AERO-MARINE SYSTEMS LIMITED © 2026 // 10-YEAR MASTER PLAN &amp; FLEET (HKD EDITION)</span>
+            <a href="routes-calculator.html" class="text-tech-cyan hover:underline">Proceed to 03. All 28 Routes Map &amp; OPEX Calculator →</a>
+        </div>
+    </footer>
+</body>
+</html>
