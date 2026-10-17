@@ -29,76 +29,9 @@
 </head>
 <body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
 
-    <!-- FIXED SINGLE-LINE TOP BAR -->
-    <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 gap-4">
-                
-                <!-- Brand -->
-                <a href="index.html" class="flex items-center space-x-3 shrink-0">
-                    <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
-                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                    </div>
-                    <div class="flex flex-col whitespace-nowrap">
-                        <div class="flex items-center space-x-2">
-                            <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
-                            <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-purple-400 border border-zinc-800 rounded">CLASS &amp; POLICY</span>
-                        </div>
-                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">DNV HSLC • HKMD • HKMPB</span>
-                    </div>
-                </a>
-
-                <!-- Single-Line Desktop Nav -->
-                <nav class="hidden lg:flex items-center space-x-1.5 text-[11px] font-mono uppercase tracking-wider whitespace-nowrap">
-                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Overview</a>
-                    <a href="master-plan-fleet.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. 10-Yr Plan &amp; Fleet</a>
-                    <a href="routes-calculator.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors">03. 28 Routes &amp; OPEX</a>
-                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-amber hover:bg-zinc-900 transition-colors">04. R&amp;D Blueprints</a>
-                    <a href="investors.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">05. Investors</a>
-
-                    <!-- Expandable Stakeholder Portals Dropdown -->
-                    <div class="relative group">
-                        <button class="px-2.5 py-1.5 rounded bg-purple-500/15 text-purple-400 border border-purple-500/40 font-bold inline-flex items-center gap-1">
-                            <span>Stakeholder Portals</span>
-                            <svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="absolute right-0 mt-1 w-64 bg-zinc-950 border border-zinc-800 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                            <a href="hkstp-itf.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-emerald">06. HKSTP / ESS / GTF / RTH</a>
-                            <a href="utilities-grid.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-tech-cyan">07. HKE / CLP / AAHK / CEDD</a>
-                            <a href="regulatory-class.html" class="block px-4 py-2 text-[11px] text-purple-400 font-bold bg-zinc-900">08. DNV Class &amp; HKMPB</a>
-                            <a href="stakeholder-tracker.html" class="block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">09. Oct 2026 Comms Log</a>
-                            <div class="border-t border-zinc-800 my-1"></div>
-                            <a href="hke-walkover-handout.html" class="block px-4 py-2 text-[11px] text-tech-cyan font-bold hover:bg-zinc-900">10. HKE Site Walkover Sheet ↗</a>
-                        </div>
-                    </div>
-                </nav>
-
-                <!-- Right Action & Currency Badge -->
-                <div class="flex items-center space-x-2 shrink-0 whitespace-nowrap">
-                    <a href="hke-walkover-handout.html" class="hidden sm:inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all">
-                        HKE Walkover ↗
-                    </a>
-                    <span class="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400">EN • HKD</span>
-                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="lg:hidden text-zinc-400 hover:text-white p-1.5 border border-zinc-800 rounded bg-zinc-900">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950 border-b border-zinc-800 px-4 py-4 space-y-1.5 font-mono text-xs uppercase tracking-wider">
-            <a href="index.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">01. Overview</a>
-            <a href="master-plan-fleet.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">02. 10-Yr Plan &amp; Fleet</a>
-            <a href="routes-calculator.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">03. 28 Routes Map &amp; OPEX</a>
-            <a href="engineering-rd.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">04. R&amp;D Blueprints</a>
-            <a href="investors.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">05. Investors &amp; 93.5% Stack</a>
-            <a href="hkstp-itf.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">06. HKSTP / ESS / GTF / RTH</a>
-            <a href="utilities-grid.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">07. HKE / CLP / AAHK / CEDD</a>
-            <a href="regulatory-class.html" class="block p-2 text-purple-400 font-bold rounded bg-zinc-900">08. DNV Class &amp; HKMPB Policy</a>
-            <a href="stakeholder-tracker.html" class="block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">09. Oct 2026 Comms Log</a>
-        </div>
-    </header>
+    <!-- REUSABLE DEDICATED ARCHITECTURE TOP BAR -->
+    <script src="header.js"></script>
+    <site-header></site-header>
 
     <main>
         <!-- HERO -->
@@ -222,18 +155,11 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
+    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500 mt-auto">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <span>AERO-MARINE SYSTEMS LIMITED © 2026 // DNV CLASSIFICATION &amp; HKMPB BRIEFING (HKD)</span>
             <a href="stakeholder-tracker.html" class="text-tech-cyan hover:underline">Proceed to 09. Live October 2026 Stakeholder Correspondence Log →</a>
         </div>
     </footer>
-    
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu) menu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>
