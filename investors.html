@@ -1,1 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYWING Investor Data Room | 93.5% Non-Dilutive Stack & Staged VC Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { tech: { cyan: '#00f2ff', emerald: '#10b981', amber: '#f59e0b', slate: '#94a3b8' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c0e12; color: #d4d4d8; }
+        .data-card { background-color: #11141b; border: 1px solid #222733; transition: all 0.2s ease; }
+        .data-card:hover { border-color: #384152; }
+        .glass-card { background-color: rgba(17, 20, 27, 0.88); backdrop-filter: blur(8px); border: 1px solid #222733; }
+        .cad-grid-bg {
+            background-size: 36px 36px;
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-700 selection:text-white min-h-screen flex flex-col">
 
+    <!-- GLOBAL MULTI-PAGE HEADER -->
+    <header class="fixed top-0 w-full bg-[#0c0e12]/95 backdrop-blur-md z-50 border-b border-zinc-800/80">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-3">
+                <a href="index.html" class="flex items-center space-x-3 shrink-0">
+                    <div class="w-8 h-8 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center">
+                        <svg class="w-4 h-4 text-tech-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
+                            <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-amber border border-zinc-800 rounded">VC DATA ROOM</span>
+                        </div>
+                        <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase" data-i18n="nav_subtitle">93.5% Non-Dilutive Leverage • 15.4x Equity Multiple</span>
+                    </div>
+                </a>
+
+                <nav class="hidden xl:flex items-center space-x-2 text-[10.5px] font-mono uppercase tracking-wider">
+                    <a href="index.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors" data-i18n="nav_home">01. Master Plan &amp; 28 Routes</a>
+                    <a href="engineering-rd.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors" data-i18n="nav_eng">02. R&amp;D &amp; Blueprints (SIL/D1/D2)</a>
+                    <a href="hkstp-itf.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-emerald hover:bg-zinc-900 transition-colors" data-i18n="nav_grants">03. HKSTP / ESS / GTF / RTH</a>
+                    <a href="investors.html" class="px-2.5 py-1.5 rounded bg-tech-amber/15 text-tech-amber border border-tech-amber/40 font-bold" data-i18n="nav_vc">04. Investors &amp; VC</a>
+                    <a href="utilities-grid.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-tech-cyan hover:bg-zinc-900 transition-colors" data-i18n="nav_grid">05. HKE / CLP / AAHK / CEDD</a>
+                    <a href="regulatory-class.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors" data-i18n="nav_reg">06. DNV &amp; HKMPB</a>
+                    <a href="stakeholder-tracker.html" class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors" data-i18n="nav_tracker">07. Active Comms</a>
+                </nav>
+
+                <div class="flex items-center space-x-2 shrink-0">
+                    <a href="hke-walkover-handout.html" class="hidden sm:inline-flex items-center bg-zinc-900 text-tech-cyan border border-tech-cyan/40 px-2.5 py-1 rounded text-[10px] font-mono font-bold hover:bg-tech-cyan hover:text-slate-950 transition-all" data-i18n="nav_handout">
+                        HKE Walkover Sheet ↗
+                    </a>
+                    <div class="flex bg-zinc-950 border border-zinc-800 rounded p-0.5 text-[10px] font-mono shrink-0">
+                        <button onclick="setLang('en')" id="btn-lang-en" class="px-2 py-1 rounded bg-zinc-800 text-white font-semibold">EN (USD)</button>
+                        <button onclick="setLang('tc')" id="btn-lang-tc" class="px-2 py-1 rounded text-zinc-500 hover:text-white">繁 (HKD)</button>
+                        <button onclick="setLang('sc')" id="btn-lang-sc" class="px-2 py-1 rounded text-zinc-500 hover:text-white">简 (RMB)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1: VC FUNDING & PUBLIC-PRIVATE CAPITALIZATION STRATEGY (#funding) — 100% RESTORED FROM 2.TXT -->
+        <section id="funding" class="pt-28 pb-20 md:pt-36 px-4 sm:px-6 lg:px-8 border-b border-zinc-800/80 cad-grid-bg">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs mb-3" data-i18n="sec6_tag">
+                            6. VC FUNDING &amp; PUBLIC-PRIVATE CAPITALIZATION STRATEGY
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-i18n="sec6_title">
+                            93.5% Non-Dilutive Leverage &amp; Staged VC Architecture
+                        </h1>
+                    </div>
+                    <p class="text-zinc-300 max-w-xl text-sm leading-relaxed" data-i18n="sec6_desc">
+                        HKSTP grants alone cannot fund full-scale commercial vessels—and early-stage VCs will not fund unvalidated shipyard CapEx. Our staged capital stack uses 93.5% non-dilutive HKSTP/ITF grants for Phase 0–1 IP creation, then unlocks 1:1 ITF Enterprise Support Scheme (ESS) co-matching for Phase 2 (D2) VC syndicate investors.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- PHASE 0–1 NON-TABLE BUDGET LEDGER (7 COLS) -->
+                    <div class="lg:col-span-7 glass-card rounded-2xl overflow-hidden">
+                        <div class="p-6 bg-zinc-950 border-b border-zinc-800 flex flex-wrap justify-between items-center gap-4">
+                            <div>
+                                <span class="text-xs font-mono uppercase tracking-wider text-tech-cyan block mb-1" data-i18n="p0_table_sub">PHASE 0–1 (18-MONTH INCUBATION): SIL, HIL &amp; D1 PROTOTYPE</span>
+                                <h3 class="text-xl font-bold text-white" data-i18n="p0_table_title">Compliance-Audited R&amp;D Budget Breakdown</h3>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs font-mono text-zinc-400 block" data-i18n="p0_total_label">TOTAL PHASE 0 CAPITALIZATION</span>
+                                <span class="text-2xl font-mono font-bold text-tech-emerald" data-i18n="p0_total_val">HK$ 3,198,000 (~$410k USD)</span>
+                            </div>
+                        </div>
+
+                        <div class="divide-y divide-zinc-800/70">
+                            <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-zinc-900/30">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-tech-cyan font-bold">01.</span>
+                                        <h4 class="font-semibold text-white text-sm" data-i18n="b_cat1">R&amp;D Engineering Talent (ITF RTH Subsidized)</h4>
+                                    </div>
+                                    <p class="text-xs text-zinc-400 mt-1" data-i18n="b_desc1">2x Full-Time Control Systems &amp; Marine Mechatronics Engineers (100% covered via ITF Research Talent Hub)</p>
+                                </div>
+                                <div class="font-mono font-bold text-white text-sm sm:text-right whitespace-nowrap" data-i18n="b_val1">HK$ 1,450,000</div>
+                            </div>
+
+                            <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-zinc-900/30">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-tech-cyan font-bold">02.</span>
+                                        <h4 class="font-semibold text-white text-sm" data-i18n="b_cat2">Simulation Software &amp; Multi-Physics Cloud</h4>
+                                    </div>
+                                    <p class="text-xs text-zinc-400 mt-1" data-i18n="b_desc2">MATLAB/Simulink Control Toolboxes, Star-CCM+ / ANSYS Fluent CFD licenses, Gazebo/ROS2 cloud compute</p>
+                                </div>
+                                <div class="font-mono font-bold text-white text-sm sm:text-right whitespace-nowrap" data-i18n="b_val2">HK$ 280,000</div>
+                            </div>
+
+                            <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-zinc-900/30">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-tech-cyan font-bold">03.</span>
+                                        <h4 class="font-semibold text-white text-sm" data-i18n="b_cat3">HIL Benchtop &amp; D1 Avionics/Sub-Scale Rig</h4>
+                                    </div>
+                                    <p class="text-xs text-zinc-400 mt-1" data-i18n="b_desc3">NVIDIA Jetson Orin Nano, dual STM32H7 ECUs, SBG marine IMU, ultrasonic/LiDAR sensors &amp; carbon T-foil rig</p>
+                                </div>
+                                <div class="font-mono font-bold text-white text-sm sm:text-right whitespace-nowrap" data-i18n="b_val3">HK$ 320,000</div>
+                            </div>
+
+                            <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-950/15 border-l-2 border-tech-emerald">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-tech-emerald font-bold">04.</span>
+                                        <h4 class="font-semibold text-white text-sm" data-i18n="b_cat4">Systems Architecture, Project Management &amp; Operational Runway</h4>
+                                        <span class="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded" data-i18n="b_tag4">HKSTP COMPLIANT</span>
+                                    </div>
+                                    <p class="text-xs text-zinc-300 mt-1" data-i18n="b_desc4">Principal Systems Architect technical leadership, utility/marine regulatory interfacing (HKE/HKMD), and 18-month corporate operational runway</p>
+                                </div>
+                                <div class="font-mono font-bold text-tech-emerald text-sm sm:text-right whitespace-nowrap" data-i18n="b_val4">HK$ 720,000</div>
+                            </div>
+
+                            <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-zinc-900/30">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-tech-cyan font-bold">05.</span>
+                                        <h4 class="font-semibold text-white text-sm" data-i18n="b_cat5">Intellectual Property &amp; Freedom-to-Operate</h4>
+                                    </div>
+                                    <p class="text-xs text-zinc-400 mt-1" data-i18n="b_desc5">PCT &amp; regional patent filings for 100Hz wave-feedforward active foil stabilization &amp; BESS dock telemetry (90% PAG subsidized)</p>
+                                </div>
+                                <div class="font-mono font-bold text-white text-sm sm:text-right whitespace-nowrap" data-i18n="b_val5">HK$ 278,000</div>
+                            </div>
+
+                            <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-zinc-900/30">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-tech-cyan font-bold">06.</span>
+                                        <h4 class="font-semibold text-white text-sm" data-i18n="b_cat6">HKSTP Lab Setup, Marine Insurance &amp; Tolo Trials</h4>
+                                    </div>
+                                    <p class="text-xs text-zinc-400 mt-1" data-i18n="b_desc6">Science Park bench space, third-party marine test insurance, and Tolo Harbour slipway sea-trial logistics</p>
+                                </div>
+                                <div class="font-mono font-bold text-white text-sm sm:text-right whitespace-nowrap" data-i18n="b_val6">HK$ 150,000</div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-gradient-to-r from-emerald-950/60 via-zinc-900 to-cyan-950/50 border-t border-emerald-500/40">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div>
+                                    <span class="inline-block font-mono text-xs font-bold uppercase tracking-wider text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded mb-2" data-i18n="nd_badge">
+                                        93.5% NON-DILUTIVE COVERAGE RATIO
+                                    </span>
+                                    <h4 class="text-base font-bold text-white" data-i18n="nd_title">
+                                        Net Unsubsidized Equity Gap: Only HK$ 208,000 (6.5% of Phase 0 Budget)
+                                    </h4>
+                                    <p class="text-xs text-zinc-300 mt-1 leading-relaxed" data-i18n="nd_desc">
+                                        Public grants reimburse HK$ 2,990,000 of the HK$ 3,198,000 budget. Early angel/seed capital serves primarily as a low-risk Working-Capital Reimbursement Float Facility, protecting early investors from R&amp;D burn while capturing 100% of core flight-control IP.
+                                    </p>
+                                </div>
+                                <div class="sm:text-right shrink-0 bg-zinc-950/90 border border-emerald-500/30 rounded-xl px-4 py-3">
+                                    <div class="text-[11px] font-mono text-zinc-400" data-i18n="nd_stat_label">PUBLIC GRANT STACK</div>
+                                    <div class="text-xl font-mono font-extrabold text-tech-emerald" data-i18n="nd_stat_val">HK$ 2.99M / 3.20M</div>
+                                    <div class="text-[11px] font-mono text-tech-cyan mt-0.5" data-i18n="nd_stat_sub">15.4x Equity Leverage</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN (5 COLS): PUBLIC GRANT STACK + MULTI-STAGE VC FUNNEL -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-card rounded-2xl p-6">
+                            <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-tech-cyan mb-4" data-i18n="stack_title">
+                                LEVERAGED PUBLIC CAPITAL STACK (PHASE 0–1)
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-xl bg-zinc-950 border border-zinc-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="font-semibold text-white text-sm" data-i18n="g1_name">HKSTP Incu-Tech Programme</span>
+                                        <span class="font-mono font-bold text-tech-emerald text-sm" data-i18n="g1_val">HK$ 1,290,000</span>
+                                    </div>
+                                    <p class="text-xs text-zinc-400" data-i18n="g1_desc">Direct grant &amp; operational subsidy covering lab rent, HIL hardware tooling, and R&amp;D milestones.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-zinc-950 border border-zinc-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="font-semibold text-white text-sm" data-i18n="g2_name">ITF Research Talent Hub (RTH)</span>
+                                        <span class="font-mono font-bold text-tech-emerald text-sm" data-i18n="g2_val">HK$ 1,450,000</span>
+                                    </div>
+                                    <p class="text-xs text-zinc-400" data-i18n="g2_desc">100% government-funded salary reimbursement for 2 full-time Master/PhD control &amp; mechatronics engineers.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-zinc-950 border border-zinc-800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="font-semibold text-white text-sm" data-i18n="g3_name">Patent Application Grant (PAG)</span>
+                                        <span class="font-mono font-bold text-tech-emerald text-sm" data-i18n="g3_val">HK$ 250,000</span>
+                                    </div>
+                                    <p class="text-xs text-zinc-400" data-i18n="g3_desc">Covers 90% of up to HK$ 278k in PCT and regional patent filings (10% net co-pay).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-6 border border-cyan-500/30 bg-gradient-to-b from-zinc-900/90 to-zinc-950">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-mono text-xs font-bold text-tech-cyan uppercase tracking-wider" data-i18n="vc_roadmap_tag">MULTI-MARKET INVESTOR CATCHMENT (HK / GBA / GLOBAL)</span>
+                                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">USD / HKD / RMB</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-3" data-i18n="vc_roadmap_title">How Private VC &amp; Strategic Capital Plugs In</h4>
+                            <div class="space-y-3 text-xs text-zinc-300">
+                                <div class="p-3.5 rounded-lg bg-zinc-950/90 border border-zinc-800">
+                                    <div class="font-mono font-bold text-tech-emerald mb-0.5" data-i18n="tranche1_title">Tranche 1 (Now): HK$ 1.5M – 2.0M Angel / Bridge Float</div>
+                                    <p class="text-zinc-400" data-i18n="tranche1_desc">Covers the HK$ 208k net gap + working-capital float ahead of HKSTP/ITF reimbursement cycles to launch Phase 0 SIL &amp; Phase 1 D1 in Tolo Harbour.</p>
+                                </div>
+                                <div class="p-3.5 rounded-lg bg-zinc-950/90 border border-zinc-800">
+                                    <div class="font-mono font-bold text-tech-amber mb-0.5" data-i18n="tranche2_title">Tranche 2 (Month 12): HK$ 10M Seed + HK$ 10M ITF ESS (HK$ 20M Total)</div>
+                                    <p class="text-zinc-400" data-i18n="tranche2_desc">1:1 matching via HK Innovation &amp; Technology Fund (ESS) + Green Tech Fund to build the 25-pax BAYWING-D2 and energize the first 500 kW HKE BESS charger.</p>
+                                </div>
+                                <div class="p-3.5 rounded-lg bg-zinc-950/90 border border-zinc-800">
+                                    <div class="font-mono font-bold text-tech-cyan mb-0.5" data-i18n="tranche3_title">Tranche 3 (Month 26+): Series A &amp; GBA Maritime Green Lease</div>
+                                    <p class="text-zinc-400" data-i18n="tranche3_desc">Co-investment with PRD composite shipyards, green shipping leasing funds, and ferry operators for D3–D5 &amp; EF-150 fleet scaling across HK &amp; GBA.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INVESTOR MERITS, HKE UTILITY MILESTONE & RISK MITIGATION (#merits) — 100% RESTORED FROM 2.TXT -->
+        <section id="merits" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#090b0f]">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-tech-cyan font-mono text-xs mb-3" data-i18n="sec7_tag">
+                        7. INVESTOR MERITS, TRACTION &amp; RISK MITIGATION
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4" data-i18n="sec7_title">
+                        De-Risking Deep Tech Before Heavy CapEx
+                    </h2>
+                    <p class="text-zinc-400 text-sm" data-i18n="sec7_desc">
+                        We systematically neutralize the three biggest failure modes in marine electrification: hydrodynamic control instability, utility grid bottlenecks, and shipyard balance-sheet bloat.
+                    </p>
+                </div>
+
+                <!-- ACTIVE HKE DISTRIBUTION PLANNING TRACTION BANNER -->
+                <div class="mb-10 p-6 rounded-2xl bg-gradient-to-r from-cyan-950/70 via-zinc-900 to-emerald-950/70 border border-cyan-500/40 shadow-lg">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div class="space-y-2 max-w-3xl">
+                            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span data-i18n="hke_badge">LIVE INFRASTRUCTURE TRACTION // HK ELECTRIC DISTRIBUTION PLANNING</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="hke_banner_title">
+                                Sheung Wan Landing No. 1 Grid Interface Walkover Scheduled (Oct 2026)
+                            </h3>
+                            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed" data-i18n="hke_banner_desc">
+                                HK Electric’s Distribution Planning Department has formally initiated technical feasibility review and scheduled a joint site walkover at Sheung Wan Landing No. 1 (adjacent to the HK–Macau Ferry Terminal) for our 250 kW – 900 kW continuous Low-Voltage (380V/415V AC) supply profile. Located at the junction of the Central and Macau ferry corridors, this public landing serves as a dual-purpose node: validating the 500 kW charger for our intra-harbour BAYWING-D2 pilot (extending to Central Piers 7–10 &amp; Wan Chai Pier) while establishing the first modular floating BESS buffer for the 3.5 MW EF-150 Macau flagship—without triggering multi-year 11kV road excavations.
+                            </p>
+                            <div class="pt-3 flex flex-wrap gap-3">
+                                <a href="hke-walkover-handout.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-tech-cyan hover:bg-cyan-400 text-slate-950 font-mono text-xs font-bold shadow-md transition-all">
+                                    <span data-i18n="hke_btn_text">View Official HKE Site Walkover Decision Handout &amp; Map</span>
+                                    <span>→</span>
+                                </a>
+                                <a href="utilities-grid.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white hover:border-tech-cyan font-mono text-xs font-bold transition-all">
+                                    <span>Explore 05. Full Utility &amp; Port Works Portal</span>
+                                    <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="shrink-0 grid grid-cols-2 sm:grid-cols-1 gap-3 bg-zinc-950/90 p-4 rounded-xl border border-zinc-800 font-mono text-xs">
+                            <div>
+                                <span class="text-zinc-400 block text-[10px]" data-i18n="hke_stat1_l">PHASE 1–2 HKE LV LOAD</span>
+                                <span class="text-tech-emerald font-bold text-base">250 – 900 kW AC</span>
+                            </div>
+                            <div class="border-t border-zinc-800 pt-2">
+                                <span class="text-zinc-400 block text-[10px]" data-i18n="hke_stat2_l">GRID PROTECTION TOPOLOGY</span>
+                                <span class="text-tech-cyan font-bold text-xs" data-i18n="hke_stat2_v">UNIDIRECTIONAL BESS (ZERO EXPORT)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BULL CASE VS RISK MITIGATION GRID -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="glass-card rounded-2xl p-7 border border-emerald-500/30">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-tech-emerald font-mono font-bold">↑</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white" data-i18n="bull_title">What Institutional Investors Love (The Bull Case)</h3>
+                                <p class="text-xs text-tech-emerald font-mono" data-i18n="bull_sub">STRUCTURAL MOAT &amp; CAPITAL EFFICIENCY</p>
+                            </div>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="p-4 rounded-xl bg-zinc-950/80 border border-zinc-800">
+                                <h4 class="font-bold text-white text-sm mb-1" data-i18n="bull_1_t">1. 93.5% Non-Dilutive R&amp;D Leverage</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="bull_1_d">By executing a software-first Digital Twin (Phase 0) and sub-scale Froude demonstrator (Phase 1), HK$ 2.99M of our HK$ 3.20M initial budget is covered by HKSTP Incu-Tech, ITF RTH, and PAG grants. Investor equity isn't burned on raw aluminium.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-zinc-950/80 border border-zinc-800">
+                                <h4 class="font-bold text-white text-sm mb-1" data-i18n="bull_2_t">2. Froude-Scaled Physics De-Risking (Fn = 1.17)</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="bull_2_d">A 3.56m autonomous testbed (D1) has a higher natural pitch/heave frequency than a 28.5m vessel. Proving 100Hz active flap stabilization on the D1 in Tolo Harbour mathematically solves control stability before carrying a single passenger on the D2.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-zinc-950/80 border border-zinc-800">
+                                <h4 class="font-bold text-white text-sm mb-1" data-i18n="bull_3_t">3. Undeniable Short-Haul Unit Economics (78% OPEX Cut)</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="bull_3_d">Decoupling the hull cuts energy burn to ~$4.90 USD/NM vs ~$22.50 USD/NM for MGO diesel catamarans, delivering a ~3.1-year payback on EV CapEx premium and optimal 50% Depth-of-Discharge LFP battery longevity (4,000+ cycles).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-7 border border-amber-500/30">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-tech-amber font-mono font-bold">⚡</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white" data-i18n="risk_title">What VCs &amp; Assessors Scrutinize (Solved Mitigations)</h3>
+                                <p class="text-xs text-tech-amber font-mono" data-i18n="risk_sub">EXECUTION, GRID &amp; MANUFACTURING DE-RISKING</p>
+                            </div>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="p-4 rounded-xl bg-zinc-950/80 border border-zinc-800">
+                                <h4 class="font-bold text-white text-sm mb-1" data-i18n="risk_1_t">1. Key-Person &amp; Lean Engineering Team Risk</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="risk_1_d">Mitigation: ITF Research Talent Hub funds 2 full-time control/mechatronics engineers from Day 1, built on modular ROS2/AUTOSAR-compliant C++ architecture and standard COTS avionics (Jetson/STM32H7) to eliminate single-developer lock-in.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-zinc-950/80 border border-zinc-800">
+                                <h4 class="font-bold text-white text-sm mb-1" data-i18n="risk_2_t">2. Dockside Grid Capacity &amp; Pier Tenancy Lead Times</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="risk_2_d">Mitigation (Active): Rather than waiting years for 11kV substations, our unidirectional floating BESS draws 250–900 kW continuous LV power from existing HKE transformers—already under joint site review with HK Electric at Sheung Wan Landing No. 1.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-zinc-950/80 border border-zinc-800">
+                                <h4 class="font-bold text-white text-sm mb-1" data-i18n="risk_3_t">3. The Phase 3 "Shipyard CapEx Trap"</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="risk_3_d">Mitigation: Aero-Marine Systems is an aerospace flight-control &amp; powertrain OEM—not a capital-heavy shipyard. Hull layup is contracted to established Pearl River Delta (PRD) carbon-composite yards under DNV HSLC classification, while we retain high-margin FCS software, foil struts, and BESS charging IP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 px-4 border-t border-zinc-800/80 bg-[#07090c] text-center font-mono text-xs text-zinc-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span data-i18n="footer_copy">AERO-MARINE SYSTEMS LIMITED © 2026 // HONG KONG &amp; GREATER BAY AREA</span>
+            <a href="utilities-grid.html" class="text-tech-cyan hover:underline">Proceed to 05. HKE / CLP / AAHK SkyPier / CEDD Portal →</a>
+        </div>
+    </footer>
+
+    <!-- FULL TRI-LINGUAL DICTIONARY FOR INVESTORS.HTML -->
+    <script>
+        const i18nData = {
+            en: {
+                nav_subtitle: "93.5% Non-Dilutive Leverage • 15.4x Equity Multiple",
+                sec6_tag: "6. VC FUNDING & PUBLIC-PRIVATE CAPITALIZATION STRATEGY",
+                sec6_title: "93.5% Non-Dilutive Leverage & Staged VC Architecture",
+                sec6_desc: "HKSTP grants alone cannot fund full-scale commercial vessels—and early-stage VCs will not fund unvalidated shipyard CapEx. Our staged capital stack uses 93.5% non-dilutive HKSTP/ITF grants for Phase 0–1 IP creation, then unlocks 1:1 ITF Enterprise Support Scheme (ESS) co-matching for Phase 2 (D2) VC syndicate investors.",
+                p0_table_sub: "PHASE 0–1 (18-MONTH INCUBATION): SIL, HIL & D1 PROTOTYPE",
+                p0_table_title: "Compliance-Audited R&D Budget Breakdown",
+                p0_total_label: "TOTAL PHASE 0 CAPITALIZATION",
+                p0_total_val: "HK$ 3,198,000 (~$410k USD)",
+                b_cat1: "R&D Engineering Talent (ITF RTH Subsidized)",
+                b_desc1: "2x Full-Time Control Systems & Marine Mechatronics Engineers (100% covered via ITF Research Talent Hub)",
+                b_val1: "HK$ 1,450,000",
+                b_cat2: "Simulation Software & Multi-Physics Cloud",
+                b_desc2: "MATLAB/Simulink Control Toolboxes, Star-CCM+ / ANSYS Fluent CFD licenses, Gazebo/ROS2 cloud compute",
+                b_val2: "HK$ 280,000",
+                b_cat3: "HIL Benchtop & D1 Avionics/Sub-Scale Rig",
+                b_desc3: "NVIDIA Jetson Orin Nano, dual STM32H7 ECUs, SBG marine IMU, ultrasonic/LiDAR sensors & carbon T-foil rig",
+                b_val3: "HK$ 320,000",
+                b_cat4: "Systems Architecture, Project Management & Operational Runway",
+                b_tag4: "HKSTP COMPLIANT",
+                b_desc4: "Principal Systems Architect technical leadership, utility/marine regulatory interfacing (HKE/HKMD), and 18-month corporate operational runway",
+                b_val4: "HK$ 720,000",
+                b_cat5: "Intellectual Property & Freedom-to-Operate",
+                b_desc5: "PCT & regional patent filings for 100Hz wave-feedforward active foil stabilization & BESS dock telemetry (90% PAG subsidized)",
+                b_val5: "HK$ 278,000",
+                b_cat6: "HKSTP Lab Setup, Marine Insurance & Tolo Trials",
+                b_desc6: "Science Park bench space, third-party marine test insurance, and Tolo Harbour slipway sea-trial logistics",
+                b_val6: "HK$ 150,000",
+                nd_badge: "93.5% NON-DILUTIVE COVERAGE RATIO",
+                nd_title: "Net Unsubsidized Equity Gap: Only HK$ 208,000 (6.5% of Phase 0 Budget)",
+                nd_desc: "Public grants reimburse HK$ 2,990,000 of the HK$ 3,198,000 budget. Early angel/seed capital serves primarily as a low-risk Working-Capital Reimbursement Float Facility, protecting early investors from R&D burn while capturing 100% of core flight-control IP.",
+                nd_stat_label: "PUBLIC GRANT STACK",
+                nd_stat_val: "HK$ 2.99M / 3.20M",
+                nd_stat_sub: "15.4x Equity Leverage",
+                stack_title: "LEVERAGED PUBLIC CAPITAL STACK (PHASE 0–1)",
+                g1_name: "HKSTP Incu-Tech Programme",
+                g1_val: "HK$ 1,290,000",
+                g1_desc: "Direct grant & operational subsidy covering lab rent, HIL hardware tooling, and R&D milestones.",
+                g2_name: "ITF Research Talent Hub (RTH)",
+                g2_val: "HK$ 1,450,000",
+                g2_desc: "100% government-funded salary reimbursement for 2 full-time Master/PhD control & mechatronics engineers.",
+                g3_name: "Patent Application Grant (PAG)",
+                g3_val: "HK$ 250,000",
+                g3_desc: "Covers 90% of up to HK$ 278k in PCT and regional patent filings (10% net co-pay).",
+                vc_roadmap_tag: "MULTI-MARKET INVESTOR CATCHMENT (HK / GBA / GLOBAL)",
+                vc_roadmap_title: "How Private VC & Strategic Capital Plugs In",
+                tranche1_title: "Tranche 1 (Now): HK$ 1.5M – 2.0M Angel / Bridge Float",
+                tranche1_desc: "Covers the HK$ 208k net gap + working-capital float ahead of HKSTP/ITF reimbursement cycles to launch Phase 0 SIL & Phase 1 D1 in Tolo Harbour.",
+                tranche2_title: "Tranche 2 (Month 12): HK$ 10M Seed + HK$ 10M ITF ESS (HK$ 20M Total)",
+                tranche2_desc: "1:1 matching via HK Innovation & Technology Fund (ESS) + Green Tech Fund to build the 25-pax BAYWING-D2 and energize the first 500 kW HKE BESS charger.",
+                tranche3_title: "Tranche 3 (Month 26+): Series A & GBA Maritime Green Lease",
+                tranche3_desc: "Co-investment with PRD composite shipyards, green shipping leasing funds, and ferry operators for D3–D5 & EF-150 fleet scaling across HK & GBA.",
+                sec7_tag: "7. INVESTOR MERITS, TRACTION & RISK MITIGATION",
+                sec7_title: "De-Risking Deep Tech Before Heavy CapEx",
+                sec7_desc: "We systematically neutralize the three biggest failure modes in marine electrification: hydrodynamic control instability, utility grid bottlenecks, and shipyard balance-sheet bloat.",
+                hke_badge: "LIVE INFRASTRUCTURE TRACTION // HK ELECTRIC DISTRIBUTION PLANNING",
+                hke_banner_title: "Sheung Wan Landing No. 1 Grid Interface Walkover Scheduled (Oct 2026)",
+                hke_banner_desc: "HK Electric’s Distribution Planning Department has formally initiated technical feasibility review and scheduled a joint site walkover at Sheung Wan Landing No. 1 (adjacent to the HK–Macau Ferry Terminal) for our 250 kW – 900 kW continuous Low-Voltage (380V/415V AC) supply profile. Located at the junction of the Central and Macau ferry corridors, this public landing serves as a dual-purpose node: validating the 500 kW charger for our intra-harbour BAYWING-D2 pilot (extending to Central Piers 7–10 & Wan Chai Pier) while establishing the first modular floating BESS buffer for the 3.5 MW EF-150 Macau flagship—without triggering multi-year 11kV road excavations.",
+                hke_btn_text: "View Official HKE Site Walkover Decision Handout & Map",
+                hke_stat1_l: "PHASE 1–2 HKE LV LOAD",
+                hke_stat2_l: "GRID PROTECTION TOPOLOGY",
+                hke_stat2_v: "UNIDIRECTIONAL BESS (ZERO EXPORT)",
+                bull_title: "What Institutional Investors Love (The Bull Case)",
+                bull_sub: "STRUCTURAL MOAT & CAPITAL EFFICIENCY",
+                bull_1_t: "1. 93.5% Non-Dilutive R&D Leverage",
+                bull_1_d: "By executing a software-first Digital Twin (Phase 0) and sub-scale Froude demonstrator (Phase 1), HK$ 2.99M of our HK$ 3.20M initial budget is covered by HKSTP Incu-Tech, ITF RTH, and PAG grants. Investor equity isn't burned on raw aluminium.",
+                bull_2_t: "2. Froude-Scaled Physics De-Risking (Fn = 1.17)",
+                bull_2_d: "A 3.56m autonomous testbed (D1) has a higher natural pitch/heave frequency than a 28.5m vessel. Proving 100Hz active flap stabilization on the D1 in Tolo Harbour mathematically solves control stability before carrying a single passenger on the D2.",
+                bull_3_t: "3. Undeniable Short-Haul Unit Economics (78% OPEX Cut)",
+                bull_3_d: "Decoupling the hull cuts energy burn to ~$4.90 USD/NM vs ~$22.50 USD/NM for MGO diesel catamarans, delivering a ~3.1-year payback on EV CapEx premium and optimal 50% Depth-of-Discharge LFP battery longevity (4,000+ cycles).",
+                risk_title: "What VCs & Assessors Scrutinize (Solved Mitigations)",
+                risk_sub: "EXECUTION, GRID & MANUFACTURING DE-RISKING",
+                risk_1_t: "1. Key-Person & Lean Engineering Team Risk",
+                risk_1_d: "Mitigation: ITF Research Talent Hub funds 2 full-time control/mechatronics engineers from Day 1, built on modular ROS2/AUTOSAR-compliant C++ architecture and standard COTS avionics (Jetson/STM32H7) to eliminate single-developer lock-in.",
+                risk_2_t: "2. Dockside Grid Capacity & Pier Tenancy Lead Times",
+                risk_2_d: "Mitigation (Active): Rather than waiting years for 11kV substations, our unidirectional floating BESS draws 250–900 kW continuous LV power from existing HKE transformers—already under joint site review with HK Electric at Sheung Wan Landing No. 1.",
+                risk_3_t: "3. The Phase 3 'Shipyard CapEx Trap'",
+                risk_3_d: "Mitigation: Aero-Marine Systems is an aerospace flight-control & powertrain OEM—not a capital-heavy shipyard. Hull layup is contracted to established Pearl River Delta (PRD) carbon-composite yards under DNV HSLC classification, while we retain high-margin FCS software, foil struts, and BESS charging IP.",
+                footer_copy: "AERO-MARINE SYSTEMS LIMITED © 2026 // HONG KONG & GREATER BAY AREA"
+            },
+            tc: {
+                nav_subtitle: "93.5% 非稀釋性政府資助槓桿 • 15.4倍 股權資金放大率",
+                sec6_tag: "6. 創投融資與公私營資本槓桿策略",
+                sec6_title: "93.5% 非稀釋性政府資助槓桿與分階段創投架構",
+                sec6_desc: "單靠科學園資助無法建造全尺寸商用船，而早期創投基金亦不會承擔未經認證的造船重資產風險。我們在第 0–1 階段利用 93.5% 非稀釋性政府資助完成核心飛控 IP，再於第 2 階段 (D2) 啟動創新科技署 ESS 1:1 配對基金，為創投基金提供雙倍資金槓桿。",
+                p0_table_sub: "第 0–1 階段 (18個月孵化期)：SIL、HIL 及 D1 樣機驗證",
+                p0_table_title: "符合香港科學園審計標準之研發預算明細",
+                p0_total_label: "第 0 階段總資本預算",
+                p0_total_val: "HK$ 3,198,000",
+                b_cat1: "研發工程人才薪酬 (ITF RTH 全額資助)",
+                b_desc1: "2名全職飛控系統及船舶機電工程師 (由創新科技署「研究人才庫」100% 資助)",
+                b_val1: "HK$ 1,450,000",
+                b_cat2: "多物理場仿真軟件及雲端算力",
+                b_desc2: "MATLAB/Simulink 控制工具箱、Star-CCM+ / ANSYS Fluent 水動力授權及 Gazebo/ROS2 雲端運算",
+                b_val2: "HK$ 280,000",
+                b_cat3: "HIL 硬件在環測試台及 D1 航電水翼組件",
+                b_desc3: "NVIDIA Jetson Orin Nano、雙冗餘 STM32H7 控制器、船用慣導 IMU、激光雷達及碳纖維 T 型水翼測試架",
+                b_val3: "HK$ 320,000",
+                b_cat4: "系統架構研發、項目工程管理及營運資金儲備",
+                b_tag4: "符合科學園審計規範",
+                b_desc4: "首席系統架構師技術攻關、電力及海事監管對接 (港燈 HKE / 海事處 HKMD) 以及 18 個月企業合規營運支出",
+                b_val4: "HK$ 720,000",
+                b_cat5: "知識產權佈局及專利申請 (PAG 90%資助)",
+                b_desc5: "100Hz 波浪前饋主動水翼穩定算法及岸電儲能調度系統之 PCT 國際與地區專利申請",
+                b_val5: "HK$ 278,000",
+                b_cat6: "科學園實驗室配置、海事保險及吐露港海試",
+                b_desc6: "科學園研發工位租賃、第三方水上測試保險及白石角吐露港滑道測試後勤",
+                b_val6: "HK$ 150,000",
+                nd_badge: "93.5% 非稀釋性資金覆蓋率",
+                nd_title: "淨自籌股權資金缺口：僅 HK$ 208,000 (佔第 0 階段預算 6.5%)",
+                nd_desc: "政府資助合共報銷 HK$ 2,990,000（總預算 HK$ 3,198,000）。早期天使/種子資金主要作為低風險「營運周轉過橋資金 (Working-Capital Float)」，在保障早期投資者下行風險的同時，100% 鎖定核心飛控專利資產。",
+                nd_stat_label: "公共資助總額",
+                nd_stat_val: "HK$ 2.99M / 3.20M",
+                nd_stat_sub: "15.4倍 股權資金槓桿",
+                stack_title: "公共資本槓桿組合 (第 0–1 階段)",
+                g1_name: "香港科學園 Incu-Tech 創科培育計劃",
+                g1_val: "HK$ 1,290,000",
+                g1_desc: "直接資助及營運津貼，涵蓋實驗室租金、HIL 硬件設備及研發里程碑考核。",
+                g2_name: "創新科技署「研究人才庫」(ITF RTH)",
+                g2_val: "HK$ 1,450,000",
+                g2_desc: "由政府 100% 報銷 2 名全職碩士/博士級飛控與機電工程師薪酬。",
+                g3_name: "專利申請資助計劃 (PAG)",
+                g3_val: "HK$ 250,000",
+                g3_desc: "資助高達 HK$ 278,000 國際及地區專利申請費用的 90%（企業僅需自付 10%）。",
+                vc_roadmap_tag: "跨市場投資者對接架構 (香港 / 大灣區 / 國際基金)",
+                vc_roadmap_title: "私募創投 (VC) 與產業資本切入路徑",
+                tranche1_title: "第一輪 (當前)：HK$ 150萬 – 200萬 天使 / 報銷周轉過橋融資",
+                tranche1_desc: "覆蓋 HK$ 20.8萬淨資金缺口及政府資助報銷周期之周轉金，立即啟動第 0 階段數字孿生及吐露港 D1 海試。",
+                tranche2_title: "第二輪 (第12個月)：HK$ 1,000萬 種子輪 + HK$ 1,000萬 ITF ESS 配對 (合共 HK$ 2,000萬)",
+                tranche2_desc: "透過創新科技署「企業支援計劃」(ESS) 1:1 政府配對及綠色科技基金，建造 25–40 座 BAYWING-D2 並於中上環碼頭落實 500 kW 儲能快充。",
+                tranche3_title: "第三輪 (第26個月+)：A輪融資及大灣區綠色船舶租賃銀團",
+                tranche3_desc: "聯同珠三角碳纖維船廠、綠色航運租賃基金及渡輪營運商，規模化部署 D3–D5 全港船隊及 EF-150 跨境高速船隊。",
+                sec7_tag: "7. 投資亮點、電網實質進展與風險緩釋",
+                sec7_title: "在重資產投入前徹底消除深科技風險",
+                sec7_desc: "我們系統性地解決電動渡輪三大痛點：高海況水翼控制失穩、碼頭高壓電網審批瓶頸，以及船廠重資產負債陷阱。",
+                hke_badge: "基建實質進展 // 香港電燈 (HK ELECTRIC) 配電規劃部聯合勘察",
+                hke_banner_title: "上環一號梯台岸電快充接口現場勘察已排期 (2026年10月)",
+                hke_banner_desc: "香港電燈 (HK Electric) 配電規劃部已正式受理技術可行性評估，並定於 2026年10月21日 在「上環一號梯台」（毗鄰港澳碼頭信德中心）進行聯合現場勘察，審視我們 250 kW – 900 kW 持續低壓 (380V/415V AC) 供電方案。該公眾梯台位處中環與港澳航線交匯點，具備雙重戰略價值：既可驗證維港短途線 BAYWING-D2 的 500 kW 快充系統（並延伸至中環 7–10 號碼頭及灣仔碼頭），同時作為港澳線 EF-150 旗艦船 3.5 MW 兆瓦快充的首個浮動儲能緩衝節點——無需進行耗時數年的 11kV 高壓掘路工程。",
+                hke_btn_text: "查看港燈現場勘察一頁決策單及走線圖",
+                hke_stat1_l: "第 1–2 階段港燈低壓負載",
+                hke_stat2_l: "電網保護拓撲架構",
+                hke_stat2_v: "單向充電儲能緩衝 (零逆向饋電)",
+                bull_title: "機構投資者看重的結構性優勢 (Bull Case)",
+                bull_sub: "核心技術護城河與極致資本效率",
+                bull_1_t: "1. 93.5% 非稀釋性研發資金槓桿",
+                bull_1_d: "透過軟件優先的數字孿生 (Phase 0) 與縮尺模型驗證 (Phase 1)，首階段 HK$ 320萬預算中有 HK$ 299萬由科學園及創新科技署資助覆蓋，投資人資金不會消耗在早期鋁材試錯。",
+                bull_2_t: "2. 弗勞德數 (Fn = 1.17) 物理縮尺除險",
+                bull_2_d: "3.56米 D1 測試艇的固有縱搖/升沉頻率高於 28.5米大船。在吐露港真實海況下驗證 D1 的 100Hz 主動襟翼控制，能從數學與物理層面徹底解決載客前的飛控穩定性。",
+                bull_3_t: "3. 無可爭議的短途航線經濟效益 (節省 78% 能源成本)",
+                bull_3_d: "船體脫離水面減阻 80%，每海里電費僅 ~$4.90 美元（傳統柴油雙體船高達 ~$22.50 美元），約 3.1 年即可收回電動船溢價，且 LFP 電池工作於 50% 淺充放區間，壽命超過 4,000 次循環。",
+                risk_title: "創投基金與評審關注的風險及解決方案",
+                risk_sub: "執行力、岸電基建與製造模式除險",
+                risk_1_t: "1. 關鍵人物依賴與精簡工程團隊風險",
+                risk_1_d: "解決方案：由第 1 天起透過 ITF RTH 聘請 2 名全職飛控及機電工程師，採用模組化 ROS2/AUTOSAR 標準 C++ 架構及商用現成航電硬件 (Jetson/STM32H7)，消除單一開發者依賴。",
+                risk_2_t: "2. 碼頭岸電容量審批與租約周期瓶頸",
+                risk_2_d: "解決方案 (已落地)：無需等待數年興建 11kV 變電站，我們的單向浮動儲能系統直接利用港燈現有低壓變壓器裕度（250–900 kW 持續負載），目前已與港燈配電規劃部推進上環一號梯台現場交界勘察。",
+                risk_3_t: "3. 第 3 階段「重資產造船資本陷阱」",
+                risk_3_d: "解決方案：Aero-Marine Systems 定位為「海事飛控系統與電力推進 OEM 供應商」而非船廠。碳纖維船體由珠三角成熟船廠按 DNV HSLC 規範代工，我們專注持有高毛利的飛控軟件、水翼總成及岸電儲能 IP。",
+                footer_copy: "AERO-MARINE SYSTEMS LIMITED © 2026 // 香港及粵港澳大灣區"
+            },
+            sc: {
+                nav_subtitle: "93.5% 非稀释性政府资助杠杆 • 15.4倍 股权资金放大率",
+                sec6_tag: "6. 创投融资与公私营资本杠杆策略",
+                sec6_title: "93.5% 非稀释性政府资助杠杆与分阶段创投架构",
+                sec6_desc: "单靠香港科学园资助无法建造全尺寸商用船，而早期创投基金也不会承担未经验证的造船重资产风险。我们在第 0–1 阶段利用 93.5% 非稀释性香港政府资助完成核心飞控 IP，再于第 2 阶段 (D2) 启动香港创新科技署 ESS 1:1 配对基金，为大湾区及国际创投提供双倍资金杠杆。",
+                p0_table_sub: "第 0–1 阶段 (18个月孵化期)：SIL、HIL 及 D1 样机验证",
+                p0_table_title: "符合香港科学园审计标准之研发预算明细",
+                p0_total_label: "第 0 阶段总资本预算",
+                p0_total_val: "¥ 2,952,000 RMB (HK$ 3,198,000)",
+                b_cat1: "研发工程人才薪酬 (ITF RTH 全额资助)",
+                b_desc1: "2名全职飞控系统及船舶机电工程师 (由香港创新科技署“研究人才库” 100% 资助)",
+                b_val1: "¥ 1,338,000 (HK$ 1.45M)",
+                b_cat2: "多物理场仿真软件及云端算力",
+                b_desc2: "MATLAB/Simulink 控制工具箱、Star-CCM+ / ANSYS Fluent 水动力授权及 Gazebo/ROS2 云端运算",
+                b_val2: "¥ 258,000 (HK$ 280k)",
+                b_cat3: "HIL 硬件在环测试台及 D1 航电水翼组件",
+                b_desc3: "NVIDIA Jetson Orin Nano、双冗余 STM32H7 控制器、船用惯导 IMU、激光雷达及碳纤维 T 型水翼测试架",
+                b_val3: "¥ 295,000 (HK$ 320k)",
+                b_cat4: "系统架构研发、项目工程管理及运营资金储备",
+                b_tag4: "符合科学园审计规范",
+                b_desc4: "首席系统架构师技术攻关、电力及海事监管对接 (港灯 HKE / 香港海事处 HKMD) 以及 18 个月企业合规运营支出",
+                b_val4: "¥ 665,000 (HK$ 720k)",
+                b_cat5: "知识产权布局及专利申请 (PAG 90%资助)",
+                b_desc5: "100Hz 波浪前馈主动水翼稳定算法及岸电储能调度系统之 PCT 国际与地区专利申请",
+                b_val5: "¥ 257,000 (HK$ 278k)",
+                b_cat6: "科学园实验室配置、海事保险及吐露港海试",
+                b_desc6: "科学园研发工位租赁、第三方水上测试保险及白石角吐露港滑道测试后勤",
+                b_val6: "¥ 139,000 (HK$ 150k)",
+                nd_badge: "93.5% 非稀释性资金覆盖率",
+                nd_title: "净自筹股权资金缺口：仅 ¥ 19.2万 RMB / HK$ 208,000 (占预算 6.5%)",
+                nd_desc: "香港公共科研资助合计报销 HK$ 2,990,000（总预算 HK$ 3,198,000）。早期天使/种子资金主要作为低风险“运营周转过桥资金 (Working-Capital Float)”，在保障早期投资人下行风险的同时，100% 锁定核心飞控专利资产。",
+                nd_stat_label: "公共资助总额",
+                nd_stat_val: "HK$ 2.99M / 3.20M",
+                nd_stat_sub: "15.4倍 股权资金杠杆",
+                stack_title: "公共资本杠杆组合 (第 0–1 阶段)",
+                g1_name: "香港科学园 Incu-Tech 创科培育计划",
+                g1_val: "HK$ 1,290,000",
+                g1_desc: "直接资助及运营津贴，涵盖实验室租金、HIL 硬件设备及研发里程碑考核。",
+                g2_name: "香港创新科技署“研究人才库” (ITF RTH)",
+                g2_val: "HK$ 1,450,000",
+                g2_desc: "由特区政府 100% 报销 2 名全职硕士/博士级飞控与机电工程师薪酬。",
+                g3_name: "专利申请资助计划 (PAG)",
+                g3_val: "HK$ 250,000",
+                g3_desc: "资助高达 HK$ 278,000 国际及地区专利申请费用的 90%（企业仅需自付 10%）。",
+                vc_roadmap_tag: "跨市场投资者对接架构 (香港 / 大湾区人民币基金 / 美元基金)",
+                vc_roadmap_title: "私募创投 (VC) 与大湾区产业资本切入路径",
+                tranche1_title: "第一轮 (当前)：¥ 140万 – 185万 RMB (HK$ 1.5M–2.0M) 天使/报销周转融资",
+                tranche1_desc: "覆盖 HK$ 20.8万净资金缺口及政府资助报销周期之周转金，立即启动第 0 阶段数字孪生及吐露港 D1 海试。",
+                tranche2_title: "第二轮 (第12个月)：HK$ 1,000万 种子轮 + HK$ 1,000万 ITF ESS 配对 (共 HK$ 2,000万)",
+                tranche2_desc: "通过香港创新科技署“企业支援计划”(ESS) 1:1 政府配对及绿色科技基金，联合珠三角船厂建造 25–40 座 BAYWING-D2 并落地上环/中环码头 500 kW 储能快充。",
+                tranche3_title: "第三轮 (第26个月+)：A轮融资及大湾区绿色船舶租赁银团",
+                tranche3_desc: "联合大湾区碳纤维制造基地、绿色航运金融租赁基金及船务集团，规模化部署 D3–D5 全港船队及 EF-150 港澳深珠跨境高速船队。",
+                sec7_tag: "7. 投资亮点、电网实质进展与风险缓释",
+                sec7_title: "在重资产投入前彻底消除深科技风险",
+                sec7_desc: "我们系统性地解决电动渡轮三大痛点：高海况水翼控制失稳、码头高压电网审批瓶颈，以及船厂重资产负债陷阱。",
+                hke_badge: "基建实质进展 // 香港电灯 (HK ELECTRIC) 配电规划部联合勘察",
+                hke_banner_title: "上环一号梯台岸电快充接口现场勘察已排期 (2026年10月)",
+                hke_banner_desc: "香港电灯 (HK Electric) 配电规划部已正式受理技术可行性评估，并定于 2026年10月21日 在“上环一号梯台”（毗邻港澳码头信德中心）进行联合现场勘察，审视我们 250 kW – 900 kW 持续低压 (380V/415V AC) 供电方案。该公众梯台位处中环与港澳航线交汇点，具备双重战略价值：既可验证维港短途线 BAYWING-D2 的 500 kW 快充系统（并延伸至中环 7–10 号码头及湾仔码头），同时作为港澳线 EF-150 旗舰船 3.5 MW 兆瓦快充的首个浮动储能缓冲节点——无需进行耗时数年的 11kV 高压挖路工程。",
+                hke_btn_text: "查看港灯现场勘察一页决策单及走线图",
+                hke_stat1_l: "第 1–2 阶段港灯低压负载",
+                hke_stat2_l: "电网保护拓扑架构",
+                hke_stat2_v: "单向充电储能缓冲 (零逆向馈电)",
+                bull_title: "机构投资者看重的结构性优势 (Bull Case)",
+                bull_sub: "核心技术护城河与极致资本效率",
+                bull_1_t: "1. 93.5% 非稀释性研发资金杠杆",
+                bull_1_d: "通过软件优先的数字孪生 (Phase 0) 与缩尺模型验证 (Phase 1)，首阶段 HK$ 320万预算中有 HK$ 299万由香港科学园及创新科技署资助覆盖，投资人资金不会消耗在早期铝材试错。",
+                bull_2_t: "2. 弗劳德数 (Fn = 1.17) 物理缩尺除险",
+                bull_2_d: "3.56米 D1 测试艇的固有纵摇/升沉频率高于 28.5米大船。在吐露港真实海况下验证 D1 的 100Hz 主动襟翼控制，能从数学与物理层面彻底解决载客前的飞控稳定性。",
+                bull_3_t: "3. 无可争议的短途航线经济效益 (节省 78% 能源成本)",
+                bull_3_d: "船体脱离水面减阻 80%，每海里电费仅 ~$4.90 美元（传统柴油双体船高达 ~$22.50 美元），约 3.1 年即可收回电动船溢价，且 LFP 電池工作于 50% 浅充放区间，寿命超过 4,000 次循环。",
+                risk_title: "创投基金与评审关注的风险及解决方案",
+                risk_sub: "执行力、岸电基建与制造模式除险",
+                risk_1_t: "1. 关键人物依赖与精简工程团队风险",
+                risk_1_d: "解决方案：从第 1 天起通过 ITF RTH 聘请 2 名全职飞控及机电工程师，采用模块化 ROS2/AUTOSAR 标准 C++ 架构及商用现成航电硬件 (Jetson/STM32H7)，消除单一开发者依赖。",
+                risk_2_t: "2. 码头岸电容量审批与租约周期瓶颈",
+                risk_2_d: "解决方案 (已落地)：无需等待数年兴建 11kV 变电站，我们的单向浮动储能系统直接利用港灯现有低压变压器裕度（250–900 kW 持续负载），目前已与港灯配电规划部推进上环一号梯台现场交界勘察。",
+                risk_3_t: "3. 第 3 阶段“重资产造船资本陷阱”",
+                risk_3_d: "解决方案：Aero-Marine Systems 定位为“海事飞控系统与电力推进 OEM 供应商”而非船厂。碳纤维船体由珠三角成熟复合材料船厂按 DNV HSLC 规范代工，我们专注持有高毛利的飞控软件、水翼总成及岸电储能 IP。",
+                footer_copy: "AERO-MARINE SYSTEMS LIMITED © 2026 // 香港及粤港澳大湾区"
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const k = el.getAttribute('data-i18n');
+                if (i18nData[lang] && i18nData[lang][k]) el.textContent = i18nData[lang][k];
+            });
+            ['en', 'tc', 'sc'].forEach(l => {
+                const btn = document.getElementById(`btn-lang-${l}`);
+                if (btn) btn.className = (l === lang) ? "px-2 py-1 rounded bg-zinc-800 text-white font-semibold" : "px-2 py-1 rounded text-zinc-500 hover:text-white";
+            });
+        }
+    </script>
+</body>
+</html>
