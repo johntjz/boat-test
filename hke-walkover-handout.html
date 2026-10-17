@@ -86,25 +86,24 @@
 </head>
 <body>
 
-    <!-- FLOATING MULTI-PAGE TOOLBAR (HIDDEN WHEN PRINTED) -->
-    <div class="no-print max-w-[210mm] mx-auto mt-3 mb-2 flex flex-wrap justify-between items-center gap-2 px-2 text-xs font-mono">
-        <div class="flex items-center gap-2">
-            <a href="index.html" class="px-3 py-1.5 rounded bg-slate-800 text-cyan-400 hover:bg-slate-700 border border-slate-600 font-bold">
-                ← Master Plan (index.html)
-            </a>
-            <a href="utilities-grid.html" class="px-3 py-1.5 rounded bg-slate-800 text-emerald-400 hover:bg-slate-700 border border-slate-600 font-bold">
-                Grid &amp; Port Works Portal →
-            </a>
-        </div>
-        <div class="flex items-center gap-2">
-            <button onclick="toggleTheme()" id="btn-theme" class="px-3 py-1.5 rounded bg-slate-700 text-white hover:bg-slate-600 transition-all shadow">
-                Switch to iPad Dark Mode
-            </button>
-            <div class="flex bg-slate-800 rounded p-0.5 border border-slate-700 shadow">
-                <button onclick="toggleLang('en')" id="btn-en" class="px-2.5 py-1 rounded bg-cyan-500 text-slate-950 font-bold">EN</button>
-                <button onclick="toggleLang('tc')" id="btn-tc" class="px-2.5 py-1 rounded text-slate-300 hover:text-white">繁</button>
-                <button onclick="toggleLang('sc')" id="btn-sc" class="px-2.5 py-1 rounded text-slate-300 hover:text-white">简</button>
-            </div>
+    <!-- REUSABLE DEDICATED ARCHITECTURE TOP BAR -->
+    <div class="no-print">
+        <script src="header.js"></script>
+        <site-header></site-header>
+    </div>
+
+    <!-- SPACING FOR FIXED HEADER ON HANDOUT PAGE -->
+    <div class="no-print h-16"></div>
+
+    <!-- FLOATING TOOLBAR FOR THEME / PRINT -->
+    <div class="no-print max-w-[210mm] mx-auto mt-3 mb-2 flex justify-end items-center gap-2 px-2 text-xs font-mono">
+        <button onclick="toggleTheme()" id="btn-theme" class="px-3 py-1.5 rounded bg-slate-700 text-white hover:bg-slate-600 transition-all shadow">
+            Switch to iPad Dark Mode
+        </button>
+        <div class="flex bg-slate-800 rounded p-0.5 border border-slate-700 shadow">
+            <button onclick="toggleLang('en')" id="btn-en" class="px-2.5 py-1 rounded bg-cyan-500 text-slate-950 font-bold">EN</button>
+            <button onclick="toggleLang('tc')" id="btn-tc" class="px-2.5 py-1 rounded text-slate-300 hover:text-white">繁</button>
+            <button onclick="toggleLang('sc')" id="btn-sc" class="px-2.5 py-1 rounded text-slate-300 hover:text-white">简</button>
         </div>
     </div>
 
@@ -296,7 +295,7 @@
                 </div>
             </section>
 
-            <!-- SECTION 3: NON-TABLE 3-STAGE VISUAL PROGRESSION CARDS (REPLACES OLD HTML TABLE) -->
+            <!-- SECTION 3: NON-TABLE 3-STAGE VISUAL PROGRESSION CARDS -->
             <section class="mb-2">
                 <div class="flex items-center justify-between mb-1.5">
                     <h2 class="text-xs font-extrabold uppercase tracking-wide" style="color: var(--accent-blue);" data-i18n="s3_title">
@@ -308,7 +307,6 @@
                 </div>
 
                 <div class="grid grid-cols-3 gap-2.5 text-[10px]">
-                    <!-- Stage 1 Card -->
                     <div class="card p-2.5 border-l-4" style="border-left-color: var(--accent-green);">
                         <div class="flex justify-between items-center mb-1">
                             <span class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="r1_1">Stage 1 (Now): Sheung Wan No. 1</span>
@@ -321,7 +319,6 @@
                         </p>
                     </div>
 
-                    <!-- Stage 2 Card -->
                     <div class="card p-2.5 border-l-4" style="border-left-color: var(--accent-blue);">
                         <div class="flex justify-between items-center mb-1">
                             <span class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="r2_1">Stage 2 (Next): Central &amp; Wan Chai</span>
@@ -334,7 +331,6 @@
                         </p>
                     </div>
 
-                    <!-- Stage 3 Card -->
                     <div class="card p-2.5 border-l-4" style="border-left-color: #64748b;">
                         <div class="flex justify-between items-center mb-1">
                             <span class="font-bold text-[10.5px]" style="color: var(--accent-blue);" data-i18n="r3_1">Stage 3 (Future): Macau Terminal</span>
@@ -482,7 +478,7 @@
                 r3_1: "第三階段 (遠期)：上環港澳碼頭",
                 r3_2: "營運船型：EF-150 港澳高速水翼船",
                 r3_3: "1.5 – 3.0 MW (11kV 專線)",
-                r3_4: "提早於 Q4 規劃預留地下管道，配合跨境高速船隊全面電動化。",
+                r3_4: "提早於 Q4 规划預留地下管道，配合跨境高速船队全面电动化。",
                 foot_action: "會後下一步：我方按問題 2 確認的 kW 數值提交表格 C.I. 141 → 港燈發出簡短《供電可行性確認函》供科學園、土木工程拓展署及海事處存檔。",
                 sign_box: "港燈代表 / 備註: _____________"
             },
@@ -509,7 +505,7 @@
                 st3_f: "✓ 100% 单向用电零倒灌",
                 st4_t: "第四步：电动船快充",
                 st4_h: "10分钟靠岸极速补电",
-                st4_d: "当电动渡轮靠岸上下客时，由储能电池库在 10 分钟内快速补电，既快又不伤电网。",
+                st4_d: "当电动渡轮靠岸上下客时，由储能电池库在 10 分钟内快速补電，既快又不伤电网。",
                 st4_f: "✓ 船端极速、电网平稳",
                 s2_title: "2A. 今日现场需敲定的 4 个问题",
                 d1_q: "问题 1：最近的港灯供电点在哪里？",
@@ -535,7 +531,7 @@
                 r1_2: "运营船型：D2 先导电动船 (25–40座)",
                 r1_3: "250 – 300 kW (普通低压街电)",
                 r1_4: "直接用现成变压器余量，免除大型马路或海堤开挖工程。",
-                r2_1: "第二阶段 (下一步)：中环及湾仔码头",
+                r2_1: "second phase (下一步)：中环及湾仔码头",
                 r2_2: "运营船型：D3 / D4 / D5 维港及离岛船队",
                 r2_3: "300 – 900 kW (普通低压街电)",
                 r2_4: "100% 复制上环“岸上电表箱 + 浮动储能桥”模式至中环 7–10 号及湾仔码头。",
@@ -543,7 +539,7 @@
                 r3_2: "运营船型：EF-150 港澳高速水翼船",
                 r3_3: "1.5 – 3.0 MW (11kV 专线)",
                 r3_4: "提早于 Q4 规划预留地下管道，配合跨境高速船队全面电动化。",
-                foot_action: "会后下一步：我方按问题 2 确认的 kW 数值提交表格 C.I. 141 → 港灯发出简短《供电可行性确认函》供科学园、土木工程拓展署及海事处存档。",
+                foot_action: "会后下一步：我方按问题 2 确认的 kW 数值提交表格 C.I. 141 → 港燈發出簡短《供電可行性確認函》供科學園、土木工程拓展署及海事處存档。",
                 sign_box: "港灯代表 / 备注: _____________"
             }
         };
@@ -559,7 +555,7 @@
                 if (btn) {
                     btn.className = (l === lang)
                         ? "px-2.5 py-1 rounded bg-cyan-500 text-slate-950 font-bold"
-                        : "px-2.5 py-1 rounded text-slate-300 hover:text-white";
+                        : "px-2.5 py-1.5 rounded text-slate-300 hover:text-white";
                 }
             });
         }
