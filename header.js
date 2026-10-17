@@ -13,7 +13,7 @@ class SiteHeader extends HTMLElement {
                         <div class="flex flex-col whitespace-nowrap">
                             <div class="flex items-center space-x-2">
                                 <span class="text-sm font-mono font-bold tracking-wider text-white">BAYWING</span>
-                                <span id="brand-badge" class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-cyan border border-zinc-800 rounded">D1–D5 / EF-150</span>
+                                <span class="text-[9px] font-mono px-1.5 py-0.5 bg-zinc-900 text-tech-cyan border border-zinc-800 rounded">D1–D5 / EF-150</span>
                             </div>
                             <span class="text-[8.5px] font-mono text-zinc-500 tracking-widest uppercase">Electric Maritime Hub</span>
                         </div>
@@ -22,12 +22,12 @@ class SiteHeader extends HTMLElement {
                     <!-- Desktop Navigation -->
                     <nav class="hidden xl:flex items-center space-x-1.5 text-[10.5px] font-mono uppercase tracking-wider whitespace-nowrap" id="desktop-nav">
                         <a href="index.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">01. Overview</a>
-                        <a href="master-plan-fleet.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. 10-Yr Plan & Fleet</a>
-                        <a href="routes-calculator.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">03. 28 Routes & OPEX</a>
-                        <a href="engineering-rd.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">04. R&D Blueprints</a>
+                        <a href="master-plan-fleet.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">02. 10-Yr Plan &amp; Fleet</a>
+                        <a href="routes-calculator.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">03. 28 Routes &amp; OPEX</a>
+                        <a href="engineering-rd.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">04. R&amp;D Blueprints</a>
                         <a href="investors.html" class="nav-link px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors">05. Investors</a>
 
-                        <!-- Expandable Stakeholder Portals Dropdown -->
+                        <!-- Stakeholder Portals Dropdown -->
                         <div class="relative group">
                             <button class="px-2.5 py-1.5 rounded text-zinc-300 hover:text-white hover:bg-zinc-900 transition-colors inline-flex items-center gap-1">
                                 <span>Stakeholder Portals</span>
@@ -36,7 +36,7 @@ class SiteHeader extends HTMLElement {
                             <div class="absolute right-0 mt-1 w-64 bg-zinc-950 border border-zinc-800 rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                                 <a href="hkstp-itf.html" class="nav-link block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">06. HKSTP / ESS / GTF / RTH</a>
                                 <a href="utilities-grid.html" class="nav-link block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">07. HKE / CLP / AAHK / CEDD</a>
-                                <a href="regulatory-class.html" class="nav-link block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">08. DNV Class & HKMPB</a>
+                                <a href="regulatory-class.html" class="nav-link block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">08. DNV Class &amp; HKMPB</a>
                                 <a href="stakeholder-tracker.html" class="nav-link block px-4 py-2 text-[11px] text-zinc-300 hover:bg-zinc-900 hover:text-white">09. Oct 2026 Comms Log</a>
                                 <div class="border-t border-zinc-800 my-1"></div>
                                 <a href="hke-walkover-handout.html" class="block px-4 py-2 text-[11px] text-tech-cyan font-bold hover:bg-zinc-900" target="_blank">10. HKE Site Handout ↗</a>
@@ -60,33 +60,30 @@ class SiteHeader extends HTMLElement {
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden xl:hidden bg-zinc-950 border-b border-zinc-800 px-4 py-4 space-y-1.5 font-mono text-xs uppercase tracking-wider">
                 <a href="index.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">01. Overview</a>
-                <a href="master-plan-fleet.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">02. 10-Yr Plan & Fleet</a>
-                <a href="routes-calculator.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">03. 28 Routes & OPEX</a>
-                <a href="engineering-rd.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">04. R&D Blueprints</a>
+                <a href="master-plan-fleet.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">02. 10-Yr Plan &amp; Fleet</a>
+                <a href="routes-calculator.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">03. 28 Routes &amp; OPEX</a>
+                <a href="engineering-rd.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">04. R&amp;D Blueprints</a>
                 <a href="investors.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">05. Investors</a>
                 <a href="hkstp-itf.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">06. HKSTP / ESS / GTF</a>
-                <a href="utilities-grid.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">07. Utilities & Grid</a>
-                <a href="regulatory-class.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">08. Class & Policy</a>
+                <a href="utilities-grid.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">07. Utilities &amp; Grid</a>
+                <a href="regulatory-class.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">08. Class &amp; Policy</a>
                 <a href="stakeholder-tracker.html" class="nav-link block p-2 text-zinc-300 hover:text-white rounded hover:bg-zinc-900">09. Comms Log</a>
+                <div class="border-t border-zinc-800 pt-2"></div>
+                <a href="hke-walkover-handout.html" class="block p-2 text-tech-cyan font-bold" target="_blank">10. HKE Site Handout ↗</a>
             </div>
         </header>
         `;
 
-        // Automatically highlight the active page link
+        // Automatically highlight active page link
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
         const links = this.querySelectorAll('.nav-link');
         
         links.forEach(link => {
             if (link.getAttribute('href') === currentPath) {
-                // Remove default styling, add active highlight styling
                 link.classList.remove('text-zinc-300', 'hover:text-white', 'hover:bg-zinc-900');
-                
-                // For desktop links: White background, dark text
                 if (link.closest('#desktop-nav') && !link.closest('.group')) {
                     link.classList.add('bg-white', 'text-zinc-950', 'font-bold');
-                } 
-                // For dropdown or mobile links: Bold white text
-                else {
+                } else {
                     link.classList.add('text-white', 'font-bold', 'bg-zinc-900');
                 }
             }
